@@ -1,0 +1,313 @@
+MUHDAN FYAN
+SYAH SOFIAN
+F UL L S TA CK DEV EL OP ER
+
+TENTANG SAYA
+I am a professional Web Developer with 10 years of work
+experience. I have acquired knowledge in several
+programming languages and web/software development
+tech-stacks such as PHP, JS, & Golang.
+
+Currently, I am working as a Marbot Masjid, IT Freelancer,
+and Head of a Non-Formal Education Institution named
+
+KONTAK
+0831-3408-6899
+muhdanfyan.github.io
+
+muhdanfyan@gmail.com
+
+KEAHLIAN
+BACKEND (JS, PHP, GO)
+FRONT END(REACT)
+DATABASE (SQL, NoSQL)
+
+PHP FRAMEWORK (LARAVEL, CI)
+Graphic Design, Simple Motion,
+
+Video Editor
+
+BAHASA
+Inggris - 80%
+Indonesia - 100%
+
+Arab- 70%
+
+REFERENSI
+PONDOK INFORMATIKA
+
+Jln. Bontobilla II no. 18
+Batua, Manggala
+pondokinformatika
+@gmail.com
+
+PONDOK INFORMATIKA.
+
+PENDIDIKAN
+PONDOK INFORMATIKA
+2017 - 2020 BACK END DEVELOPER
+
+UNIVERSITAS DIPA MAKASSAR
+2006 - 2011 TEKNIK INFORMATIKA
+
+PENGALAMAN
+2022 - Now
+
+PT. Object Media
+Digitama
+2021 - 2022
+
+Yayasan Satu
+Kebaikan
+2021 - 2022
+
+Mallmora
+Reseller
+Jan - July 2021
+
+PT. Jagona
+Era Teknologi
+2020 - 2021
+
+MAGAU
+GROUP
+
+2017 - Now
+
+PONDOK
+INFORMATIKA
+
+2013 - 2014
+
+CV.
+VISUALDATA
+2011 - 2012
+
+STIBA
+MAKASSAR
+
+HOBI
+
+WEB DEVELOPER
+Creating and Designing websites for client needs
+
+FRONT END DEVELOPER
+Design a Crowd Funding Web using React JS
+
+TECH LEAD
+"Managing and controlling team performance, and
+Involved in Front End using ReactJS"
+
+BACK END DEVELOPER
+Building a Web Administrator
+creating REST APIs
+
+using
+
+CodeIgniter,
+
+FULL STACK DEVELOPER
+Building Landing Page, Consuming REST-API built Web
+Administrator
+
+MENTOR, FOUNDER, & LEADER
+Holding a position as the leader and mentor in an
+educational institution that combines IT training and religious
+guidance since 2017
+
+WEB DEVELOPER
+Designing an Online Shop using OpenCart CMS and
+Customization using PHP
+
+IT STAFF & DATABASE
+Managing Student Database and Registration Administration.
+Designing Desktop App-based Academic Management
+System, Graphic Design, & IT Support
+
+Muhdan Fyan
+Porto Folio
+
+@muhdanfyan
+
+Produk dan Portofolio
+Pegas Belajar (WEB)
+Psychological
+
+Test
+
+Website
+
+Tech
+
+Codeigniter
+
+using
+
+PHP
+
+Framework Codeigniter and MySQL database.
+Stack:
+
+MySQL, JS (Questions).
+
+PHP
+
+Framework,
+
+github.com/muhdanfyan/pegasbelajar
+
+Bazarwi (MarketPlace & Event)
+Website
+System
+
+Marketplace
+
+for
+
+Bazaar
+
+&
+
+Public
+
+and
+
+Information
+
+Exhibition
+
+using
+
+Codeigniter & MySQL Tech Stack: Codeigniter
+PHP Framework, MySQL
+bazar.wahdah.or.id/
+
+SIMLEG SulTeng(CMS Admin & REST
+API)
+
+Tahfidzbaubau(School Web Profil +
+Tahfidz Online)
+
+Information System and Meeting Agenda of
+
+senior high school and equivalent to support
+
+The Website of the Legislative Management
+
+the Provincial DPRD of Central Celebes, has
+features
+
+Meetings,
+
+including:
+
+Management
+
+Management
+
+of
+
+of
+
+Meeting
+
+DPRD
+File
+
+Results, Attendance, REST API for consuming
+SILMEG Prov Sulteng (playstore & appstore),
+
+A website profile for junior high school or
+transparency
+promotion.
+
+of
+
+information
+
+TechStack:
+
+and
+
+school
+
+self-made
+
+CMS
+
+Codeigniter
+
+Framework, MySQL, adminLTE
+
+PHP
+
+tahfizbaubau.com/
+
+etc. TechStack: Codeigniter PHP Framework,
+MySQL, piCRUD
+
+PICRUD(CRUD Generator)
+
+simleg-dprdsulteng.com/
+
+SIPAPAN.ID
+Housing
+
+and
+
+Application
+
+of
+
+Designing
+
+a
+
+Administrators
+
+starter
+
+using
+
+for
+
+PHP
+
+Framework
+
+Codeigniter, GroceryCRUD Generator, MYSQL,
+Settlement
+the
+
+Data
+
+Housing
+
+Collection
+
+Department,
+
+Residential Area and Land Office of Buton
+
+REST
+
+API,
+
+TechStack:
+
+Codeigniter
+
+Framework, MySQL, adminLTE.
+
+github.com/muhdanfyan/picrud
+
+Regency
+
+sipapan.id
+
+Portofolio lain bisa dicek di Repositori GitHub Saya :
+github.com/muhdanfyan?tab=repositories
+
+PHP
+
+
