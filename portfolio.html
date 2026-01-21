@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semua Portofolio | Muhdan Fyan</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #ffffff;
+      --bg-card: rgba(255, 255, 255, 0.8);
+      --primary: #6366f1;
+      --secondary: #a855f7;
+      --text-main: #0f172a;
+      --text-dim: #475569;
+      --glass-border: rgba(15, 23, 42, 0.1);
+      --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);
+    }
+
+    .glass {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .section-header {
+      padding-top: 8rem;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 6rem;
+    }
+
+    .project-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      color: var(--text-dim);
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      border-radius: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    footer {
+      padding: 4rem 0;
+      text-align: center;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-dim);
+    }
+
+    .search-container {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-input {
+      width: 100%;
+      max-width: 500px;
+      padding: 1rem 1.5rem;
+      background: #f1f5f9;
+      border: 1px solid var(--glass-border);
+      border-radius: 1rem;
+      color: var(--text-main);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gradient-bg"></div>
+
+  <nav>
+    <div class="container nav-content">
+      <a href="index.html" class="logo">MF</a>
+      <a href="index.html" class="btn btn-outline" style="padding: 0.5rem 1rem; border-radius: 0.5rem;">Kembali</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section-header" data-aos="fade-down">
+      <h1>Seluruh Portofolio</h1>
+      <p style="color: var(--text-dim); margin-top: 1rem;">Daftar lengkap 68 website yang telah dideploy.</p>
+    </div>
+
+    <div class="search-container" data-aos="fade-up">
+      <input type="text" id="searchInput" class="search-input" placeholder="Cari nama project atau tahun...">
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Bearboy</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2026.</p>
+          <div class="project-tags">
+            <span class="tag">2026</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://bearboysunat.com" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Asesmen</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://asesmen.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Risethub</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://risethub.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Demopisantri</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://demopisantri.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Pesantrenteknologi</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://pesantrenteknologi.id" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Quizfunwalk</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://quizfunwalk.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Quiz Funwalhutmk2025</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://quiz-funwalhutmk2025.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Pisantri</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://pisantri.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Sukrigrafis</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://sukrigrafis.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Simkes</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://simkes.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Mbgman</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://mbgman.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Retribusi Admin</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://retribusi-admin.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>E Retribusi</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://e-retribusi.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Devkassaone</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://devkassaone.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Devsirangkul</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://devsirangkul.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Kassaoneid</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://kassaone.id" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Kassapp</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://kassapp.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Sirangkul</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://sirangkul.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Visibaubau4</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://visibaubau4.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Profilsantri</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://profilsantri.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Cekpondok</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://cekpondok.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Super Pony B97Bcb</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://super-pony-b97bcb.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Ceksantri</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://ceksantri.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Wiyasa</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://wiyasamediapustaka.com" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Implementasiqr</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://implementasiqr.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Cosmic Dragon 9961B6</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://cosmic-dragon-9961b6.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Sdalmuyassar</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://sdalmuyassar.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Pondokinformatika</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://pondokinformatika.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Sditkausarilqurro</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://sditkausarilqurro.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Sippeka</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2025.</p>
+          <div class="project-tags">
+            <span class="tag">2025</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://sippeka.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Lbhtanasuci</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2024.</p>
+          <div class="project-tags">
+            <span class="tag">2024</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://lbhtanasuci.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Webdpd</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2024.</p>
+          <div class="project-tags">
+            <span class="tag">2024</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://webdpd.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Quantumbrain</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2024.</p>
+          <div class="project-tags">
+            <span class="tag">2024</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://quantumbrain.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Objectmediatama</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://objectmediatama.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Zulkifliat</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://zulkifliat.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Jelajahpublishing</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://jelajahpublishing.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Halimbubu</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://halimbubu.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Kpbaubau</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://kpbaubau.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Ongkahomestay</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://ongkahomestay.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Bengkelhondabaubau</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://bengkelhondabaubau.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Skomindo</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://skomindo.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Daftarpi</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://daftarpi.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Klinikmatasedayu</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://klinikmatasedayu.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Merchap</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://merchap.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Ladziiz</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://ladziiz.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Lestaree</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://lestaree.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Jamilulmukminin</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://jamilulmukminin.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Bvgarispringbed</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://bvgarispringbed.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Baksomasateng</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2023.</p>
+          <div class="project-tags">
+            <span class="tag">2023</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://baksomasateng.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Informatikahighschool</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2022.</p>
+          <div class="project-tags">
+            <span class="tag">2022</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://informatikahighschool.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Workshop1Milyarpertama</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2022.</p>
+          <div class="project-tags">
+            <span class="tag">2022</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://workshop1milyarpertama.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Mainawa</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2022.</p>
+          <div class="project-tags">
+            <span class="tag">2022</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://mainawa.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Malmoraapp</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2022.</p>
+          <div class="project-tags">
+            <span class="tag">2022</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://malmoraapp.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Kurirquran</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2022.</p>
+          <div class="project-tags">
+            <span class="tag">2022</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://kurirquran.com" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Tahfiz</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2021.</p>
+          <div class="project-tags">
+            <span class="tag">2021</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://tahfiz.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Bazpar Wi</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2021.</p>
+          <div class="project-tags">
+            <span class="tag">2021</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://bazpar-wi.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Bandarkasur</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2021.</p>
+          <div class="project-tags">
+            <span class="tag">2021</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://bandarkasur.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Pilaragroidn</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2021.</p>
+          <div class="project-tags">
+            <span class="tag">2021</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://pilaragroidn.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Kedaiaisyah</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2021.</p>
+          <div class="project-tags">
+            <span class="tag">2021</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://kedaiaisyah.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Fisheryndo</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2021.</p>
+          <div class="project-tags">
+            <span class="tag">2021</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://fisheryndo.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Celanajogerkeren</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://celanajogerkeren.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Piblajar</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://piblajar.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="100">
+        <div class="project-info">
+          <h3>Pihome</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://pihome.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="150">
+        <div class="project-info">
+          <h3>Mentorboxid</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://mentorboxid.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-info">
+          <h3>Rumahquranmultimedia</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://rumahquranmultimedia.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="250">
+        <div class="project-info">
+          <h3>Elegant Khorana 0B5B70</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://elegant-khorana-0b5b70.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="0">
+        <div class="project-info">
+          <h3>Bintarolc</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://bintarolc.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+      <div class="project-card glass" data-aos="zoom-in" data-aos-delay="50">
+        <div class="project-info">
+          <h3>Distracted Wright 4Bf154</h3>
+          <p style="color: var(--text-dim); margin-top: 0.5rem;">Project created in 2020.</p>
+          <div class="project-tags">
+            <span class="tag">2020</span>
+            <span class="tag">Netlify</span>
+          </div>
+          <a href="https://distracted-wright-4bf154.netlify.app" target="_blank" class="btn btn-outline"
+            style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    const searchInput = document.getElementById('searchInput');
+    const projectsGrid = document.getElementById('projectsGrid');
+    const cards = projectsGrid.getElementsByClassName('project-card');
+
+    searchInput.addEventListener('keyup', (e) => {
+      const term = e.target.value.toLowerCase();
+      Array.from(cards).forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        const text = card.querySelector('p').innerText.toLowerCase();
+        if (title.includes(term) || text.includes(term)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
