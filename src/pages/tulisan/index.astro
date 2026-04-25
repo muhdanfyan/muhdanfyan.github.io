@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import manifest from '../../../data/manifest.json';
+
+const writings = manifest.writing;
+---
+
+<Layout title="All Writings | Muhdan Fyan">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        MUHDAN FYAN
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Home</a>
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
+          <span id="langLabel">ID</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-6 pt-32 mb-20">
+    <div class="mb-12">
+      <h1 class="text-4xl font-extrabold mb-4">All Writings</h1>
+      <p class="text-slate-600">Catatan teknologi, edukasi, dan pemikiran saya.</p>
+      <div class="w-12 h-1 bg-indigo-600 rounded-full mt-6"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {writings.map((writing) => (
+        <a href={`/tulisan/${writing.slug}/`} class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" data-langs={JSON.stringify(writing.available_langs)}>
+          <div class="flex-1">
+            <span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{writing.category}</span>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors writing-title" data-id={writing.title} data-en={writing.title_en}>{writing.title}</h3>
+            <p class="text-slate-500 text-sm mb-4 line-clamp-2 writing-desc" data-id={writing.description} data-en={writing.description_en}>{writing.description}</p>
+            <div class="flex items-center gap-2 text-slate-400 text-xs">
+              <span>{writing.date}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-100 py-10 text-center text-slate-400 text-sm">
+    &copy; 2026 Muhdan Fyan Syah Sofian. Made with Astro & Passion.
+  </footer>
+
+  <script is:inline>
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    function updateLanguageUI() {
+      document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+      
+      document.querySelectorAll('.writing-card').forEach(card => {
+        const langs = JSON.parse(card.dataset.langs || '["id"]');
+        card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+        
+        const titleEl = card.querySelector('.writing-title');
+        const descEl = card.querySelector('.writing-desc');
+        if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
+        if (descEl) descEl.innerText = currentLang === 'en' ? descEl.dataset.en : descEl.dataset.id;
+      });
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      localStorage.setItem('lang', currentLang);
+      updateLanguageUI();
+    });
+
+    updateLanguageUI();
+  </script>
+</Layout>
