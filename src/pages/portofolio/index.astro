@@ -31,7 +31,7 @@ const projects = manifest.portfolio;
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project) => (
         <div class="project-card group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all flex flex-col h-full" data-langs={JSON.stringify(project.available_langs)}>
-          <img src={project.image.startsWith('http') ? project.image : '/' + project.image} alt={project.title} class="w-full h-48 object-cover group-hover:scale-105 transition-all duration-500" />
+          <img src={(project.image && project.image.startsWith('http')) ? project.image : '/' + (project.image || 'img/screenshots/default.png')} alt={project.title} class="w-full h-48 object-cover group-hover:scale-105 transition-all duration-500" />
           <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-xl font-bold mb-2 project-title" data-id={project.title} data-en={project.title_en}>{project.title}</h3>
             <p class="text-slate-600 text-sm mb-4 line-clamp-2 project-desc" data-id={project.description} data-en={project.description_en}>{project.description}</p>

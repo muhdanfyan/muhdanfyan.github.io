@@ -7,7 +7,10 @@
       "year": "2026",
       "category": "System",
       "category_en": "System",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "img/screenshots/bearboy.png",
       "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
       "description_en": "Health management information system and digital circumcision.",
@@ -20,7 +23,10 @@
       "year": "2025",
       "category": "Netlify",
       "category_en": "Netlify",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "img/screenshots/asesmen.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
@@ -33,7 +39,10 @@
       "year": "2025",
       "category": "Netlify",
       "category_en": "Netlify",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "img/screenshots/risethub.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
@@ -46,7 +55,10 @@
       "year": "2025",
       "category": "Netlify",
       "category_en": "Netlify",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "img/screenshots/demopisantri.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
@@ -59,7 +71,10 @@
       "year": "2025",
       "category": "Netlify",
       "category_en": "Netlify",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "img/screenshots/pesantrenteknologi.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
@@ -72,23 +87,887 @@
       "year": "2026",
       "category": "System",
       "category_en": "System",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "img/screenshots/mbgman.png",
       "description": "Sistem manajemen dapur dan operasional MBG.",
       "description_en": "MBG kitchen and operational management system.",
       "url": "https://muhdanfyan.github.io/mbg-management/"
+    },
+    {
+      "title": "Quizfunwalk",
+      "title_en": "Quizfunwalk",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/693cad250bd5c00008c584ed/screenshot_2025-12-13-00-02-52-0000.webp",
+      "url": "https://quizfunwalk.netlify.app",
+      "description": "Digital project: Quizfunwalk. Deployed via Netlify.",
+      "description_en": "Digital project: Quizfunwalk. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Quiz Funwalhutmk2025",
+      "title_en": "Quiz Funwalhutmk2025",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/693ca8f80c112c000877def6/screenshot_2025-12-12-23-45-02-0000.webp",
+      "url": "https://quiz-funwalhutmk2025.netlify.app",
+      "description": "Digital project: Quiz Funwalhutmk2025. Deployed via Netlify.",
+      "description_en": "Digital project: Quiz Funwalhutmk2025. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Pisantri",
+      "title_en": "Pisantri",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/695fe6ee768ab20008268075/screenshot_2026-01-08-17-19-20-0000.webp",
+      "url": "https://pisantri.netlify.app",
+      "description": "Digital project: Pisantri. Deployed via Netlify.",
+      "description_en": "Digital project: Pisantri. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Sukrigrafis",
+      "title_en": "Sukrigrafis",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/692c0a8f5ae959846a297fb7/screenshot_2025-11-30-09-13-00-0000.webp",
+      "url": "https://sukrigrafis.netlify.app",
+      "description": "Digital project: Sukrigrafis. Deployed via Netlify.",
+      "description_en": "Digital project: Sukrigrafis. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Simkes",
+      "title_en": "Simkes",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/69238f9bf60ae700081215a8/screenshot_2025-11-23-22-50-21-0000.webp",
+      "url": "https://simkes.netlify.app",
+      "description": "Digital project: Simkes. Deployed via Netlify.",
+      "description_en": "Digital project: Simkes. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Mbgman",
+      "title_en": "Mbgman",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6909d9186dacbdfac0f28dd2/screenshot_2025-11-04-10-45-03-0000.webp",
+      "url": "https://mbgman.netlify.app",
+      "description": "Digital project: Mbgman. Deployed via Netlify.",
+      "description_en": "Digital project: Mbgman. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Retribusi Admin",
+      "title_en": "Retribusi Admin",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/691e000eb7b2a20008d22068/screenshot_2025-11-19-17-36-34-0000.webp",
+      "url": "https://retribusi-admin.netlify.app",
+      "description": "Digital project: Retribusi Admin. Deployed via Netlify.",
+      "description_en": "Digital project: Retribusi Admin. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "E Retribusi",
+      "title_en": "E Retribusi",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/690d5629d49a7c00082879a8/screenshot_2025-11-07-02-15-24-0000.webp",
+      "url": "https://e-retribusi.netlify.app",
+      "description": "Digital project: E Retribusi. Deployed via Netlify.",
+      "description_en": "Digital project: E Retribusi. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Devkassaone",
+      "title_en": "Devkassaone",
+      "category": "Web App",
+      "image": null,
+      "url": "https://devkassaone.netlify.app",
+      "description": "Digital project: Devkassaone. Deployed via Netlify.",
+      "description_en": "Digital project: Devkassaone. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Devsirangkul",
+      "title_en": "Devsirangkul",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/68ff6abc41ebba0008a66eec/screenshot_2025-10-27-12-51-49-0000.webp",
+      "url": "https://devsirangkul.netlify.app",
+      "description": "Digital project: Devsirangkul. Deployed via Netlify.",
+      "description_en": "Digital project: Devsirangkul. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Kassaoneid",
+      "title_en": "Kassaoneid",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/694b71070ddf47000830a921/screenshot_2025-12-24-04-50-50-0000.webp",
+      "url": "https://kassaone.id",
+      "description": "Digital project: Kassaoneid. Deployed via Netlify.",
+      "description_en": "Digital project: Kassaoneid. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Kassapp",
+      "title_en": "Kassapp",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/68e9bf1a9afa4e000860058e/screenshot_2025-10-11-02-21-38-0000.webp",
+      "url": "https://kassapp.netlify.app",
+      "description": "Digital project: Kassapp. Deployed via Netlify.",
+      "description_en": "Digital project: Kassapp. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Sirangkul",
+      "title_en": "Sirangkul",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6957c8700b6bdb0008d70ebe/screenshot_2026-01-02-13-31-12-0000.webp",
+      "url": "https://sirangkul.netlify.app",
+      "description": "Digital project: Sirangkul. Deployed via Netlify.",
+      "description_en": "Digital project: Sirangkul. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Visibaubau4",
+      "title_en": "Visibaubau4",
+      "category": "Web App",
+      "image": null,
+      "url": "https://visibaubau4.netlify.app",
+      "description": "Digital project: Visibaubau4. Deployed via Netlify.",
+      "description_en": "Digital project: Visibaubau4. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Profilsantri",
+      "title_en": "Profilsantri",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/689aa6df876f33f9d89e50cb/screenshot_2025-08-12-02-28-48-0000.webp",
+      "url": "https://profilsantri.netlify.app",
+      "description": "Digital project: Profilsantri. Deployed via Netlify.",
+      "description_en": "Digital project: Profilsantri. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Cekpondok",
+      "title_en": "Cekpondok",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/68c07f2e4c696c0008f69b3f/screenshot_2025-09-09-19-25-49-0000.webp",
+      "url": "https://cekpondok.netlify.app",
+      "description": "Digital project: Cekpondok. Deployed via Netlify.",
+      "description_en": "Digital project: Cekpondok. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Super Pony B97Bcb",
+      "title_en": "Super Pony B97Bcb",
+      "category": "Web App",
+      "image": null,
+      "url": "https://super-pony-b97bcb.netlify.app",
+      "description": "Digital project: Super Pony B97Bcb. Deployed via Netlify.",
+      "description_en": "Digital project: Super Pony B97Bcb. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Ceksantri",
+      "title_en": "Ceksantri",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6899e1fa39d78a0008128670/screenshot_2025-08-11-12-29-37-0000.webp",
+      "url": "https://ceksantri.netlify.app",
+      "description": "Digital project: Ceksantri. Deployed via Netlify.",
+      "description_en": "Digital project: Ceksantri. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Wiyasa",
+      "title_en": "Wiyasa",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6966561b8b171d0008bfb543/screenshot_2026-01-13-14-26-53-0000.webp",
+      "url": "https://wiyasamediapustaka.com",
+      "description": "Digital project: Wiyasa. Deployed via Netlify.",
+      "description_en": "Digital project: Wiyasa. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Implementasiqr",
+      "title_en": "Implementasiqr",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6860a42a44a1c000080791d9/screenshot_2025-06-29-02-25-52-0000.webp",
+      "url": "https://implementasiqr.netlify.app",
+      "description": "Digital project: Implementasiqr. Deployed via Netlify.",
+      "description_en": "Digital project: Implementasiqr. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Cosmic Dragon 9961B6",
+      "title_en": "Cosmic Dragon 9961B6",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6857f6735b22ba99cbbfdb7b/screenshot_2025-06-22-12-26-28-0000.webp",
+      "url": "https://cosmic-dragon-9961b6.netlify.app",
+      "description": "Digital project: Cosmic Dragon 9961B6. Deployed via Netlify.",
+      "description_en": "Digital project: Cosmic Dragon 9961B6. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Sdalmuyassar",
+      "title_en": "Sdalmuyassar",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/684c5c2ae0cec300085ce50a/screenshot_2025-06-13-17-13-52-0000.webp",
+      "url": "https://sdalmuyassar.netlify.app",
+      "description": "Digital project: Sdalmuyassar. Deployed via Netlify.",
+      "description_en": "Digital project: Sdalmuyassar. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Pondokinformatika",
+      "title_en": "Pondokinformatika",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/68763e303ca73c000806d864/screenshot_2025-07-15-11-40-50-0000.webp",
+      "url": "https://pondokinformatika.netlify.app",
+      "description": "Digital project: Pondokinformatika. Deployed via Netlify.",
+      "description_en": "Digital project: Pondokinformatika. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Sditkausarilqurro",
+      "title_en": "Sditkausarilqurro",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/687c75c3b9566f0008534341/screenshot_2025-07-20-04-51-56-0000.webp",
+      "url": "https://sditkausarilqurro.netlify.app",
+      "description": "Digital project: Sditkausarilqurro. Deployed via Netlify.",
+      "description_en": "Digital project: Sditkausarilqurro. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Sippeka",
+      "title_en": "Sippeka",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/683107755574030008d9217c/screenshot_2025-05-23-23-40-52-0000.webp",
+      "url": "https://sippeka.netlify.app",
+      "description": "Digital project: Sippeka. Deployed via Netlify.",
+      "description_en": "Digital project: Sippeka. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Lbhtanasuci",
+      "title_en": "Lbhtanasuci",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6762bc14cf05fb0008ce52bb/screenshot_2024-12-18-12-12-40-0000.webp",
+      "url": "https://lbhtanasuciindonesia.com",
+      "description": "Digital project: Lbhtanasuci. Deployed via Netlify.",
+      "description_en": "Digital project: Lbhtanasuci. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Webdpd",
+      "title_en": "Webdpd",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6705c1f9dcc4c60008c3ce91/screenshot_2024-10-08-23-37-07-0000.webp",
+      "url": "https://webdpd.netlify.app",
+      "description": "Digital project: Webdpd. Deployed via Netlify.",
+      "description_en": "Digital project: Webdpd. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Quantumbrain",
+      "title_en": "Quantumbrain",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/659739db9a65ea4b9ca76d7a/screenshot_2024-01-04-23-06-13-0000.webp",
+      "url": "https://quantumbrain.id",
+      "description": "Digital project: Quantumbrain. Deployed via Netlify.",
+      "description_en": "Digital project: Quantumbrain. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Objectmediatama",
+      "title_en": "Objectmediatama",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/657d207749ae8c00081030ee/screenshot_2023-12-16-03-59-00-0000.png",
+      "url": "https://objectmediatama.com",
+      "description": "Digital project: Objectmediatama. Deployed via Netlify.",
+      "description_en": "Digital project: Objectmediatama. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Zulkifliat",
+      "title_en": "Zulkifliat",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/658034ff91f0860008dc250a/screenshot_2023-12-18-12-03-31-0000.png",
+      "url": "https://zulkifliat.com",
+      "description": "Digital project: Zulkifliat. Deployed via Netlify.",
+      "description_en": "Digital project: Zulkifliat. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Jelajahpublishing",
+      "title_en": "Jelajahpublishing",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/66c884e808104d0008b29004/screenshot_2024-08-23-12-47-56-0000.webp",
+      "url": "https://jelajahpublishing.id",
+      "description": "Digital project: Jelajahpublishing. Deployed via Netlify.",
+      "description_en": "Digital project: Jelajahpublishing. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Halimbubu",
+      "title_en": "Halimbubu",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/652b6a0802104c2f66f0dd03/screenshot_2023-10-15-04-27-01-0000.png",
+      "url": "https://halimbubu.netlify.app",
+      "description": "Digital project: Halimbubu. Deployed via Netlify.",
+      "description_en": "Digital project: Halimbubu. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Kpbaubau",
+      "title_en": "Kpbaubau",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/65291505f9fff50008740c06/screenshot_2023-10-13-09-59-43-0000.png",
+      "url": "https://kpbaubau.netlify.app",
+      "description": "Digital project: Kpbaubau. Deployed via Netlify.",
+      "description_en": "Digital project: Kpbaubau. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Ongkahomestay",
+      "title_en": "Ongkahomestay",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/65505c628d48f6000899ecd9/screenshot_2023-11-12-05-02-36-0000.png",
+      "url": "https://ongkahomestay.com",
+      "description": "Digital project: Ongkahomestay. Deployed via Netlify.",
+      "description_en": "Digital project: Ongkahomestay. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Bengkelhondabaubau",
+      "title_en": "Bengkelhondabaubau",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6520daaee5e5c90009b9b638/screenshot_2023-10-07-04-14-39-0000.png",
+      "url": "https://bengkelhondabaubau.com",
+      "description": "Digital project: Bengkelhondabaubau. Deployed via Netlify.",
+      "description_en": "Digital project: Bengkelhondabaubau. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Skomindo",
+      "title_en": "Skomindo",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63fee2ecc2d7cc0008d28fef/screenshot_2023-03-01-05-30-34-0000.png",
+      "url": "https://skomindo.netlify.app",
+      "description": "Digital project: Skomindo. Deployed via Netlify.",
+      "description_en": "Digital project: Skomindo. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Daftarpi",
+      "title_en": "Daftarpi",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6400637ec181e500087df101/screenshot_2023-03-02-08-51-21-0000.png",
+      "url": "https://daftarpi.netlify.app",
+      "description": "Digital project: Daftarpi. Deployed via Netlify.",
+      "description_en": "Digital project: Daftarpi. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Klinikmatasedayu",
+      "title_en": "Klinikmatasedayu",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63ec527987fd17000871fcad/screenshot_2023-02-15-03-33-20-0000.png",
+      "url": "https://klinikmatasedayu.netlify.app",
+      "description": "Digital project: Klinikmatasedayu. Deployed via Netlify.",
+      "description_en": "Digital project: Klinikmatasedayu. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Merchap",
+      "title_en": "Merchap",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63d290c9024406137b6440d8/screenshot_2023-01-26-14-40-48-0000.png",
+      "url": "https://merchap.netlify.app",
+      "description": "Digital project: Merchap. Deployed via Netlify.",
+      "description_en": "Digital project: Merchap. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Ladziiz",
+      "title_en": "Ladziiz",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63cc99324ca6a42263c8eca9/screenshot_2023-01-22-02-02-33-0000.png",
+      "url": "https://ladziidzcatering.com",
+      "description": "Digital project: Ladziiz. Deployed via Netlify.",
+      "description_en": "Digital project: Ladziiz. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Lestaree",
+      "title_en": "Lestaree",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63ca8f22a0262e0008984adb/screenshot_2023-01-20-12-55-08-0000.png",
+      "url": "https://lestaree.netlify.app",
+      "description": "Digital project: Lestaree. Deployed via Netlify.",
+      "description_en": "Digital project: Lestaree. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Jamilulmukminin",
+      "title_en": "Jamilulmukminin",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/6506a7bff1e5bc0007537b5e/screenshot_2023-09-17-07-16-33-0000.png",
+      "url": "https://jamilulmukminin.or.id",
+      "description": "Digital project: Jamilulmukminin. Deployed via Netlify.",
+      "description_en": "Digital project: Jamilulmukminin. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Bvgarispringbed",
+      "title_en": "Bvgarispringbed",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63e9d6931c74e50007d5b9b4/screenshot_2023-02-13-06-20-09-0000.png",
+      "url": "https://bvgarispringbed.com",
+      "description": "Digital project: Bvgarispringbed. Deployed via Netlify.",
+      "description_en": "Digital project: Bvgarispringbed. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Baksomasateng",
+      "title_en": "Baksomasateng",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/640ca1c6934534000972e146/screenshot_2023-03-11-15-44-12-0000.png",
+      "url": "https://baksomasateng.web.id",
+      "description": "Digital project: Baksomasateng. Deployed via Netlify.",
+      "description_en": "Digital project: Baksomasateng. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Yysnalihizaam",
+      "title_en": "Yysnalihizaam",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63b606e628ae630008698b68/screenshot_2023-01-04-23-09-20-0000.png",
+      "url": "https://yysnalihizaam.netlify.app",
+      "description": "Digital project: Yysnalihizaam. Deployed via Netlify.",
+      "description_en": "Digital project: Yysnalihizaam. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Informatikahighschool",
+      "title_en": "Informatikahighschool",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63da27067aab1d00088b1a93/screenshot_2023-02-01-08-47-25-0000.png",
+      "url": "https://informatikahighschool.netlify.app",
+      "description": "Digital project: Informatikahighschool. Deployed via Netlify.",
+      "description_en": "Digital project: Informatikahighschool. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Workshop1Milyarpertama",
+      "title_en": "Workshop1Milyarpertama",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/63321edc36dcd20008979982/screenshot_2022-09-26-21-51-32-0000.png",
+      "url": "https://workshop1milyarpertama.netlify.app",
+      "description": "Digital project: Workshop1Milyarpertama. Deployed via Netlify.",
+      "description_en": "Digital project: Workshop1Milyarpertama. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Mainawa",
+      "title_en": "Mainawa",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/628731426df08f00085379c1/screenshot_2022-05-20-06-12-30-0000.png",
+      "url": "https://mainawa.netlify.app",
+      "description": "Digital project: Mainawa. Deployed via Netlify.",
+      "description_en": "Digital project: Mainawa. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Malmoraapp",
+      "title_en": "Malmoraapp",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/62809ba421663a7cb2adb25e/screenshot_2022-05-15-06-24-06-0000.png",
+      "url": "https://malmoraapp.netlify.app",
+      "description": "Digital project: Malmoraapp. Deployed via Netlify.",
+      "description_en": "Digital project: Malmoraapp. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Kurirquran",
+      "title_en": "Kurirquran",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/61fc9b695b2c3a00070d471e/screenshot_2022-02-04-03-20-17-0000.png",
+      "url": "https://kurirquran.com",
+      "description": "Digital project: Kurirquran. Deployed via Netlify.",
+      "description_en": "Digital project: Kurirquran. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Tahfiz",
+      "title_en": "Tahfiz",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/619ccabfd72ae600078877ef/screenshot_2021-11-23-11-04-36-0000.png",
+      "url": "https://tahfiz.id",
+      "description": "Digital project: Tahfiz. Deployed via Netlify.",
+      "description_en": "Digital project: Tahfiz. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Bazpar Wi",
+      "title_en": "Bazpar Wi",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/61826b06d033680008028005/screenshot_2021-11-03-10-57-17-0000.png",
+      "url": "https://bazpar-wi.netlify.app",
+      "description": "Digital project: Bazpar Wi. Deployed via Netlify.",
+      "description_en": "Digital project: Bazpar Wi. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Bandarkasur",
+      "title_en": "Bandarkasur",
+      "category": "Web App",
+      "image": null,
+      "url": "https://bandarkasur.netlify.app",
+      "description": "Digital project: Bandarkasur. Deployed via Netlify.",
+      "description_en": "Digital project: Bandarkasur. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Satukebaikan",
+      "title_en": "Satukebaikan",
+      "category": "Web App",
+      "image": null,
+      "url": "https://satukebaikan.netlify.app",
+      "description": "Digital project: Satukebaikan. Deployed via Netlify.",
+      "description_en": "Digital project: Satukebaikan. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Pilaragroidn",
+      "title_en": "Pilaragroidn",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/62640215590082000991f5cb/screenshot_2022-04-23-13-41-55-0000.png",
+      "url": "https://pilaragroidn.com",
+      "description": "Digital project: Pilaragroidn. Deployed via Netlify.",
+      "description_en": "Digital project: Pilaragroidn. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Kedaiaisyah",
+      "title_en": "Kedaiaisyah",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/60c0312c44acd546773bfd35/screenshot_2021-06-09-03-10-43-0000.png",
+      "url": "https://kedaiaisyah.netlify.app",
+      "description": "Digital project: Kedaiaisyah. Deployed via Netlify.",
+      "description_en": "Digital project: Kedaiaisyah. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Fisheryndo",
+      "title_en": "Fisheryndo",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/61638baf836f400007207ba1/screenshot_2021-10-11-00-56-21-0000.png",
+      "url": "https://fisheryndo.com",
+      "description": "Digital project: Fisheryndo. Deployed via Netlify.",
+      "description_en": "Digital project: Fisheryndo. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Celanajogerkeren",
+      "title_en": "Celanajogerkeren",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5f6a6ffbf87808000719e9b3/screenshot.png",
+      "url": "https://celanajogerkeren.netlify.app",
+      "description": "Digital project: Celanajogerkeren. Deployed via Netlify.",
+      "description_en": "Digital project: Celanajogerkeren. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Piblajar",
+      "title_en": "Piblajar",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5f4e1eac6a9e25000764c791/screenshot.png",
+      "url": "https://piblajar.site",
+      "description": "Digital project: Piblajar. Deployed via Netlify.",
+      "description_en": "Digital project: Piblajar. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Pihome",
+      "title_en": "Pihome",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5ff5fb72647f1400076e8763/screenshot.png",
+      "url": "https://pihome.netlify.app",
+      "description": "Digital project: Pihome. Deployed via Netlify.",
+      "description_en": "Digital project: Pihome. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Mentorboxid",
+      "title_en": "Mentorboxid",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5e9fc443ce8dd2000644d625/screenshot.png",
+      "url": "https://mentorboxid.netlify.app",
+      "description": "Digital project: Mentorboxid. Deployed via Netlify.",
+      "description_en": "Digital project: Mentorboxid. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Rumahquranmultimedia",
+      "title_en": "Rumahquranmultimedia",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5e844f4bd4d50c0007945b36/screenshot.png",
+      "url": "https://rumahquranmultimedia.netlify.app",
+      "description": "Digital project: Rumahquranmultimedia. Deployed via Netlify.",
+      "description_en": "Digital project: Rumahquranmultimedia. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Elegant Khorana 0B5B70",
+      "title_en": "Elegant Khorana 0B5B70",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5e6e03bc11d3420008372d6a/screenshot.png",
+      "url": "https://mausunat.online",
+      "description": "Digital project: Elegant Khorana 0B5B70. Deployed via Netlify.",
+      "description_en": "Digital project: Elegant Khorana 0B5B70. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Valuz Lp",
+      "title_en": "Valuz Lp",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5e69b1a776d6120009d0908d/screenshot.png",
+      "url": "https://valuz-lp.netlify.app",
+      "description": "Digital project: Valuz Lp. Deployed via Netlify.",
+      "description_en": "Digital project: Valuz Lp. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Bintarolc",
+      "title_en": "Bintarolc",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5e6c676ffc2e240008d8077a/screenshot.png",
+      "url": "https://bintarolc.website",
+      "description": "Digital project: Bintarolc. Deployed via Netlify.",
+      "description_en": "Digital project: Bintarolc. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
+    },
+    {
+      "title": "Distracted Wright 4Bf154",
+      "title_en": "Distracted Wright 4Bf154",
+      "category": "Web App",
+      "image": "https://d33wubrfki0l68.cloudfront.net/5e57e17631c989d521606da8/screenshot.png",
+      "url": "https://distracted-wright-4bf154.netlify.app",
+      "description": "Digital project: Distracted Wright 4Bf154. Deployed via Netlify.",
+      "description_en": "Digital project: Distracted Wright 4Bf154. Deployed via Netlify.",
+      "available_langs": [
+        "id",
+        "en"
+      ]
     }
   ],
   "writing": [
     {
       "slug": "indonesia-engineering-risk",
       "slug_en": "indonesia-engineering-risk",
-      "title": "Engineer di Indonesia: Skill Tinggi, Risiko Penjara? 🚀",
-      "title_en": "Engineering in Indonesia: High Skill, High Risk? 🚀",
+      "title": "Engineer di Indonesia: Skill Tinggi, Risiko Penjara? \ud83d\ude80",
+      "title_en": "Engineering in Indonesia: High Skill, High Risk? \ud83d\ude80",
       "date": "2026-04-25",
       "category": "Technology",
       "category_en": "Technology",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200",
       "description": "Krisis kepastian hukum bagi tenaga ahli di Indonesia. Mengapa kompetensi saja tidak cukup?",
       "description_en": "The legal uncertainty crisis for experts in Indonesia. Why is competence not enough?"
@@ -101,7 +980,9 @@
       "date": "2026-04-25",
       "category": "Education",
       "category_en": "Education",
-      "available_langs": ["id"],
+      "available_langs": [
+        "id"
+      ],
       "image": "tulisan/ukk-smkn4-baubau-diskominfo/lab-smk.jpg",
       "description": "Pengalaman berkesan mewakili Diskominfo Baubau dalam menguji kompetensi taruna TKJ di SMKN 4 Baubau.",
       "description_en": "A memorable experience representing Diskominfo Baubau in testing the competency of TKJ cadets at SMKN 4 Baubau."
@@ -114,7 +995,10 @@
       "date": "2026-04-25",
       "category": "Media",
       "category_en": "Media",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "tulisan/insight-media-group/hero.png",
       "description": "Eksplorasi bagaimana Insight Media Group merevolusi dunia publikasi digital melalui integrasi teknologi.",
       "description_en": "Exploring how Insight Media Group is revolutionizing the digital publication world through technology integration."
@@ -127,7 +1011,10 @@
       "date": "2026-04-25",
       "category": "Technology",
       "category_en": "Technology",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200",
       "description": "Bongkar rahasia efisiensi coding menggunakan AI Agent otonom melalui strategi automated testing yang ketat.",
       "description_en": "Unlocking the secrets of coding efficiency using autonomous AI Agents through rigorous automated testing strategies."
@@ -140,7 +1027,10 @@
       "date": "2026-04-25",
       "category": "Technology",
       "category_en": "Technology",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1200",
       "description": "Tips dan workflow lanjutan menggunakan Claude Code untuk coding lebih cepat.",
       "description_en": "Advanced tips and workflows using Claude Code for faster coding."
@@ -153,7 +1043,10 @@
       "date": "2026-04-24",
       "category": "Education",
       "category_en": "Education",
-      "available_langs": ["id", "en"],
+      "available_langs": [
+        "id",
+        "en"
+      ],
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
       "description": "Memahami dan menyaring informasi di tengah perkembangan kecerdasan buatan.",
       "description_en": "Understanding and filtering information amidst the rapid development of artificial intelligence."

@@ -59,7 +59,7 @@ const htmlEn = marked(contentEn);
       </div>
     </header>
 
-    <img src={writing.image.startsWith('http') ? writing.image : '/' + writing.image} class="w-full h-[400px] object-cover rounded-3xl shadow-2xl mb-12" alt={writing.title} />
+    <img src={(writing.image && writing.image.startsWith('http')) ? writing.image : '/' + (writing.image || 'img/screenshots/default.png')} class="w-full h-[400px] object-cover rounded-3xl shadow-2xl mb-12" alt={writing.title} />
 
     <div id="articleContent" class="prose prose-indigo prose-lg max-w-none prose-img:rounded-2xl prose-headings:font-bold prose-headings:tracking-tight">
       <div id="contentId" class="lang-content" set:html={htmlId}></div>
