@@ -55,52 +55,110 @@
     </script>
 
     <style>
-        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.8; color: #1a202c; max-width: 850px; margin: 0 auto; padding: 40px 20px; background-color: #f8fafc; }
-        .content-card { background: white; padding: 50px; border-radius: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
-        h1 { font-size: 2.5rem; color: #1e293b; line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-        .meta { color: #64748b; font-size: 0.95rem; margin-bottom: 3rem; display: flex; gap: 15px; }
-        img.hero { width: 100%; border-radius: 16px; margin-bottom: 2rem; }
-        .back-btn { display: inline-flex; align-items: center; text-decoration: none; color: #6366f1; font-weight: 600; margin-bottom: 2rem; transition: transform 0.2s; }
+        :root {
+          --primary: #6366f1;
+          --secondary: #a855f7;
+          --bg-deep: #f8fafc;
+          --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
+        }
+
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.8; color: #1e293b; max-width: 1000px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-deep); }
+        
+        .container { max-width: 850px; margin: 0 auto; }
+        
+        .back-btn { display: inline-flex; align-items: center; text-decoration: none; color: var(--primary); font-weight: 600; margin-bottom: 2rem; transition: transform 0.2s; gap: 8px; }
         .back-btn:hover { transform: translateX(-5px); }
-        .repo-link { display: block; background: #f1f5f9; padding: 20px; border-radius: 12px; border-left: 4px solid #6366f1; text-decoration: none; color: #334155; margin: 2rem 0; font-weight: 500; }
-        footer { margin-top: 5rem; text-align: center; color: #94a3b8; font-size: 0.9rem; }
-        blockquote { border-left: 4px solid #e2e8f0; padding-left: 20px; font-style: italic; color: #475569; margin: 2rem 0; }
-        em { font-style: italic; }
-        strong { font-weight: 700; color: #0f172a; }
-        .highlight { color: #6366f1; font-weight: 700; }
+
+        .content-card { background: white; padding: 60px; border-radius: 2rem; box-shadow: var(--card-shadow); border: 1px solid rgba(15, 23, 42, 0.05); }
+
+        .article-content h1 { font-size: 3rem; color: #0f172a; line-height: 1.1; margin-bottom: 2rem; letter-spacing: -0.03em; font-weight: 800; }
+        .article-content h2 { font-size: 2.2rem; margin-top: 3rem; margin-bottom: 1.2rem; color: #0f172a; font-weight: 700; }
+        .article-content h3 { font-size: 1.6rem; margin-top: 2.5rem; color: #334155; font-weight: 600; }
+        .article-content p { margin-bottom: 1.8rem; font-size: 1.15rem; color: #334155; }
+        
+        .article-content img { width: 100%; border-radius: 1.5rem; margin: 2.5rem 0; box-shadow: var(--card-shadow); }
+        
+        .article-content blockquote { 
+          border-left: 6px solid var(--primary); 
+          padding: 2rem 2.5rem; 
+          background: rgba(99, 102, 241, 0.05); 
+          border-radius: 0 1.5rem 1.5rem 0; 
+          margin: 3rem 0; 
+          font-style: italic;
+          font-size: 1.2rem;
+          color: #475569;
+        }
+
+        .article-content code { 
+          background: #f1f5f9; 
+          padding: 0.25rem 0.6rem; 
+          border-radius: 0.5rem; 
+          font-family: 'SFMono-Regular', monospace; 
+          font-size: 0.9em;
+          color: var(--primary);
+        }
+
+        .article-content pre { 
+          background: #0f172a; 
+          color: #f8fafc; 
+          padding: 2rem; 
+          border-radius: 1.2rem; 
+          overflow-x: auto; 
+          margin: 2.5rem 0;
+          font-size: 0.95rem;
+        }
+
+        .article-content a { color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 2px solid rgba(99, 102, 241, 0.2); transition: all 0.2s; }
+        .article-content a:hover { border-bottom-color: var(--primary); background: rgba(99, 102, 241, 0.05); }
+
+        .meta { color: #64748b; font-size: 1rem; margin-bottom: 1.5rem; display: flex; gap: 20px; font-weight: 500; }
+        
+        footer { margin-top: 6rem; text-align: center; color: #94a3b8; font-size: 1rem; padding-bottom: 2rem; }
+        
+        @media (max-width: 768px) {
+            .content-card { padding: 30px 20px; border-radius: 1.5rem; }
+            .article-content h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
-    <a href="https://muhdanfyan.github.io" class="back-btn">← Kembali ke Portfolio</a>
-    
-    <article class="content-card">
-        <div class="meta">
-            <span>📅 25 April 2026</span>
-            <span>•</span>
-            <span>💻 Technology</span>
-        </div>
-
-        <h1>Claude Code: "Partner Nyata" di Terminal—Bukan Sekadar *Chatbot* Biasa! 🚀</h1>
-        
-        <img src="https://code.claude.com/assets/hero-terminal.png" alt="Claude Code CLI Interface" class="hero">
-
-        <p>Pernah merasa lelah bolak-balik antara <em>Browser</em> (<em>ChatGPT</em>/<em>Claude web</em>) dan <em>Terminal</em> cuma buat <em>copy-paste</em> kode? Di komunitas <strong>developer Indonesia</strong>, <span class="highlight">efisiensi adalah segalanya</span>. Kita butuh <em>tool</em> yang nggak cuma pinter teori, tapi bisa langsung eksekusi.</p>
-
-        <blockquote>
-            "Claude Code bukan asisten yang cuma bisa jawab pertanyaan, dia adalah <strong><em>Agent</em></strong> yang punya 'tangan' buat ngetik dan 'kaki' buat jalan di direktori proyek kita."
-        </blockquote>
-
-        <p>Salah satu fitur yang paling menarik adalah <code>/btw</code> (<em>By The Way</em>), yang memungkinkan kita bertanya hal lain tanpa menghentikan proses <em>coding</em> yang sedang berjalan di latar belakang. Sangat cocok untuk <em>workflow</em> yang dinamis.</p>
-
-        <a href="https://github.com/muhdanfyan/claude-code-tips" class="repo-link">
-            🚀 Lihat Rangkuman Teknis & Konfigurasi di GitHub →
+    <div class="container">
+        <a href="https://muhdanfyan.github.io" class="back-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Kembali ke Portfolio
         </a>
+        
+        <article class="content-card">
+            <div class="meta">
+                <span>📅 25 April 2026</span>
+                <span>•</span>
+                <span>💻 Technology</span>
+            </div>
 
-        <p>Selain itu, fitur <strong><em>Visual Verification</em></strong> lewat ekstensi <em>Chrome</em> memberikan "mata" pada Claude untuk melihat aplikasi web yang ia buat secara <em>real-time</em>. Ini adalah <span class="highlight">lompatan besar</span> dalam dunia <em>AI Agent</em>.</p>
-    </article>
+            <div class="article-content">
+                <h1>Claude Code: "Partner Nyata" di Terminal—Bukan Sekadar *Chatbot* Biasa! 🚀</h1>
+                
+                <img src="https://code.claude.com/assets/hero-terminal.png" alt="Claude Code CLI Interface">
 
-    <footer>
-        &copy; 2026 Muhdan Fyan Syah. Dipublish menggunakan Gemini CLI.
-    </footer>
+                <p>Pernah merasa lelah bolak-balik antara <em>Browser</em> (<em>ChatGPT</em>/<em>Claude web</em>) dan <em>Terminal</em> cuma buat <em>copy-paste</em> kode? Di komunitas <strong>developer Indonesia</strong>, <strong>efisiensi adalah segalanya</strong>. Kita butuh <em>tool</em> yang nggak cuma pinter teori, tapi bisa langsung eksekusi.</p>
+
+                <blockquote>
+                    "Claude Code bukan asisten yang cuma bisa jawab pertanyaan, dia adalah <strong><em>Agent</em></strong> yang punya 'tangan' buat ngetik dan 'kaki' buat jalan di direktori proyek kita."
+                </blockquote>
+
+                <p>Salah satu fitur yang paling menarik adalah <code>/btw</code> (<em>By The Way</em>), yang memungkinkan kita bertanya hal lain tanpa menghentikan proses <em>coding</em> yang sedang berjalan di latar belakang. Sangat cocok untuk <em>workflow</em> yang dinamis.</p>
+
+                <p>Gunakan fitur <strong><em>Visual Verification</em></strong> lewat ekstensi <em>Chrome</em> untuk memberikan "mata" pada Claude agar bisa melihat aplikasi web yang ia buat secara <em>real-time</em>. Ini adalah <strong>lompatan besar</strong> dalam dunia <em>AI Agent</em>.</p>
+
+                <a href="https://github.com/muhdanfyan/claude-code-tips" style="display: block; background: #f1f5f9; padding: 25px; border-radius: 1rem; border-left: 5px solid var(--primary); margin: 3rem 0; color: #0f172a;">
+                    🚀 Lihat Rangkuman Teknis & Konfigurasi di GitHub →
+                </a>
+            </div>
+        </article>
+
+        <footer>
+            &copy; 2026 Muhdan Fyan Syah. Dipublish menggunakan Gemini CLI.
+        </footer>
+    </div>
 </body>
 </html>

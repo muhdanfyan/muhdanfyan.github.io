@@ -449,6 +449,46 @@
       pointer-events: all;
     }
 
+    /* Article Standard Styling */
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #1e293b;
+    }
+    .article-content h1 { font-size: 2.8rem; margin-bottom: 1.5rem; color: #0f172a; line-height: 1.2; }
+    .article-content h2 { font-size: 2rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #1e293b; }
+    .article-content h3 { font-size: 1.5rem; margin-top: 2rem; color: #334155; }
+    .article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+    .article-content img { width: 100%; border-radius: 1.5rem; margin: 2rem 0; box-shadow: var(--card-shadow); }
+    .article-content blockquote { 
+      border-left: 5px solid var(--primary); 
+      padding: 1.5rem 2rem; 
+      background: rgba(99, 102, 241, 0.05); 
+      border-radius: 0 1rem 1rem 0; 
+      margin: 2rem 0; 
+      font-style: italic; 
+    }
+    .article-content code { 
+      background: #f1f5f9; 
+      padding: 0.2rem 0.5rem; 
+      border-radius: 0.4rem; 
+      font-family: 'SFMono-Regular', monospace; 
+      font-size: 0.9em; 
+    }
+    .article-content pre { 
+      background: #0f172a; 
+      color: #f8fafc; 
+      padding: 1.5rem; 
+      border-radius: 1rem; 
+      overflow-x: auto; 
+      margin: 2rem 0; 
+    }
+    .article-content a { color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 2px solid rgba(99, 102, 241, 0.2); transition: all 0.2s; }
+    .article-content a:hover { border-bottom-color: var(--primary); }
+    .article-content ul, .article-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+    .article-content li { margin-bottom: 0.5rem; }
+
     /* Custom Scrollbar for Detail View */
     #detailView::-webkit-scrollbar {
       width: 8px;
@@ -859,9 +899,9 @@
         const response = await fetch(filePath);
         if (!response.ok) throw new Error('File not found');
         const markdown = await response.text();
-        detailContent.innerHTML = marked.parse(markdown);
+        detailContent.innerHTML = `<div class="article-content">${marked.parse(markdown)}</div>`;
       } catch (error) {
-        detailContent.innerHTML = `<h2>Konten tidak ditemukan</h2><p>Maaf, detail untuk "${slug}" belum tersedia di server.</p>`;
+        detailContent.innerHTML = `<div class="article-content"><h2>Konten tidak ditemukan</h2><p>Maaf, detail untuk "${slug}" belum tersedia di server.</p></div>`;
       }
     }
 
