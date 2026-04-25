@@ -730,10 +730,45 @@
             <div class="line" style="margin-top: 1.5rem;"></div>
           </div>
           <div class="projects-grid" id="writingHomeGrid">
-            <!-- Highlights dinamis -->
+            <!-- Highlights 4 Terbaru -->
+          </div>
+          <div style="text-align: center; margin-top: 4rem;">
+            <a href="#/writing" class="btn btn-primary"
+              style="display: inline-flex; font-size: 1.1rem; padding: 1rem 3rem;">
+              Lihat Semua Tulisan
+              <i data-lucide="arrow-right"></i>
+            </a>
           </div>
         </div>
       </section>
+    </div>
+
+    <!-- Writing List View -->
+    <div id="writingListView" class="view-section">
+      <div class="container">
+        <div class="section-header" style="padding-top: 8rem;">
+          <h1>Semua Tulisan</h1>
+          <p style="color: var(--text-dim); margin-top: 1rem;">Kumpulan pemikiran dan tutorial dalam dunia pengembangan web.</p>
+        </div>
+        
+        <div style="margin-bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
+          <input type="text" id="writingSearchInput" class="glass"
+            style="width: 100%; max-width: 500px; padding: 1rem 1.5rem; border-radius: 1rem; outline: none;"
+            placeholder="Cari judul artikel atau kategori..." oninput="updateWritingView()">
+          
+          <div id="writingCategories" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+            <!-- Dinamis -->
+          </div>
+        </div>
+
+        <div class="projects-grid" id="writingFullGrid">
+          <!-- Dinamis dari manifest -->
+        </div>
+
+        <div id="writingPagination" style="margin-top: 4rem; display: flex; justify-content: center; gap: 0.5rem;">
+          <!-- Dinamis -->
+        </div>
+      </div>
     </div>
 
     <!-- Portfolio List View -->
@@ -816,6 +851,12 @@
 
     // Dynamic Content Loading
     let manifestData = null;
+    let writingPageState = {
+      page: 1,
+      limit: 6,
+      filter: '',
+      category: 'All'
+    };
 
     async function initContent() {
       try {
@@ -823,11 +864,78 @@
         manifestData = await response.json();
         renderGrid('portfolioHomeGrid', manifestData.portfolio.slice(0, 5), 'portofolio');
         renderGrid('portfolioFullGrid', manifestData.portfolio, 'portofolio');
-        renderGrid('writingHomeGrid', manifestData.writing, 'tulisan');
+        renderGrid('writingHomeGrid', manifestData.writing.slice(0, 4), 'tulisan');
+        
+        setupWritingCategories();
+        updateWritingView();
+        
         handleRouting();
       } catch (error) {
         console.error('Error loading manifest:', error);
       }
+    }
+
+    function setupWritingCategories() {
+      const categories = ['All', ...new Set(manifestData.writing.map(w => w.category))];
+      const container = document.getElementById('writingCategories');
+      if (!container) return;
+      container.innerHTML = categories.map(cat => `
+        <button onclick="filterWritingByCategory('${cat}')" class="tag ${writingPageState.category === cat ? 'active' : ''}" 
+          style="cursor: pointer; border: 1px solid var(--primary); ${writingPageState.category === cat ? 'background: var(--primary); color: white;' : ''}">
+          ${cat}
+        </button>
+      `).join('');
+    }
+
+    function filterWritingByCategory(cat) {
+      writingPageState.category = cat;
+      writingPageState.page = 1;
+      setupWritingCategories();
+      updateWritingView();
+    }
+
+    function updateWritingView() {
+      const searchInput = document.getElementById('writingSearchInput');
+      writingPageState.filter = searchInput ? searchInput.value.toLowerCase() : '';
+      
+      let filtered = manifestData.writing.filter(w => {
+        const matchesSearch = w.title.toLowerCase().includes(writingPageState.filter) || 
+                            w.category.toLowerCase().includes(writingPageState.filter);
+        const matchesCategory = writingPageState.category === 'All' || w.category === writingPageState.category;
+        return matchesSearch && matchesCategory;
+      });
+
+      const totalPages = Math.ceil(filtered.length / writingPageState.limit);
+      const start = (writingPageState.page - 1) * writingPageState.limit;
+      const paginated = filtered.slice(start, start + writingPageState.limit);
+
+      renderGrid('writingFullGrid', paginated, 'tulisan');
+      renderWritingPagination(totalPages);
+    }
+
+    function renderWritingPagination(totalPages) {
+      const container = document.getElementById('writingPagination');
+      if (!container || totalPages <= 1) {
+        if (container) container.innerHTML = '';
+        return;
+      }
+
+      let html = '';
+      for (let i = 1; i <= totalPages; i++) {
+        html += `
+          <button onclick="changeWritingPage(${i})" class="btn ${writingPageState.page === i ? 'btn-primary' : 'btn-outline'}" 
+            style="padding: 0.5rem 1rem; min-width: 3rem; justify-content: center;">
+            ${i}
+          </button>
+        `;
+      }
+      container.innerHTML = html;
+    }
+
+    function changeWritingPage(p) {
+      writingPageState.page = p;
+      updateWritingView();
+      window.scrollTo(0, document.getElementById('writingListView').offsetTop);
     }
 
     function renderGrid(containerId, items, type) {
@@ -878,6 +986,8 @@
         switchView('homeView');
       } else if (hash === '#/portfolio') {
         switchView('portfolioListView');
+      } else if (hash === '#/writing') {
+        switchView('writingListView');
       } else if (hash.startsWith('#/portofolio/')) {
         const slug = hash.split('/')[2];
         await showDetail('portofolio', slug);
