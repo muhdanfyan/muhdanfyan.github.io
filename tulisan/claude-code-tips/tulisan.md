@@ -1,5 +1,7 @@
 # Claude Code: "Partner Nyata" di Terminal—Bukan Sekadar *Chatbot* Biasa! 🚀
 
+📅 **25 April 2026**
+
 ![Coding Environment](https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200)
 
 Pernah merasa lelah bolak-balik antara *Browser* (*ChatGPT*/*Claude web*) dan *Terminal* cuma buat *copy-paste* kode? Di komunitas *developer* Indonesia, **efisiensi adalah segalanya**. Kita butuh *tool* yang nggak cuma pinter teori, tapi bisa langsung "eksekusi". Itulah kenapa **Claude Code** jadi pembicaraan hangat belakangan ini.
@@ -55,7 +57,6 @@ Saya telah merangkum semua standar *Agentic Workflow* ini ke dalam sebuah `SKILL
 ### Penutup: Opini Saya
 Bagi saya, Claude Code adalah jawaban buat *developer* yang pengen **fokus di logika**, bukan di urusan teknis yang repetitif. Di era AI ini, *skill* kita bukan lagi cuma ngetik kode, tapi gimana cara kita "mengarahkan" ***Agent*** seperti Claude buat jadi partner kerja yang tangguh.
 
-*Sudah siap meninggalkan cara lama dan pindah ke workflow agentic?*
-
 ---
-*Ditulis dengan penuh semangat menggunakan Gemini CLI - April 2026*
+**Sumber:** [XDA Developers](https://www.xda-developers.com/claude-codes-creator-keeps-sharing-tips-and-they-all-made-my-experience-better/) | **Penulis:** Muhdan Fyan Syah Sofian
+*Ditulis dengan penuh semangat menggunakan Gemini CLI*
