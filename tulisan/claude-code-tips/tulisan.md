@@ -1,6 +1,6 @@
 # Claude Code: "Partner Nyata" di Terminal—Bukan Sekadar *Chatbot* Biasa! 🚀
 
-<img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=2000" alt="Coding Environment" style="width:100%; border-radius:1.5rem; margin-bottom:2rem;">
+![Coding Environment](https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200)
 
 Pernah merasa lelah bolak-balik antara *Browser* (*ChatGPT*/*Claude web*) dan *Terminal* cuma buat *copy-paste* kode? Di komunitas *developer* Indonesia, **efisiensi adalah segalanya**. Kita butuh *tool* yang nggak cuma pinter teori, tapi bisa langsung "eksekusi". Itulah kenapa **Claude Code** jadi pembicaraan hangat belakangan ini.
 
@@ -14,7 +14,7 @@ Berdasarkan tips dari **Boris Cherny** (sang kreator), saya mencoba membedah ken
 2.  **Solusi "Marbot IT" & *Freelancer*:** Kadang kita harus benerin *bug* sambil di jalan atau lagi nggak di depan *PC*. Dengan fitur ***Dispatch***, kita bisa kontrol proses *coding* di *PC* rumah cuma lewat *HP*. 📱
 3.  **Hemat Kuota:** Karena berbasis teks di *terminal*, data yang ditukar jauh lebih kecil dibanding *antarmuka web* yang penuh aset visual.
 
-<img src="https://code.claude.com/assets/hero-terminal.png" alt="Claude Code CLI" style="width:100%; border-radius:1.5rem; border:1px solid #eee; margin:2rem 0;">
+![Claude Code CLI](https://code.claude.com/assets/hero-terminal.png)
 
 ---
 
@@ -31,7 +31,7 @@ Claude bakal jawab tanpa ngerusak ***task*** **utama** yang lagi jalan.
 Bikin *script* tapi sering *crash*? Pake `/loop` buat mantau *log*. Claude bakal kasih tahu kalau ada yang aneh. **Sangat efisien** buat yang males melototin *terminal* berjam-jam.
 
 #### 3. *Visual Verification* (*Eyes on the Code*)
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" alt="AI Agent Visual" style="width:100%; border-radius:1.5rem; margin:2rem 0;">
+![AI Agent Visual](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000)
 
 Claude sekarang punya "mata" lewat ekstensi *Chrome*. Dia bisa buka *web* buatan dia sendiri, liat kalau ada tombol yang miring, dan langsung benerin kodenya. ***Real-time self-correction!***
 
