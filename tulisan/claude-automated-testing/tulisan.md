@@ -24,19 +24,19 @@ Untuk mendapatkan performa maksimal, Claude Code butuh "tangan" untuk bekerja. A
 Ini adalah taktik tingkat tinggi bagi *Senior Engineer*. Saat menyuruh Claude membuat fitur, jangan biarkan dia berhenti setelah kode ditulis. Gunakan instruksi:
 > "Claude, buatkan [***Integration Test***](https://www.atlassian.com/continuous-delivery/software-testing/automated-testing) untuk fitur ini. ***Jangan berhenti bekerja sampai semua skrip pengujian lulus 100%. Jika ada error, analisis outputnya dan perbaiki kodenya sendiri secara berulang.***"
 
-Ini memaksa Claude untuk melakukan [***Self-Correction Loop***](https://en.wikipedia.org/wiki/Self-correction) secara otonom hingga kode benar-benar valid.
+Ini memaksa Claude untuk melakukan [***Self-Correction Loop***](https://en.wikipedia.org/wiki/Self-correction) secara otonom. Selain itu, pastikan pengujian dibuat bersifat **deterministik**—misalnya dengan memastikan pemrosesan data melalui *parsing pipeline* memberikan hasil yang konsisten setiap saat.
 
-#### 3. Prioritas pada *Integration Testing*
-Dibandingkan [***Unit Test***](https://en.wikipedia.org/wiki/Unit_testing) yang hanya menguji fungsi kecil, pengujian integrasi jauh lebih efektif untuk AI. Mintalah Claude mensimulasikan urutan panggilan [***API***](https://id.wikipedia.org/wiki/Antarmuka_pemrograman_aplikasi) yang nyata. Hal ini memastikan bahwa perubahan di satu file tidak merusak ketergantungan di file lainnya.
+#### 3. Inspeksi Manual pada Skrip Tes
+Jangan percaya buta pada AI. Kadang Claude bisa membuat pengujian yang "asal lulus" namun logikanya salah. Lakukan inspeksi manual sesekali pada input dan output yang dihasilkan skrip tes tersebut. Mintalah Claude untuk menunjukkan hasil eksekusi tes secara detail agar Anda bisa mendeteksi jika ada *bug* di dalam skrip pengujian itu sendiri.
 
 ---
 
 ### 📊 Meningkatkan Efektivitas Verifikasi Manual
 
-Jika ada bagian yang tidak bisa diuji secara otomatis (seperti tampilan visual), gunakan workflow berikut:
+Jika ada bagian yang tidak bisa diuji secara otomatis (seperti tampilan visual atau izin admin khusus), gunakan workflow "Zero Cognitive Energy":
 
-- **HTML Testing Checklist:** Mintalah Claude membuat file HTML sederhana berisi daftar perubahan dan link langsung ke halaman terkait. Ini memudahkan Anda untuk mengecek tampilan akhir tanpa harus mencari-cari URL-nya secara manual.
-- **Automated Data Sourcing:** Jangan mencari data tes secara manual. Perintahkan Claude: *"Cari data dummy yang valid dari database atau file JSON untuk menguji skenario ini."*
+- **HTML Checklist Report:** Mintalah Claude membuat laporan HTML otonom yang berisi daftar tugas yang telah dikerjakan lengkap dengan **checkbox**. Sertakan deskripsi cara menguji dan link langsung ke halaman terkait. Tujuannya adalah agar Anda hanya perlu melakukan verifikasi klik-klik saja tanpa perlu mengingat apa yang harus diuji.
+- **Outsourcing Data Test:** Jangan habiskan waktu mencari data manual. Perintahkan Claude: *"Cari atau buatkan data dummy yang valid dari database atau file JSON untuk skenario ini."* Biarkan AI menangani persiapan data yang membosankan.
 
 ---
 

@@ -64,9 +64,20 @@
 
                 <h4>2. Mandat "Pantang Berhenti" (<em>The No-Stop Directive</em>)</h4>
                 <p>Gunakan instruksi tegas: "Claude, buatkan <a href="https://www.atlassian.com/continuous-delivery/software-testing/automated-testing"><em>Integration Test</em></a>. <strong><em>Jangan berhenti bekerja sampai seluruh skrip lulus 100% tanpa campur tangan saya.</em></strong>"</p>
+                <p>Ini memaksa Claude untuk melakukan <a href="https://en.wikipedia.org/wiki/Self-correction"><strong>Self-Correction Loop</strong></a> secara otonom. Selain itu, pastikan pengujian bersifat <strong>deterministik</strong>—misalnya dengan memastikan pemrosesan data melalui <em>parsing pipeline</em> memberikan hasil konsisten.</p>
 
-                <h4>3. Prioritas pada <em>Integration Testing</em></h4>
-                <p>Pengujian integrasi jauh lebih efektif untuk AI karena memastikan perubahan tidak merusak <a href="https://id.wikipedia.org/wiki/Antarmuka_pemrograman_aplikasi"><em>API</em></a> atau ketergantungan antar file.</p>
+                <h4>3. Inspeksi Manual pada Skrip Tes</h4>
+                <p>Jangan percaya buta pada AI. Kadang Claude bisa membuat pengujian yang "asal lulus" namun logikanya salah. Lakukan inspeksi manual sesekali pada input dan output yang dihasilkan skrip tes tersebut untuk mendeteksi <em>bug</em> di dalam skrip pengujian itu sendiri.</p>
+
+                <hr>
+
+                <h3>📊 Meningkatkan Efektivitas Verifikasi Manual</h3>
+                <p>Jika ada bagian yang tidak bisa diuji secara otomatis (seperti tampilan visual atau izin admin khusus), gunakan workflow <strong>"Zero Cognitive Energy"</strong>:</p>
+
+                <ul>
+                    <li><strong>HTML Checklist Report:</strong> Mintalah Claude membuat laporan HTML otonom yang berisi daftar tugas yang telah dikerjakan lengkap dengan <strong>checkbox</strong>, deskripsi cara menguji, dan link langsung ke halaman terkait.</li>
+                    <li><strong>Outsourcing Data Test:</strong> Perintahkan Claude: <em>"Cari atau buatkan data dummy yang valid dari database atau file JSON untuk skenario ini."</em> Biarkan AI menangani persiapan data yang membosankan.</li>
+                </ul>
 
                 <hr>
 

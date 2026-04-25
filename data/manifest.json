@@ -48,6 +48,22 @@
   ],
   "writing": [
     {
+      "slug": "ukk-smkn4-baubau-diskominfo",
+      "title": "Sinergi Digital di Pulau Makassar: Catatan Penguji UKK SMKN 4 Baubau",
+      "date": "2026-04-25",
+      "category": "Education",
+      "image": "tulisan/ukk-smkn4-baubau-diskominfo/lab-smk.jpg",
+      "description": "Pengalaman berkesan mewakili Diskominfo Baubau dalam menguji kompetensi taruna TKJ di SMKN 4 Baubau."
+    },
+    {
+      "slug": "insight-media-group",
+      "title": "Insight Media Group: Masa Depan Publikasi Digital",
+      "date": "2026-04-25",
+      "category": "Media",
+      "image": "tulisan/insight-media-group/hero.png",
+      "description": "Eksplorasi bagaimana Insight Media Group merevolusi dunia publikasi digital melalui integrasi teknologi."
+    },
+    {
       "slug": "claude-automated-testing",
       "title": "Strategi Testing-First: Performa Maksimal Claude Code",
       "date": "2026-04-25",
