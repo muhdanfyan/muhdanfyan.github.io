@@ -8,7 +8,7 @@ Pernah merasa lelah bolak-balik antara *Browser* (*ChatGPT*/*Claude web*) dan *T
 
 ### 🇮🇩 Kenapa Ini Cocok Banget Buat Developer Kita?
 
-Berdasarkan tips dari **Boris Cherny** (sang kreator), saya mencoba membedah kenapa *tool* ini bakal mengubah cara kita *nge-code*, terutama buat kita yang hobi eksplorasi di *terminal*.
+Berdasarkan tips dari **Boris Cherny** (sang kreator) dan diskusi mendalam di forum global seperti *Hacker News* dan *Reddit*, saya mencoba membedah kenapa *tool* ini bakal mengubah cara kita *nge-code*.
 
 1.  **Ringan & "Sat-set":** Buat kita yang mungkin spek laptopnya terbatas atau sering pake **Termux**, Claude Code jauh lebih ringan dibanding harus buka *IDE* berat plus *browser* dengan puluhan *tab*.
 2.  **Solusi "Marbot IT" & *Freelancer*:** Kadang kita harus benerin *bug* sambil di jalan atau lagi nggak di depan *PC*. Dengan fitur ***Dispatch***, kita bisa kontrol proses *coding* di *PC* rumah cuma lewat *HP*. 📱
@@ -18,19 +18,22 @@ Berdasarkan tips dari **Boris Cherny** (sang kreator), saya mencoba membedah ken
 
 ---
 
-### 💡 Tips Pro: Melampaui Batas *Chatbot*
+### 🔥 Rahasia Komunitas Global: Jangan Lakukan "Vibe Coding"
 
-> "Claude Code bukan asisten yang cuma bisa jawab pertanyaan, dia adalah ***Agent*** yang punya 'tangan' buat ngetik dan 'kaki' buat jalan di direktori proyek kita."
+Pembahasan paling panas di internet saat ini adalah bahaya dari *"Vibe Coding"*—yaitu menyuruh AI menulis kode secara sporadis tanpa rencana yang jelas. Para *senior engineer* menyarankan **Spec-Driven Development (SDD)** saat bekerja dengan AI.
 
-#### 1. Gunakan `/btw` untuk "*OOT*" yang Berfaedah
+#### 1. Siklus *Explore* ➔ *Plan* ➔ *Code*
+Jangan biarkan Claude langsung menulis kode! Minta dia untuk mengeksplorasi file yang ada, membuat rencana di *Markdown*, dan baru izinkan eksekusi setelah Anda menyetujui rencananya. Ini mengurangi halusinasi AI hingga 4x lipat.
+
+#### 2. Gunakan `/btw` untuk "*OOT*" yang Berfaedah
 Lagi asik suruh Claude bikin *API*, tiba-tiba lupa nama *interface* di file lain? Jangan hentikan prosesnya! Langsung aja:
 `/btw "Eh, nama interface di types.ts tadi apa ya?"`
 Claude bakal jawab tanpa ngerusak ***task*** **utama** yang lagi jalan.
 
-#### 2. `/loop`: Biarkan Claude Jadi Penjaga Malam
-Bikin *script* tapi sering *crash*? Pake `/loop` buat mantau *log*. Claude bakal kasih tahu kalau ada yang aneh. **Sangat efisien** buat yang males melototin *terminal* berjam-jam.
+#### 3. Manajemen Konteks (*Handover*)
+*Context window* (ingatan AI) adalah aset paling berharga. Jika ingatan Claude sudah hampir penuh (mendekati 80%), minta dia menulis file `handover.md` berisi ringkasan progres, lalu mulai sesi terminal baru. Ini menjaga AI tetap "pintar" dan tidak lemot.
 
-#### 3. *Visual Verification* (*Eyes on the Code*)
+#### 4. *Visual Verification* (*Eyes on the Code*)
 ![AI Agent Visual](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000)
 
 Claude sekarang punya "mata" lewat ekstensi *Chrome*. Dia bisa buka *web* buatan dia sendiri, liat kalau ada tombol yang miring, dan langsung benerin kodenya. ***Real-time self-correction!***
@@ -39,7 +42,7 @@ Claude sekarang punya "mata" lewat ekstensi *Chrome*. Dia bisa buka *web* buatan
 
 ### 🛠️ Intip Rahasianya di Repository Saya
 
-Saya sudah merangkum semua pemahaman teknis, contoh konfigurasi `settings.json`, dan panduan ***Skills*** agar Anda nggak perlu bingung mulai dari mana.
+Saya telah merangkum semua standar *Agentic Workflow* ini ke dalam sebuah `SKILL.md` (instruksi khusus AI) di GitHub saya.
 
 👉 **Cek di sini:** [muhdanfyan/claude-code-tips](https://github.com/muhdanfyan/claude-code-tips)
 
@@ -52,7 +55,7 @@ Saya sudah merangkum semua pemahaman teknis, contoh konfigurasi `settings.json`,
 ### Penutup: Opini Saya
 Bagi saya, Claude Code adalah jawaban buat *developer* yang pengen **fokus di logika**, bukan di urusan teknis yang repetitif. Di era AI ini, *skill* kita bukan lagi cuma ngetik kode, tapi gimana cara kita "mengarahkan" ***Agent*** seperti Claude buat jadi partner kerja yang tangguh.
 
-*Gimana menurut kalian? Sudah siap pindah ke workflow agentic?*
+*Sudah siap meninggalkan cara lama dan pindah ke workflow agentic?*
 
 ---
 *Ditulis dengan penuh semangat menggunakan Gemini CLI - April 2026*
