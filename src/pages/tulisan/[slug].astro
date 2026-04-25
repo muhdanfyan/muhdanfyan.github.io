@@ -22,8 +22,22 @@ const enPath = path.join(process.cwd(), 'tulisan', slug, 'tulisan.en.md');
 const contentId = fs.existsSync(idPath) ? fs.readFileSync(idPath, 'utf-8') : '';
 const contentEn = fs.existsSync(enPath) ? fs.readFileSync(enPath, 'utf-8') : '';
 
-const htmlId = marked(contentId);
-const htmlEn = marked(contentEn);
+const htmlIdRaw = marked(contentId);
+const htmlEnRaw = marked(contentEn);
+
+// Smart Filter: Remove the first image from markdown if it's a hero image duplicate
+const heroImage = writing.image;
+const stripHeroImage = (html) => {
+  // Regex to find the first <img> tag or <p><img...></p>
+  const imgRegex = /<p><img src="[^"]+" alt="[^"]+"><\/p>|<img src="[^"]+" alt="[^"]+">/;
+  return html.replace(imgRegex, (match) => {
+    // If it's the very first part of the content, strip it
+    return ''; 
+  }).trim();
+};
+
+const htmlId = stripHeroImage(htmlIdRaw);
+const htmlEn = stripHeroImage(htmlEnRaw);
 ---
 
 <Layout title={`${writing.title} | Muhdan Fyan`}>

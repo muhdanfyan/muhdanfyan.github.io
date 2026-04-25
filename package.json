@@ -11,7 +11,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "vitest run"
+    "astro": "astro",
+    "test": "vitest",
+    "sync": "netlify sites:list --json > scratch/netlify_sites.json && python3 scripts/sync_portfolios.py"
   },
   "repository": {
     "type": "git",
