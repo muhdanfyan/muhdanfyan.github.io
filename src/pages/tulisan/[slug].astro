@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import manifest from '../../../data/manifest.json';
+import { marked } from 'marked';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  return manifest.writing.map((writing) => ({
+    params: { slug: writing.slug },
+    props: { writing },
+  }));
+}
+
+const { slug } = Astro.params;
+const { writing } = Astro.props;
+
+// Load Content
+const idPath = path.join(process.cwd(), 'tulisan', slug, 'tulisan.md');
+const enPath = path.join(process.cwd(), 'tulisan', slug, 'tulisan.en.md');
+
+const contentId = fs.existsSync(idPath) ? fs.readFileSync(idPath, 'utf-8') : '';
+const contentEn = fs.existsSync(enPath) ? fs.readFileSync(enPath, 'utf-8') : '';
+
+const htmlId = marked(contentId);
+const htmlEn = marked(contentEn);
+---
+
+<Layout title={`${writing.title} | Muhdan Fyan`}>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        MUHDAN FYAN
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Home</a>
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
+          <span id="langLabel">ID</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="container mx-auto px-6 pt-32 mb-20 max-w-4xl">
+    <a href="/tulisan/" class="inline-flex items-center gap-2 text-indigo-600 font-bold mb-8 hover:gap-4 transition-all">
+      ← Kembali ke Tulisan
+    </a>
+
+    <header class="mb-12">
+      <span class="text-sm font-bold text-indigo-600 uppercase mb-4 block">{writing.category}</span>
+      <h1 class="text-5xl font-extrabold mb-6 tracking-tight leading-tight article-title" data-id={writing.title} data-en={writing.title_en}>
+        {writing.title}
+      </h1>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span>{writing.date}</span>
+        <span>•</span>
+        <span>Muhdan Fyan Syah Sofian</span>
+      </div>
+    </header>
+
+    <img src={writing.image.startsWith('http') ? writing.image : '/' + writing.image} class="w-full h-[400px] object-cover rounded-3xl shadow-2xl mb-12" alt={writing.title} />
+
+    <div id="articleContent" class="prose prose-indigo prose-lg max-w-none prose-img:rounded-2xl prose-headings:font-bold prose-headings:tracking-tight">
+      <div id="contentId" class="lang-content" set:html={htmlId}></div>
+      <div id="contentEn" class="lang-content hidden" set:html={htmlEn}></div>
+    </div>
+  </article>
+
+  <footer class="border-t border-slate-100 py-10 text-center text-slate-400 text-sm">
+    &copy; 2026 Muhdan Fyan Syah Sofian. Made with Astro & Passion.
+  </footer>
+
+  <script is:inline>
+    let currentLang = localStorage.getItem('lang') || 'id';
+
+    function updateLanguageUI() {
+      document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+      
+      const titleEl = document.querySelector('.article-title');
+      if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
+
+      document.getElementById('contentId').classList.toggle('hidden', currentLang === 'en');
+      document.getElementById('contentEn').classList.toggle('hidden', currentLang === 'id');
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      localStorage.setItem('lang', currentLang);
+      updateLanguageUI();
+    });
+
+    updateLanguageUI();
+  </script>
+</Layout>
+
+<style is:global>
+  .lang-content.hidden {
+    display: none;
+  }
+  /* Basic Prose Styling manually since we don't have typography plugin yet */
+  .prose h1, .prose h2, .prose h3 { color: #0f172a; margin-top: 2rem; margin-bottom: 1rem; }
+  .prose p { margin-bottom: 1.5rem; color: #334155; line-height: 1.8; }
+  .prose ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1.5rem; }
+  .prose li { margin-bottom: 0.5rem; }
+  .prose blockquote { border-left: 4px solid #6366f1; padding-left: 1.5rem; font-style: italic; color: #475569; margin: 2rem 0; }
+</style>
