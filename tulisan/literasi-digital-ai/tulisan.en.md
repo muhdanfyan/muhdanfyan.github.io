@@ -1,0 +1,20 @@
+# The Importance of Digital Literacy in the AI Era 🤖
+
+📅 **24 April 2026**
+
+![Digital Literacy](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200)
+
+In the era of [**Artificial Intelligence (AI)**](https://en.wikipedia.org/wiki/Artificial_intelligence), information flows faster than our ability to process it. The ability to distinguish between human-made content and [**AI-generated content**](https://en.wikipedia.org/wiki/Generative_artificial_intelligence) is becoming a must-have skill for every digital individual.
+
+### Why is Digital Literacy Important?
+1. **Information Verification:** Preventing the spread of mass AI-generated hoaxes.
+2. **Cybersecurity:** Understanding how [***deepfakes***](https://en.wikipedia.org/wiki/Deepfake) and AI-based attacks work.
+3. **Work Efficiency:** Knowing when to use AI and when to rely on human intuition.
+
+> "Technology is a great tool for those who understand it, but can backfire on those who just use it."
+
+We must view AI as a ***copilot***, not a replacement for our brains. **Literacy is our shield.**
+
+---
+**Source:** Personal Thought | **Author:** Muhdan Fyan Syah Sofian
+*Written using Gemini CLI*

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhdan Fyan | Full Stack Developer</title>
+  <title>Semua Tulisan | Muhdan Fyan</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -519,7 +519,7 @@
 
   <nav id="navbar">
     <div class="container nav-content">
-      <div class="logo">MF</div>
+      <a href="../" class="logo" style="text-decoration: none;">MF</a>
       <div class="cta-buttons" style="display: flex; align-items: center; gap: 1rem;">
         <button onclick="toggleLanguage()" class="btn btn-outline" 
           style="padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.8rem; background: rgba(99, 102, 241, 0.05); border-color: var(--primary);">
@@ -532,223 +532,13 @@
   </nav>
 
   <main id="mainContent">
-    <!-- Home View -->
-    <div id="homeView" class="view-section active">
-      <header class="hero">
-        <div class="container hero-content" data-aos="fade-up">
-          <div class="hero-text">
-            <span class="hero-badge" data-i18n="hero_badge">Professional Web Developer</span>
-            <h1 data-i18n="hero_title">Muhdan Fyan<br>Syah Sofian</h1>
-            <p data-i18n="hero_desc">Berpengalaman lebih dari 10 tahun dalam membangun solusi web skala industri. Kini berfokus pada efisiensi pengembangan menggunakan AI Agents dan otomatisasi modern.
-            </p>
-            <div class="cta-buttons">
-              <a href="mailto:muhdanfyan@gmail.com" class="btn btn-primary">
-                <i data-lucide="mail"></i> <span data-i18n="btn_contact">Hubungi Saya</span>
-              </a>
-              <a href="https://github.com/muhdanfyan" target="_blank" class="btn btn-outline">
-                <i data-lucide="github"></i> <span data-i18n="btn_portfolio">Portfolio GitHub</span>
-              </a>
-            </div>
-          </div>
-          <div class="hero-image-container">
-            <div class="image-glow"></div>
-            <img
-              src="https://res.cloudinary.com/duntlhjil/image/upload/v1765759801/pisantri/fotosantri/xcbhj9tffpopikh0mvrv.jpg"
-              alt="Muhdan Fyan" class="profile-photo">
-          </div>
-        </div>
-      </header>
-
-      <section id="about">
-        <div class="container">
-          <div class="grid-2">
-            <div data-aos="fade-right">
-              <div class="section-header" style="text-align: left;">
-                <h2 data-i18n="about_title">Profil Profesional</h2>
-                <div class="line" style="margin: 0;"></div>
-              </div>
-              <p style="color: var(--text-dim); margin-bottom: 2rem;" data-i18n="about_desc">
-                Saya adalah Full Stack Developer yang memadukan keahlian teknis mendalam dengan kepemimpinan strategis. Sebagai founder Pondok Informatika, saya berdedikasi menciptakan ekosistem belajar yang modern dan adaptif terhadap perkembangan AI.
-              </p>
-              <div class="glass" style="padding: 2rem;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                  <div>
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;" data-i18n="about_lang">Bahasa</h4>
-                    <p>Indonesia (100%)</p>
-                    <p>English (80%)</p>
-                    <p>Arabic (70%)</p>
-                  </div>
-                  <div>
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;" data-i18n="about_contact">Kontak</h4>
-                    <p>0831-3408-6899</p>
-                    <p>muhdanfyan@gmail.com</p>
-                    <p>muhdanfyan.github.io</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div data-aos="fade-left">
-              <div class="section-header" style="text-align: left;">
-                <h2 data-i18n="skills_title">Keahlian</h2>
-                <div class="line" style="margin: 0;"></div>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card glass">
-                  <i data-lucide="layout" size="32"></i>
-                  <p>Backend (JS, PHP, GO)</p>
-                </div>
-                <div class="skill-card glass">
-                  <i data-lucide="monitor" size="32"></i>
-                  <p>Frontend (React)</p>
-                </div>
-                <div class="skill-card glass">
-                  <i data-lucide="database" size="32"></i>
-                  <p>SQL & NoSQL</p>
-                </div>
-                <div class="skill-card glass">
-                  <i data-lucide="code-2" size="32"></i>
-                  <p>Laravel & CI</p>
-                </div>
-                <div class="skill-card glass">
-                  <i data-lucide="palette" size="32"></i>
-                  <p>Graphic Design</p>
-                </div>
-                <div class="skill-card glass">
-                  <i data-lucide="video" size="32"></i>
-                  <p>Video Editing</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-i18n="exp_title">Pengalaman Kerja</h2>
-            <div class="line"></div>
-          </div>
-          <div class="timeline" data-aos="fade-up">
-            <div class="timeline-item">
-              <div class="timeline-date">2022 - Sekarang</div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <h3>PT. Object Media Digitama</h3>
-                <div class="timeline-company">Web Developer</div>
-                <p>Bertanggung jawab dalam pembuatan dan perancangan website sesuai kebutuhan klien.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2021 - 2022</div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <h3>Yayasan Satu Kebaikan</h3>
-                <div class="timeline-company">Front End Developer</div>
-                <p>Merancang Web Crowd Funding menggunakan React JS.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2021 - 2022</div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <h3>Mallmora Reseller</h3>
-                <div class="timeline-company">Tech Lead</div>
-                <p>Mengelola dan mengontrol performa tim, serta terlibat dalam pengembangan Front End menggunakan
-                  ReactJS.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2020 - 2021</div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <h3>PT. Jagona Era Teknologi</h3>
-                <div class="timeline-company">Back End Developer</div>
-                <p>Membangun Web Administrator dan membuat REST API menggunakan CodeIgniter.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2017 - Sekarang</div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <h3>Pondok Informatika</h3>
-                <div class="timeline-company">Mentor, Founder, & Leader</div>
-                <p>Memimpin dan menjadi mentor di institusi pendidikan yang menggabungkan pelatihan IT dan bimbingan
-                  agama.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-date">2013 - 2014</div>
-              <div class="timeline-content glass" style="padding: 2rem;">
-                <h3>CV. Visualdata</h3>
-                <div class="timeline-company">Web Developer</div>
-                <p>Merancang Toko Online menggunakan OpenCart CMS dan kustomisasi menggunakan PHP.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="education">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-i18n="edu_title">Pendidikan</h2>
-            <div class="line"></div>
-          </div>
-          <div class="grid-2">
-            <div class="glass" style="padding: 2rem;" data-aos="fade-right">
-              <h3 style="color: var(--primary);">Pondok Informatika</h3>
-              <p style="color: var(--text-dim); margin-bottom: 1rem;">2017 - 2020</p>
-              <p>Back End Developer Program</p>
-            </div>
-            <div class="glass" style="padding: 2rem;" data-aos="fade-left">
-              <h3 style="color: var(--primary);">Universitas Dipa Makassar</h3>
-              <p style="color: var(--text-dim); margin-bottom: 1rem;">2006 - 2011</p>
-              <p>Teknik Informatika</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-i18n="projects_title">Portofolio Unggulan</h2>
-            <div class="line"></div>
-          </div>
-          <div class="projects-grid" id="portfolioHomeGrid">
-            <!-- Highlights 5 Terbaru -->
-          </div>
-          <div style="text-align: center; margin-top: 4rem;">
-            <a href="portfolio/" class="btn btn-primary"
-              style="display: inline-flex; font-size: 1.1rem; padding: 1rem 3rem;" data-i18n="btn_all_portfolio">
-              Lihat Semua Portofolio
-              <i data-lucide="arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="writing">
-        <div class="container">
-          <div class="section-header">
-            <h2 data-i18n="writing_title">Tulisan Terbaru</h2>
-            <p style="color: var(--text-dim); margin-top: 1rem;" data-i18n="writing_subtitle">Catatan teknis, tips, dan pemikiran seputar pengembangan teknologi.</p>
-            <div class="line" style="margin-top: 1.5rem;"></div>
-          </div>
-          <div class="projects-grid" id="writingHomeGrid">
-            <!-- Highlights 4 Terbaru -->
-          </div>
-          <div style="text-align: center; margin-top: 4rem;">
-            <a href="writing/" class="btn btn-primary"
-              style="display: inline-flex; font-size: 1.1rem; padding: 1rem 3rem;" data-i18n="btn_all_writing">
-              Lihat Semua Tulisan
-              <i data-lucide="arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
+    <!-- Home View (Hidden by default on this page) -->
+    <div id="homeView" class="view-section">
+      <!-- Content same as index.html -->
     </div>
 
     <!-- Writing List View -->
-    <div id="writingListView" class="view-section">
+    <div id="writingListView" class="view-section active">
       <div class="container">
         <div class="section-header" style="padding-top: 8rem;">
           <h1 data-i18n="all_writing_title">Semua Tulisan</h1>
@@ -774,37 +564,7 @@
         </div>
       </div>
     </div>
-
-    <!-- Portfolio List View -->
-    <div id="portfolioListView" class="view-section">
-      <div class="container">
-        <div class="section-header" style="padding-top: 8rem;">
-          <h1 data-i18n="all_portfolio_title">Seluruh Portofolio</h1>
-          <p style="color: var(--text-dim); margin-top: 1rem;" data-i18n="all_portfolio_desc">Daftar lengkap website yang telah dideploy.</p>
-        </div>
-        <div style="margin-bottom: 3rem; display: flex; justify-content: center;">
-          <input type="text" id="searchInput" class="glass"
-            style="width: 100%; max-width: 500px; padding: 1rem 1.5rem; border-radius: 1rem; outline: none;"
-            placeholder="Cari nama project atau tahun..." oninput="filterPortfolio()" data-i18n="search_portfolio">
-        </div>
-        <div class="projects-grid" id="portfolioFullGrid">
-          <!-- Dinamis dari manifest -->
-        </div>
-      </div>
-    </div>
   </main>
-  <div style="text-align: center; margin-top: 4rem;">
-    <a href="portfolio.html" class="btn btn-primary"
-      style="display: inline-flex; font-size: 1.1rem; padding: 1rem 3rem;">
-      Lihat Semua Portofolio (68 Proyek)
-      <i data-lucide="arrow-right"></i>
-    </a>
-    <p style="color: var(--text-dim); margin-top: 2rem;" data-i18n="github_repo_text">Portofolio lain bisa dicek di Repositori GitHub Saya :</p>
-    <a href="https://github.com/muhdanfyan?tab=repositories" target="_blank"
-      style="color: var(--primary); font-weight: 600; text-decoration: none;">github.com/muhdanfyan</a>
-  </div>
-  </div>
-  </section>
 
   <div id="detailView" class="glass"
     style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; overflow-y: auto; background: white; padding: 2rem;">
@@ -812,7 +572,7 @@
       <button onclick="closeDetail()" class="btn btn-outline"
         style="margin-bottom: 2rem; position: sticky; top: 0; z-index: 10; background: white;"><i
           data-lucide="arrow-left"></i>
-        <span data-i18n="back_btn">Kembali</span></button>
+        Kembali</button>
       <div id="detailContent"></div>
     </div>
   </div>
@@ -823,7 +583,7 @@
 
   <footer>
     <div class="container">
-      <p data-i18n="footer_copy">&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.</p>
+      <p>&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.</p>
     </div>
   </footer>
 
@@ -857,24 +617,6 @@
     const translations = {
       id: {
         nav_contact: 'Kontak',
-        hero_badge: 'Professional Web Developer',
-        hero_title: 'Muhdan Fyan<br>Syah Sofian',
-        hero_desc: 'Berpengalaman lebih dari 10 tahun dalam membangun solusi web skala industri. Kini berfokus pada efisiensi pengembangan menggunakan AI Agents dan otomatisasi modern.',
-        btn_contact: 'Hubungi Saya',
-        btn_portfolio: 'Portfolio GitHub',
-        about_title: 'Profil Profesional',
-        about_desc: 'Saya adalah Full Stack Developer yang memadukan keahlian teknis mendalam dengan kepemimpinan strategis. Sebagai founder Pondok Informatika, saya berdedikasi menciptakan ekosistem belajar yang modern dan adaptif terhadap perkembangan AI.',
-        about_lang: 'Bahasa',
-        about_contact: 'Kontak',
-        skills_title: 'Keahlian',
-        exp_title: 'Pengalaman Kerja',
-        edu_title: 'Pendidikan',
-        projects_title: 'Portofolio Unggulan',
-        btn_all_portfolio: 'Lihat Semua Portofolio',
-        writing_title: 'Tulisan Terbaru',
-        writing_subtitle: 'Catatan teknis, tips, dan pemikiran seputar pengembangan teknologi.',
-        btn_all_writing: 'Lihat Semua Tulisan',
-        footer_copy: '&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.',
         back_btn: 'Kembali',
         read_article: 'Baca Artikel',
         view_detail: 'Lihat Detail',
@@ -882,31 +624,10 @@
         all_writing_title: 'Semua Tulisan',
         all_writing_desc: 'Kumpulan pemikiran dan tutorial dalam dunia pengembangan web.',
         search_writing: 'Cari judul artikel atau kategori...',
-        search_portfolio: 'Cari nama project atau tahun...',
-        all_portfolio_title: 'Seluruh Portofolio',
-        all_portfolio_desc: 'Daftar lengkap website yang telah dideploy.',
-        github_repo_text: 'Portofolio lain bisa dicek di Repositori GitHub Saya :'
+        footer_copy: '&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.'
       },
       en: {
         nav_contact: 'Contact',
-        hero_badge: 'Professional Web Developer',
-        hero_title: 'Muhdan Fyan<br>Syah Sofian',
-        hero_desc: 'Over 10 years of experience building industry-scale web solutions. Currently focusing on development efficiency using AI Agents and modern automation.',
-        btn_contact: 'Contact Me',
-        btn_portfolio: 'GitHub Portfolio',
-        about_title: 'Professional Profile',
-        about_desc: 'I am a Full Stack Developer who blends deep technical expertise with strategic leadership. As the founder of Pondok Informatika, I am dedicated to creating a modern learning ecosystem adaptive to AI developments.',
-        about_lang: 'Languages',
-        about_contact: 'Contact',
-        skills_title: 'Skills',
-        exp_title: 'Work Experience',
-        edu_title: 'Education',
-        projects_title: 'Featured Portfolio',
-        btn_all_portfolio: 'View All Portfolio',
-        writing_title: 'Recent Writings',
-        writing_subtitle: 'Technical notes, tips, and thoughts on technology development.',
-        btn_all_writing: 'View All Writings',
-        footer_copy: '&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.',
         back_btn: 'Back',
         read_article: 'Read Article',
         view_detail: 'View Detail',
@@ -914,10 +635,7 @@
         all_writing_title: 'All Writings',
         all_writing_desc: 'A collection of thoughts and tutorials in the world of web development.',
         search_writing: 'Search article title or category...',
-        search_portfolio: 'Search project name or year...',
-        all_portfolio_title: 'All Portfolio',
-        all_portfolio_desc: 'Complete list of deployed websites.',
-        github_repo_text: 'Other portfolios can be checked in my GitHub Repository :'
+        footer_copy: '&copy; 2026 Muhdan Fyan Syah Sofian. Made with passion & code.'
       }
     };
 
@@ -928,7 +646,7 @@
       currentLang = currentLang === 'id' ? 'en' : 'id';
       localStorage.setItem('lang', currentLang);
       applyTranslations();
-      initContent(); // Re-render dynamic grids
+      initContent();
     }
 
     function applyTranslations() {
@@ -957,11 +675,8 @@
 
     async function initContent() {
       try {
-        const response = await fetch('data/manifest.json?v=' + new Date().getTime());
+        const response = await fetch('../data/manifest.json?v=' + new Date().getTime());
         manifestData = await response.json();
-        renderGrid('portfolioHomeGrid', manifestData.portfolio.slice(0, 5), 'portofolio');
-        renderGrid('portfolioFullGrid', manifestData.portfolio, 'portofolio');
-        renderGrid('writingHomeGrid', manifestData.writing.slice(0, 4), 'tulisan');
         
         setupWritingCategories();
         updateWritingView();
@@ -999,7 +714,7 @@
       let filtered = manifestData.writing.filter(w => {
         const title = currentLang === 'en' ? (w.title_en || w.title) : w.title;
         const category = currentLang === 'en' ? (w.category_en || w.category) : w.category;
-        
+
         const matchesSearch = title.toLowerCase().includes(writingPageState.filter) || 
                             category.toLowerCase().includes(writingPageState.filter);
         const matchesCategory = writingPageState.category === 'All' || category === writingPageState.category;
@@ -1048,22 +763,13 @@
         const desc = currentLang === 'en' ? (item.description_en || item.description) : item.description;
         const cat = currentLang === 'en' ? (item.category_en || item.category) : item.category;
         const btnText = isWriting ? translations[currentLang].read_article : translations[currentLang].view_detail;
-        
-        // Bilingual path and slug logic
-        let pathPrefix = '';
-        let slug = '';
-        
-        if (isWriting) {
-          pathPrefix = currentLang === 'en' ? 'writing/' : 'tulisan/';
-          slug = currentLang === 'en' ? (item.slug_en || item.slug) : item.slug;
-        } else {
-          pathPrefix = 'portofolio/';
-          slug = item.slug;
-        }
+
+        const imagePath = item.image.startsWith('http') ? item.image : '../' + item.image;
+        const linkPath = isWriting ? `../tulisan/${item.slug}/` : `../portofolio/${item.slug}/`;
 
         return `
         <div class="project-card glass" data-aos="zoom-in" data-aos-delay="${index * 50}">
-          ${item.image ? `<img src="${item.image}" class="project-image" alt="${title}" style="height: ${isWriting ? '220px' : '180px'}; object-fit: cover;">` : ''}
+          ${item.image ? `<img src="${imagePath}" class="project-image" alt="${title}" style="height: ${isWriting ? '220px' : '180px'}; object-fit: cover;">` : ''}
           <div class="project-info">
             ${isWriting ? `<span class="tag" style="background: rgba(99, 102, 241, 0.1); color: var(--primary); font-weight: 600; margin-bottom: 0.8rem; display: inline-block;">${cat}</span>` : ''}
             <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">${title}</h3>
@@ -1073,7 +779,7 @@
               ${!isWriting ? `<span class="tag">${cat}</span>` : ''}
             </div>
             <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
-              <a href="${pathPrefix}${slug}/" class="btn ${isWriting ? 'btn-primary' : 'btn-outline'}" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; justify-content: center;">
+              <a href="${linkPath}" class="btn ${isWriting ? 'btn-primary' : 'btn-outline'}" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; justify-content: center;">
                 ${btnText}
               </a>
               ${item.url && !isWriting ? `<a href="${item.url}" target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">${translations[currentLang].visit_site}</a>` : ''}
@@ -1086,29 +792,16 @@
     }
 
     function switchView(viewId) {
-      // Logic for homepage SPA remains for Home/Writing view toggle if needed, 
-      // but links now point to physical directories
       document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
       const activeView = document.getElementById(viewId);
-      if(activeView) activeView.classList.add('active');
-      window.scrollTo(0, 0);
+      activeView.classList.add('active');
     }
 
     async function handleRouting() {
       const hash = window.location.hash;
-      if (hash === '#/portfolio') {
-        switchView('portfolioListView');
-      } else if (hash === '#/writing') {
-        switchView('writingListView');
-      } else if (hash.startsWith('#/portofolio/')) {
+      if (hash.startsWith('#/tulisan/')) {
         const slug = hash.split('/')[2];
-        await showDetail('portofolio', slug);
-      } else if (hash.startsWith('#/tulisan/') || hash.startsWith('#/writing/')) {
-        const parts = hash.split('/');
-        const slug = parts[2];
         await showDetail('tulisan', slug);
-      } else {
-        switchView('homeView');
       }
     }
 
@@ -1119,30 +812,13 @@
       detailView.style.display = 'block';
       document.body.style.overflow = 'hidden';
 
-      // Internal resolution logic: find the actual folder slug even if hash uses slug_en
-      let folderSlug = slug;
-      if (type === 'tulisan' && manifestData) {
-        const item = manifestData.writing.find(w => w.slug === slug || w.slug_en === slug);
-        if (item) folderSlug = item.slug; // Always use the primary folder name
-      }
-
-      let baseFilePath = '';
-      if (type === 'portofolio') {
-        baseFilePath = `portofolio/${folderSlug}/detail`;
-        if (folderSlug !== 'bearboy') {
-          detailContent.innerHTML = `<h2>${folderSlug.charAt(0).toUpperCase() + folderSlug.slice(1)}</h2><p>Detail konten sedang disiapkan. Silakan kunjungi link website untuk melihat produk aktif.</p>`;
-          return;
-        }
-      } else if (type === 'tulisan') {
-        baseFilePath = `tulisan/${folderSlug}/tulisan`;
-      }
+      let baseFilePath = `../tulisan/${slug}/tulisan`;
 
       const filePath = currentLang === 'en' ? `${baseFilePath}.en.md` : `${baseFilePath}.md`;
 
       try {
         let response = await fetch(filePath);
         if (!response.ok && currentLang === 'en') {
-          // Fallback to ID if EN not found
           response = await fetch(`${baseFilePath}.md`);
           const markdown = await response.text();
           detailContent.innerHTML = `<div style="background: #fff9c4; padding: 1rem; border-radius: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem;">English translation not available yet. Showing Indonesian version.</div><div class="article-content">${marked.parse(markdown)}</div>`;
@@ -1152,7 +828,7 @@
           detailContent.innerHTML = `<div class="article-content">${marked.parse(markdown)}</div>`;
         }
       } catch (error) {
-        detailContent.innerHTML = `<div class="article-content"><h2>Konten tidak ditemukan</h2><p>Maaf, detail untuk "${slug}" belum tersedia di server.</p></div>`;
+        detailContent.innerHTML = `<div class="article-content"><h2>Konten tidak ditemukan</h2><p>Maaf, detail untuk "${slug}" belum tersedia.</p></div>`;
       }
     }
 
@@ -1160,18 +836,9 @@
       const detailView = document.getElementById('detailView');
       detailView.style.display = 'none';
       document.body.style.overflow = 'auto';
+      history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 
-    function filterPortfolio() {
-      const q = document.getElementById('searchInput').value.toLowerCase();
-      const filtered = manifestData.portfolio.filter(p => {
-        const title = currentLang === 'en' ? (p.title_en || p.title) : p.title;
-        return title.toLowerCase().includes(q) || p.year.includes(q);
-      });
-      renderGrid('portfolioFullGrid', filtered, 'portofolio');
-    }
-
-    window.addEventListener('hashchange', handleRouting);
     document.addEventListener('DOMContentLoaded', () => {
       applyTranslations();
       initContent();
