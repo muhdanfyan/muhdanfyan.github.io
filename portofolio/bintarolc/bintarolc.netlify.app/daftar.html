@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bintaro Learning Center</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="d-flex align-items-center min-vh-100">
+            <div class="container text-center col-sm-4">
+                <div class="form borde rounded" style="padding: 16px; background-color: rgb(243, 243, 243);">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <h4>Daftar Lewat WA</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="hp"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea rows="5" class="form-control" id="pesan">Mohon infonya untuk pendaftaran bimbel CPNS Bintaro Learning Center</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button id="click_btn" class="btn btn-primary col-sm-12" >Daftar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var dataNumber = ['6285298028500','6285781395932'];
+        var randomNumber = Math.floor(Math.random()*dataNumber.length);
+
+        var data = {
+            userAgen: '',
+            platform: 'whatsapp',
+            redirect: 'false',
+            idNumber: dataNumber[randomNumber],
+            // pixel: '1903503003128637',
+            message: '"Mohon infonya untuk pendaftaran bimbel CPNS Bintaro Learning Center"',
+            event: {
+                page: 'Lead',
+                button: 'AddToWishlist',
+            },
+            listPixels: [1903503003128637, 2559850577360897]
+        };
+
+        $(document).ready(function() {
+            $('#hp').val(dataNumber[randomNumber]);
+        });
+    </script>
+    <script>
+            var redirect=data.redirect;var platform=data.platform;var idNumber=data.idNumber;var pixelId=data.pixel;var pixelEvents=data.event.page;var buttonEvent=data.event.button;var buttonEvent=data.event.button;var dataMessage=data.message;var isMobile=data.userAgen;var prefix;
+        var trackerStandardName=['Search','AddToWishlist','ViewContent','AddToCart','InitiateCheckout','Purchase','Lead','AddPaymentInfo','CompleteRegistration',];
+        var userAgent={android:navigator.userAgent.match(/Android/i),webOs:navigator.userAgent.match(/webOS/i),ipad:navigator.userAgent.match(/iPad/i),ipod:navigator.userAgent.match(/iPod/i),iphone:navigator.userAgent.match(/iPhone/i),blackberry:navigator.userAgent.match(/BlackBerry/i),windowsPhone:navigator.userAgent.match(/Windows Phone/i),}
+        var loopAllPixelId=function(listPixels){for(var i=0;i<listPixels.length;i++){var pixels=listPixels[i]
+        fbq('init', '' + pixels + '')}}
+        var initFacebookPixel=function(){!(function(f,b,e,v,n,t,s){if(f.fbq)return
+        n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}
+        if(!f._fbq)f._fbq=n
+        n.push=n
+        n.loaded=!0
+        n.version='2.0'
+        n.queue=[]
+        t=b.createElement(e)
+        t.async=!0
+        t.src=v
+        s=b.getElementsByTagName(e)[0]
+        s.parentNode.insertBefore(t,s)})(window,document,'script','https://connect.facebook.net/en_US/fbevents.js')
+        // fbq('init',pixelId)
+        loopAllPixelId(data.listPixels)
+        fbq('track',pixelEvents.toString())}
+        var trackButtonEvents=function(buttonEvent){var track
+        var event=buttonEvent.toString()
+        if(buttonEvent in trackerStandardName){track='track'}else{track='trackCustom'}
+        fbq(track,event)}
+        var trimMessage=function(){$('textarea').each(function(){$(this).val($(this).val().trim())})}
+        var initRedirectType=function(){switch(platform){case 'wa':prefix='https://web.whatsapp.com/send?phone='+idNumber+'&text='+dataMessage
+        if(userAgent.android||userAgent.iphone||userAgent.ipad||userAgent.ipod){prefix='whatsapp://send?phone='+idNumber+'&text='+dataMessage}
+        break
+        case 'whatsapp':prefix='https://web.whatsapp.com/send?phone='+idNumber+'&text='+dataMessage
+        if(userAgent.android||userAgent.iphone||userAgent.ipad||userAgent.ipod){prefix='whatsapp://send?phone='+idNumber+'&text='+dataMessage}
+        break
+        default:prefix='https://bintarolc.website'
+        break}
+        console.log(prefix)
+        window.setTimeout(function(){window.location.href=prefix},3000)}
+        var initClickType=function(){$('#click_btn').on('click',function(){$(this).text('loading...')
+        $(this).attr('disabled','disabled')
+        trackButtonEvents(buttonEvent)
+        initRedirectType()})}
+        var ready=function(callback){if(document.readyState!='loading')callback()
+        else if(document.addEventListener)
+        document.addEventListener('DOMContentLoaded',callback)
+        else
+        document.attachEvent('onreadystatechange',function(){if(document.readyState=='complete')callback()})}
+        ready(function(){initFacebookPixel()
+        initClickType()
+        trimMessage()})
+        </script>
+        
+
+</body>
+
+</html>

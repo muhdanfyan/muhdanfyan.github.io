@@ -961,7 +961,10 @@
         manifestData = await response.json();
         renderGrid('portfolioHomeGrid', manifestData.portfolio.slice(0, 5), 'portofolio');
         renderGrid('portfolioFullGrid', manifestData.portfolio, 'portofolio');
-        renderGrid('writingHomeGrid', manifestData.writing.slice(0, 4), 'tulisan');
+        
+        // Filter writing for home grid based on language
+        const filteredWriting = manifestData.writing.filter(w => (w.available_langs || ['id']).includes(currentLang));
+        renderGrid('writingHomeGrid', filteredWriting.slice(0, 4), 'tulisan');
         
         setupWritingCategories();
         updateWritingView();
@@ -997,6 +1000,10 @@
       writingPageState.filter = searchInput ? searchInput.value.toLowerCase() : '';
       
       let filtered = manifestData.writing.filter(w => {
+        // Strict language filtering
+        const langs = w.available_langs || ['id']; // Default to ID if not specified
+        if (!langs.includes(currentLang)) return false;
+
         const title = currentLang === 'en' ? (w.title_en || w.title) : w.title;
         const category = currentLang === 'en' ? (w.category_en || w.category) : w.category;
         

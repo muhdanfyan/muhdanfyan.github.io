@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+dist/
+
+# Astro
+.astro/
+
+# Environment
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+tests-results/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
