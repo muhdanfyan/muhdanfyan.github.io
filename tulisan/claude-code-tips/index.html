@@ -1,169 +1,57 @@
 <!DOCTYPE html>
 <html lang="id" prefix="og: http://ogp.me/ns#">
 <head>
+    <!-- Meta Tags Utama untuk Link Preview (Wajib Paling Atas) -->
+    <meta property="og:title" content="Claude Code: Partner Nyata di Terminal">
+    <meta property="og:description" content="Bongkar rahasia efisiensi coding menggunakan AI Agent otonom langsung dari terminal.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=60&w=800">
+    <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=60&w=800">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="420">
+    <meta property="og:url" content="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
+    <meta property="og:type" content="article">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Dasar -->
     <title>Meningkatkan Produktivitas dengan Claude Code - Muhdan Fyan</title>
-    <meta name="description" content="Pelajari tips dan workflow lanjutan Claude Code dari sang pencipta, Boris Cherny. Tingkatkan efisiensi coding Anda dengan AI Agent otonom di terminal.">
-    <meta name="keywords" content="Claude Code, AI Coding, Anthropic, Productivity, Programming Tips, Muhdan Fyan, Indonesia Developer">
-    <meta name="author" content="Muhdan Fyan Syah">
+    <meta name="description" content="Pelajari tips dan workflow lanjutan Claude Code dari sang pencipta, Boris Cherny.">
     <link rel="canonical" href="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
 
-    <!-- Open Graph / Facebook (Link Preview) -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
-    <meta property="og:title" content="Claude Code: 'Partner Nyata' di Terminal—Bukan Sekadar Chatbot!">
-    <meta property="og:description" content="Bongkar rahasia efisiensi coding menggunakan AI Agent otonom langsung dari terminal. Tips pro untuk developer Indonesia.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200">
-    <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Muhdan Fyan Portfolio">
-
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
-    <meta name="twitter:title" content="Claude Code: Tips & Workflow Lanjutan">
-    <meta name="twitter:description" content="Tingkatkan produktivitas coding Anda dengan workflow agentic di terminal. Rangkuman tips dari kreator Claude Code.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200">
-
-    <!-- Structured Data (JSON-LD) untuk Google Search -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "Meningkatkan Produktivitas dengan Claude Code: Tips & Workflow Lanjutan",
-      "description": "Panduan mendalam mengenai penggunaan Claude Code AI CLI untuk meningkatkan efisiensi pengembangan perangkat lunak.",
-      "image": "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200",
-      "author": {
-        "@type": "Person",
-        "name": "Muhdan Fyan Syah"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Muhdan Fyan Portfolio",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://muhdanfyan.github.io/img/profile.png"
-        }
-      },
-      "datePublished": "2026-04-25",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://muhdanfyan.github.io/tulisan/claude-code-tips/"
-      }
-    }
-    </script>
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=60&w=800">
 
     <style>
-        :root {
-          --primary: #6366f1;
-          --secondary: #a855f7;
-          --bg-deep: #f8fafc;
-          --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
-        }
-
-        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.8; color: #1e293b; max-width: 1000px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-deep); }
-        
+        :root { --primary: #6366f1; --bg-deep: #f8fafc; --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1); }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: #1e293b; max-width: 1000px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-deep); }
         .container { max-width: 850px; margin: 0 auto; }
-        
-        .back-btn { display: inline-flex; align-items: center; text-decoration: none; color: var(--primary); font-weight: 600; margin-bottom: 2rem; transition: transform 0.2s; gap: 8px; }
-        .back-btn:hover { transform: translateX(-5px); }
-
+        .back-btn { display: inline-flex; align-items: center; text-decoration: none; color: var(--primary); font-weight: 600; margin-bottom: 2rem; gap: 8px; }
         .content-card { background: white; padding: 60px; border-radius: 2rem; box-shadow: var(--card-shadow); border: 1px solid rgba(15, 23, 42, 0.05); }
-
-        .article-content h1 { font-size: 3rem; color: #0f172a; line-height: 1.1; margin-bottom: 2rem; letter-spacing: -0.03em; font-weight: 800; }
-        .article-content h2 { font-size: 2.2rem; margin-top: 3rem; margin-bottom: 1.2rem; color: #0f172a; font-weight: 700; }
-        .article-content h3 { font-size: 1.6rem; margin-top: 2.5rem; color: #334155; font-weight: 600; }
+        .article-content h1 { font-size: 3rem; color: #0f172a; line-height: 1.1; margin-bottom: 2rem; font-weight: 800; letter-spacing: -0.03em; }
         .article-content p { margin-bottom: 1.8rem; font-size: 1.15rem; color: #334155; }
-        
         .article-content img { width: 100%; border-radius: 1.5rem; margin: 2.5rem 0; box-shadow: var(--card-shadow); }
-        
-        .article-content blockquote { 
-          border-left: 6px solid var(--primary); 
-          padding: 2rem 2.5rem; 
-          background: rgba(99, 102, 241, 0.05); 
-          border-radius: 0 1.5rem 1.5rem 0; 
-          margin: 3rem 0; 
-          font-style: italic;
-          font-size: 1.2rem;
-          color: #475569;
-        }
-
-        .article-content code { 
-          background: #f1f5f9; 
-          padding: 0.25rem 0.6rem; 
-          border-radius: 0.5rem; 
-          font-family: 'SFMono-Regular', monospace; 
-          font-size: 0.9em;
-          color: var(--primary);
-        }
-
-        .article-content pre { 
-          background: #0f172a; 
-          color: #f8fafc; 
-          padding: 2rem; 
-          border-radius: 1.2rem; 
-          overflow-x: auto; 
-          margin: 2.5rem 0;
-          font-size: 0.95rem;
-        }
-
-        .article-content a { color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 2px solid rgba(99, 102, 241, 0.2); transition: all 0.2s; }
-        .article-content a:hover { border-bottom-color: var(--primary); background: rgba(99, 102, 241, 0.05); }
-
-        .meta { color: #64748b; font-size: 1rem; margin-bottom: 1.5rem; display: flex; gap: 20px; font-weight: 500; }
-        
-        footer { margin-top: 6rem; text-align: center; color: #94a3b8; font-size: 1rem; padding-bottom: 2rem; }
-        
-        @media (max-width: 768px) {
-            .content-card { padding: 30px 20px; border-radius: 1.5rem; }
-            .article-content h1 { font-size: 2.2rem; }
-        }
+        .article-content blockquote { border-left: 6px solid var(--primary); padding: 2rem 2.5rem; background: rgba(99, 102, 241, 0.05); border-radius: 0 1.5rem 1.5rem 0; margin: 3rem 0; font-style: italic; font-size: 1.25rem; color: #475569; }
+        footer { margin-top: 6rem; text-align: center; color: #94a3b8; font-size: 1rem; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="https://muhdanfyan.github.io" class="back-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Kembali ke Portfolio
-        </a>
-        
+        <a href="https://muhdanfyan.github.io" class="back-btn">← Kembali ke Portfolio</a>
         <article class="content-card">
-            <div class="meta">
-                <span>📅 25 April 2026</span>
-                <span>•</span>
-                <span>💻 Technology</span>
-            </div>
-
             <div class="article-content">
                 <h1>Claude Code: "Partner Nyata" di Terminal—Bukan Sekadar *Chatbot* Biasa! 🚀</h1>
                 <p>📅 <strong>25 April 2026</strong></p>
-                
                 <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=1200" alt="Coding Environment">
-
-                <p>Pernah merasa lelah bolak-balik antara <em>Browser</em> (<em>ChatGPT</em>/<em>Claude web</em>) dan <em>Terminal</em> cuma buat <em>copy-paste</em> kode? Di komunitas <strong>developer Indonesia</strong>, <strong>efisiensi adalah segalanya</strong>. Kita butuh <em>tool</em> yang nggak cuma pinter teori, tapi bisa langsung eksekusi.</p>
-
-                <blockquote>
-                    "Claude Code bukan asisten yang cuma bisa jawab pertanyaan, dia adalah <strong><em>Agent</em></strong> yang punya 'tangan' buat ngetik dan 'kaki' buat jalan di direktori proyek kita."
-                </blockquote>
-
-                <p>Salah satu fitur yang paling menarik adalah <code>/btw</code> (<em>By The Way</em>), yang memungkinkan kita bertanya hal lain tanpa menghentikan proses <em>coding</em> yang sedang berjalan di latar belakang. Sangat cocok untuk <em>workflow</em> yang dinamis.</p>
-
-                <p>Gunakan fitur <strong><em>Visual Verification</em></strong> lewat ekstensi <em>Chrome</em> untuk memberikan "mata" pada Claude agar bisa melihat aplikasi web yang ia buat secara <em>real-time</em>. Ini adalah <strong>lompatan besar</strong> dalam dunia <em>AI Agent</em>.</p>
-
-                <a href="https://github.com/muhdanfyan/claude-code-tips" style="display: block; background: #f1f5f9; padding: 25px; border-radius: 1rem; border-left: 5px solid var(--primary); margin: 3rem 0; color: #0f172a;">
+                <p>Pelajari efisiensi coding menggunakan AI Agent otonom langsung dari terminal...</p>
+                <a href="https://github.com/muhdanfyan/claude-code-tips" style="display: block; background: #f1f5f9; padding: 25px; border-radius: 1rem; border-left: 5px solid var(--primary); margin: 3rem 0; color: #0f172a; text-decoration: none;">
                     🚀 Lihat Rangkuman Teknis & Konfigurasi di GitHub →
                 </a>
+                <p style="margin-top: 4rem; border-top: 1px solid #eee; padding-top: 2rem;">
+                    <strong>Sumber:</strong> XDA Developers | <strong>Penulis:</strong> Muhdan Fyan Syah Sofian
+                </p>
             </div>
         </article>
-
-        <footer>
-            &copy; 2026 Muhdan Fyan Syah. Dipublish menggunakan Gemini CLI.
-        </footer>
+        <footer>&copy; 2026 Muhdan Fyan Syah.</footer>
     </div>
 </body>
 </html>
