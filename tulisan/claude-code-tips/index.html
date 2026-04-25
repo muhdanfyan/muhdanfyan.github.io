@@ -3,57 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Dasar -->
     <title>Meningkatkan Produktivitas dengan Claude Code - Muhdan Fyan</title>
+    <meta name="description" content="Pelajari tips dan workflow lanjutan Claude Code dari sang pencipta, Boris Cherny. Tingkatkan efisiensi coding Anda dengan AI Agent otonom di terminal.">
+    <meta name="keywords" content="Claude Code, AI Coding, Anthropic, Productivity, Programming Tips, Muhdan Fyan, Indonesia Developer">
+    <meta name="author" content="Muhdan Fyan Syah">
+    <link rel="canonical" href="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
+
+    <!-- Open Graph / Facebook (Link Preview) -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
+    <meta property="og:title" content="Claude Code: 'Partner Nyata' di Terminal—Bukan Sekadar Chatbot!">
+    <meta property="og:description" content="Bongkar rahasia efisiensi coding menggunakan AI Agent otonom langsung dari terminal. Tips pro untuk developer Indonesia.">
+    <meta property="og:image" content="https://code.claude.com/assets/hero-terminal.png">
+    <meta property="og:site_name" content="Muhdan Fyan Portfolio">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://muhdanfyan.github.io/tulisan/claude-code-tips/">
+    <meta name="twitter:title" content="Claude Code: Tips & Workflow Lanjutan">
+    <meta name="twitter:description" content="Tingkatkan produktivitas coding Anda dengan workflow agentic di terminal. Rangkuman tips dari kreator Claude Code.">
+    <meta name="twitter:image" content="https://code.claude.com/assets/hero-terminal.png">
+
+    <!-- Structured Data (JSON-LD) untuk Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Meningkatkan Produktivitas dengan Claude Code: Tips & Workflow Lanjutan",
+      "description": "Panduan mendalam mengenai penggunaan Claude Code AI CLI untuk meningkatkan efisiensi pengembangan perangkat lunak.",
+      "image": "https://code.claude.com/assets/hero-terminal.png",
+      "author": {
+        "@type": "Person",
+        "name": "Muhdan Fyan Syah"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Muhdan Fyan Portfolio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://muhdanfyan.github.io/img/profile.png"
+        }
+      },
+      "datePublished": "2026-04-25",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://muhdanfyan.github.io/tulisan/claude-code-tips/"
+      }
+    }
+    </script>
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 2rem; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        h2 { color: #34495e; margin-top: 2rem; }
-        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 3px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
-        pre { background: #f4f4f4; padding: 1rem; border-radius: 5px; overflow-x: auto; }
-        .back-link { display: inline-block; margin-bottom: 2rem; text-decoration: none; color: #3498db; }
-        .repo-box { background: #e8f6fe; border-left: 5px solid #3498db; padding: 1rem; margin: 1.5rem 0; }
-        footer { margin-top: 4rem; font-size: 0.9rem; color: #7f8c8d; text-align: center; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.8; color: #1a202c; max-width: 850px; margin: 0 auto; padding: 40px 20px; background-color: #f8fafc; }
+        .content-card { background: white; padding: 50px; border-radius: 24px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); }
+        h1 { font-size: 2.5rem; color: #1e293b; line-height: 1.2; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+        .meta { color: #64748b; font-size: 0.95rem; margin-bottom: 3rem; display: flex; gap: 15px; }
+        img.hero { width: 100%; border-radius: 16px; margin-bottom: 2rem; }
+        .back-btn { display: inline-flex; align-items: center; text-decoration: none; color: #6366f1; font-weight: 600; margin-bottom: 2rem; transition: transform 0.2s; }
+        .back-btn:hover { transform: translateX(-5px); }
+        .repo-link { display: block; background: #f1f5f9; padding: 20px; border-radius: 12px; border-left: 4px solid #6366f1; text-decoration: none; color: #334155; margin: 2rem 0; font-weight: 500; }
+        footer { margin-top: 5rem; text-align: center; color: #94a3b8; font-size: 0.9rem; }
+        blockquote { border-left: 4px solid #e2e8f0; padding-left: 20px; font-style: italic; color: #475569; margin: 2rem 0; }
     </style>
 </head>
 <body>
-    <a href="/" class="back-link">← Kembali ke Beranda</a>
+    <a href="https://muhdanfyan.github.io" class="back-btn">← Kembali ke Portfolio</a>
     
-    <h1>Meningkatkan Produktivitas dengan Claude Code: Tips & Workflow Lanjutan</h1>
-    
-    <p>Baru-baru ini, Boris Cherny (pencipta Claude Code) berbagi berbagai tips yang secara signifikan meningkatkan pengalaman menggunakan tool AI CLI ini. Artikel ini merangkum pemahaman tersebut dan bagaimana Anda bisa menerapkannya dalam workflow harian Anda.</p>
+    <article class="content-card">
+        <div class="meta">
+            <span>📅 25 April 2026</span>
+            <span>•</span>
+            <span>💻 Technology</span>
+        </div>
 
-    <div class="repo-box">
-        <strong>Repository Terkait:</strong><br>
-        Saya telah membuat rangkuman teknis dan contoh konfigurasinya di sini:<br>
-        <a href="https://github.com/muhdanfyan/claude-code-tips" target="_blank">github.com/muhdanfyan/claude-code-tips</a>
-    </div>
+        <h1>Claude Code: "Partner Nyata" di Terminal—Bukan Sekadar Chatbot Biasa! 🚀</h1>
+        
+        <img src="https://code.claude.com/assets/hero-terminal.png" alt="Claude Code CLI Interface" class="hero">
 
-    <h2>Apa itu Claude Code?</h2>
-    <p>Claude Code adalah tool CLI dari Anthropic yang memungkinkan Claude berinteraksi langsung dengan sistem file Anda, menjalankan perintah terminal, dan membantu proses coding secara otonom.</p>
+        <p>Baru-baru ini, Boris Cherny (pencipta Claude Code) berbagi berbagai tips yang secara signifikan meningkatkan pengalaman menggunakan tool AI CLI ini. Di komunitas <strong>developer Indonesia</strong>, efisiensi adalah segalanya. Kita butuh tool yang nggak cuma pinter teori, tapi bisa langsung eksekusi.</p>
 
-    <h2>Tips & Perintah Utama</h2>
-    <ul>
-        <li><strong><code>/btw</code> (By The Way):</strong> Gunakan ini untuk bertanya hal di luar tugas utama tanpa merusak alur kerja Claude yang sedang berjalan.</li>
-        <li><strong><code>/loop</code>:</strong> Sangat berguna untuk otomatisasi. Misalnya, memantau error log setiap beberapa menit.</li>
-        <li><strong><code>/schedule</code>:</strong> Membuat tugas persisten yang berjalan bahkan setelah terminal ditutup (Cloud Tasks).</li>
-        <li><strong><code>/teleport</code>:</strong> Memindahkan sesi aktif antar perangkat dengan mudah.</li>
-    </ul>
+        <blockquote>
+            "Claude Code bukan asisten yang cuma bisa jawab pertanyaan, dia adalah Agent yang punya 'tangan' buat ngetik dan 'kaki' buat jalan di direktori proyek kita."
+        </blockquote>
 
-    <h2>Cara Menggunakan Repository Tips</h2>
-    <p>Dalam repository <code>claude-code-tips</code>, saya menyediakan beberapa aset penting:</p>
-    <pre><code># Clone repo tips
-git clone https://github.com/muhdanfyan/claude-code-tips.git
+        <p>Salah satu fitur yang paling menarik adalah <code>/btw</code> (By The Way), yang memungkinkan kita bertanya hal lain tanpa menghentikan proses coding yang sedang berjalan di latar belakang. Sangat cocok untuk workflow yang dinamis.</p>
 
-# Lihat panduan konfigurasi
-cat examples/settings.json</code></pre>
+        <a href="https://github.com/muhdanfyan/claude-code-tips" class="repo-link">
+            🚀 Lihat Rangkuman Teknis & Konfigurasi di GitHub →
+        </a>
 
-    <p>Gunakan flag <code>--add-dir</code> saat menjalankan Claude untuk memberikan akses ke banyak folder sekaligus, yang sangat membantu jika proyek Anda memiliki ketergantungan antar direktori.</p>
-
-    <h2>Visual Verification</h2>
-    <p>Salah satu fitur paling keren adalah ekstensi Chrome (beta) yang memberikan "mata" pada Claude. Claude dapat membangun web app, membukanya di browser, mendeteksi error console, dan memperbaikinya sendiri secara visual.</p>
+        <p>Selain itu, fitur <strong>Visual Verification</strong> lewat ekstensi Chrome memberikan "mata" pada Claude untuk melihat aplikasi web yang ia buat secara real-time. Ini adalah lompatan besar dalam dunia AI Agent.</p>
+    </article>
 
     <footer>
-        &copy; 2026 Muhdan Fyan Syah. Ditulis menggunakan Gemini CLI.
+        &copy; 2026 Muhdan Fyan Syah. Dipublish menggunakan Gemini CLI.
     </footer>
+
+    <!-- Redirect logic untuk user yang masuk ke folder fisik tapi ingin kembali ke SPA mode (opsional) -->
+    <script>
+        // Jika user mengakses folder fisik, kita biarkan mereka membacanya. 
+        // Ini bagus untuk SEO karena crawler melihat konten statis ini.
+    </script>
 </body>
 </html>
