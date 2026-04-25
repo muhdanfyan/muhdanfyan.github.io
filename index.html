@@ -833,23 +833,28 @@
     function renderGrid(containerId, items, type) {
       const grid = document.getElementById(containerId);
       if (!grid) return;
-      grid.innerHTML = items.map((item, index) => `
+      grid.innerHTML = items.map((item, index) => {
+        const isWriting = type === 'tulisan';
+        return `
         <div class="project-card glass" data-aos="zoom-in" data-aos-delay="${index * 50}">
-          ${item.image ? `<img src="${item.image}" class="project-image" alt="${item.title}">` : ''}
+          ${item.image ? `<img src="${item.image}" class="project-image" alt="${item.title}" style="height: ${isWriting ? '220px' : '180px'}; object-fit: cover;">` : ''}
           <div class="project-info">
-            <h3>${item.title}</h3>
-            <p style="color: var(--text-dim); margin-top: 0.5rem;">${item.description}</p>
-            <div class="project-tags">
-              <span class="tag">${item.year || item.date}</span>
-              <span class="tag">${item.category}</span>
+            ${isWriting ? `<span class="tag" style="background: rgba(99, 102, 241, 0.1); color: var(--primary); font-weight: 600; margin-bottom: 0.8rem; display: inline-block;">${item.category}</span>` : ''}
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">${item.title}</h3>
+            <p style="color: var(--text-dim); font-size: 0.95rem; margin-top: 0.5rem; line-height: 1.5;">${item.description}</p>
+            <div class="project-tags" style="margin-top: 1.2rem; border-top: 1px solid rgba(15, 23, 42, 0.05); padding-top: 1rem;">
+              <span class="tag"><i data-lucide="calendar" size="12" style="display: inline; vertical-align: middle; margin-right: 4px;"></i> ${item.year || item.date}</span>
+              ${!isWriting ? `<span class="tag">${item.category}</span>` : ''}
             </div>
-            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-              <a href="#/${type}/${item.slug}" class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Lihat Detail</a>
-              ${item.url ? `<a href="${item.url}" target="_blank" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Visit Site</a>` : ''}
+            <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
+              <a href="#/${type}/${item.slug}" class="btn ${isWriting ? 'btn-primary' : 'btn-outline'}" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; justify-content: center;">
+                ${isWriting ? 'Baca Artikel' : 'Lihat Detail'}
+              </a>
+              ${item.url && !isWriting ? `<a href="${item.url}" target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Visit Site</a>` : ''}
             </div>
           </div>
         </div>
-      `).join('');
+      `}).join('');
       lucide.createIcons();
       AOS.refresh();
     }
