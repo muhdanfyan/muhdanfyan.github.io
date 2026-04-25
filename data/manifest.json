@@ -3,46 +3,61 @@
     {
       "slug": "bearboy",
       "title": "Bearboy",
+      "title_en": "Bearboy",
       "year": "2026",
       "category": "System",
+      "category_en": "System",
       "image": "img/screenshots/bearboy.png",
       "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
+      "description_en": "Health management information system and digital circumcision.",
       "url": "https://bearboysunat.com"
     },
     {
       "slug": "asesmen",
       "title": "Asesmen",
+      "title_en": "Assessment",
       "year": "2025",
       "category": "Netlify",
+      "category_en": "Netlify",
       "image": "img/screenshots/asesmen.png",
       "description": "Project created in 2025.",
+      "description_en": "Project created in 2025.",
       "url": "https://asesmen.netlify.app"
     },
     {
       "slug": "risethub",
       "title": "Risethub",
+      "title_en": "Risethub",
       "year": "2025",
       "category": "Netlify",
+      "category_en": "Netlify",
       "image": "img/screenshots/risethub.png",
       "description": "Project created in 2025.",
+      "description_en": "Project created in 2025.",
       "url": "https://risethub.netlify.app"
     },
     {
       "slug": "demopisantri",
       "title": "Demopisantri",
+      "title_en": "Demopisantri",
       "year": "2025",
       "category": "Netlify",
+      "category_en": "Netlify",
       "image": "img/screenshots/demopisantri.png",
       "description": "Project created in 2025.",
+      "description_en": "Project created in 2025.",
       "url": "https://demopisantri.netlify.app"
     },
     {
       "slug": "pesantrenteknologi",
       "title": "Pesantrenteknologi",
+      "title_en": "Tech Santri",
       "year": "2025",
       "category": "Netlify",
+      "category_en": "Netlify",
       "image": "img/screenshots/pesantrenteknologi.png",
       "description": "Project created in 2025.",
+      "description_en": "Project created in 2025.",
       "url": "https://pesantrenteknologi.id"
     }
   ],
@@ -50,42 +65,57 @@
     {
       "slug": "ukk-smkn4-baubau-diskominfo",
       "title": "Sinergi Digital di Pulau Makassar: Catatan Penguji UKK SMKN 4 Baubau",
+      "title_en": "Digital Synergy on Makassar Island: Notes from SMKN 4 Baubau UKK Examiner",
       "date": "2026-04-25",
       "category": "Education",
+      "category_en": "Education",
       "image": "tulisan/ukk-smkn4-baubau-diskominfo/lab-smk.jpg",
-      "description": "Pengalaman berkesan mewakili Diskominfo Baubau dalam menguji kompetensi taruna TKJ di SMKN 4 Baubau."
+      "description": "Pengalaman berkesan mewakili Diskominfo Baubau dalam menguji kompetensi taruna TKJ di SMKN 4 Baubau.",
+      "description_en": "A memorable experience representing Diskominfo Baubau in testing the competency of TKJ cadets at SMKN 4 Baubau."
     },
     {
       "slug": "insight-media-group",
       "title": "Insight Media Group: Masa Depan Publikasi Digital",
+      "title_en": "Insight Media Group: The Future of Digital Publication",
       "date": "2026-04-25",
       "category": "Media",
+      "category_en": "Media",
       "image": "tulisan/insight-media-group/hero.png",
-      "description": "Eksplorasi bagaimana Insight Media Group merevolusi dunia publikasi digital melalui integrasi teknologi."
+      "description": "Eksplorasi bagaimana Insight Media Group merevolusi dunia publikasi digital melalui integrasi teknologi.",
+      "description_en": "Exploring how Insight Media Group is revolutionizing the digital publication world through technology integration."
     },
     {
       "slug": "claude-automated-testing",
       "title": "Strategi Testing-First: Performa Maksimal Claude Code",
+      "title_en": "Testing-First Strategy: Maximum Claude Code Performance",
       "date": "2026-04-25",
       "category": "Technology",
+      "category_en": "Technology",
       "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200",
-      "description": "Bongkar rahasia efisiensi coding menggunakan AI Agent otonom melalui strategi automated testing yang ketat."
+      "description": "Bongkar rahasia efisiensi coding menggunakan AI Agent otonom melalui strategi automated testing yang ketat.",
+      "description_en": "Unlocking the secrets of coding efficiency using autonomous AI Agents through rigorous automated testing strategies."
     },
     {
       "slug": "claude-code-tips",
       "title": "Meningkatkan Produktivitas dengan Claude Code",
+      "title_en": "Increasing Productivity with Claude Code",
       "date": "2026-04-25",
       "category": "Technology",
+      "category_en": "Technology",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1200",
-      "description": "Tips dan workflow lanjutan menggunakan Claude Code untuk coding lebih cepat."
+      "description": "Tips dan workflow lanjutan menggunakan Claude Code untuk coding lebih cepat.",
+      "description_en": "Advanced tips and workflows using Claude Code for faster coding."
     },
     {
       "slug": "literasi-digital-ai",
       "title": "Pentingnya Literasi Digital di Era AI",
+      "title_en": "The Importance of Digital Literacy in the AI Era",
       "date": "2026-04-24",
       "category": "Education",
+      "category_en": "Education",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
-      "description": "Memahami dan menyaring informasi di tengah perkembangan kecerdasan buatan."
+      "description": "Memahami dan menyaring informasi di tengah perkembangan kecerdasan buatan.",
+      "description_en": "Understanding and filtering information amidst the rapid development of artificial intelligence."
     }
   ]
 }
