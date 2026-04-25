@@ -455,39 +455,45 @@
       margin: 0 auto;
       line-height: 1.8;
       color: #1e293b;
+      font-size: 1.15rem;
     }
-    .article-content h1 { font-size: 2.8rem; margin-bottom: 1.5rem; color: #0f172a; line-height: 1.2; }
-    .article-content h2 { font-size: 2rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #1e293b; }
-    .article-content h3 { font-size: 1.5rem; margin-top: 2rem; color: #334155; }
-    .article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
-    .article-content img { width: 100%; border-radius: 1.5rem; margin: 2rem 0; box-shadow: var(--card-shadow); }
+    .article-content h1 { font-size: 3rem; margin-bottom: 2rem; color: #0f172a; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; }
+    .article-content h2 { font-size: 2.2rem; margin-top: 3.5rem; margin-bottom: 1.5rem; color: #0f172a; font-weight: 700; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.5rem; }
+    .article-content h3 { font-size: 1.6rem; margin-top: 2.5rem; color: #334155; font-weight: 600; }
+    .article-content p { margin-bottom: 1.8rem; }
+    .article-content img { display: block; width: 100%; height: auto; border-radius: 1.5rem; margin: 3rem 0; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
     .article-content blockquote { 
-      border-left: 5px solid var(--primary); 
-      padding: 1.5rem 2rem; 
+      border-left: 6px solid var(--primary); 
+      padding: 2rem 2.5rem; 
       background: rgba(99, 102, 241, 0.05); 
-      border-radius: 0 1rem 1rem 0; 
-      margin: 2rem 0; 
-      font-style: italic; 
+      border-radius: 0 1.5rem 1.5rem 0; 
+      margin: 3rem 0; 
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #475569;
     }
     .article-content code { 
       background: #f1f5f9; 
-      padding: 0.2rem 0.5rem; 
-      border-radius: 0.4rem; 
+      padding: 0.25rem 0.6rem; 
+      border-radius: 0.5rem; 
       font-family: 'SFMono-Regular', monospace; 
-      font-size: 0.9em; 
+      font-size: 0.9em;
+      color: var(--primary);
     }
     .article-content pre { 
       background: #0f172a; 
       color: #f8fafc; 
-      padding: 1.5rem; 
-      border-radius: 1rem; 
+      padding: 2rem; 
+      border-radius: 1.2rem; 
       overflow-x: auto; 
-      margin: 2rem 0; 
+      margin: 2.5rem 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
     .article-content a { color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 2px solid rgba(99, 102, 241, 0.2); transition: all 0.2s; }
-    .article-content a:hover { border-bottom-color: var(--primary); }
-    .article-content ul, .article-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
-    .article-content li { margin-bottom: 0.5rem; }
+    .article-content a:hover { border-bottom-color: var(--primary); background: rgba(99, 102, 241, 0.05); }
+    .article-content ul, .article-content ol { margin-bottom: 1.8rem; padding-left: 1.5rem; }
+    .article-content li { margin-bottom: 0.8rem; }
+    .article-content hr { border: none; border-top: 2px solid #f1f5f9; margin: 4rem 0; }
 
     /* Custom Scrollbar for Detail View */
     #detailView::-webkit-scrollbar {
