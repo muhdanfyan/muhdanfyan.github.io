@@ -713,7 +713,7 @@
             <!-- Highlights 5 Terbaru -->
           </div>
           <div style="text-align: center; margin-top: 4rem;">
-            <a href="#/portfolio" class="btn btn-primary"
+            <a href="portfolio/" class="btn btn-primary"
               style="display: inline-flex; font-size: 1.1rem; padding: 1rem 3rem;">
               Lihat Semua Portofolio
               <i data-lucide="arrow-right"></i>
@@ -733,7 +733,7 @@
             <!-- Highlights 4 Terbaru -->
           </div>
           <div style="text-align: center; margin-top: 4rem;">
-            <a href="#/writing" class="btn btn-primary"
+            <a href="writing/" class="btn btn-primary"
               style="display: inline-flex; font-size: 1.1rem; padding: 1rem 3rem;">
               Lihat Semua Tulisan
               <i data-lucide="arrow-right"></i>
@@ -955,7 +955,7 @@
               ${!isWriting ? `<span class="tag">${item.category}</span>` : ''}
             </div>
             <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
-              <a href="#/${type}/${item.slug}" class="btn ${isWriting ? 'btn-primary' : 'btn-outline'}" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; justify-content: center;">
+              <a href="${type}/${item.slug}/" class="btn ${isWriting ? 'btn-primary' : 'btn-outline'}" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; flex: 1; justify-content: center;">
                 ${isWriting ? 'Baca Artikel' : 'Lihat Detail'}
               </a>
               ${item.url && !isWriting ? `<a href="${item.url}" target="_blank" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Visit Site</a>` : ''}
@@ -968,32 +968,22 @@
     }
 
     function switchView(viewId) {
+      // Logic for homepage SPA remains for Home/Writing view toggle if needed, 
+      // but links now point to physical directories
       document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
       const activeView = document.getElementById(viewId);
-      activeView.classList.add('active');
+      if(activeView) activeView.classList.add('active');
       window.scrollTo(0, 0);
     }
 
     async function handleRouting() {
       const hash = window.location.hash;
-
-      // Reset Detail View if not in hash
-      if (!hash.includes('/portofolio/') && !hash.includes('/tulisan/')) {
-        closeDetail();
-      }
-
-      if (hash === '' || hash === '#/') {
-        switchView('homeView');
-      } else if (hash === '#/portfolio') {
+      if (hash === '#/portfolio') {
         switchView('portfolioListView');
       } else if (hash === '#/writing') {
         switchView('writingListView');
-      } else if (hash.startsWith('#/portofolio/')) {
-        const slug = hash.split('/')[2];
-        await showDetail('portofolio', slug);
-      } else if (hash.startsWith('#/tulisan/')) {
-        const slug = hash.split('/')[2];
-        await showDetail('tulisan', slug);
+      } else {
+        switchView('homeView');
       }
     }
 
