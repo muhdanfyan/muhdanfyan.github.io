@@ -820,7 +820,7 @@
 
     async function initContent() {
       try {
-        const response = await fetch('data/manifest.json');
+        const response = await fetch('data/manifest.json?v=' + new Date().getTime());
         manifestData = await response.json();
         renderGrid('portfolioHomeGrid', manifestData.portfolio.slice(0, 5), 'portofolio');
         renderGrid('portfolioFullGrid', manifestData.portfolio, 'portofolio');
