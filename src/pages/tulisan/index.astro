@@ -31,6 +31,7 @@ const writings = manifest.writing;
     <div class="grid md:grid-cols-2 gap-8">
       {writings.map((writing) => (
         <a href={`/tulisan/${writing.slug}/`} class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" data-langs={JSON.stringify(writing.available_langs)}>
+          <img src={writing.image.startsWith('http') ? writing.image : '/' + writing.image} alt={writing.title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-all" />
           <div class="flex-1">
             <span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{writing.category}</span>
             <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors writing-title" data-id={writing.title} data-en={writing.title_en}>{writing.title}</h3>
