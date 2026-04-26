@@ -19,14 +19,21 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
 		<title>{title}</title>
     <link rel="canonical" href={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
+    <meta property="og:site_name" content="Muhdan Fyan Portfolio" />
+    <meta property="og:url" content={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
+
+    <!-- Open Graph / Facebook / IG / WhatsApp -->
+    <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io${image}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io${image}`} />
