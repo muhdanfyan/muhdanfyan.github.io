@@ -40,13 +40,20 @@ To ensure articles and images appear correctly on `muhdanfyan.github.io`, agents
 Every article must follow this strictly:
 - **Markdown:** `tulisan/[slug]/tulisan.md`.
 - **SEO Static:** `tulisan/[slug]/index.html` (Must match the premium article layout and contain FULL content).
+- **Semantic HTML Mapping (Mandatory):** When manually converting Markdown to HTML, agents MUST use:
+  - `<strong>` for **bold**, `<em>` for *italics*.
+  - `<a>` with `target="_blank"` for links.
+  - `<ul>`/`<li>` for unordered lists, `<ol>`/`<li>` for ordered lists.
+  - Proper `<p>` wrapping for every paragraph (No naked text).
+  - Semantic `<header>`, `<main>`, `<article>`, and `<footer>` tags.
 - **Manifest:** Sync `data/manifest.json` with valid high-res image URLs.
 
 ### 2. Article Formatting Mandates
 - **Publication Date:** Placed at the very top (below title) with 📅 **Day Month Year**.
 - **Visual & Typography Standards:**
+  - **Semantic Links:** AI Agent MUST map Markdown links `[Text](URL)` to semantic `<a>` tags with `target="_blank"` and appropriate hover styles.
   - **Drop Cap:** Paragraph 1 MUST use the `.dropcap` class (huruf pertama besar dan artistik).
-  - **Gradient Headlines:** `h2` elements MUST use CSS gradients (Indigo to Purple).
+  - **Proportional Sub-heads:** `h2` elements MUST NOT be oversized. Use `1.5rem` font-size, bold weight, and a vertical accent bar for structure.
   - **Custom Callouts:** Crucial quotes/insights MUST be wrapped in a `.callout` box with a light background and accent border.
   - **High-End Visuals:** Primary images MUST use `.glass-img` (rounded 2rem, deep shadow, hover effect).
   - **Code Highlights:** Technical terms or inline code MUST use the `.highlight` span (Indigo background, JetBrains Mono font).

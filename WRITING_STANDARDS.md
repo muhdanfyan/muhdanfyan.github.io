@@ -40,6 +40,12 @@ To ensure articles and images appear correctly on `muhdanfyan.github.io`, agents
 Every article must follow this strictly:
 - **Markdown:** `tulisan/[slug]/tulisan.md`.
 - **SEO Static:** `tulisan/[slug]/index.html` (Must match the premium article layout and contain FULL content).
+- **Semantic HTML Mapping (Mandatory):** When manually converting Markdown to HTML, agents MUST use:
+  - `<strong>` for **bold**, `<em>` for *italics*.
+  - `<a>` with `target="_blank"` for links.
+  - `<ul>`/`<li>` for unordered lists, `<ol>`/`<li>` for ordered lists.
+  - Proper `<p>` wrapping for every paragraph (No naked text).
+  - Semantic `<header>`, `<main>`, `<article>`, and `<footer>` tags.
 - **Manifest:** Sync `data/manifest.json` with valid high-res image URLs.
 
 ### 2. Article Formatting Mandates
