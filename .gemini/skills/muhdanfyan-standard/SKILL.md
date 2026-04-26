@@ -44,11 +44,16 @@ Every article must follow this strictly:
 
 ### 2. Article Formatting Mandates
 - **Publication Date:** Placed at the very top (below title) with 📅 **Day Month Year**.
-- **Hero Image:** High-quality, representative, and synced with SEO tags.
+- **Visual & Typography Standards:**
+  - **Drop Cap:** Paragraph 1 MUST use the `.dropcap` class (huruf pertama besar dan artistik).
+  - **Gradient Headlines:** `h2` elements MUST use CSS gradients (Indigo to Purple).
+  - **Custom Callouts:** Crucial quotes/insights MUST be wrapped in a `.callout` box with a light background and accent border.
+  - **High-End Visuals:** Primary images MUST use `.glass-img` (rounded 2rem, deep shadow, hover effect).
+  - **Code Highlights:** Technical terms or inline code MUST use the `.highlight` span (Indigo background, JetBrains Mono font).
 - **Language:** Foreign terms (English/etc.) MUST be *italicized*.
 - **Deep Linking:** Every technical term, tool, or advanced concept MUST be hyper-linked to its official documentation or a reputable reference.
 - **Indonesia Perspective:** Include context relevant to Indonesian developers (e.g., Termux, local culture).
-- **Footer:** Mandatory footer: **Sumber:** [Link] | **Penulis:** Muhdan Fyan Syah Sofian.
+- **Footer:** Mandatory footer: **Sumber:** [Link] | **Penulis:** Muhdan Fyan Syah Sofian | **Standardized via Gemini CLI**.
 
 ### 3. SEO & Rich Preview (WhatsApp/Social)
 - **Link Preview Standards:**
