@@ -973,6 +973,22 @@
   ],
   "writing": [
     {
+      "slug": "kecanduan-gadget-remaja-psikologi",
+      "slug_en": "gadget-addiction-youth-psychology",
+      "title": "Kecanduan Gadget pada Anak: Perspektif Psikologi",
+      "title_en": "Youth Gadget Addiction: A Psychological Perspective",
+      "date": "2026-04-26",
+      "category": "Psychology & Health",
+      "category_en": "Psychology & Health",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/gadget-addiction.jpg",
+      "description": "Analisis mendalam mengenai mekanisme otak, gejala CIU, dan dampak kesehatan mental pada remaja.",
+      "description_en": "In-depth analysis of brain mechanisms, CIU symptoms, and mental health impact on youth."
+    },
+    {
       "slug": "ai-native-engineer-pergeseran-paradigma",
       "slug_en": "ai-native-engineer-paradigm-shift",
       "title": "Menjadi AI-Native Engineer",
@@ -1086,8 +1102,8 @@
     {
       "slug": "indonesia-engineering-risk",
       "slug_en": "indonesia-engineering-risk",
-      "title": "Engineer di Indonesia: Skill Tinggi, Risiko Penjara? 🚀",
-      "title_en": "Engineering in Indonesia: High Skill, High Risk? 🚀",
+      "title": "Engineer di Indonesia: Skill Tinggi, Risiko Penjara? \ud83d\ude80",
+      "title_en": "Engineering in Indonesia: High Skill, High Risk? \ud83d\ude80",
       "date": "2026-04-26",
       "category": "Technology & Law",
       "category_en": "Technology & Law",
