@@ -18,8 +18,6 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     <link rel="canonical" href={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
-
-    <link rel="canonical" href={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
     <meta property="og:site_name" content="Muhdan Fyan Portfolio" />
     <meta property="og:url" content={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
 
@@ -27,7 +25,7 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <meta property="og:type" content="article" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io${image}`} />
+    <meta property="og:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io/${image.startsWith('/') ? image.slice(1) : image}`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -36,7 +34,7 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <meta property="twitter:url" content={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io${image}`} />
+    <meta property="twitter:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io/${image.startsWith('/') ? image.slice(1) : image}`} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
