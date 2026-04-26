@@ -1050,6 +1050,22 @@
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
       "description": "Memahami dan menyaring informasi di tengah perkembangan kecerdasan buatan.",
       "description_en": "Understanding and filtering information amidst the rapid development of artificial intelligence."
+    },
+    {
+      "slug": "indonesia-engineering-risk",
+      "slug_en": "indonesia-engineering-risk",
+      "title": "Engineer di Indonesia: Skill Tinggi, Risiko Penjara? 🚀",
+      "title_en": "Engineering in Indonesia: High Skill, High Risk? 🚀",
+      "date": "2026-04-26",
+      "category": "Technology & Law",
+      "category_en": "Technology & Law",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/indonesia-engineering-risk.png",
+      "description": "Analisis mendalam mengenai risiko hukum, hambatan birokrasi, dan krisis literasi digital bagi engineer di Indonesia.",
+      "description_en": "Deep analysis of legal risks, bureaucratic obstacles, and digital literacy crisis for engineers in Indonesia."
     }
   ]
 }
