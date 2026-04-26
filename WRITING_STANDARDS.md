@@ -45,6 +45,7 @@ Every article must follow this strictly:
 ### 2. Article Formatting Mandates
 - **Publication Date:** Placed at the very top (below title) with 📅 **Day Month Year**.
 - **Visual & Typography Standards:**
+  - **Semantic Links:** AI Agent MUST map Markdown links `[Text](URL)` to semantic `<a>` tags with `target="_blank"` and appropriate hover styles.
   - **Drop Cap:** Paragraph 1 MUST use the `.dropcap` class (huruf pertama besar dan artistik).
   - **Gradient Headlines:** `h2` elements MUST use CSS gradients (Indigo to Purple).
   - **Custom Callouts:** Crucial quotes/insights MUST be wrapped in a `.callout` box with a light background and accent border.
