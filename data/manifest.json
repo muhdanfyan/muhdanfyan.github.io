@@ -1,6 +1,22 @@
 {
   "portfolio": [
     {
+      "slug": "aindea",
+      "title": "Aindea",
+      "title_en": "Aindea",
+      "year": "2026",
+      "category": "AI Translator",
+      "category_en": "AI Translator",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/aindea.jpg",
+      "description": "Translator Bahasa Wolio berbasis AI. Fungsi: Chat interaktif, koreksi gramatika, dan preservasi budaya. Teknologi: React.js, Vite, Google Gemini 2.5 Flash API.",
+      "description_en": "AI-powered Wolio Language Translator. Functions: Interactive chat, grammar correction, and cultural preservation. Technology: React.js, Vite, Google Gemini 2.5 Flash API.",
+      "url": "https://aindea.netlify.app"
+    },
+    {
       "slug": "bearboy",
       "title": "Bearboy",
       "title_en": "Bearboy",
@@ -956,6 +972,22 @@
     }
   ],
   "writing": [
+    {
+      "slug": "aindea",
+      "slug_en": "aindea",
+      "title": "Aindea",
+      "title_en": "Aindea",
+      "date": "2026-04-26",
+      "category": "Technology & Culture",
+      "category_en": "Technology & Culture",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/aindea.jpg",
+      "description": "Mengenal Aindea: Apotek Digital untuk Preservasi Bahasa Wolio melalui AI.",
+      "description_en": "Discover Aindea: A Digital Pharmacy for Wolio Language Preservation through AI."
+    },
     {
       "slug": "ukk-smkn4-baubau-diskominfo",
       "slug_en": "ukk-smkn4-baubau-diskominfo",

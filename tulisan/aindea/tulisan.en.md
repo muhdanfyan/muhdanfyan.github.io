@@ -1,0 +1,41 @@
+---
+title: "Aindea"
+description: "Discover Aindea: A Digital Pharmacy for Wolio Language Preservation through AI."
+date: "2026-04-26"
+category: "Technology & Culture"
+image: "https://muhdanfyan.github.io/img/screenshots/aindea.jpg"
+---
+
+![Aindea Hero](https://muhdanfyan.github.io/img/screenshots/aindea.jpg)
+
+## App Purpose
+
+**Aindea** is designed not just as a tool, but as a **"Digital Pharmacy"** for the preservation of the Wolio Language. Like a pharmacy providing medicine to heal, Aindea provides the "remedy" against the threat of local language extinction in the modern era.
+
+The main goals of this project are:
+1.  **Digital Healing**: Revitalizing the use of the Wolio Language among the younger generation through fun interactions.
+2.  **Active Preservation**: Transforming static dictionary data into a dynamic conversation partner named **Ayi**.
+3.  **Cultural Bridge**: Facilitating access for anyone who wants to understand the philosophy and unique expressions of the Buton people.
+
+## Main Functions
+
+This application has several core functions supported by artificial intelligence:
+*   **Interactive Discussion (Chat)**: Users can chat directly with Ayi in Indonesian or Wolio.
+*   **Automatic Grammar Correction**: The system will detect and provide suggestions for improving the Wolio sentence structure typed by the user.
+*   **Contextual Translator**: Translations that are not just literal but also adapt to the cultural context of Buton.
+
+## Technology Used
+
+Aindea is built with modern technology standards to ensure speed and accuracy:
+*   **Frontend**: React.js & Vite (Fast & Reactive UI).
+*   **Artificial Intelligence (AI)**: Google Gemini 2.5 Flash API (The latest and fastest AI model for text processing).
+*   **Animations**: Framer Motion for a premium user experience.
+*   **Data Reference**: Integrated with linguistic databases from the Dictionary of Wolio-Indonesian Expressions (1985).
+
+Digital preservation is our real step to ensure cultural identity is not lost in global algorithms.
+
+---
+
+**References & Inspiration:**
+*   [Wolio-Indonesian Dictionary - Husen Abas, et al.](https://github.com/muhdanfyan/aindea)
+*   [Google Gemini AI Documentation](https://ai.google.dev/)
