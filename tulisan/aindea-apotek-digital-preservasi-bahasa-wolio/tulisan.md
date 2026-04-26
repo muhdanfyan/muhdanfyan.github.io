@@ -3,10 +3,10 @@ title: "Aindea"
 description: "Mengenal Aindea: Apotek Digital untuk Preservasi Bahasa Wolio melalui AI."
 date: "2026-04-26"
 category: "Technology & Culture"
-image: "https://muhdanfyan.github.io/img/screenshots/aindea.jpg"
+image: "/img/screenshots/aindea.jpg"
 ---
 
-![Aindea Hero](https://muhdanfyan.github.io/img/screenshots/aindea.jpg)
+![Aindea Hero](/img/screenshots/aindea.jpg)
 
 ## Tujuan Aplikasi
 

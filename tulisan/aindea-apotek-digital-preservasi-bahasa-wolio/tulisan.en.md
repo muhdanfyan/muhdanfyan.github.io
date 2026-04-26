@@ -3,10 +3,10 @@ title: "Aindea"
 description: "Discover Aindea: A Digital Pharmacy for Wolio Language Preservation through AI."
 date: "2026-04-26"
 category: "Technology & Culture"
-image: "https://muhdanfyan.github.io/img/screenshots/aindea.jpg"
+image: "/img/screenshots/aindea.jpg"
 ---
 
-![Aindea Hero](https://muhdanfyan.github.io/img/screenshots/aindea.jpg)
+![Aindea Hero](/img/screenshots/aindea.jpg)
 
 ## App Purpose
 
