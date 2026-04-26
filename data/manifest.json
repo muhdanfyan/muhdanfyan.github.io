@@ -957,22 +957,6 @@
   ],
   "writing": [
     {
-      "slug": "indonesia-engineering-risk",
-      "slug_en": "indonesia-engineering-risk",
-      "title": "Engineer di Indonesia: Skill Tinggi, Risiko Penjara? \ud83d\ude80",
-      "title_en": "Engineering in Indonesia: High Skill, High Risk? \ud83d\ude80",
-      "date": "2026-04-25",
-      "category": "Technology",
-      "category_en": "Technology",
-      "available_langs": [
-        "id",
-        "en"
-      ],
-      "image": "img/indonesia-engineering-risk.png",
-      "description": "Krisis kepastian hukum bagi tenaga ahli di Indonesia. Mengapa kompetensi saja tidak cukup?",
-      "description_en": "The legal uncertainty crisis for experts in Indonesia. Why is competence not enough?"
-    },
-    {
       "slug": "ukk-smkn4-baubau-diskominfo",
       "slug_en": "ukk-smkn4-baubau-diskominfo",
       "title": "Sinergi Digital di Pulau Makassar: Catatan Penguji UKK SMKN 4 Baubau",

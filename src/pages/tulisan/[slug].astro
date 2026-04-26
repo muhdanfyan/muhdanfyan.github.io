@@ -29,19 +29,26 @@ const htmlEnRaw = marked(contentEn);
 const heroImage = writing.image;
 
 // Dynamic Image Extraction (Fallback for OG Image)
-const extractFirstImage = (html) => {
+const extractFirstImage = (html, slug) => {
   const match = html.match(/<img[^>]+src="([^">]+)"/);
-  return match ? match[1] : null;
+  if (!match) return null;
+  
+  const src = match[1];
+  if (src.startsWith('http') || src.startsWith('/')) {
+    return src;
+  }
+  // Fallback for relative paths in markdown
+  return `tulisan/${slug}/${src}`;
 };
 
-const firstImageInContent = extractFirstImage(htmlIdRaw);
-const finalOgImage = heroImage || firstImageInContent || '/img/screenshots/default.png';
+const firstImageInContent = extractFirstImage(htmlIdRaw, slug);
+const finalOgImage = heroImage || firstImageInContent || 'img/screenshots/default.png';
 
 const stripHeroImage = (html) => {
-  // Regex to find the first <img> tag or <p><img...></p>
-  const imgRegex = /<p><img src="[^"]+" alt="[^"]+"><\/p>|<img src="[^"]+" alt="[^"]+">/;
+  // More robust regex to catch images with or without p tags and varying attributes
+  const imgRegex = /<p>\s*<img[^>]+src="[^"]+"[^>]*>\s*<\/p>|<img[^>]+src="[^"]+"[^>]*>/;
   return html.replace(imgRegex, (match) => {
-    // If it's the very first part of the content, strip it
+    // We only strip the first one if it's identical to the hero image or if it's the very first element
     return ''; 
   }).trim();
 };
