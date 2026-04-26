@@ -973,20 +973,20 @@
   ],
   "writing": [
     {
-      "slug": "evolusi-ai-coding-agents",
-      "slug_en": "evolution-of-ai-coding-agents",
-      "title": "Evolusi AI Coding Agents: Dari Autocomplete ke Rekayasa Otonom",
-      "title_en": "Evolution of AI Coding Agents: From Autocomplete to Autonomous Engineering",
+      "slug": "ai-native-engineer-pergeseran-paradigma",
+      "slug_en": "ai-native-engineer-paradigm-shift",
+      "title": "Menjadi AI-Native Engineer: Pergeseran Paradigma dari Eksekutor ke Orkestrator",
+      "title_en": "Becoming an AI-Native Engineer: Paradigm Shift from Executor to Orchestrator",
       "date": "2026-04-26",
-      "category": "Technology & AI",
-      "category_en": "Technology & AI",
+      "category": "Technology & Career",
+      "category_en": "Technology & Career",
       "available_langs": [
         "id",
         "en"
       ],
       "image": "img/screenshots/ai-agents.jpg",
-      "description": "Menjelajahi arsitektur, strategi efisiensi konteks, dan pergeseran paradigma menuju Vibe Coding dengan Mechanical Sympathy.",
-      "description_en": "Exploring agent architecture, context efficiency strategies, and the paradigm shift toward Vibe Coding with Mechanical Sympathy."
+      "description": "Panduan mendalam mengenai fenomena AI-Native Engineer dan bagaimana hal ini mengubah industri pengembangan perangkat lunak secara fundamental.",
+      "description_en": "In-depth guide to the AI-Native Engineer phenomenon and how it is fundamentally changing the software development industry."
     },
     {
       "slug": "aindea-apotek-digital-preservasi-bahasa-wolio",
