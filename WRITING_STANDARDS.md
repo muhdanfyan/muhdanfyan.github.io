@@ -1,42 +1,65 @@
-# 📖 Standar Penulisan & Media (Pedoman Agen AI)
+---
+name: muhdanfyan-standard
+description: Standardized workflows and agentic mandates for Muhdan Fyan's workspace. Ensures backups, publications, and coding tasks follow advanced "Claude Agentic" patterns (SDD, Anti-Vibe Coding, Deep-Linking, Comprehensive Content).
+---
 
-Dokumen ini adalah acuan resmi untuk setiap penulisan artikel dan pengelolaan media di website `muhdanfyan.github.io`. Setiap agen AI yang bekerja di repositori ini **WAJIB** mengikuti standar ini.
+# Muhdan Fyan Standard Skill (Agentic Edition)
+
+This skill mandates how agents must behave and execute tasks within Muhdan Fyan's environment, integrating advanced agentic workflows and premium publication standards.
+
+## 🤖 Core Agentic Directives (Anti-Vibe Coding)
+
+### 1. Spec-Driven Development (SDD) & Anti-Truncation
+Agents MUST NOT engage in "Vibe Coding" or simplify complex topics.
+- **The Cycle:** `Explore ➔ Plan ➔ Code`.
+- **Anti-Truncation:** Every point from a reference or article MUST be explained in depth. Never simplify or omit technical details.
+- **The No-Stop Directive:** When testing, use the mindset: "Do not stop until the script passes 100% via otonom self-correction."
+
+### 2. Context Management (Handovers)
+- **Action:** Proactively suggest a `handover.md` when context exceeds 80% capacity to maintain agent "intelligence" levels.
 
 ---
 
-## 1. Standar Konten (Editorial)
-*   **Tone & Gaya Bahasa**: Menggunakan bahasa Indonesia yang tajam, kritis, namun tetap elegan (Premium). Hindari tone yang terlalu suram; gunakan pendekatan solutif dan optimis.
-*   **Riset Berbasis Data**: Setiap artikel isu sosial/teknis (seperti Engineering Risk) wajib merujuk pada sumber video YouTube yang relevan (misal: Ferry Irwandi, Eko Kurniawan Khannedy, dsb) untuk mendapatkan data primer dan kutipan langsung.
-*   **Struktur Artikel**:
-    1.  **Hero Image**: Gambar pembuka yang cerah dan positif.
-    2.  **Hook**: Kalimat pembuka yang menggugah eksistensi pembaca.
-    3.  **Insight**: Analisis mendalam berbasis poin-poin.
-    4.  **Referensi**: Daftar link YouTube/sumber asli di bagian akhir.
+## ✍️ Content & Publication Standards (Premium UX)
+
+### 1. Manual Publication Procedure (Critical for Live Updates)
+To ensure articles and images appear correctly on `muhdanfyan.github.io`, agents MUST follow these post-build steps:
+- **Image Validation:**
+  - Verify extension match (e.g., if file is `.jpg`, code MUST NOT seek `.png`).
+  - **Asset Sync:** Copy images from `public/img/screenshots/` to root `/img/screenshots/` and `/dist/img/screenshots/`.
+- **Static HTML Generation:**
+  - Every new article MUST have an `index.html` file in its directory (e.g., `tulisan/[slug]/index.html`).
+  - Use the Premium Layout template (ID/EN support, OG Tags, responsive design).
+- **Link Logic:**
+  - Use **Relative Paths** for all assets (e.g., `/img/screenshots/name.jpg` instead of full URLs) to ensure compatibility across environments.
+- **Deployment & Synchronization:**
+  - **Git Workflow:** `git add .` -> `git commit -m "feat/fix: [desc]"` -> `git push origin main`.
+  - **Force Sync:** If files are git-ignored but needed live (like `/dist/`), use `git add -f [path]` to force inclusion.
+
+### 2. File Structure & Manifest
+Every article must follow this strictly:
+- **Markdown:** `tulisan/[slug]/tulisan.md`.
+- **SEO Static:** `tulisan/[slug]/index.html` (Must match the premium article layout and contain FULL content).
+- **Manifest:** Sync `data/manifest.json` with valid high-res image URLs.
+
+### 2. Article Formatting Mandates
+- **Publication Date:** Placed at the very top (below title) with 📅 **Day Month Year**.
+- **Hero Image:** High-quality, representative, and synced with SEO tags.
+- **Language:** Foreign terms (English/etc.) MUST be *italicized*.
+- **Deep Linking:** Every technical term, tool, or advanced concept MUST be hyper-linked to its official documentation or a reputable reference.
+- **Indonesia Perspective:** Include context relevant to Indonesian developers (e.g., Termux, local culture).
+- **Footer:** Mandatory footer: **Sumber:** [Link] | **Penulis:** Muhdan Fyan Syah Sofian.
+
+### 3. SEO & Rich Preview (WhatsApp/Social)
+- **OG Tags:** Must be at the very top of `<head>`.
+- **Image Optimization:** Use explicit dimensions (1200x630) and compressed URLs for WhatsApp compatibility.
+- **JSON-LD:** `TechArticle` schema with correct author metadata.
 
 ---
 
-## 2. Standar Teknis SEO & Social Media
-*   **Image Link Preview (OG Image)**: 
-    *   Sistem Astro sudah dikonfigurasi untuk mengambil gambar pertama di Markdown sebagai pratinjau secara otomatis.
-    *   **PENTING**: Pastikan URL gambar di metadata menggunakan link absolut (dimulai dengan `https://muhdanfyan.github.io/`).
-    *   Jangan lupa tanda `/` setelah domain.
-*   **Canonical Tags**: Setiap halaman wajib memiliki tag canonical yang mengarah ke URL aslinya di GitHub Pages untuk menghindari duplikasi konten di mata Google.
-*   **Sitemap**: Jalankan `npm run build` setiap kali ada tulisan baru untuk memperbarui `sitemap-index.xml`.
+## 📦 Infrastructure & Backup Standards
+- **Pattern:** `rclone move /sdcard/ gdrive:Backup_HP_Deep/` with standard excludes.
+- **Hierarchy:** `Media/`, `Documents_All/`, `System_Apps/`.
 
 ---
-
-## 3. Alur Kerja Deployment (Penting!)
-Untuk menghindari masalah "konten kembali ke versi lama" (Reversion Bug):
-1.  **Hapus File Penghalang**: Selalu jalankan `find tulisan -name "index.html" -delete` sebelum membangun ulang.
-2.  **Surgical Copy**: Jangan gunakan `cp -r dist/tulisan .` secara sembarangan karena dapat menimpa file sumber `.md`.
-3.  **Commit Manual**: Selalu commit file `.md` sumber **sebelum** melakukan proses build hasil produksi.
-
----
-
-## 4. Estetika Visual
-*   Gunakan ilustrasi yang dihasilkan AI dengan tone cerah, wajah tersenyum, dan atmosfer yang profesional namun ramah.
-*   Resolusi standar untuk Link Preview adalah **1200x630 piksel**.
-
----
-*Ditetapkan pada: April 2026*  
-*Oleh: Muhdan Fyan & Antigravity (AI Assistant)*
+*Standard established in April 2026. This skill is the single source of truth for the muhdanfyan workspace. Never compromise on depth or quality.*
