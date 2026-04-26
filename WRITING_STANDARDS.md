@@ -47,7 +47,7 @@ Every article must follow this strictly:
 - **Visual & Typography Standards:**
   - **Semantic Links:** AI Agent MUST map Markdown links `[Text](URL)` to semantic `<a>` tags with `target="_blank"` and appropriate hover styles.
   - **Drop Cap:** Paragraph 1 MUST use the `.dropcap` class (huruf pertama besar dan artistik).
-  - **Gradient Headlines:** `h2` elements MUST use CSS gradients (Indigo to Purple).
+  - **Proportional Sub-heads:** `h2` elements MUST NOT be oversized. Use `1.5rem` font-size, bold weight, and a vertical accent bar for structure.
   - **Custom Callouts:** Crucial quotes/insights MUST be wrapped in a `.callout` box with a light background and accent border.
   - **High-End Visuals:** Primary images MUST use `.glass-img` (rounded 2rem, deep shadow, hover effect).
   - **Code Highlights:** Technical terms or inline code MUST use the `.highlight` span (Indigo background, JetBrains Mono font).
