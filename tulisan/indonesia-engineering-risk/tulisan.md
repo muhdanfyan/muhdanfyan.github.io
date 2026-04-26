@@ -28,7 +28,7 @@ Hambatan utama lainnya meliputi:
 *   **Regulasi yang Belum Rapi**: Inkonsistensi aturan antara pusat dan daerah seringkali membuat *engineer* berada di area abu-abu yang berbahaya secara hukum.
 
 ### 4. Krisis Talenta: Sektor Publik sebagai "Zona Merah"
-Dampak dari ketidakpastian hukum dan hambatan struktural ini nyata. Tokoh seperti **Eko Kurniawan Khannedy** secara terbuka menyatakan keengganannya untuk berkontribusi di sektor pemerintahan. Indonesia berisiko mengalami *brain drain* jidid baru, di mana talenta terbaik lebih memilih bekerja untuk perusahaan asing daripada harus bertaruh nyawa di tanah air sendiri.
+Dampak dari ketidakpastian hukum dan hambatan struktural ini nyata. Tokoh seperti **Eko Kurniawan Khannedy** secara terbuka menyatakan keengganannya untuk berkontribusi di sektor pemerintahan. Indonesia berisiko mengalami *brain drain* jilid baru, di mana talenta terbaik lebih memilih bekerja untuk perusahaan asing daripada harus bertaruh nyawa di tanah air sendiri.
 
 Mengutip Eko: *"Kasus ini bikin saya mikir-mikir buat kontribusi atau bantuin pemerintah... bukan saya gak mau kalo diundang jadi konsultan atau training, saya tahu mungkin kalian gak ada sangkut pautnya dengan oknum-oknum ini, tapi juga saya menghindari hal-hal seperti kasus Ibam ini. Semoga kasus Ibam ini dilihat sama orang nomor 1 di Indonesia lagi seperti Tom Lembong."*
 
@@ -40,7 +40,7 @@ Pesan dari diskusi kolektif di komunitas teknologi saat ini sangat jelas: **Lite
 ### 🛠️ Referensi & Inspirasi (YouTube Playlist)
 *   **Ibrahim Arief (Ibam):** [Kedaulatan Engineer & Kasus Chromebook](https://youtu.be/1PQPWyM-17U) - Tuntutan 22 Tahun untuk sebuah Opini.
 *   **Ferry Irwandi:** [Ketidakadilan Menjijikan](https://youtu.be/a2-YH_aQbmc) - Analisis Kasus Ibam & Amsal Sitepu.
-*   **Eko Kurniawan Khannedy:** [Dilema Kontribusi](https://youtu.be/-_GUAasbGHQ) - Mengenai IT Experts yang takut pemerintah.
+*   **Eko Kurniawan Khannedy:** [Dilema Kontribusi](https://youtu.be/-_GUAasbGHQ) - Mengapa Ahli IT Takut Pemerintah.
 *   **Darurat Hukum:** [Shorts Discussion](https://youtube.com/shorts/GvMNbYHoyV8).
 
 ---
