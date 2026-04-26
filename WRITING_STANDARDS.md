@@ -51,8 +51,12 @@ Every article must follow this strictly:
 - **Footer:** Mandatory footer: **Sumber:** [Link] | **Penulis:** Muhdan Fyan Syah Sofian.
 
 ### 3. SEO & Rich Preview (WhatsApp/Social)
-- **OG Tags:** Must be at the very top of `<head>`.
-- **Image Optimization:** Use explicit dimensions (1200x630) and compressed URLs for WhatsApp compatibility.
+- **Link Preview Standards:**
+  - **Absolute URLs for Meta Tags:** OG Tags (`og:image`) and Twitter Cards MUST use absolute URLs (e.g., `https://muhdanfyan.github.io/img/...`).
+  - **Relative Paths for Content:** Internal `<img>` tags SHOULD use relative paths (`/img/...`) for portability.
+- **Image Optimization:** 
+  - **Dimensions:** Aim for 1200x630px for optimal social media scaling.
+  - **Compatibility:** Use `.jpg` or `.png`. Verify the extension matches the file exactly (case-sensitive).
 - **JSON-LD:** `TechArticle` schema with correct author metadata.
 
 ---
