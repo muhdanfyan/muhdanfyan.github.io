@@ -12,7 +12,9 @@ Instruksi ini bersifat FOUNDATIONAL. Setiap agen Gemini CLI yang bekerja di work
 ### 1. Manual Publication Procedure (Critical)
 Setiap publikasi tulisan baru di `muhdanfyan.github.io` wajib mengikuti langkah pasca-build:
 - **Aset Sync:** Salin gambar dari `public/img/screenshots/` ke root `/img/screenshots/` dan `/dist/img/screenshots/`.
+- **Sorting Logic:** Pastikan data tulisan diurutkan berdasarkan tanggal terbaru (`descending`) agar tulisan baru otomatis muncul di 4 slot utama halaman depan.
 - **HTML Static Generation:** Setiap artikel wajib memiliki `index.html` manual di foldernya. Gunakan struktur "Premium Layout" (Support ID/EN, OG Tags, High-end CSS).
+- **Homepage Sync:** Setelah build, wajib menyalin `dist/index.html` ke root `/index.html` dan `dist/tulisan/index.html` ke `/tulisan/index.html` untuk memperbarui daftar tulisan terbaru di halaman utama.
 - **Force Sync:** Gunakan `git add -f` untuk folder `dist/` guna memastikan file statis terunggah meskipun di-ignore oleh git standar.
 
 ### 2. Article Formatting & Typography
