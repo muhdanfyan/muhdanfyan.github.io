@@ -1,11 +1,3 @@
----
-title: "Humankind: A New Realism About Human Nature"
-date: "2026-04-27"
-category: "Philosophy & History"
-image: "/img/humankind-cover.jpg"
-description: "An in-depth review of Rutger Bregman's Humankind: A Hopeful History, challenging the cynical view of human nature."
----
-
 <p class="dropcap">The book <i>Humankind: A Hopeful History</i> stands on the philosophical foundations of French thinker <b>Jean-Jacques Rousseau</b> and introduces the radical idea that <b>fundamentally, most humans are good and decent creatures</b>. This idea is not mere blind optimism, but an invitation to look at history and science from a different perspective.</p>
 
 Ideologically, the book firmly opposes the cynical view of <span class="highlight">Thomas Hobbes</span> and other Western thinkers such as <a href="https://en.wikipedia.org/wiki/Niccol%C3%B2_Machiavelli" target="_blank">Machiavelli</a> and <a href="https://en.wikipedia.org/wiki/Sigmund_Freud" target="_blank">Freud</a> who consider humans to be fundamentally selfish, evil, and in need of civilization or strong rulers to tame their savage instincts. Instead, it adheres to <span class="highlight">Rousseau</span>'s argument that humans in their *"state of nature"* (when they were still nomadic hunter-gatherers) were compassionate, peace-loving, and valued equality. According to this ideological foundation, it is precisely **"civilization"—in the form of the invention of agriculture, private property, and the formation of the state—that has corrupted human freedom** and given birth to war, inequality, disease, and oppression.

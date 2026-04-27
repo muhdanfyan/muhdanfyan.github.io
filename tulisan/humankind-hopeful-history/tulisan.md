@@ -1,11 +1,3 @@
----
-title: "Humankind: Sebuah Realisme Baru Tentang Hakikat Manusia"
-date: "2026-04-27"
-category: "Philosophy & History"
-image: "/img/humankind-cover.jpg"
-description: "Ulasan mendalam buku Humankind: A Hopeful History karya Rutger Bregman yang menantang pandangan sinis tentang sifat dasar manusia."
----
-
 <p class="dropcap">Buku <i>Humankind: A Hopeful History</i> berdiri di atas landasan filosofis pemikir Prancis <b>Jean-Jacques Rousseau</b> dan memperkenalkan gagasan radikal bahwa <b>pada dasarnya, sebagian besar manusia adalah makhluk yang baik dan layak</b>. Gagasan ini bukan sekadar optimisme buta, melainkan sebuah ajakan untuk melihat sejarah dan sains dari sudut pandang yang berbeda.</p>
 
 Secara ideologis, buku ini dengan tegas menentang pandangan sinis dari <span class="highlight">Thomas Hobbes</span> dan pemikir-pemikir Barat lainnya seperti <a href="https://id.wikipedia.org/wiki/Niccol%C3%B2_Machiavelli" target="_blank">Machiavelli</a> dan <a href="https://id.wikipedia.org/wiki/Sigmund_Freud" target="_blank">Freud</a> yang menganggap manusia pada dasarnya egois, jahat, dan membutuhkan peradaban atau penguasa yang kuat untuk menjinakkan insting buas mereka. Sebaliknya, buku ini berpegang pada argumen <span class="highlight">Rousseau</span> bahwa manusia pada *"state of nature"* (ketika masih menjadi nomaden pengumpul-pemburu) adalah makhluk yang penuh kasih sayang, cinta damai, dan menjunjung tinggi kesetaraan. Menurut landasan ideologi ini, justru **"peradaban"—berupa penemuan pertanian, properti pribadi, dan pembentukan negara—yang telah merusak kebebasan manusia** dan melahirkan peperangan, ketidaksetaraan, penyakit, serta penindasan.
