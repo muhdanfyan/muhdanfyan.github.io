@@ -1130,6 +1130,22 @@
       "image": "img/humankind-cover.jpg",
       "description": "Ulasan mendalam buku Humankind: A Hopeful History karya Rutger Bregman yang menantang pandangan sinis tentang sifat dasar manusia.",
       "description_en": "An in-depth review of Rutger Bregman's Humankind: A Hopeful History, challenging the cynical view of human nature."
+    },
+    {
+      "slug": "pilih-ai-sesuai-kebutuhan",
+      "slug_en": "choose-ai-by-need",
+      "title": "Jangan Asal Pakai: Panduan Memilih AI Sesuai Kebutuhan",
+      "title_en": "Choosing the Right AI for Your Specific Needs",
+      "date": "2026-04-27",
+      "category": "Technology & AI",
+      "category_en": "Technology & AI",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/ai-agents.jpg",
+      "description": "Pelajari berbagai jenis Chat AI (ChatGPT, Claude, Gemini, dll) agar Anda tidak sekadar ikut-ikutan tren.",
+      "description_en": "Learn about various AI types (ChatGPT, Claude, Gemini, etc.) so you don't just follow the trend."
     }
   ]
 }
