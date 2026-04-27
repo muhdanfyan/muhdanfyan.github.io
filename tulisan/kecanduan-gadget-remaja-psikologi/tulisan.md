@@ -3,14 +3,12 @@ title: "Mengenal Kecanduan Gadget pada Anak: Perspektif Psikologi Klinis"
 description: "Analisis mendalam mengenai mekanisme otak, gejala Compulsive Internet Use, dan dampak kesehatan mental pada remaja."
 date: "2026-04-26"
 category: "Psychology & Health"
-image: "/img/screenshots/gadget-addiction.jpg"
+image: "https://images.unsplash.com/photo-1551670978-33498f418967?auto=format&fit=crop&q=80&w=1200"
 ---
 
-![Gadget Addiction Hero](/img/screenshots/gadget-addiction.jpg)
+![Gadget Addiction Hero](https://images.unsplash.com/photo-1551670978-33498f418967?auto=format&fit=crop&q=80&w=1200)
 
-📅 **26 April 2026**
-
-<p class="dropcap">Kecanduan *gadget* atau internet pada anak-anak dan remaja kini diakui secara psikologis sebagai gangguan perilaku yang memiliki karakteristik serupa dengan kecanduan substansi atau judi. Manual Diagnostik dan Statistik Gangguan Mental (**DSM-5**) telah mengakui bentuk kecanduan non-zat ini karena dampak parah yang ditimbulkannya terhadap fungsi kehidupan seseorang.</p>
+<p class="dropcap">Kecanduan *gadget* atau internet pada anak-anak dan remaja kini diakui secara psikologis sebagai gangguan perilaku yang memiliki karakteristik serupa dengan kecanduan substansi atau judi. Manual Diagnostik dan Statistik Gangguan Mental (<span class="highlight">DSM-5</span>) telah mengakui bentuk kecanduan non-zat ini karena dampak parah yang ditimbulkannya terhadap fungsi kehidupan seseorang.</p>
 
 Sebagai praktisi psikologi, penting untuk memahami bahwa ini bukan sekadar masalah durasi penggunaan, melainkan tentang keterikatan emosional dan neurologis yang kompleks.
 
