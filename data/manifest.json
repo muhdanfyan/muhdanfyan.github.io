@@ -1114,6 +1114,22 @@
       "image": "img/indonesia-engineering-risk.png",
       "description": "Analisis mendalam mengenai risiko hukum, hambatan birokrasi, dan krisis literasi digital bagi engineer di Indonesia.",
       "description_en": "Deep analysis of legal risks, bureaucratic obstacles, and digital literacy crisis for engineers in Indonesia."
+    },
+    {
+      "slug": "humankind-hopeful-history",
+      "slug_en": "humankind-hopeful-history",
+      "title": "Humankind: Sebuah Realisme Baru Tentang Hakikat Manusia",
+      "title_en": "Humankind: A New Realism About Human Nature",
+      "date": "2026-04-27",
+      "category": "Philosophy & History",
+      "category_en": "Philosophy & History",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/indonesia-engineering-risk.png",
+      "description": "Ulasan mendalam buku Humankind: A Hopeful History karya Rutger Bregman yang menantang pandangan sinis tentang sifat dasar manusia.",
+      "description_en": "An in-depth review of Rutger Bregman's Humankind: A Hopeful History, challenging the cynical view of human nature."
     }
   ]
 }
