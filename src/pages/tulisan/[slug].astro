@@ -51,8 +51,8 @@ if (fs.existsSync(idPath)) {
     writingMetadata.title = data.title_id;
     writingMetadata.title_en = data.title_en;
     writingMetadata.date = data.date;
-    writingMetadata.category = data.category_id;
-    writingMetadata.category_en = data.category_en;
+    writingMetadata.category = data.category || '';
+    writingMetadata.category_en = data.category_en || data.category || '';
     writingMetadata.description = data.description_id;
     writingMetadata.description_en = data.description_en;
     writingMetadata.image = data.image;
