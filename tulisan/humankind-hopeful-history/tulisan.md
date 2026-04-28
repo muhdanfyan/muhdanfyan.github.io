@@ -1,0 +1,33 @@
+<p class="dropcap">Pernahkah Anda bertanya-tanya, apa yang akan terjadi jika sebuah pesawat jatuh di pulau terpencil dan hanya anak-anak yang selamat? Jika Anda pernah membaca novel <i>Lord of the Flies</i>, Anda mungkin membayangkan mereka akan saling membunuh untuk bertahan hidup. Namun, melalui buku <i>Humankind: A Hopeful History</i>, <b>Rutger Bregman</b> membongkar fakta bahwa kejadian nyata dari kisah tersebut justru menunjukkan sebaliknya: anak-anak itu bekerja sama dan saling menjaga selama 15 bulan hingga diselamatkan.</p>
+
+Buku ini bukan sekadar bacaan sejarah yang berat; ia adalah sebuah perjalanan untuk menjawab pertanyaan mendasar: **"Apakah manusia pada dasarnya jahat atau baik?"**
+
+Selama berabad-abad, kita "dicuci otak" oleh pandangan sinis para pemikir besar seperti <span class="highlight">Thomas Hobbes</span> yang percaya bahwa manusia adalah serigala bagi sesamanya. Kita diajarkan bahwa peradaban hanyalah lapisan tipis yang menutupi kebuasan kita. Bregman hadir untuk menghancurkan mitos tersebut. Ia berargumen, sejalan dengan pemikiran <span class="highlight">Jean-Jacques Rousseau</span>, bahwa sifat asli manusia bukanlah egoisme, melainkan **keramahan dan kerja sama**. Justru sistem yang kita bangun di atas rasa tidak percaya—seperti penjara yang kejam atau manajemen kantor yang otoriter—yang seringkali memancing sisi buruk manusia keluar.
+
+## Meruntuhkan *Veneer Theory* (Teori Lapisan Luar)
+
+Bregman menjelaskan istilah *Veneer Theory*, yaitu keyakinan salah bahwa moralitas kita hanyalah lapisan tipis (*veneer*) yang mudah pecah saat krisis. Namun, data sejarah berkata lain. Saat pengeboman London di Perang Dunia II atau bencana <a href="https://id.wikipedia.org/wiki/Badai_Katrina" target="_blank">Badai Katrina</a>, manusia tidak saling memangsa. Sebaliknya, yang muncul adalah gelombang keberanian, kerja sama, dan altruisme yang luar biasa. **Dalam keadaan paling gelap, kita justru menunjukkan sisi terbaik kita.**
+
+## Evolusi *Homo Puppy*: Mengapa Kita Bertahan?
+
+Mengapa manusia (Homo Sapiens) bisa menguasai bumi, sementara manusia purba lain yang lebih kuat (seperti Neanderthal) punah? Jawabannya bukan karena kita yang paling kejam, tapi karena kita adalah spesies yang paling ramah. Bregman menjuluki kita sebagai *Homo puppy*. Kita berevolusi untuk menjadi makhluk yang sangat sosial, mampu belajar dari satu sama lain, dan memiliki kemampuan unik untuk **tersipu malu**—sebuah tanda biologis bahwa kita peduli pada apa yang dipikirkan orang lain.
+
+## Membongkar Kebohongan Sains Populer
+
+Salah satu bagian yang paling memuaskan bagi pembaca awam adalah saat Bregman membongkar eksperimen psikologi yang sering masuk buku pelajaran:
+*   **Eksperimen Penjara Stanford:** Ternyata adalah "pertunjukan" yang diarahkan oleh penelitinya agar para penjaga bertindak kejam.
+*   **Kasus Kitty Genovese:** Kisah tentang 38 orang yang diam melihat pembunuhan ternyata adalah hoax jurnalistik. Faktanya, tetangganya berlari menolong dan ia meninggal di pelukan sahabatnya.
+
+## Realisme Baru: Mempercayai Manusia Sebagai Strategi
+
+Memiliki pandangan positif bukan berarti naif. Bregman menyebutnya sebagai **"Realisme Baru"**. Jika kita percaya manusia itu jahat, kita akan membuat sistem yang mengekang. Sebaliknya, jika kita membangun sistem berbasis kepercayaan, hasilnya luar biasa:
+1.  **Buurtzorg (Belanda):** Perusahaan perawat tanpa manajer yang justru jauh lebih efisien.
+2.  **Sekolah Agora:** Anak-anak yang menentukan kurikulumnya sendiri dan terbukti lebih kreatif serta mandiri.
+3.  **Penjara Norwegia:** Tanpa jeruji besi dan memperlakukan narapidana seperti manusia, menghasilkan tingkat residivisme terendah di dunia.
+
+## Kesimpulan
+
+Buku ini mengajak kita berhenti melihat berita yang selalu fokus pada kejahatan, dan mulai melihat ke sekeliling kita. Manusia sejatinya diprogram untuk berbuat baik. Mempercayai orang lain bukan hanya soal moral, tapi adalah cara paling masuk akal untuk membangun masa depan peradaban yang lebih baik.
+
+---
+**Sumber:** [Humankind: A Hopeful History](https://www.rutgerbregman.com/books) by Rutger Bregman | **Penulis:** Muhdan Fyan Syah Sofian | **Standardized via Gemini CLI**
