@@ -14,13 +14,14 @@ export default config({
   collections: {
     writing: collection({
       label: 'Tulisan',
-      slugField: 'title_en', 
+      slugField: 'slug', // Menggunakan slug (nama folder) sebagai identifier
       path: 'tulisan/*/tulisan',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
-        title_en: fields.slug({ name: { label: 'English Title (Slug)' } }),
+        slug: fields.text({ label: 'Slug (Folder Name)' }),
         title_id: fields.text({ label: 'Indonesian Title' }),
+        title_en: fields.text({ label: 'English Title' }),
         date: fields.date({ label: 'Date', defaultValue: { kind: 'today' } }),
         image: fields.text({ label: 'Image Path/URL' }),
         
