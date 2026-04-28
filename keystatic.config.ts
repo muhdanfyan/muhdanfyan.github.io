@@ -16,31 +16,59 @@ export default config({
       label: 'Tulisan',
       slugField: 'slug', 
       path: 'tulisan/*/',
-      format: { contentField: 'content' }, // Keystatic will use index.mdoc by default with this
+      format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
-        slug: fields.text({ label: 'Slug (Folder Name)' }),
-        title_id: fields.text({ label: 'Indonesian Title' }),
-        title_en: fields.text({ label: 'English Title' }),
-        date: fields.date({ label: 'Date', defaultValue: { kind: 'today' } }),
-        image: fields.text({ label: 'Image Path/URL' }),
+        slug: fields.text({ 
+          label: 'Slug (Nama Folder)',
+          description: 'Gunakan huruf kecil dan tanda hubung (contoh: judul-artikel-saya)',
+          validation: { length: { min: 1 } }
+        }),
+        title_id: fields.text({ label: 'Judul (Indonesia)' }),
+        title_en: fields.text({ label: 'Judul (English)' }),
+        date: fields.date({ label: 'Tanggal Publish', defaultValue: { kind: 'today' } }),
         
-        category_id: fields.text({ label: 'Category (ID)' }),
-        description_id: fields.text({ label: 'Description (ID)', multiline: true }),
+        image: fields.image({
+          label: 'Gambar Sampul',
+          directory: 'public/img/tulisan',
+          publicPath: '/img/tulisan',
+        }),
         
-        category_en: fields.text({ label: 'Category (EN)' }),
-        description_en: fields.text({ label: 'Description (EN)', multiline: true }),
+        // Kategori dalam bentuk Dropdown
+        category_id: fields.select({
+          label: 'Kategori (ID)',
+          options: [
+            { label: 'Technology', value: 'Technology' },
+            { label: 'Education', value: 'Education' },
+            { label: 'Psychology & Health', value: 'Psychology & Health' },
+            { label: 'Technology & Career', value: 'Technology & Career' },
+            { label: 'Philosophy & History', value: 'Philosophy & History' },
+            { label: 'Media', value: 'Media' },
+            { label: 'Technology & Culture', value: 'Technology & Culture' },
+            { label: 'Technology & Law', value: 'Technology & Law' },
+            { label: 'Technology & AI', value: 'Technology & AI' },
+          ],
+          defaultValue: 'Technology',
+        }),
+        
+        description_id: fields.text({ label: 'Deskripsi Singkat (ID)', multiline: true }),
+        
+        category_en: fields.text({ label: 'Kategori (EN)' }),
+        description_en: fields.text({ label: 'Deskripsi Singkat (EN)', multiline: true }),
 
         content: fields.markdoc({
-          label: 'Konten Utama (Indonesian)',
+          label: 'Isi Tulisan (Indonesia)',
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: 'public/img/tulisan/content',
+            publicPath: '/img/tulisan/content',
+          },
         }),
 
         content_en_markdown: fields.text({
-          label: 'Content (English Markdown)',
+          label: 'Isi Tulisan (English Markdown)',
           multiline: true,
         }),
       },
