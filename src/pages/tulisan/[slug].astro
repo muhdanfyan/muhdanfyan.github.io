@@ -4,39 +4,75 @@ import manifest from '../../../data/manifest.json';
 import { marked } from 'marked';
 import fs from 'node:fs';
 import path from 'node:path';
+import matter from 'gray-matter';
+
+import { DocumentRenderer } from '@keystatic/core/renderer';
 
 export async function getStaticPaths() {
-  return manifest.writing.map((w) => ({
-    params: { slug: w.slug },
-  }));
+  const tulisanDir = path.join(process.cwd(), 'tulisan');
+  const folders = fs.readdirSync(tulisanDir);
+  
+  return folders
+    .filter(slug => fs.existsSync(path.join(tulisanDir, slug, 'tulisan.md')))
+    .map(slug => ({ params: { slug } }));
 }
 
 const { slug } = Astro.params;
-const writing = manifest.writing.find((item) => item.slug === slug);
-
-if (!writing) {
-  return Astro.redirect('/404');
-}
+// We no longer need manifest for writing metadata as it's parsed from the file below
+const writingManifest = null; 
 
 // Read markdown files
 const contentDir = path.join(process.cwd(), 'tulisan', slug);
 const idPath = path.join(contentDir, 'tulisan.md');
 const enPath = path.join(contentDir, 'tulisan.en.md');
 
+if (!fs.existsSync(idPath)) {
+  return Astro.redirect('/404');
+}
+
 let htmlId = '';
-let htmlEn = '';
+let contentEnMarkdown = '';
+let writingMetadata = { 
+  title: '', 
+  title_en: '', 
+  date: '', 
+  category: '', 
+  category_en: '', 
+  description: '', 
+  description_en: '', 
+  image: '' 
+};
 
 if (fs.existsSync(idPath)) {
-  const content = fs.readFileSync(idPath, 'utf-8');
+  const rawContent = fs.readFileSync(idPath, 'utf-8');
+  const { data, content } = matter(rawContent);
+  
+  if (data.title_id) {
+    writingMetadata.title = data.title_id;
+    writingMetadata.title_en = data.title_en;
+    writingMetadata.date = data.date;
+    writingMetadata.category = data.category_id;
+    writingMetadata.category_en = data.category_en;
+    writingMetadata.description = data.description_id;
+    writingMetadata.description_en = data.description_en;
+    writingMetadata.image = data.image;
+  }
+
   htmlId = marked(content);
+
+  if (data.content_en_markdown) {
+    contentEnMarkdown = data.content_en_markdown;
+  }
 }
 
-if (fs.existsSync(enPath)) {
+// Fallback to separate English file if Keystatic content_en_markdown is not present
+let htmlEnFallback = '';
+if (!contentEnMarkdown && fs.existsSync(enPath)) {
   const content = fs.readFileSync(enPath, 'utf-8');
-  htmlEn = marked(content);
-} else {
-  htmlEn = htmlId; // Fallback
+  htmlEnFallback = marked(content);
 }
+
+const writing = writingMetadata;
 ---
 
 <Layout 
@@ -75,7 +111,9 @@ if (fs.existsSync(enPath)) {
 
     <div class="prose prose-indigo prose-lg max-w-none">
       <div id="contentId" class="lang-content" set:html={htmlId}></div>
-      <div id="contentEn" class="lang-content hidden" set:html={htmlEn}></div>
+      <div id="contentEn" class="lang-content hidden">
+        {contentEnMarkdown ? <div set:html={marked(contentEnMarkdown)} /> : <div set:html={htmlEnFallback || htmlId} />}
+      </div>
     </div>
   </article>
 

@@ -1,8 +1,35 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import manifest from '../../../data/manifest.json';
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
 
-const writings = manifest.writing.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const tulisanDir = path.join(process.cwd(), 'tulisan');
+const folders = fs.readdirSync(tulisanDir);
+
+const writings = folders
+  .map((slug) => {
+    const filePath = path.join(tulisanDir, slug, 'tulisan.md');
+    if (!fs.existsSync(filePath)) return null;
+    
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data } = matter(fileContent);
+    
+    return {
+      slug,
+      title: data.title_id || slug,
+      title_en: data.title_en || slug,
+      date: data.date || '',
+      category: data.category_id || 'General',
+      category_en: data.category_en || 'General',
+      description: data.description_id || '',
+      description_en: data.description_en || '',
+      image: data.image || '',
+      available_langs: data.content_en_markdown ? ['id', 'en'] : ['id']
+    };
+  })
+  .filter(Boolean)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
 <Layout title="All Writings | Muhdan Fyan">
@@ -23,14 +50,41 @@ const writings = manifest.writing.sort((a, b) => new Date(b.date).getTime() - ne
 
   <main class="container mx-auto px-6 pt-32 mb-20">
     <div class="mb-12">
-      <h1 class="text-4xl font-extrabold mb-4">All Writings</h1>
-      <p class="text-slate-600">Catatan teknologi, edukasi, dan pemikiran saya.</p>
+      <h1 class="text-4xl font-extrabold mb-4 lang-text" data-id="Semua Tulisan" data-en="All Writings">Semua Tulisan</h1>
+      <p class="text-slate-600 lang-text" data-id="Catatan teknologi, edukasi, dan pemikiran saya." data-en="My notes on technology, education, and thoughts.">Catatan teknologi, edukasi, dan pemikiran saya.</p>
       <div class="w-12 h-1 bg-indigo-600 rounded-full mt-6"></div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8">
+    <!-- Filters & Search -->
+    <div class="flex flex-col md:flex-row gap-6 mb-12">
+      <div class="relative flex-1">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Cari tulisan..." 
+          class="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all"
+        />
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+      <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar" id="categoryFilters">
+        <button class="category-btn active px-6 py-3 rounded-2xl font-bold text-sm bg-indigo-600 text-white transition-all whitespace-nowrap" data-category="all">All</button>
+        {Array.from(new Set(writings.map(w => w.category))).map(category => (
+          <button class="category-btn px-6 py-3 rounded-2xl font-bold text-sm bg-slate-50 text-slate-600 hover:bg-slate-100 transition-all whitespace-nowrap" data-category={category}>{category}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8" id="writingGrid">
       {writings.map((writing) => (
-        <a href={`/tulisan/${writing.slug}/`} class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" data-langs={JSON.stringify(writing.available_langs)}>
+        <a href={`/tulisan/${writing.slug}/`} 
+           class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" 
+           data-langs={JSON.stringify(writing.available_langs)}
+           data-category={writing.category}
+           data-title-id={writing.title.toLowerCase()}
+           data-title-en={writing.title_en.toLowerCase()}
+        >
           <img src={(writing.image && writing.image.startsWith('http')) ? writing.image : '/' + (writing.image || 'img/screenshots/default.png')} alt={writing.title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-all" />
           <div class="flex-1">
             <span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{writing.category}</span>
@@ -42,6 +96,17 @@ const writings = manifest.writing.sort((a, b) => new Date(b.date).getTime() - ne
           </div>
         </a>
       ))}
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-4 mt-16" id="pagination">
+      <button id="prevBtn" class="p-3 rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all disabled:opacity-50 disabled:hover:bg-slate-50 disabled:hover:text-slate-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <div id="pageNumbers" class="flex gap-2"></div>
+      <button id="nextBtn" class="p-3 rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all disabled:opacity-50 disabled:hover:bg-slate-50 disabled:hover:text-slate-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </button>
     </div>
   </main>
 
@@ -74,27 +139,125 @@ const writings = manifest.writing.sort((a, b) => new Date(b.date).getTime() - ne
 
   <script is:inline>
     let currentLang = localStorage.getItem('lang') || 'id';
+    let searchQuery = '';
+    let selectedCategory = 'all';
+    let currentPage = 1;
+    const itemsPerPage = 6;
 
-    function updateLanguageUI() {
+    function updateUI() {
       document.getElementById('langLabel').innerText = currentLang.toUpperCase();
       
-      document.querySelectorAll('.writing-card').forEach(card => {
+      // Update general text
+      document.querySelectorAll('.lang-text').forEach(el => {
+        el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
+      });
+
+      const cards = Array.from(document.querySelectorAll('.writing-card'));
+      
+      // Filtering
+      const filteredCards = cards.filter(card => {
         const langs = JSON.parse(card.dataset.langs || '["id"]');
-        card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+        const matchesLang = langs.includes(currentLang);
+        const matchesCategory = selectedCategory === 'all' || card.dataset.category === selectedCategory;
+        const titleId = card.dataset.titleId || '';
+        const titleEn = card.dataset.titleEn || '';
+        const matchesSearch = titleId.includes(searchQuery.toLowerCase()) || titleEn.includes(searchQuery.toLowerCase());
         
+        return matchesLang && matchesCategory && matchesSearch;
+      });
+
+      // Pagination
+      const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+      if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+
+      cards.forEach(card => card.style.display = 'none');
+      filteredCards.slice(startIndex, endIndex).forEach(card => {
+        card.style.display = 'flex';
         const titleEl = card.querySelector('.writing-title');
         const descEl = card.querySelector('.writing-desc');
         if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
         if (descEl) descEl.innerText = currentLang === 'en' ? descEl.dataset.en : descEl.dataset.id;
       });
+
+      // Update Pagination Controls
+      updatePaginationControls(totalPages);
     }
 
+    function updatePaginationControls(totalPages) {
+      const pageNumbers = document.getElementById('pageNumbers');
+      pageNumbers.innerHTML = '';
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.innerText = i;
+        btn.className = `w-10 h-10 rounded-xl font-bold transition-all ${i === currentPage ? 'bg-indigo-600 text-white' : 'bg-slate-50 text-slate-600 hover:bg-slate-100'}`;
+        btn.onclick = () => {
+          currentPage = i;
+          updateUI();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        pageNumbers.appendChild(btn);
+      }
+
+      document.getElementById('prevBtn').disabled = currentPage === 1;
+      document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    // Event Listeners
     document.getElementById('langToggle').addEventListener('click', () => {
       currentLang = currentLang === 'id' ? 'en' : 'id';
       localStorage.setItem('lang', currentLang);
-      updateLanguageUI();
+      updateUI();
     });
 
-    updateLanguageUI();
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      currentPage = 1;
+      updateUI();
+    });
+
+    document.querySelectorAll('.category-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.category-btn').forEach(b => {
+          b.classList.remove('bg-indigo-600', 'text-white', 'active');
+          b.classList.add('bg-slate-50', 'text-slate-600');
+        });
+        btn.classList.add('bg-indigo-600', 'text-white', 'active');
+        btn.classList.remove('bg-slate-50', 'text-slate-600');
+        selectedCategory = btn.dataset.category;
+        currentPage = 1;
+        updateUI();
+      });
+    });
+
+    document.getElementById('prevBtn').onclick = () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updateUI();
+      }
+    };
+
+    document.getElementById('nextBtn').onclick = () => {
+      const cards = document.querySelectorAll('.writing-card:not([style*="display: none"])');
+      // This is a bit complex for client side with totalPages, but updateUI handles it
+      currentPage++;
+      updateUI();
+    };
+
+    updateUI();
   </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
 </Layout>
