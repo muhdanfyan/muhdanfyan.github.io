@@ -14,9 +14,9 @@ export default config({
   collections: {
     writing: collection({
       label: 'Tulisan',
-      slugField: 'slug', // Menggunakan slug (nama folder) sebagai identifier
+      slugField: 'slug', 
       path: 'tulisan/*/',
-      format: { contentField: 'content' },
+      format: { contentField: 'content' }, // Keystatic will use index.mdoc by default with this
       entryLayout: 'content',
       schema: {
         slug: fields.text({ label: 'Slug (Folder Name)' }),
@@ -31,7 +31,7 @@ export default config({
         category_en: fields.text({ label: 'Category (EN)' }),
         description_en: fields.text({ label: 'Description (EN)', multiline: true }),
 
-        content: fields.document({
+        content: fields.markdoc({
           label: 'Konten Utama (Indonesian)',
           formatting: true,
           dividers: true,
