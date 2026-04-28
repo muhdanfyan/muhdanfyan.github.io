@@ -12,7 +12,7 @@ const folders = fs.existsSync(tulisanDir) ? fs.readdirSync(tulisanDir) : [];
 
 const writings = folders
   .map((slug) => {
-    const filePath = path.join(tulisanDir, slug, 'tulisan.md');
+    const filePath = path.join(tulisanDir, slug, 'index.md');
     if (!fs.existsSync(filePath)) return null;
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const { data } = matter(fileContent);

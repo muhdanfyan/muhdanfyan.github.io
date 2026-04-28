@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   const folders = fs.readdirSync(tulisanDir);
   
   return folders
-    .filter(slug => fs.existsSync(path.join(tulisanDir, slug, 'tulisan.md')))
+    .filter(slug => fs.existsSync(path.join(tulisanDir, slug, 'index.md')))
     .map(slug => ({ params: { slug } }));
 }
 
@@ -23,7 +23,7 @@ const writingManifest = null;
 
 // Read markdown files
 const contentDir = path.join(process.cwd(), 'tulisan', slug);
-const idPath = path.join(contentDir, 'tulisan.md');
+const idPath = path.join(contentDir, 'index.md');
 const enPath = path.join(contentDir, 'tulisan.en.md');
 
 if (!fs.existsSync(idPath)) {

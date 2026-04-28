@@ -15,7 +15,7 @@ export default config({
     writing: collection({
       label: 'Tulisan',
       slugField: 'slug', // Menggunakan slug (nama folder) sebagai identifier
-      path: 'tulisan/*/tulisan',
+      path: 'tulisan/*/',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
