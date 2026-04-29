@@ -216,9 +216,10 @@ MUHDAN FYAN
         charOffset = saved >= currentText.length ? 0 : saved; lastCharIndex = charOffset;
         utterance = new SpeechSynthesisUtterance(currentText.substring(charOffset));
         utterance.lang = lang === 'id' ? 'id-ID' : 'en-US'; utterance.rate = 0.95;
-        const mk = ['Male','David','Daniel','Alex','Eddy','Oliver','Thomas','James','Arthur'];
-        let bv = voices.find(v => v.lang.startsWith(utterance.lang) && mk.some(k => v.name.includes(k))) || voices.find(v => v.lang.startsWith(utterance.lang));
+        const qk = ['Google', 'Natural', 'Enhanced', 'Premium', 'Damayanti', 'Ardi', 'Indah'];
+        let bv = voices.find(v => v.lang.startsWith(utterance.lang) && qk.some(k => v.name.includes(k)));
         if (bv) utterance.voice = bv;
+        // If no high-quality voice found, we don't set utterance.voice to let browser use device default
         utterance.onstart = () => { startProgressTimer(); startResumeHack(); };
         utterance.onboundary = (e) => updateProgress(e.charIndex);
         utterance.onend = () => { window.stopAudio(); progressBar.style.width = '0%'; audioProgressText.innerText = '00:00'; localStorage.removeItem(getStorageKey()); };
