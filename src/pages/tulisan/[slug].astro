@@ -310,9 +310,30 @@ const writing = writingMetadata;
       utterance.rate = 0.95; // Slightly slower for more natural feel
       utterance.pitch = 1;
 
-      // Select best voice if available
+      // Select best voice (prioritize Male voices if available)
       const voices = synth.getVoices();
-      const bestVoice = voices.find(v => v.lang.startsWith(utterance.lang) && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural')));
+      const maleKeywords = ['Male', 'David', 'Daniel', 'Alex', 'Eddy', 'Oliver', 'Thomas', 'James', 'Arthur'];
+      
+      // Try to find a high-quality Male voice first
+      let bestVoice = voices.find(v => 
+        v.lang.startsWith(utterance.lang) && 
+        maleKeywords.some(key => v.name.includes(key)) &&
+        (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural'))
+      );
+
+      // Fallback to any Male voice in that language
+      if (!bestVoice) {
+        bestVoice = voices.find(v => 
+          v.lang.startsWith(utterance.lang) && 
+          maleKeywords.some(key => v.name.includes(key))
+        );
+      }
+
+      // Final fallback to any high-quality voice (usually female if no male is found)
+      if (!bestVoice) {
+        bestVoice = voices.find(v => v.lang.startsWith(utterance.lang) && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural')));
+      }
+
       if (bestVoice) utterance.voice = bestVoice;
 
       utterance.onboundary = (event) => {
