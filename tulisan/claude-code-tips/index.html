@@ -141,12 +141,17 @@ MUHDAN FYAN
     let isPlaying = false;
     let currentText = '';
     let voices = [];
+    let lastCharIndex = 0;
+    let charOffset = 0;
+    let progressInterval = null;
 
     const playBtn = document.getElementById('playAudio');
     const playIcon = document.getElementById('playIcon');
     const pauseIcon = document.getElementById('pauseIcon');
     const progressBar = document.getElementById('progressBar');
     const audioProgressText = document.getElementById('audioProgress');
+
+    const getStorageKey = () => `audio_progress_${window.location.pathname}_${currentLang}`;
 
     function loadVoices() {
       voices = synth.getVoices();
@@ -158,10 +163,15 @@ MUHDAN FYAN
 
     function updateAudioProgress(charIndex) {
       if (!currentText || currentText.length === 0) return;
-      const progress = (charIndex / currentText.length) * 100;
+      const absoluteIndex = charIndex + charOffset;
+      lastCharIndex = absoluteIndex;
+      
+      const progress = (absoluteIndex / currentText.length) * 100;
       const safeProgress = Math.min(Math.max(progress, 0), 100);
       progressBar.style.width = `${safeProgress}%`;
       audioProgressText.innerText = `${Math.round(safeProgress)}%`;
+      
+      localStorage.setItem(getStorageKey(), absoluteIndex);
     }
 
     function setupMediaSession() {
@@ -192,10 +202,12 @@ MUHDAN FYAN
         isPlaying = false;
         playIcon.classList.remove('hidden');
         pauseIcon.classList.add('hidden');
+        clearInterval(progressInterval);
         if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
       } else {
         if (synth.paused && utterance) {
           synth.resume();
+          startProgressTimer();
         } else {
           startSpeaking();
         }
@@ -204,6 +216,17 @@ MUHDAN FYAN
         pauseIcon.classList.remove('hidden');
         if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
       }
+    }
+
+    function startProgressTimer() {
+      clearInterval(progressInterval);
+      // Fallback timer in case onboundary doesn't fire (approx 15 chars per sec)
+      progressInterval = setInterval(() => {
+        if (synth.speaking && !synth.paused) {
+          lastCharIndex += 2; // Approximate increment
+          updateAudioProgress(lastCharIndex - charOffset);
+        }
+      }, 100);
     }
 
     function startSpeaking() {
@@ -215,7 +238,13 @@ MUHDAN FYAN
 
       setupMediaSession();
 
-      utterance = new SpeechSynthesisUtterance(currentText);
+      // Check for saved progress
+      const savedIndex = parseInt(localStorage.getItem(getStorageKey())) || 0;
+      charOffset = savedIndex >= currentText.length ? 0 : savedIndex;
+      lastCharIndex = charOffset;
+
+      const textToSpeak = currentText.substring(charOffset);
+      utterance = new SpeechSynthesisUtterance(textToSpeak);
       utterance.lang = currentLang === 'id' ? 'id-ID' : 'en-US';
       utterance.rate = 0.95;
       utterance.pitch = 1;
@@ -236,10 +265,7 @@ MUHDAN FYAN
       if (bestVoice) utterance.voice = bestVoice;
 
       utterance.onstart = () => {
-        if (progressBar.style.width === '0%') {
-          progressBar.style.width = '1%';
-          audioProgressText.innerText = '1%';
-        }
+        startProgressTimer();
       };
 
       utterance.onboundary = (event) => {
@@ -252,6 +278,8 @@ MUHDAN FYAN
         pauseIcon.classList.add('hidden');
         progressBar.style.width = '0%';
         audioProgressText.innerText = '0%';
+        localStorage.removeItem(getStorageKey());
+        clearInterval(progressInterval);
         if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
       };
 
@@ -259,12 +287,34 @@ MUHDAN FYAN
         isPlaying = false;
         playIcon.classList.remove('hidden');
         pauseIcon.classList.add('hidden');
+        clearInterval(progressInterval);
       };
 
       synth.speak(utterance);
     }
 
     playBtn.addEventListener('click', toggleAudio);
+
+    // Click to seek logic
+    document.getElementById('progressContainer').addEventListener('click', (e) => {
+      if (!currentText) return;
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const clickedProgress = x / rect.width;
+      const newCharIndex = Math.floor(clickedProgress * currentText.length);
+      
+      localStorage.setItem(getStorageKey(), newCharIndex);
+      
+      if (isPlaying || synth.speaking) {
+        startSpeaking(); // Restart from new position
+      } else {
+        charOffset = newCharIndex;
+        lastCharIndex = newCharIndex;
+        const progress = (newCharIndex / currentText.length) * 100;
+        progressBar.style.width = `${progress}%`;
+        audioProgressText.innerText = `${Math.round(progress)}%`;
+      }
+    });
 
     // Stop audio when changing language or leaving page
     document.getElementById('langToggle').addEventListener('click', () => {
