@@ -116,8 +116,28 @@ const writing = writingMetadata;
       </div>
     </div>
 
+    <!-- AI Voice Reader -->
+    <div class="audio-player mt-16 p-8 bg-gradient-to-br from-slate-50 to-indigo-50/30 rounded-[2rem] border border-slate-100 shadow-sm flex flex-col md:flex-row items-center gap-6">
+      <button id="playAudio" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group active:scale-95">
+        <svg id="playIcon" class="w-8 h-8 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="pauseIcon" class="w-8 h-8 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
+      <div class="flex-1 w-full">
+        <div class="flex justify-between items-center mb-3">
+          <div class="flex flex-col">
+            <span class="text-sm font-black text-slate-900 lang-text" data-id="Dengarkan Tulisan" data-en="Listen to Article">Dengarkan Tulisan</span>
+            <span class="text-xs text-slate-400 font-medium lang-text" data-id="Dibacakan oleh AI Voice" data-en="Narrated by AI Voice">Dibacakan oleh AI Voice</span>
+          </div>
+          <span id="audioProgress" class="text-xs font-black text-indigo-600 bg-indigo-50 px-2 py-1 rounded-md">0%</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden cursor-pointer" id="progressContainer">
+          <div id="progressBar" class="h-full bg-indigo-600 w-0 transition-all duration-300"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Share & Copy Options -->
-    <div class="mt-16 pt-8 border-t border-slate-100">
+    <div class="mt-8 pt-8 border-t border-slate-100">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div class="flex items-center gap-4">
           <span class="text-sm font-bold text-slate-400 uppercase tracking-wider lang-text" data-id="Bagikan:" data-en="Share:">Bagikan:</span>
@@ -242,6 +262,87 @@ const writing = writingMetadata;
         alert(text);
       }
     });
+
+    // AI Voice Reader Logic
+    const synth = window.speechSynthesis;
+    let utterance = null;
+    let isPlaying = false;
+    let currentText = '';
+
+    const playBtn = document.getElementById('playAudio');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    const progressBar = document.getElementById('progressBar');
+    const audioProgressText = document.getElementById('audioProgress');
+
+    function updateAudioProgress(charIndex) {
+      if (!currentText) return;
+      const progress = (charIndex / currentText.length) * 100;
+      progressBar.style.width = `${Math.min(progress, 100)}%`;
+      audioProgressText.innerText = `${Math.round(Math.min(progress, 100))}%`;
+    }
+
+    function toggleAudio() {
+      if (isPlaying) {
+        synth.pause();
+        isPlaying = false;
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+      } else {
+        if (synth.paused && utterance) {
+          synth.resume();
+        } else {
+          startSpeaking();
+        }
+        isPlaying = true;
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+      }
+    }
+
+    function startSpeaking() {
+      synth.cancel();
+      const activeContent = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+      currentText = activeContent.innerText;
+      
+      utterance = new SpeechSynthesisUtterance(currentText);
+      utterance.lang = currentLang === 'id' ? 'id-ID' : 'en-US';
+      utterance.rate = 0.95; // Slightly slower for more natural feel
+      utterance.pitch = 1;
+
+      // Select best voice if available
+      const voices = synth.getVoices();
+      const bestVoice = voices.find(v => v.lang.startsWith(utterance.lang) && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural')));
+      if (bestVoice) utterance.voice = bestVoice;
+
+      utterance.onboundary = (event) => {
+        updateAudioProgress(event.charIndex);
+      };
+
+      utterance.onend = () => {
+        isPlaying = false;
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        progressBar.style.width = '0%';
+        audioProgressText.innerText = '0%';
+      };
+
+      synth.speak(utterance);
+    }
+
+    playBtn.addEventListener('click', toggleAudio);
+
+    // Stop audio when changing language or leaving page
+    document.getElementById('langToggle').addEventListener('click', () => {
+      synth.cancel();
+      isPlaying = false;
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+      progressBar.style.width = '0%';
+      audioProgressText.innerText = '0%';
+    });
+
+    window.addEventListener('beforeunload', () => synth.cancel());
 
     updateLanguageUI();
   </script>
