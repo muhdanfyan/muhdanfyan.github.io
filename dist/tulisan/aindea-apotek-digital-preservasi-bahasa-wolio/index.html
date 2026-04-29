@@ -138,6 +138,7 @@ MUHDAN FYAN
     let utterance = null;
     let isPlaying = false;
     let currentText = '';
+    let voices = [];
 
     const playBtn = document.getElementById('playAudio');
     const playIcon = document.getElementById('playIcon');
@@ -145,11 +146,42 @@ MUHDAN FYAN
     const progressBar = document.getElementById('progressBar');
     const audioProgressText = document.getElementById('audioProgress');
 
+    function loadVoices() {
+      voices = synth.getVoices();
+    }
+    if (synth.onvoiceschanged !== undefined) {
+      synth.onvoiceschanged = loadVoices;
+    }
+    loadVoices();
+
     function updateAudioProgress(charIndex) {
-      if (!currentText) return;
+      if (!currentText || currentText.length === 0) return;
       const progress = (charIndex / currentText.length) * 100;
-      progressBar.style.width = `${Math.min(progress, 100)}%`;
-      audioProgressText.innerText = `${Math.round(Math.min(progress, 100))}%`;
+      const safeProgress = Math.min(Math.max(progress, 0), 100);
+      progressBar.style.width = `${safeProgress}%`;
+      audioProgressText.innerText = `${Math.round(safeProgress)}%`;
+    }
+
+    function setupMediaSession() {
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: document.querySelector('h1').innerText,
+          artist: 'Muhdan Fyan',
+          album: 'AI Voice Reader',
+          artwork: [{ 
+            src: document.querySelector('header img')?.src || '', 
+            sizes: '512x512', 
+            type: 'image/jpeg' 
+          }]
+        });
+
+        navigator.mediaSession.setActionHandler('play', () => {
+          if (!isPlaying) toggleAudio();
+        });
+        navigator.mediaSession.setActionHandler('pause', () => {
+          if (isPlaying) toggleAudio();
+        });
+      }
     }
 
     function toggleAudio() {
@@ -158,6 +190,7 @@ MUHDAN FYAN
         isPlaying = false;
         playIcon.classList.remove('hidden');
         pauseIcon.classList.add('hidden');
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
       } else {
         if (synth.paused && utterance) {
           synth.resume();
@@ -167,44 +200,45 @@ MUHDAN FYAN
         isPlaying = true;
         playIcon.classList.add('hidden');
         pauseIcon.classList.remove('hidden');
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
       }
     }
 
     function startSpeaking() {
       synth.cancel();
       const activeContent = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-      currentText = activeContent.innerText;
+      currentText = activeContent.innerText.trim();
       
+      if (!currentText) return;
+
+      setupMediaSession();
+
       utterance = new SpeechSynthesisUtterance(currentText);
       utterance.lang = currentLang === 'id' ? 'id-ID' : 'en-US';
-      utterance.rate = 0.95; // Slightly slower for more natural feel
+      utterance.rate = 0.95;
       utterance.pitch = 1;
 
-      // Select best voice (prioritize Male voices if available)
-      const voices = synth.getVoices();
       const maleKeywords = ['Male', 'David', 'Daniel', 'Alex', 'Eddy', 'Oliver', 'Thomas', 'James', 'Arthur'];
-      
-      // Try to find a high-quality Male voice first
       let bestVoice = voices.find(v => 
         v.lang.startsWith(utterance.lang) && 
         maleKeywords.some(key => v.name.includes(key)) &&
         (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural'))
+      ) || voices.find(v => 
+        v.lang.startsWith(utterance.lang) && 
+        maleKeywords.some(key => v.name.includes(key))
+      ) || voices.find(v => 
+        v.lang.startsWith(utterance.lang) && 
+        (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural'))
       );
 
-      // Fallback to any Male voice in that language
-      if (!bestVoice) {
-        bestVoice = voices.find(v => 
-          v.lang.startsWith(utterance.lang) && 
-          maleKeywords.some(key => v.name.includes(key))
-        );
-      }
-
-      // Final fallback to any high-quality voice (usually female if no male is found)
-      if (!bestVoice) {
-        bestVoice = voices.find(v => v.lang.startsWith(utterance.lang) && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Neural')));
-      }
-
       if (bestVoice) utterance.voice = bestVoice;
+
+      utterance.onstart = () => {
+        if (progressBar.style.width === '0%') {
+          progressBar.style.width = '1%';
+          audioProgressText.innerText = '1%';
+        }
+      };
 
       utterance.onboundary = (event) => {
         updateAudioProgress(event.charIndex);
@@ -216,6 +250,13 @@ MUHDAN FYAN
         pauseIcon.classList.add('hidden');
         progressBar.style.width = '0%';
         audioProgressText.innerText = '0%';
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
+      };
+
+      utterance.onerror = () => {
+        isPlaying = false;
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
       };
 
       synth.speak(utterance);
