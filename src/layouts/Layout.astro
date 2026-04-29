@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from 'astro:transitions';
+
 interface Props {
 	title: string;
   description?: string;
@@ -12,6 +14,7 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
 <html lang="id">
 	<head>
 		<meta charset="UTF-8" />
+    <ClientRouter />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

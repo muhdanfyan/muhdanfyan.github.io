@@ -15,9 +15,10 @@ if [ $? -eq 0 ]; then
     cp dist/index.html .
     cp dist/404.html .
     
-    # Sinkronisasi folder portofolio dan tulisan
+    # Sinkronisasi folder portofolio, tulisan, dan gambar
     cp -r dist/portofolio/* portofolio/ 2>/dev/null || :
     cp -r dist/tulisan/* tulisan/ 2>/dev/null || :
+    cp -r dist/img/* img/ 2>/dev/null || :
     
     echo "📂 Sinkronisasi selesai."
     
