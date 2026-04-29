@@ -202,27 +202,58 @@ const writing = writingMetadata;
   </footer>
 
   <script is:inline>
-    // Global speech synthesis and media session setup
     const synth = window.speechSynthesis;
     let voices = [];
+    let audioCtx = null;
+    let oscillator = null;
+    let gainNode = null;
+    let resumeTimer = null;
+
     function loadVoices() { voices = synth.getVoices(); }
     if (synth.onvoiceschanged !== undefined) { synth.onvoiceschanged = loadVoices; }
     loadVoices();
 
+    // Create a REAL audio stream (near-silent oscillator) to keep browser alive when screen is off
+    function startKeepAlive() {
+      if (audioCtx) return;
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      oscillator = audioCtx.createOscillator();
+      gainNode = audioCtx.createGain();
+      gainNode.gain.value = 0.001; // Near-silent but real audio
+      oscillator.frequency.value = 1; // 1Hz - inaudible
+      oscillator.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      oscillator.start();
+    }
+
+    function stopKeepAlive() {
+      if (oscillator) { try { oscillator.stop(); } catch(e){} oscillator = null; }
+      if (audioCtx) { audioCtx.close(); audioCtx = null; }
+      gainNode = null;
+    }
+
+    // Chrome pauses SpeechSynthesis after ~15s. This hack resumes it periodically.
+    function startResumeHack() {
+      clearInterval(resumeTimer);
+      resumeTimer = setInterval(() => {
+        if (synth.speaking && !synth.paused) {
+          synth.pause();
+          synth.resume();
+        }
+      }, 10000);
+    }
+    function stopResumeHack() { clearInterval(resumeTimer); }
+
     function updateMediaSession() {
-      if ('mediaSession' in navigator) {
-        const title = document.querySelector('h1')?.innerText || 'Tulisan';
-        const image = document.querySelector('header img')?.src || '';
-        navigator.mediaSession.metadata = new MediaMetadata({
-          title: title,
-          artist: 'Muhdan Fyan',
-          album: 'AI Voice Reader',
-          artwork: [{ src: image, sizes: '512x512', type: 'image/jpeg' }]
-        });
-        
-        navigator.mediaSession.setActionHandler('play', () => { if (window.toggleAudio) window.toggleAudio(); });
-        navigator.mediaSession.setActionHandler('pause', () => { if (window.toggleAudio) window.toggleAudio(); });
-      }
+      if (!('mediaSession' in navigator)) return;
+      const title = document.querySelector('h1')?.innerText || 'Tulisan';
+      const image = document.querySelector('header img')?.src || '';
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: title, artist: 'Muhdan Fyan', album: 'AI Voice Reader',
+        artwork: [{ src: image, sizes: '512x512', type: 'image/jpeg' }]
+      });
+      navigator.mediaSession.setActionHandler('play', () => { if (window.toggleAudio) window.toggleAudio(); });
+      navigator.mediaSession.setActionHandler('pause', () => { if (window.toggleAudio) window.toggleAudio(); });
     }
 
     function initLanguage() {
@@ -233,193 +264,101 @@ const writing = writingMetadata;
         document.querySelectorAll('.lang-text').forEach(el => {
           el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
         });
-        const idContent = document.getElementById('contentId');
-        const enContent = document.getElementById('contentEn');
-        if (idContent && enContent) {
-          idContent.classList.toggle('hidden', currentLang === 'en');
-          enContent.classList.toggle('hidden', currentLang !== 'en');
-        }
+        const idC = document.getElementById('contentId'), enC = document.getElementById('contentEn');
+        if (idC && enC) { idC.classList.toggle('hidden', currentLang === 'en'); enC.classList.toggle('hidden', currentLang !== 'en'); }
       }
-
       const langToggle = document.getElementById('langToggle');
       if (langToggle) {
-        const newToggle = langToggle.cloneNode(true);
-        langToggle.parentNode.replaceChild(newToggle, langToggle);
-        newToggle.addEventListener('click', () => {
-          currentLang = currentLang === 'id' ? 'en' : 'id';
-          localStorage.setItem('lang', currentLang);
-          updateLanguageUI();
-          if (window.stopAudio) window.stopAudio();
-        });
+        const n = langToggle.cloneNode(true); langToggle.parentNode.replaceChild(n, langToggle);
+        n.addEventListener('click', () => { currentLang = currentLang === 'id' ? 'en' : 'id'; localStorage.setItem('lang', currentLang); updateLanguageUI(); if (window.stopAudio) window.stopAudio(); });
       }
-
       const copyBtn = document.getElementById('copyText');
       if (copyBtn) {
-        const newCopy = copyBtn.cloneNode(true);
-        copyBtn.parentNode.replaceChild(newCopy, copyBtn);
-        newCopy.addEventListener('click', async () => {
-          const content = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-          try {
-            await navigator.clipboard.writeText(content.innerText);
-            const label = newCopy.querySelector('#copyLabel');
-            const original = label.innerText;
-            label.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!';
-            setTimeout(() => { label.innerText = original; }, 2000);
-          } catch (err) { console.error(err); }
+        const n = copyBtn.cloneNode(true); copyBtn.parentNode.replaceChild(n, copyBtn);
+        n.addEventListener('click', async () => {
+          const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+          try { await navigator.clipboard.writeText(c.innerText); const l = n.querySelector('#copyLabel'); const o = l.innerText; l.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!'; setTimeout(() => { l.innerText = o; }, 2000); } catch(e) {}
         });
       }
-
       const shareIG = document.getElementById('shareIG');
       if (shareIG) {
-        const newShare = shareIG.cloneNode(true);
-        shareIG.parentNode.replaceChild(newShare, shareIG);
-        newShare.addEventListener('click', () => {
-          if (navigator.share) {
-            navigator.share({ title: document.querySelector('h1').innerText, url: window.location.href });
-          } else {
-            navigator.clipboard.writeText(window.location.href);
-            alert('Link copied!');
-          }
-        });
+        const n = shareIG.cloneNode(true); shareIG.parentNode.replaceChild(n, shareIG);
+        n.addEventListener('click', () => { if (navigator.share) { navigator.share({ title: document.querySelector('h1').innerText, url: window.location.href }); } else { navigator.clipboard.writeText(window.location.href); alert('Link copied!'); } });
       }
       updateLanguageUI();
     }
 
     function initAudioPlayer() {
-      let utterance = null;
-      let isPlaying = false;
-      let currentText = '';
-      let lastCharIndex = 0;
-      let charOffset = 0;
-      let progressInterval = null;
-
+      let utterance = null, isPlaying = false, currentText = '', lastCharIndex = 0, charOffset = 0, progressInterval = null;
       const playBtn = document.getElementById('playAudio');
       if (!playBtn) return;
-
-      const playIcon = document.getElementById('playIcon');
-      const pauseIcon = document.getElementById('pauseIcon');
-      const progressBar = document.getElementById('progressBar');
-      const audioProgressText = document.getElementById('audioProgress');
+      const playIcon = document.getElementById('playIcon'), pauseIcon = document.getElementById('pauseIcon');
+      const progressBar = document.getElementById('progressBar'), audioProgressText = document.getElementById('audioProgress');
       const silentAudio = document.getElementById('silentAudio');
-
       const getStorageKey = () => `audio_progress_${window.location.pathname}_${localStorage.getItem('lang') || 'id'}`;
 
-      function updateAudioProgress(charIndex) {
-        const absoluteIndex = charIndex + charOffset;
-        lastCharIndex = absoluteIndex;
-        const progress = (absoluteIndex / (currentText.length || 1)) * 100;
-        progressBar.style.width = `${Math.min(progress, 100)}%`;
-        audioProgressText.innerText = `${Math.round(Math.min(progress, 100))}%`;
-        localStorage.setItem(getStorageKey(), absoluteIndex);
+      function updateProgress(ci) {
+        const abs = ci + charOffset; lastCharIndex = abs;
+        const p = Math.min((abs / (currentText.length || 1)) * 100, 100);
+        progressBar.style.width = `${p}%`; audioProgressText.innerText = `${Math.round(p)}%`;
+        localStorage.setItem(getStorageKey(), abs);
       }
-
       function startProgressTimer() {
         clearInterval(progressInterval);
-        progressInterval = setInterval(() => {
-          if (synth.speaking && !synth.paused) {
-            lastCharIndex += 1; // Slow increment to keep UI alive
-            updateAudioProgress(lastCharIndex - charOffset);
-          }
-        }, 150);
+        progressInterval = setInterval(() => { if (synth.speaking && !synth.paused) { lastCharIndex += 1; updateProgress(lastCharIndex - charOffset); } }, 150);
+      }
+      function setUI(playing) {
+        isPlaying = playing;
+        playIcon.classList.toggle('hidden', playing); pauseIcon.classList.toggle('hidden', !playing);
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
       }
 
       window.stopAudio = () => {
-        synth.cancel();
-        silentAudio.pause();
-        isPlaying = false;
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-        clearInterval(progressInterval);
+        synth.cancel(); silentAudio.pause(); stopKeepAlive(); stopResumeHack();
+        clearInterval(progressInterval); setUI(false);
         if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
       };
 
       function startSpeaking() {
         synth.cancel();
         const lang = localStorage.getItem('lang') || 'id';
-        const content = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-        currentText = content.innerText.trim();
-        if (!currentText) return;
-
+        const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+        currentText = c.innerText.trim(); if (!currentText) return;
         const saved = parseInt(localStorage.getItem(getStorageKey())) || 0;
-        charOffset = saved >= currentText.length ? 0 : saved;
-        lastCharIndex = charOffset;
-
+        charOffset = saved >= currentText.length ? 0 : saved; lastCharIndex = charOffset;
         utterance = new SpeechSynthesisUtterance(currentText.substring(charOffset));
-        utterance.lang = lang === 'id' ? 'id-ID' : 'en-US';
-        utterance.rate = 0.95;
-
-        const maleKeywords = ['Male', 'David', 'Daniel', 'Alex', 'Eddy', 'Oliver', 'Thomas', 'James', 'Arthur'];
-        let bestVoice = voices.find(v => v.lang.startsWith(utterance.lang) && maleKeywords.some(key => v.name.includes(key))) || 
-                        voices.find(v => v.lang.startsWith(utterance.lang));
-        if (bestVoice) utterance.voice = bestVoice;
-
-        utterance.onstart = () => {
-          startProgressTimer();
-          if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
-        };
-        utterance.onboundary = (event) => updateAudioProgress(event.charIndex);
-        utterance.onend = () => {
-          window.stopAudio();
-          progressBar.style.width = '0%';
-          audioProgressText.innerText = '0%';
-          localStorage.removeItem(getStorageKey());
-        };
+        utterance.lang = lang === 'id' ? 'id-ID' : 'en-US'; utterance.rate = 0.95;
+        const mk = ['Male','David','Daniel','Alex','Eddy','Oliver','Thomas','James','Arthur'];
+        let bv = voices.find(v => v.lang.startsWith(utterance.lang) && mk.some(k => v.name.includes(k))) || voices.find(v => v.lang.startsWith(utterance.lang));
+        if (bv) utterance.voice = bv;
+        utterance.onstart = () => { startProgressTimer(); startResumeHack(); };
+        utterance.onboundary = (e) => updateProgress(e.charIndex);
+        utterance.onend = () => { window.stopAudio(); progressBar.style.width = '0%'; audioProgressText.innerText = '0%'; localStorage.removeItem(getStorageKey()); };
         utterance.onerror = window.stopAudio;
-
         updateMediaSession();
-        silentAudio.play().finally(() => synth.speak(utterance));
+        startKeepAlive(); // Start real audio stream to prevent OS from killing process
+        silentAudio.play().catch(()=>{});
+        synth.speak(utterance);
       }
 
       window.toggleAudio = () => {
         if (isPlaying) {
-          synth.pause();
-          silentAudio.pause();
-          isPlaying = false;
-          playIcon.classList.remove('hidden');
-          pauseIcon.classList.add('hidden');
-          clearInterval(progressInterval);
-          if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+          synth.pause(); silentAudio.pause(); stopResumeHack(); clearInterval(progressInterval); setUI(false);
         } else {
-          if (synth.paused && utterance) {
-            synth.resume();
-            silentAudio.play().catch(()=>{});
-            startProgressTimer();
-          } else {
-            startSpeaking();
-          }
-          isPlaying = true;
-          playIcon.classList.add('hidden');
-          pauseIcon.classList.remove('hidden');
-          if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
+          if (synth.paused && utterance) { synth.resume(); silentAudio.play().catch(()=>{}); startProgressTimer(); startResumeHack(); }
+          else { startSpeaking(); }
+          setUI(true);
         }
-      }
+      };
 
-      const newPlay = playBtn.cloneNode(true);
-      playBtn.parentNode.replaceChild(newPlay, playBtn);
-      newPlay.addEventListener('click', window.toggleAudio);
-
-      const progressContainer = document.getElementById('progressContainer');
-      if (progressContainer) {
-        progressContainer.addEventListener('click', (e) => {
-          if (!currentText) return;
-          const rect = e.currentTarget.getBoundingClientRect();
-          const progress = (e.clientX - rect.left) / rect.width;
-          localStorage.setItem(getStorageKey(), Math.floor(progress * currentText.length));
-          startSpeaking();
-          isPlaying = true;
-          playIcon.classList.add('hidden');
-          pauseIcon.classList.remove('hidden');
-        });
-      }
+      const np = playBtn.cloneNode(true); playBtn.parentNode.replaceChild(np, playBtn);
+      np.addEventListener('click', window.toggleAudio);
+      const pc = document.getElementById('progressContainer');
+      if (pc) { pc.addEventListener('click', (e) => { if (!currentText) return; const r = e.currentTarget.getBoundingClientRect(); localStorage.setItem(getStorageKey(), Math.floor(((e.clientX - r.left) / r.width) * currentText.length)); startSpeaking(); setUI(true); }); }
     }
 
-    document.addEventListener('astro:page-load', () => {
-      initLanguage();
-      initAudioPlayer();
-    });
-
-    initLanguage();
-    initAudioPlayer();
+    document.addEventListener('astro:page-load', () => { initLanguage(); initAudioPlayer(); });
+    initLanguage(); initAudioPlayer();
   </script>
 </Layout>
 
