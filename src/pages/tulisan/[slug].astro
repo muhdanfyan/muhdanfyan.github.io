@@ -202,41 +202,42 @@ const writing = writingMetadata;
   </footer>
 
   <script is:inline>
-    // Global speech synthesis setup
+    // Global speech synthesis and media session setup
     const synth = window.speechSynthesis;
     let voices = [];
-    function loadVoices() {
-      voices = synth.getVoices();
-    }
-    if (synth.onvoiceschanged !== undefined) {
-      synth.onvoiceschanged = loadVoices;
-    }
+    function loadVoices() { voices = synth.getVoices(); }
+    if (synth.onvoiceschanged !== undefined) { synth.onvoiceschanged = loadVoices; }
     loadVoices();
+
+    function updateMediaSession() {
+      if ('mediaSession' in navigator) {
+        const title = document.querySelector('h1')?.innerText || 'Tulisan';
+        const image = document.querySelector('header img')?.src || '';
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: title,
+          artist: 'Muhdan Fyan',
+          album: 'AI Voice Reader',
+          artwork: [{ src: image, sizes: '512x512', type: 'image/jpeg' }]
+        });
+        
+        navigator.mediaSession.setActionHandler('play', () => { if (window.toggleAudio) window.toggleAudio(); });
+        navigator.mediaSession.setActionHandler('pause', () => { if (window.toggleAudio) window.toggleAudio(); });
+      }
+    }
 
     function initLanguage() {
       let currentLang = localStorage.getItem('lang') || 'id';
-
       function updateLanguageUI() {
-        const langLabel = document.getElementById('langLabel');
-        if (langLabel) {
-          langLabel.innerText = currentLang.toUpperCase();
-        }
-        
+        const label = document.getElementById('langLabel');
+        if (label) label.innerText = currentLang.toUpperCase();
         document.querySelectorAll('.lang-text').forEach(el => {
           el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
         });
-
         const idContent = document.getElementById('contentId');
         const enContent = document.getElementById('contentEn');
-        
         if (idContent && enContent) {
-          if (currentLang === 'en') {
-            idContent.classList.add('hidden');
-            enContent.classList.remove('hidden');
-          } else {
-            idContent.classList.remove('hidden');
-            enContent.classList.add('hidden');
-          }
+          idContent.classList.toggle('hidden', currentLang === 'en');
+          enContent.classList.toggle('hidden', currentLang !== 'en');
         }
       }
 
@@ -257,13 +258,13 @@ const writing = writingMetadata;
         const newCopy = copyBtn.cloneNode(true);
         copyBtn.parentNode.replaceChild(newCopy, copyBtn);
         newCopy.addEventListener('click', async () => {
-          const activeContent = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+          const content = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
           try {
-            await navigator.clipboard.writeText(activeContent.innerText);
+            await navigator.clipboard.writeText(content.innerText);
             const label = newCopy.querySelector('#copyLabel');
-            const originalText = label.innerText;
+            const original = label.innerText;
             label.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!';
-            setTimeout(() => { label.innerText = originalText; }, 2000);
+            setTimeout(() => { label.innerText = original; }, 2000);
           } catch (err) { console.error(err); }
         });
       }
@@ -281,7 +282,6 @@ const writing = writingMetadata;
           }
         });
       }
-
       updateLanguageUI();
     }
 
@@ -317,10 +317,10 @@ const writing = writingMetadata;
         clearInterval(progressInterval);
         progressInterval = setInterval(() => {
           if (synth.speaking && !synth.paused) {
-            lastCharIndex += 2;
+            lastCharIndex += 1; // Slow increment to keep UI alive
             updateAudioProgress(lastCharIndex - charOffset);
           }
-        }, 100);
+        }, 150);
       }
 
       window.stopAudio = () => {
@@ -330,17 +330,18 @@ const writing = writingMetadata;
         playIcon.classList.remove('hidden');
         pauseIcon.classList.add('hidden');
         clearInterval(progressInterval);
+        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
       };
 
       function startSpeaking() {
         synth.cancel();
         const lang = localStorage.getItem('lang') || 'id';
-        const activeContent = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-        currentText = activeContent.innerText.trim();
+        const content = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+        currentText = content.innerText.trim();
         if (!currentText) return;
 
-        const savedIndex = parseInt(localStorage.getItem(getStorageKey())) || 0;
-        charOffset = savedIndex >= currentText.length ? 0 : savedIndex;
+        const saved = parseInt(localStorage.getItem(getStorageKey())) || 0;
+        charOffset = saved >= currentText.length ? 0 : saved;
         lastCharIndex = charOffset;
 
         utterance = new SpeechSynthesisUtterance(currentText.substring(charOffset));
@@ -352,7 +353,10 @@ const writing = writingMetadata;
                         voices.find(v => v.lang.startsWith(utterance.lang));
         if (bestVoice) utterance.voice = bestVoice;
 
-        utterance.onstart = startProgressTimer;
+        utterance.onstart = () => {
+          startProgressTimer();
+          if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
+        };
         utterance.onboundary = (event) => updateAudioProgress(event.charIndex);
         utterance.onend = () => {
           window.stopAudio();
@@ -362,10 +366,11 @@ const writing = writingMetadata;
         };
         utterance.onerror = window.stopAudio;
 
+        updateMediaSession();
         silentAudio.play().finally(() => synth.speak(utterance));
       }
 
-      function toggleAudio() {
+      window.toggleAudio = () => {
         if (isPlaying) {
           synth.pause();
           silentAudio.pause();
@@ -373,6 +378,7 @@ const writing = writingMetadata;
           playIcon.classList.remove('hidden');
           pauseIcon.classList.add('hidden');
           clearInterval(progressInterval);
+          if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
         } else {
           if (synth.paused && utterance) {
             synth.resume();
@@ -384,21 +390,21 @@ const writing = writingMetadata;
           isPlaying = true;
           playIcon.classList.add('hidden');
           pauseIcon.classList.remove('hidden');
+          if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
         }
       }
 
       const newPlay = playBtn.cloneNode(true);
       playBtn.parentNode.replaceChild(newPlay, playBtn);
-      newPlay.addEventListener('click', toggleAudio);
+      newPlay.addEventListener('click', window.toggleAudio);
 
       const progressContainer = document.getElementById('progressContainer');
       if (progressContainer) {
         progressContainer.addEventListener('click', (e) => {
           if (!currentText) return;
           const rect = e.currentTarget.getBoundingClientRect();
-          const clickedProgress = (e.clientX - rect.left) / rect.width;
-          const newCharIndex = Math.floor(clickedProgress * currentText.length);
-          localStorage.setItem(getStorageKey(), newCharIndex);
+          const progress = (e.clientX - rect.left) / rect.width;
+          localStorage.setItem(getStorageKey(), Math.floor(progress * currentText.length));
           startSpeaking();
           isPlaying = true;
           playIcon.classList.add('hidden');
