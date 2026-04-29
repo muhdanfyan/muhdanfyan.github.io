@@ -68,4 +68,4 @@ Menjadi *AI-Native Engineer* bukan lagi sekadar tren, melainkan strategi bertaha
 *   [AI-Native Company - Dan Shipper](https://youtu.be/Op0UcKwOO_U)
 *   [AI Native Engineer - Programmer Zaman Now](https://youtu.be/Sg5YKhKfweg)
 
-**Penulis:** Muhdan Fyan Syah Sofian
+**Pengkaji:** Muhdan Fyan Syah Sofian
