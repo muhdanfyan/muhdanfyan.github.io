@@ -137,7 +137,7 @@ const writing = writingMetadata;
     </div>
 
     <!-- Silent audio to keep background process alive on mobile -->
-    <audio id="silentAudio" loop src="data:audio/wav;base64,UklGRigAAABXQVZFRm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==/"></audio>
+    <audio id="silentAudio" loop src="/silent.mp3"></audio>
 
     <!-- Share & Copy Options -->
     <div class="mt-8 pt-8 border-t border-slate-100">
@@ -308,23 +308,44 @@ const writing = writingMetadata;
 
     function setupMediaSession() {
       if ('mediaSession' in navigator) {
+        const title = document.querySelector('h1')?.innerText || 'Tulisan';
+        const image = document.querySelector('header img')?.src || '';
+
         navigator.mediaSession.metadata = new MediaMetadata({
-          title: document.querySelector('h1').innerText,
+          title: title,
           artist: 'Muhdan Fyan',
           album: 'AI Voice Reader',
-          artwork: [{ 
-            src: document.querySelector('header img')?.src || '', 
-            sizes: '512x512', 
-            type: 'image/jpeg' 
-          }]
+          artwork: [
+            { src: image, sizes: '96x96', type: 'image/jpeg' },
+            { src: image, sizes: '128x128', type: 'image/jpeg' },
+            { src: image, sizes: '192x192', type: 'image/jpeg' },
+            { src: image, sizes: '256x256', type: 'image/jpeg' },
+            { src: image, sizes: '384x384', type: 'image/jpeg' },
+            { src: image, sizes: '512x512', type: 'image/jpeg' },
+          ]
         });
 
-        navigator.mediaSession.setActionHandler('play', () => {
-          if (!isPlaying) toggleAudio();
+        navigator.mediaSession.setActionHandler('play', () => toggleAudio());
+        navigator.mediaSession.setActionHandler('pause', () => toggleAudio());
+        navigator.mediaSession.setActionHandler('stop', () => {
+          synth.cancel();
+          silentAudio.pause();
+          isPlaying = false;
+          playIcon.classList.remove('hidden');
+          pauseIcon.classList.add('hidden');
+          clearInterval(progressInterval);
+          navigator.mediaSession.playbackState = 'none';
         });
-        navigator.mediaSession.setActionHandler('pause', () => {
-          if (isPlaying) toggleAudio();
-        });
+        
+        try {
+          navigator.mediaSession.setActionHandler('seekto', (details) => {
+            const newCharIndex = Math.floor((details.seekTime / 60) * 1000); // Very rough estimate
+            // Seeking in TTS is hard via media session, but we can try to restart
+            if (details.fastSeek && 'fastSeek' in silentAudio) {
+              silentAudio.fastSeek(details.seekTime);
+            }
+          });
+        } catch (e) {}
       }
     }
 
