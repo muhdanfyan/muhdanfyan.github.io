@@ -32,4 +32,4 @@ Jika tugas Anda melibatkan data yang sangat banyak atau logika pemrograman yang 
 AI bukanlah ancaman, melainkan asisten yang menunggu untuk Anda beri perintah. Memahami perbedaan fungsi antar model akan menyelamatkan Anda dari kebingungan dan biaya langganan yang sia-sia. Seperti yang sering dikatakan oleh para ahli, "AI tidak akan menggantikan manusia, tapi orang yang menggunakan AI akan menggantikan orang yang tidak menggunakannya."
 
 ---
-**Sumber:** Wawasan Video [Seni Hidup Bersama AI](https://youtu.be/TO3NFnTmItc) | **Penulis:** Muhdan Fyan Syah Sofian | **Standardized via Gemini CLI**
+**Sumber:** Wawasan Video [Seni Hidup Bersama AI](https://youtu.be/TO3NFnTmItc) | **Penulis:** Muhdan Fyan Syah Sofian

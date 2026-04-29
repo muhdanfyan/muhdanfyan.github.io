@@ -38,4 +38,4 @@ Authoritatively banning technology use often triggers rebellion. A more scientif
 
 ---
 
-**Source:** [DSM-5 Guidelines](https://www.psychiatry.org/psychiatrists/practice/dsm) | **Author:** Muhdan Fyan Syah Sofian | **Standardized via Gemini CLI**
+**Source:** [DSM-5 Guidelines](https://www.psychiatry.org/psychiatrists/practice/dsm) | **Author:** Muhdan Fyan Syah Sofian

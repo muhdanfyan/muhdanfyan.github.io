@@ -23,7 +23,7 @@ Setiap publikasi tulisan baru di `muhdanfyan.github.io` wajib mengikuti langkah 
 - **Foreign Terms:** Semua istilah asing (Inggris/teknis) WAJIB ditulis *miring (italic)*.
 - **Deep Linking:** Setiap istilah teknis penting WAJIB memiliki tautan (hyperlink) ke dokumentasi resmi atau referensi otoritatif.
 - **Technical Highlights:** Gunakan tag `<span class="highlight">` dengan font *JetBrains Mono* untuk istilah alat atau teknologi.
-- **Footer Wajib:** Di akhir setiap artikel, sertakan: **Sumber:** [Link] | **Penulis:** Muhdan Fyan Syah Sofian | **Standardized via Gemini CLI**.
+- **Footer Wajib:** Di akhir setiap artikel, sertakan: **Sumber:** [Link] | **Penulis:** Muhdan Fyan Syah Sofian.
 
 ### 3. SEO & Rich Preview (Rich Media)
 - **Absolute URLs for Meta Tags:** Tag `og:image` dan `twitter:image` WAJIB menggunakan URL absolut lengkap (misal: `https://muhdanfyan.github.io/img/...`).
