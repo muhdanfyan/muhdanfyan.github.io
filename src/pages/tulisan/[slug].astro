@@ -152,6 +152,13 @@ const writing = writingMetadata;
                title="Share to Facebook">
                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 3.656 10.99 8.812 12.003v-8.49h-3.087v-3.513h3.087v-2.677c0-3.047 1.803-4.733 4.693-4.733 1.384 0 2.831.247 2.831.247v3.113h-1.595c-1.507 0-1.977.935-1.977 1.892v2.258h3.509l-.56 3.513h-2.949v8.49c5.156-1.013 8.812-6.013 8.812-12.003z"/></svg>
             </a>
+            <!-- LinkedIn -->
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`} 
+               target="_blank" 
+               class="p-2.5 bg-slate-50 text-slate-400 hover:bg-blue-50 hover:text-blue-600 rounded-xl transition-all" 
+               title="Share to LinkedIn">
+               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
             <!-- WA -->
             <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(writing.title + " " + Astro.url.href)}`} 
                target="_blank" 
