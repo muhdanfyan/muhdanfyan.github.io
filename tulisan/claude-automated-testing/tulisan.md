@@ -2,8 +2,6 @@
 
 📅 **25 April 2026**
 
-![Automated Testing Mastery](https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200)
-
 Dunia pengembangan perangkat lunak telah memasuki era baru. Jika dulu hambatan terbesar seorang pengembang adalah kecepatan menulis kode, kini hambatan tersebut telah berpindah ke **proses verifikasi**. Dengan kehadiran [***AI Agent***](https://aws.amazon.com/what-is/ai-agents/) seperti [**Claude Code**](https://www.anthropic.com/news/claude-3-7-sonnet), kita mampu menghasilkan ribuan baris kode dalam sekejap. Namun, tanpa strategi pengujian yang matang, kecepatan ini justru akan menjebak kita dalam "neraka debugging".
 
 Berdasarkan panduan teknis dari [***Towards Data Science***](https://towardsdatascience.com/how-to-vastly-improve-claude-code-performance-with-automated-testing/), artikel ini akan membedah secara menyeluruh bagaimana mematangkan workflow Anda dari sekadar "ngoding bareng AI" menjadi "membangun sistem otonom yang teruji".

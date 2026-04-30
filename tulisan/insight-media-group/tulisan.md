@@ -2,8 +2,6 @@
 
 📅 **25 April 2026**
 
-![Insight Media Group](hero.png)
-
 Dunia publikasi digital terus bertransformasi seiring dengan integrasi teknologi yang semakin mendalam. [**Insight Media Group**](https://insightmediagroup.io/) muncul sebagai salah satu pionir yang memahami bagaimana konten berkualitas harus didistribusikan secara efisien di era informasi yang sangat padat ini.
 
 ---

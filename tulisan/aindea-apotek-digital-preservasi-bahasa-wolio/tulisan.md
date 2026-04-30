@@ -6,8 +6,6 @@ category: "Technology & Culture"
 image: "/img/screenshots/aindea.jpg"
 ---
 
-![Aindea Hero](/img/screenshots/aindea.jpg)
-
 ## Tujuan Aplikasi
 
 **Aindea** dirancang bukan sekadar sebagai alat bantu, melainkan sebagai sebuah **"Apotek Digital"** bagi kelestarian Bahasa Wolio. Layaknya apotek yang menyediakan obat untuk menyembuhkan, Aindea menyediakan "penawar" terhadap ancaman kepunahan bahasa daerah di era modern.

@@ -2,8 +2,6 @@
 
 📅 **25 April 2026**
 
-![SMKN 4 Baubau Lab](lab-smk.jpg)
-
 Being part of the vocational education quality assurance process is an honor. From this Monday to Saturday, I had the opportunity to represent the [**Baubau City Communication and Informatics Office (Diskominfo)**](https://diskominfo.baubaukota.go.id/) to examine the [***Vocational Competency Test (UKK)***](https://psmk.kemdikbud.go.id/) at [**SMK Negeri 4 Baubau**](http://smkn4baubau.sch.id/), a school standing firm amidst the beauty of Makassar Island (Puma).
 
 ---

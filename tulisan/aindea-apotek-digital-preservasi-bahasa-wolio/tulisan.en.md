@@ -6,8 +6,6 @@ category: "Technology & Culture"
 image: "/img/screenshots/aindea.jpg"
 ---
 
-![Aindea Hero](/img/screenshots/aindea.jpg)
-
 ## App Purpose
 
 **Aindea** is designed not just as a tool, but as a **"Digital Pharmacy"** for the preservation of the Wolio Language. Like a pharmacy providing medicine to heal, Aindea provides the "remedy" against the threat of local language extinction in the modern era.

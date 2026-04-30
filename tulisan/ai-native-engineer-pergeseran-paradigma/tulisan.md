@@ -6,8 +6,6 @@ category: "Technology & Career"
 image: "/img/screenshots/ai-agents.jpg"
 ---
 
-![AI-Native Engineer Hero](/img/screenshots/ai-agents.jpg)
-
 📅 **26 April 2026**
 
 <p class="dropcap">Kita sedang menyaksikan kepunahan peran <i>traditional coder</i>. Era di mana pengembang menghabiskan 8 jam sehari untuk mengetik sintaks secara manual telah berakhir. Selamat datang di era **AI-Native Engineer**—sebuah pergeseran paradigma yang bukan sekadar tentang "menggunakan alat", melainkan tentang mendesain ulang seluruh alur kerja rekayasa perangkat lunak dengan asumsi bahwa kecerdasan buatan adalah kapabilitas utama.</p>
