@@ -225,8 +225,9 @@ MUHDAN FYAN
         utterance = new SpeechSynthesisUtterance(currentText.substring(charOffset));
         utterance.lang = lang === 'id' ? 'id-ID' : 'en-US'; utterance.rate = 0.95;
         const preferred = ['Damayanti', 'Ardi', 'Indah', 'Natural', 'Enhanced', 'Premium'];
-        let bv = voices.find(v => v.lang.startsWith(utterance.lang) && !v.name.includes('Google') && preferred.some(k => v.name.includes(k)));
-        if (!bv) bv = voices.find(v => v.lang.startsWith(utterance.lang) && !v.name.includes('Google'));
+        // Try to find a native-sounding Indonesian voice
+        let bv = voices.find(v => (v.lang.includes('id') || v.lang.includes('ID')) && !v.name.includes('Google') && preferred.some(k => v.name.includes(k)));
+        if (!bv) bv = voices.find(v => (v.lang.includes('id') || v.lang.includes('ID')) && !v.name.includes('Google'));
         if (bv) utterance.voice = bv;
         // If no high-quality voice found, we don't set utterance.voice to let browser use device default
         utterance.onstart = () => { startProgressTimer(); startResumeHack(); };
