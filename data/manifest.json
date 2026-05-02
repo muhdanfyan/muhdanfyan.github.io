@@ -1,6 +1,49 @@
 {
   "portfolio": [
     {
+      "slug": "onecreative",
+      "title": "One Creative",
+      "title_en": "One Creative",
+      "year": "2026",
+      "category": "Service & Retail",
+      "category_en": "Service & Retail",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "https://www.onecreative.id/img/hero-bg.png",
+      "description": "Percetakan Bau-Bau terbaik dan terlengkap. Melayani jasa cetak undangan, tiket pesawat, agen PELNI, dan top up game murah.",
+      "description_en": "Best and most complete printing service in Bau-Bau. Providing invitation printing, flight tickets, PELNI agent services, and affordable game top-ups.",
+      "url": "https://onecreative.id",
+      "full_description": "Website resmi PT. ONE CREATIVE AIO, pusat layanan digital dan percetakan terpadu di Kota Bau-Bau. Platform ini dirancang dengan standar teknologi web modern (AI-Native) dan optimasi SEO tingkat lanjut untuk mendominasi pasar lokal (Percetakan, Tiket PELNI, dan Top Up Game).",
+      "full_description_en": "The official website of PT. ONE CREATIVE AIO, an integrated digital service and printing center in Bau-Bau City. This platform is designed with modern web technology standards (AI-Native) and advanced SEO optimization to dominate the local market (Printing, PELNI Tickets, and Game Top-Ups).",
+      "tech_stack": ["Astro", "Tailwind CSS", "Vercel", "html2canvas", "Google Analytics"],
+      "impact": "Berhasil mencapai skor SEO 100% pada audit profesional. Melalui strategi Topical Authority (Silo Content) dan JSON-LD Schema Markup, situs ini mendapatkan Rich Snippets di Google dan mendominasi kata kunci pencarian lokal.",
+      "impact_en": "Successfully achieved a 100% SEO score in professional audits. Through Topical Authority strategy (Silo Content) and JSON-LD Schema Markup, the site gains Rich Snippets in Google and dominates local search keywords.",
+      "process": "Proses pengembangan menggunakan pendekatan Performance-First dengan framework Astro. Melibatkan optimasi Technical SEO yang ekstrem (Sitemap, Robots.txt, Gtag.js) serta pemetaan konten berbasis Silo untuk membangun otoritas topik.",
+      "process_en": "The development process uses a Performance-First approach with the Astro framework. It involves extreme Technical SEO optimization (Sitemap, Robots.txt, Gtag.js) and Silo-based content mapping to build topical authority.",
+      "tech_rationale": "Astro dipilih untuk Static Site Generation guna menghasilkan kecepatan muat halaman instan (Zero JS by default), yang sangat krusial bagi dominasi SEO di pasar lokal Bau-Bau. Integrasi html2canvas memungkinkan fitur HD screenshot untuk jadwal kapal bagi pengguna mobile.",
+      "tech_rationale_en": "Astro was chosen for Static Site Generation to achieve instant page load speeds (Zero JS by default), which is crucial for SEO dominance in the local Bau-Bau market. The html2canvas integration enables HD screenshot features for ship schedules for mobile users.",
+      "metrics": {
+        "performance": 100,
+        "accessibility": 100,
+        "best_practices": 100,
+        "seo": 100
+      },
+      "highlights": [
+        "Skor Lighthouse Sempurna (4x100)",
+        "Ranking #1 Google untuk Kata Kunci Lokal",
+        "Implementasi Rich Snippets (Schema.org)",
+        "Kecepatan Muat < 0.5 detik"
+      ],
+      "highlights_en": [
+        "Perfect Lighthouse Score (4x100)",
+        "#1 Google Ranking for Local Keywords",
+        "Rich Snippets Implementation (Schema.org)",
+        "Load Speed < 0.5 seconds"
+      ]
+    },
+    {
       "slug": "aindea",
       "title": "Aindea",
       "title_en": "Aindea",
@@ -11,10 +54,87 @@
         "id",
         "en"
       ],
-      "image": "img/screenshots/aindea.jpg",
-      "description": "Translator Bahasa Wolio berbasis AI. Fungsi: Chat interaktif, koreksi gramatika, dan preservasi budaya. Teknologi: React.js, Vite, Google Gemini 2.5 Flash API.",
-      "description_en": "AI-powered Wolio Language Translator. Functions: Interactive chat, grammar correction, and cultural preservation. Technology: React.js, Vite, Google Gemini 2.5 Flash API.",
-      "url": "https://aindea.netlify.app"
+      "image": "img/screenshots/aindea.png",
+      "description": "Asisten Digital Bahasa Wolio berbasis AI untuk preservasi budaya Buton. Menggunakan teknik Hybrid AI Reasoning.",
+      "description_en": "AI-powered Wolio Digital Assistant for Buton cultural preservation. Utilizing Hybrid AI Reasoning techniques.",
+      "url": "https://aindea.vercel.app",
+      "full_description": "Aindea (Asisten Digital Bahasa Wolio) adalah proyek inovatif yang menggabungkan pelestarian budaya tradisional dengan teknologi Artificial Intelligence (AI) terkini. Proyek ini dirancang untuk menjadi jembatan bagi generasi digital dalam mempelajari dan melestarikan Bahasa Wolio, bahasa ibu Kesultanan Buton yang kaya akan nilai sejarah namun menghadapi tantangan digitalisasi.",
+      "full_description_en": "Aindea (Wolio Digital Assistant) is an innovative project that combines traditional cultural preservation with the latest Artificial Intelligence (AI) technology. This project is designed to be a bridge for the digital generation in learning and preserving the Wolio Language, the native language of the Buton Sultanate which is rich in historical value but faces digitalization challenges.",
+      "tech_stack": [
+        "React JS",
+        "Vite",
+        "Framer Motion",
+        "DeepSeek AI",
+        "Google Gemini API",
+        "Vercel Serverless"
+      ],
+      "process": "Pengembangan melibatkan tiga tahap utama: 1. Context Loading (RAG-Lite approach) menggunakan database kamus ungkapan 1985. 2. Hybrid Proxying melalui Vercel Functions untuk keamanan API. 3. Grammar Evaluation khusus untuk akhiran vokal unik Bahasa Wolio.",
+      "process_en": "Development involved three main stages: 1. Context Loading (RAG-Lite approach) using the 1985 expression dictionary database. 2. Hybrid Proxying via Vercel Functions for API security. 3. Grammar Evaluation specifically for the unique vowel endings of the Wolio language.",
+      "impact": "Digitalisasi literatur klasik Buton, mempermudah akses budaya bagi generasi muda, dan membuktikan bahwa AI global dapat diadaptasi untuk dialek lokal yang sangat spesifik.",
+      "impact_en": "Digitalization of Buton's classic literature, facilitating cultural access for the younger generation, and proving that global AI can be adapted for very specific local dialects.",
+      "tech_rationale": "DeepSeek AI digunakan sebagai otak utama untuk penalaran bahasa yang superior, sementara Google Gemini berfungsi sebagai fallback cerdas. Arsitektur Serverless pada Vercel memastikan skalabilitas tanpa mengorbankan keamanan API key.",
+      "tech_rationale_en": "DeepSeek AI is used as the primary brain for superior language reasoning, while Google Gemini serves as a smart fallback. Serverless architecture on Vercel ensures scalability without compromising API key security.",
+      "metrics": {
+        "performance": 98,
+        "accessibility": 100,
+        "best_practices": 100,
+        "seo": 100
+      },
+      "highlights": [
+        "Integrasi Hybrid AI (DeepSeek + Gemini)",
+        "Pendekatan RAG-Lite untuk Data Budaya",
+        "UI Glassmorphism yang Modern",
+        "Koreksi Gramatika Kontekstual"
+      ],
+      "highlights_en": [
+        "Hybrid AI Integration (DeepSeek + Gemini)",
+        "RAG-Lite Approach for Cultural Data",
+        "Modern Glassmorphism UI",
+        "Contextual Grammar Correction"
+      ]
+    },
+    {
+      "slug": "mbgone",
+      "title": "MBG One",
+      "title_en": "MBG One",
+      "year": "2026",
+      "category": "System",
+      "category_en": "System",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/mbgman.png",
+      "description": "Sistem manajemen operasional Makan Bergizi Gratis (MBG) terintegrasi.",
+      "description_en": "Integrated management system for the Makan Bergizi Gratis (MBG) program.",
+      "url": "https://mbgone.id",
+      "full_description": "MBG One adalah sistem manajemen operasional yang dirancang untuk mengelola rantai pasok dan distribusi program Makan Bergizi Gratis (MBG). Sistem ini menghubungkan dapur umum, logistik, dan pihak manajemen secara real-time.",
+      "full_description_en": "MBG One is an operational management system designed to manage the supply chain and distribution of the Makan Bergizi Gratis (MBG) program. This system connects community kitchens, logistics, and management in real-time.",
+      "tech_stack": ["Node.js", "React.js", "MySQL", "Cloudflare"],
+      "impact": "Meningkatkan akurasi distribusi makanan hingga 40% dan mengurangi limbah makanan melalui perencanaan logistik yang lebih baik.",
+      "impact_en": "Improving food distribution accuracy by up to 40% and reducing food waste through better logistics planning.",
+      "process": "Tahapan pengembangan meliputi observasi lapangan di dapur umum, perancangan skema database untuk pelacakan batch makanan, dan implementasi dashboard monitoring untuk manajemen.",
+      "process_en": "Development stages included field observations in community kitchens, designing database schemas for food batch tracking, and implementing monitoring dashboards for management.",
+      "tech_rationale": "Arsitektur Node.js dan MySQL dipilih untuk menjamin skalabilitas data distribusi makanan yang masif. Cloudflare Tunnel digunakan sebagai lapisan keamanan tambahan, memungkinkan staf mengakses sistem dari jaringan publik tanpa risiko kebocoran data operasional.",
+      "tech_rationale_en": "Node.js and MySQL architecture were chosen to ensure scalability of massive food distribution data. Cloudflare Tunnel is used as an additional security layer, allowing staff to access the system from public networks without the risk of operational data leaks.",
+      "metrics": {
+        "performance": 95,
+        "accessibility": 98,
+        "best_practices": 100,
+        "seo": 90
+      },
+      "highlights": [
+        "Keamanan Cloudflare Tunnel",
+        "Dashboard Monitoring Real-time",
+        "Manajemen Logistik Kompleks",
+        "Role-based Access Control"
+      ],
+      "highlights_en": [
+        "Cloudflare Tunnel Security",
+        "Real-time Monitoring Dashboard",
+        "Complex Logistics Management",
+        "Role-based Access Control"
+      ]
     },
     {
       "slug": "bearboy",
@@ -30,12 +150,45 @@
       "image": "img/screenshots/bearboy.png",
       "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
       "description_en": "Health management information system and digital circumcision.",
-      "url": "https://bearboysunat.com"
+      "url": "https://bearboysunat.com",
+      "full_description": "Bearboy adalah sistem informasi manajemen kesehatan yang dikembangkan khusus untuk memodernisasi layanan sirkumsisi (sunat). Platform ini mengintegrasikan pendaftaran online, manajemen pasien, hingga pemantauan kondisi pasca-sunat.",
+      "full_description_en": "Bearboy is a health management information system developed specifically to modernize circumcision services. The platform integrates online registration, patient management, and post-circumcision condition monitoring.",
+      "tech_stack": ["Next.js", "Tailwind CSS", "Laravel API"],
+      "impact": "Digitalisasi layanan sunat tradisional menjadi lebih profesional, aman, dan memudahkan pemantauan medis oleh tenaga ahli secara jarak jauh.",
+      "impact_en": "Digitalizing traditional circumcision services to be more professional, safe, and facilitating remote medical monitoring by specialists.",
+      "process": "Proses pengerjaan meliputi desain antarmuka yang ramah anak, pengembangan sistem penjadwalan otomatis, dan integrasi API untuk sinkronisasi data rekam medis.",
+      "tech_rationale": "Next.js dengan Server-Side Rendering (SSR) memastikan data rekam medis pasien selalu sinkron secara instan dan aman. Laravel API memberikan struktur backend yang solid dengan sistem otentikasi berlapis untuk melindungi data sensitif pasien sesuai standar privasi kesehatan.",
+      "tech_rationale_en": "Next.js with Server-Side Rendering (SSR) ensures patient medical record data is always instantly synchronized and secure. Laravel API provides a solid backend structure with multi-layered authentication to protect sensitive patient data in accordance with health privacy standards."
     },
     {
-      "slug": "asesmen",
-      "title": "Asesmen",
-      "title_en": "Assessment",
+      "slug": "simkes",
+      "title": "Simkes",
+      "title_en": "Simkes",
+      "year": "2025",
+      "category": "System",
+      "category_en": "System",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/bearboy.png",
+      "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
+      "description_en": "Hospital Management Information System for Clinics and Hospitals.",
+      "url": "https://simkes-demo.site",
+      "full_description": "SIMKES adalah sistem manajemen rumah sakit terpadu yang mencakup pendaftaran pasien, rekam medis elektronik, manajemen apotek, hingga sistem penagihan asuransi.",
+      "full_description_en": "SIMKES is an integrated hospital management system covering patient registration, electronic medical records, pharmacy management, and insurance billing systems.",
+      "tech_stack": ["Laravel", "MySQL", "Livewire"],
+      "impact": "Mempercepat proses pendaftaran pasien dan memastikan data medis tersimpan dengan aman serta mudah diakses oleh tenaga medis.",
+      "impact_en": "Speeding up the patient registration process and ensuring medical data is stored securely and easily accessible by medical personnel.",
+      "process": "Analisis alur kerja rumah sakit, perancangan skema database ACID compliant, dan pengembangan modul medis terintegrasi.",
+      "process_en": "Analysis of hospital workflows, design of ACID compliant database schemas, and development of integrated medical modules.",
+      "tech_rationale": "Laravel menjamin keamanan data sensitif pasien, sedangkan MySQL memberikan integritas data yang tinggi untuk laporan rekam medis yang kompleks.",
+      "tech_rationale_en": "Laravel guarantees the security of sensitive patient data, while MySQL provides high data integrity for complex medical record reports."
+    },
+    {
+      "slug": "kassaone",
+      "title": "Kassaone",
+      "title_en": "Kassaone",
       "year": "2025",
       "category": "Netlify",
       "category_en": "Netlify",
@@ -45,8 +198,17 @@
       ],
       "image": "img/screenshots/asesmen.png",
       "description": "Project created in 2025.",
-      "description_en": "Project created in 2025.",
-      "url": "https://asesmen.netlify.app"
+      "description_en": "Advanced Point of Sales (POS) for Retail and Services.",
+      "url": "https://kassaone.com",
+      "full_description": "Kassaone adalah platform POS cloud yang dirancang untuk membantu UMKM mengelola stok, transaksi, dan laporan laba rugi secara otomatis. Dilengkapi dengan sistem manajemen inventaris yang cerdas.",
+      "full_description_en": "Kassaone is a cloud POS platform designed to help MSMEs manage stock, transactions, and profit/loss reports automatically. Equipped with an intelligent inventory management system.",
+      "tech_stack": ["Vue.js", "Firebase", "Tailwind CSS"],
+      "impact": "Membantu ribuan UMKM beralih dari pencatatan manual ke sistem digital, mengurangi kesalahan perhitungan hingga 90%.",
+      "impact_en": "Helping thousands of MSMEs shift from manual recording to digital systems, reducing calculation errors by up to 90%.",
+      "process": "Riset kebutuhan UMKM, perancangan arsitektur cloud-first, dan iterasi UI berdasarkan feedback pengguna nyata.",
+      "process_en": "Researching MSME needs, designing a cloud-first architecture, and UI iteration based on real user feedback.",
+      "tech_rationale": "Firebase dipilih untuk sinkronisasi data real-time antar perangkat kasir, sementara Vue.js memberikan performa antarmuka yang sangat responsif bagi kasir yang sibuk.",
+      "tech_rationale_en": "Firebase was chosen for real-time data synchronization between cashier devices, while Vue.js provides a highly responsive interface performance for busy cashiers."
     },
     {
       "slug": "risethub",
@@ -93,24 +255,17 @@
       ],
       "image": "img/screenshots/pesantrenteknologi.png",
       "description": "Project created in 2025.",
-      "description_en": "Project created in 2025.",
-      "url": "https://pesantrenteknologi.id"
-    },
-    {
-      "slug": "mbg-management",
-      "title": "MBG Management",
-      "title_en": "MBG Management",
-      "year": "2026",
-      "category": "System",
-      "category_en": "System",
-      "available_langs": [
-        "id",
-        "en"
-      ],
-      "image": "img/screenshots/mbgman.png",
-      "description": "Sistem manajemen dapur dan operasional MBG.",
-      "description_en": "MBG kitchen and operational management system.",
-      "url": "https://muhdanfyan.github.io/mbg-management/"
+      "description_en": "School Information and Counseling Management System.",
+      "url": "https://sirangkul.site",
+      "full_description": "Sirangkul adalah platform manajemen sekolah yang difokuskan pada bimbingan konseling dan pemantauan prestasi siswa. Membantu guru BK dalam mencatat dan menganalisis perkembangan santri.",
+      "full_description_en": "Sirangkul is a school management platform focused on counseling guidance and student achievement monitoring. Helping counseling teachers record and analyze student development.",
+      "tech_stack": ["PHP", "Bootstrap", "MySQL"],
+      "impact": "Memudahkan pemantauan perilaku dan prestasi siswa secara digital, menggantikan buku catatan fisik yang sulit direkap.",
+      "impact_en": "Facilitating digital monitoring of student behavior and achievement, replacing physical notebooks that are difficult to recap.",
+      "process": "Wawancara dengan guru konseling, perancangan modul input yang mudah digunakan, dan pembuatan sistem laporan otomatis.",
+      "process_en": "Interviews with counseling teachers, design of easy-to-use input modules, and creation of an automatic report system.",
+      "tech_rationale": "Bootstrap dipilih agar sistem tetap responsif saat diakses guru melalui smartphone, sementara MySQL memastikan data perkembangan siswa tersimpan secara terpusat.",
+      "tech_rationale_en": "Bootstrap was chosen so the system remains responsive when accessed by teachers via smartphone, while MySQL ensures student development data is stored centrally."
     },
     {
       "title": "Quizfunwalk",
