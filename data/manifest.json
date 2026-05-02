@@ -17,7 +17,13 @@
       "url": "https://onecreative.id",
       "full_description": "Website resmi PT. ONE CREATIVE AIO, pusat layanan digital dan percetakan terpadu di Kota Bau-Bau. Platform ini dirancang dengan standar teknologi web modern (AI-Native) dan optimasi SEO tingkat lanjut untuk mendominasi pasar lokal (Percetakan, Tiket PELNI, dan Top Up Game).",
       "full_description_en": "The official website of PT. ONE CREATIVE AIO, an integrated digital service and printing center in Bau-Bau City. This platform is designed with modern web technology standards (AI-Native) and advanced SEO optimization to dominate the local market (Printing, PELNI Tickets, and Game Top-Ups).",
-      "tech_stack": ["Astro", "Tailwind CSS", "Vercel", "html2canvas", "Google Analytics"],
+      "tech_stack": [
+        "Astro",
+        "Tailwind CSS",
+        "Vercel",
+        "html2canvas",
+        "Google Analytics"
+      ],
       "impact": "Berhasil mencapai skor SEO 100% pada audit profesional. Melalui strategi Topical Authority (Silo Content) dan JSON-LD Schema Markup, situs ini mendapatkan Rich Snippets di Google dan mendominasi kata kunci pencarian lokal.",
       "impact_en": "Successfully achieved a 100% SEO score in professional audits. Through Topical Authority strategy (Silo Content) and JSON-LD Schema Markup, the site gains Rich Snippets in Google and dominates local search keywords.",
       "process": "Proses pengembangan menggunakan pendekatan Performance-First dengan framework Astro. Melibatkan optimasi Technical SEO yang ekstrem (Sitemap, Robots.txt, Gtag.js) serta pemetaan konten berbasis Silo untuk membangun otoritas topik.",
@@ -169,7 +175,11 @@
       "url": "https://bearboysunat.com",
       "full_description": "Bearboy adalah sistem informasi manajemen kesehatan yang dikembangkan khusus untuk memodernisasi layanan sirkumsisi (sunat). Platform ini mengintegrasikan pendaftaran online, manajemen pasien, hingga pemantauan kondisi pasca-sunat.",
       "full_description_en": "Bearboy is a health management information system developed specifically to modernize circumcision services. The platform integrates online registration, patient management, and post-circumcision condition monitoring.",
-      "tech_stack": ["Next.js", "Tailwind CSS", "Laravel API"],
+      "tech_stack": [
+        "Next.js",
+        "Tailwind CSS",
+        "Laravel API"
+      ],
       "impact": "Digitalisasi layanan sunat tradisional menjadi lebih profesional, aman, dan memudahkan pemantauan medis oleh tenaga ahli secara jarak jauh.",
       "impact_en": "Digitalizing traditional circumcision services to be more professional, safe, and facilitating remote medical monitoring by specialists.",
       "process": "Proses pengerjaan meliputi desain antarmuka yang ramah anak, pengembangan sistem penjadwalan otomatis, dan integrasi API untuk sinkronisasi data rekam medis.",
@@ -196,7 +206,11 @@
       "url": "https://simkes-demo.site",
       "full_description": "SIMKES adalah sistem manajemen rumah sakit terpadu yang mencakup pendaftaran pasien, rekam medis elektronik, manajemen apotek, hingga sistem penagihan asuransi.",
       "full_description_en": "SIMKES is an integrated hospital management system covering patient registration, electronic medical records, pharmacy management, and insurance billing systems.",
-      "tech_stack": ["Laravel", "MySQL", "Livewire"],
+      "tech_stack": [
+        "Laravel",
+        "MySQL",
+        "Livewire"
+      ],
       "impact": "Mempercepat proses pendaftaran pasien dan memastikan data medis tersimpan dengan aman serta mudah diakses oleh tenaga medis.",
       "impact_en": "Speeding up the patient registration process and ensuring medical data is stored securely and easily accessible by medical personnel.",
       "process": "Analisis alur kerja rumah sakit, perancangan skema database ACID compliant, dan pengembangan modul medis terintegrasi.",
@@ -224,7 +238,11 @@
       "url": "https://kassaone.com",
       "full_description": "Kassaone adalah platform POS cloud yang dirancang untuk membantu UMKM mengelola stok, transaksi, dan laporan laba rugi secara otomatis. Dilengkapi dengan sistem manajemen inventaris yang cerdas.",
       "full_description_en": "Kassaone is a cloud POS platform designed to help MSMEs manage stock, transactions, and profit/loss reports automatically. Equipped with an intelligent inventory management system.",
-      "tech_stack": ["Vue.js", "Firebase", "Tailwind CSS"],
+      "tech_stack": [
+        "Vue.js",
+        "Firebase",
+        "Tailwind CSS"
+      ],
       "impact": "Membantu ribuan UMKM beralih dari pencatatan manual ke sistem digital, mengurangi kesalahan perhitungan hingga 90%.",
       "impact_en": "Helping thousands of MSMEs shift from manual recording to digital systems, reducing calculation errors by up to 90%.",
       "process": "Riset kebutuhan UMKM, perancangan arsitektur cloud-first, dan iterasi UI berdasarkan feedback pengguna nyata.",
@@ -284,7 +302,11 @@
       "url": "https://sirangkul.site",
       "full_description": "Sirangkul adalah platform manajemen sekolah yang difokuskan pada bimbingan konseling dan pemantauan prestasi siswa. Membantu guru BK dalam mencatat dan menganalisis perkembangan santri.",
       "full_description_en": "Sirangkul is a school management platform focused on counseling guidance and student achievement monitoring. Helping counseling teachers record and analyze student development.",
-      "tech_stack": ["PHP", "Bootstrap", "MySQL"],
+      "tech_stack": [
+        "PHP",
+        "Bootstrap",
+        "MySQL"
+      ],
       "impact": "Memudahkan pemantauan perilaku dan prestasi siswa secara digital, menggantikan buku catatan fisik yang sulit direkap.",
       "impact_en": "Facilitating digital monitoring of student behavior and achievement, replacing physical notebooks that are difficult to recap.",
       "process": "Wawancara dengan guru konseling, perancangan modul input yang mudah digunakan, dan pembuatan sistem laporan otomatis.",
@@ -790,32 +812,6 @@
       "url": "https://klinikmatasedayu.netlify.app",
       "description": "Digital project: Klinikmatasedayu. Deployed via Netlify.",
       "description_en": "Digital project: Klinikmatasedayu. Deployed via Netlify.",
-      "available_langs": [
-        "id",
-        "en"
-      ]
-    },
-    {
-      "title": "Merchap",
-      "title_en": "Merchap",
-      "category": "Web App",
-      "image": "https://d33wubrfki0l68.cloudfront.net/63d290c9024406137b6440d8/screenshot_2023-01-26-14-40-48-0000.png",
-      "url": "https://merchap.netlify.app",
-      "description": "Digital project: Merchap. Deployed via Netlify.",
-      "description_en": "Digital project: Merchap. Deployed via Netlify.",
-      "available_langs": [
-        "id",
-        "en"
-      ]
-    },
-    {
-      "title": "Ladziiz",
-      "title_en": "Ladziiz",
-      "category": "Web App",
-      "image": "https://d33wubrfki0l68.cloudfront.net/63cc99324ca6a42263c8eca9/screenshot_2023-01-22-02-02-33-0000.png",
-      "url": "https://ladziidzcatering.com",
-      "description": "Digital project: Ladziiz. Deployed via Netlify.",
-      "description_en": "Digital project: Ladziiz. Deployed via Netlify.",
       "available_langs": [
         "id",
         "en"
