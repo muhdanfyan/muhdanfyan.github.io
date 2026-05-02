@@ -98,42 +98,49 @@
       "title": "MBG One",
       "title_en": "MBG One",
       "year": "2026",
-      "category": "System",
-      "category_en": "System",
+      "category": "Management System",
+      "category_en": "Management System",
       "available_langs": [
         "id",
         "en"
       ],
       "image": "img/screenshots/mbgman.png",
-      "description": "Sistem manajemen operasional Makan Bergizi Gratis (MBG) terintegrasi.",
-      "description_en": "Integrated management system for the Makan Bergizi Gratis (MBG) program.",
+      "description": "Platform manajemen operasional Makan Bergizi Gratis (MBG) terpadu. Rantai pasok, logistik, dan akuntabilitas dalam satu dashboard.",
+      "description_en": "Integrated operational management platform for the Makan Bergizi Gratis (MBG) program. Supply chain, logistics, and accountability in one dashboard.",
       "url": "https://mbgone.id",
-      "full_description": "MBG One adalah sistem manajemen operasional yang dirancang untuk mengelola rantai pasok dan distribusi program Makan Bergizi Gratis (MBG). Sistem ini menghubungkan dapur umum, logistik, dan pihak manajemen secara real-time.",
-      "full_description_en": "MBG One is an operational management system designed to manage the supply chain and distribution of the Makan Bergizi Gratis (MBG) program. This system connects community kitchens, logistics, and management in real-time.",
-      "tech_stack": ["Node.js", "React.js", "MySQL", "Cloudflare"],
-      "impact": "Meningkatkan akurasi distribusi makanan hingga 40% dan mengurangi limbah makanan melalui perencanaan logistik yang lebih baik.",
-      "impact_en": "Improving food distribution accuracy by up to 40% and reducing food waste through better logistics planning.",
-      "process": "Tahapan pengembangan meliputi observasi lapangan di dapur umum, perancangan skema database untuk pelacakan batch makanan, dan implementasi dashboard monitoring untuk manajemen.",
-      "process_en": "Development stages included field observations in community kitchens, designing database schemas for food batch tracking, and implementing monitoring dashboards for management.",
-      "tech_rationale": "Arsitektur Node.js dan MySQL dipilih untuk menjamin skalabilitas data distribusi makanan yang masif. Cloudflare Tunnel digunakan sebagai lapisan keamanan tambahan, memungkinkan staf mengakses sistem dari jaringan publik tanpa risiko kebocoran data operasional.",
-      "tech_rationale_en": "Node.js and MySQL architecture were chosen to ensure scalability of massive food distribution data. Cloudflare Tunnel is used as an additional security layer, allowing staff to access the system from public networks without the risk of operational data leaks.",
+      "full_description": "MBG One (Wahdah MBG Management) adalah platform manajemen operasional yang dirancang untuk mengelola ekosistem program Makan Bergizi Gratis secara menyeluruh. Sistem ini mengintegrasikan manajemen dapur umum, inventaris bahan baku, hingga koordinasi distribusi untuk ribuan siswa dalam satu platform yang transparan.",
+      "full_description_en": "MBG One (Wahdah MBG Management) is an operational management platform designed to manage the entire Makan Bergizi Gratis program ecosystem. The system integrates community kitchen management, raw material inventory, and distribution coordination for thousands of students in one transparent platform.",
+      "tech_stack": [
+        "Vite",
+        "React TS",
+        "Supabase",
+        "Tailwind CSS",
+        "Leaflet JS",
+        "Sentry"
+      ],
+      "process": "Proses pengembangan dimulai dengan observasi alur kerja dapur umum dan logistik. Dilanjutkan dengan perancangan arsitektur database real-time untuk pelacakan stok, integrasi modul Maps untuk pemetaan distribusi, serta implementasi sistem monitoring error menggunakan Sentry.",
+      "process_en": "The development process began with observing the workflow of community kitchens and logistics. Continued with designing a real-time database architecture for stock tracking, integrating Maps modules for distribution mapping, and implementing an error monitoring system using Sentry.",
+      "impact": "Digitalisasi rantai pasok makanan yang kompleks, peningkatan akurasi inventaris bahan baku, serta penyediaan data real-time bagi pengambil kebijakan untuk meminimalkan food waste.",
+      "impact_en": "Digitalizing complex food supply chains, increasing raw material inventory accuracy, and providing real-time data for decision-makers to minimize food waste.",
+      "tech_rationale": "Supabase dipilih untuk skalabilitas dan fitur real-time yang krusial bagi koordinasi logistik yang cepat. Leaflet JS diintegrasikan untuk visualisasi titik distribusi secara akurat, sementara Sentry memastikan stabilitas sistem di lingkungan operasional yang sibuk.",
+      "tech_rationale_en": "Supabase was chosen for its scalability and real-time features, which are crucial for rapid logistics coordination. Leaflet JS is integrated for accurate visualization of distribution points, while Sentry ensures system stability in a busy operational environment.",
       "metrics": {
         "performance": 95,
         "accessibility": 98,
         "best_practices": 100,
-        "seo": 90
+        "seo": 92
       },
       "highlights": [
-        "Keamanan Cloudflare Tunnel",
-        "Dashboard Monitoring Real-time",
-        "Manajemen Logistik Kompleks",
-        "Role-based Access Control"
+        "Real-time Inventory Tracking",
+        "Interactive Distribution Maps",
+        "Full Supply Chain Integration",
+        "Sentry Error Monitoring"
       ],
       "highlights_en": [
-        "Cloudflare Tunnel Security",
-        "Real-time Monitoring Dashboard",
-        "Complex Logistics Management",
-        "Role-based Access Control"
+        "Real-time Inventory Tracking",
+        "Interactive Distribution Maps",
+        "Full Supply Chain Integration",
+        "Sentry Error Monitoring"
       ]
     },
     {
