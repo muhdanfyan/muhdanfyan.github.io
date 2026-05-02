@@ -41,7 +41,10 @@
         "#1 Google Ranking for Local Keywords",
         "Rich Snippets Implementation (Schema.org)",
         "Load Speed < 0.5 seconds"
-      ]
+      ],
+      "project_type": "UMKM",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 85
     },
     {
       "slug": "aindea",
@@ -91,7 +94,10 @@
         "RAG-Lite Approach for Cultural Data",
         "Modern Glassmorphism UI",
         "Contextual Grammar Correction"
-      ]
+      ],
+      "project_type": "Personal/Education",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 92
     },
     {
       "slug": "mbgone",
@@ -141,7 +147,10 @@
         "Interactive Distribution Maps",
         "Full Supply Chain Integration",
         "Sentry Error Monitoring"
-      ]
+      ],
+      "project_type": "Corporate",
+      "difficulty_level": "Expert",
+      "difficulty_score": 96
     },
     {
       "slug": "bearboy",
@@ -165,7 +174,10 @@
       "impact_en": "Digitalizing traditional circumcision services to be more professional, safe, and facilitating remote medical monitoring by specialists.",
       "process": "Proses pengerjaan meliputi desain antarmuka yang ramah anak, pengembangan sistem penjadwalan otomatis, dan integrasi API untuk sinkronisasi data rekam medis.",
       "tech_rationale": "Next.js dengan Server-Side Rendering (SSR) memastikan data rekam medis pasien selalu sinkron secara instan dan aman. Laravel API memberikan struktur backend yang solid dengan sistem otentikasi berlapis untuk melindungi data sensitif pasien sesuai standar privasi kesehatan.",
-      "tech_rationale_en": "Next.js with Server-Side Rendering (SSR) ensures patient medical record data is always instantly synchronized and secure. Laravel API provides a solid backend structure with multi-layered authentication to protect sensitive patient data in accordance with health privacy standards."
+      "tech_rationale_en": "Next.js with Server-Side Rendering (SSR) ensures patient medical record data is always instantly synchronized and secure. Laravel API provides a solid backend structure with multi-layered authentication to protect sensitive patient data in accordance with health privacy standards.",
+      "project_type": "UMKM",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 82
     },
     {
       "slug": "simkes",
@@ -190,7 +202,10 @@
       "process": "Analisis alur kerja rumah sakit, perancangan skema database ACID compliant, dan pengembangan modul medis terintegrasi.",
       "process_en": "Analysis of hospital workflows, design of ACID compliant database schemas, and development of integrated medical modules.",
       "tech_rationale": "Laravel menjamin keamanan data sensitif pasien, sedangkan MySQL memberikan integritas data yang tinggi untuk laporan rekam medis yang kompleks.",
-      "tech_rationale_en": "Laravel guarantees the security of sensitive patient data, while MySQL provides high data integrity for complex medical record reports."
+      "tech_rationale_en": "Laravel guarantees the security of sensitive patient data, while MySQL provides high data integrity for complex medical record reports.",
+      "project_type": "Corporate",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 88
     },
     {
       "slug": "kassaone",
@@ -215,7 +230,10 @@
       "process": "Riset kebutuhan UMKM, perancangan arsitektur cloud-first, dan iterasi UI berdasarkan feedback pengguna nyata.",
       "process_en": "Researching MSME needs, designing a cloud-first architecture, and UI iteration based on real user feedback.",
       "tech_rationale": "Firebase dipilih untuk sinkronisasi data real-time antar perangkat kasir, sementara Vue.js memberikan performa antarmuka yang sangat responsif bagi kasir yang sibuk.",
-      "tech_rationale_en": "Firebase was chosen for real-time data synchronization between cashier devices, while Vue.js provides a highly responsive interface performance for busy cashiers."
+      "tech_rationale_en": "Firebase was chosen for real-time data synchronization between cashier devices, while Vue.js provides a highly responsive interface performance for busy cashiers.",
+      "project_type": "UMKM",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 86
     },
     {
       "slug": "risethub",
@@ -272,7 +290,10 @@
       "process": "Wawancara dengan guru konseling, perancangan modul input yang mudah digunakan, dan pembuatan sistem laporan otomatis.",
       "process_en": "Interviews with counseling teachers, design of easy-to-use input modules, and creation of an automatic report system.",
       "tech_rationale": "Bootstrap dipilih agar sistem tetap responsif saat diakses guru melalui smartphone, sementara MySQL memastikan data perkembangan siswa tersimpan secara terpusat.",
-      "tech_rationale_en": "Bootstrap was chosen so the system remains responsive when accessed by teachers via smartphone, while MySQL ensures student development data is stored centrally."
+      "tech_rationale_en": "Bootstrap was chosen so the system remains responsive when accessed by teachers via smartphone, while MySQL ensures student development data is stored centrally.",
+      "project_type": "Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 78
     },
     {
       "title": "Quizfunwalk",
@@ -363,7 +384,10 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 98
     },
     {
       "title": "E Retribusi",
@@ -376,7 +400,10 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95
     },
     {
       "title": "Devkassaone",
