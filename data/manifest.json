@@ -162,26 +162,6 @@
       "is_featured": true
     },
     {
-      "slug": "quranpwa",
-      "title": "Quranpwa",
-      "title_en": "Quranpwa",
-      "year": "2026",
-      "category": "Repository",
-      "category_en": "Repository",
-      "available_langs": [
-        "id",
-        "en"
-      ],
-      "image": null,
-      "description": "Digital project: quranpwa.",
-      "description_en": "Digital project: quranpwa.",
-      "url": "https://github.com/muhdanfyan/quranpwa",
-      "project_type": "Personal/Education",
-      "difficulty_level": "Intermediate",
-      "difficulty_score": 80,
-      "is_featured": true
-    },
-    {
       "slug": "simkes",
       "title": "SIMKES Dinkes Baubau",
       "title_en": "SIMKES Dinkes Baubau",
@@ -214,6 +194,43 @@
       "difficulty_level": "Advanced",
       "difficulty_score": 88,
       "is_featured": true
+    },
+    {
+      "slug": "demopisantri",
+      "title": "Demopisantri",
+      "title_en": "Demopisantri",
+      "year": "2025",
+      "category": "Netlify",
+      "category_en": "Netlify",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/demopisantri.png",
+      "description": "Project created in 2025.",
+      "description_en": "Project created in 2025.",
+      "url": "https://demopisantri.vercel.app",
+      "is_featured": true
+    },
+    {
+      "slug": "quranpwa",
+      "title": "Quranpwa",
+      "title_en": "Quranpwa",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: quranpwa.",
+      "description_en": "Digital project: quranpwa.",
+      "url": "https://github.com/muhdanfyan/quranpwa",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
     },
     {
       "slug": "bearboy",
@@ -816,23 +833,6 @@
       "description_en": "Project created in 2025.",
       "url": "https://risethub.netlify.app",
       "is_featured": false
-    },
-    {
-      "slug": "demopisantri",
-      "title": "Demopisantri",
-      "title_en": "Demopisantri",
-      "year": "2025",
-      "category": "Netlify",
-      "category_en": "Netlify",
-      "available_langs": [
-        "id",
-        "en"
-      ],
-      "image": "img/screenshots/demopisantri.png",
-      "description": "Project created in 2025.",
-      "description_en": "Project created in 2025.",
-      "url": "https://demopisantri.vercel.app",
-      "is_featured": true
     },
     {
       "slug": "pesantrenteknologi",
