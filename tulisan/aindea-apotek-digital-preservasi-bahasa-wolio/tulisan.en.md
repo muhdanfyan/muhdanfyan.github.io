@@ -3,7 +3,7 @@ title: "Aindea"
 description: "Discover Aindea: A Digital Pharmacy for Wolio Language Preservation through AI."
 date: "2026-04-26"
 category: "Technology & Culture"
-image: "/img/screenshots/aindea.png"
+image: "/img/screenshots/aindea.jpg"
 ---
 
 ## App Purpose

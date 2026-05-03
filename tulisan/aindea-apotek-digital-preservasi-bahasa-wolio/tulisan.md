@@ -3,7 +3,7 @@ title: "Aindea"
 description: "Mengenal Aindea: Apotek Digital untuk Preservasi Bahasa Wolio melalui AI."
 date: "2026-04-26"
 category: "Technology & Culture"
-image: "/img/screenshots/aindea.png"
+image: "/img/screenshots/aindea.jpg"
 ---
 
 ## Tujuan Aplikasi

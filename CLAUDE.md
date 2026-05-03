@@ -35,3 +35,4 @@ When adding new writings:
 2. Specify `available_langs` (e.g., `["id", "en"]`).
 3. Create the corresponding Markdown files in `tulisan/[slug]/`.
 4. Use `.en.md` suffix for English versions.
+5. **Image Optimization**: Ensure all images are JPG and under 300KB using the `image-optimization` skill.

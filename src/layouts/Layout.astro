@@ -34,6 +34,7 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content={image.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg'} />
     <meta property="og:image:alt" content={title} />
+    <meta itemprop="image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io${image.startsWith('/') ? image : '/' + image}`} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
