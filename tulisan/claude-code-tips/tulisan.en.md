@@ -16,7 +16,7 @@ Based on tips from [**Boris Cherny**](https://x.com/bcherny) (the creator), I've
 2.  **Solution for "IT Marbots" & Freelancers:** Sometimes we have to fix bugs while on the go. With the [***Dispatch***](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code) feature, we can control the coding process on our home PC just through our smartphone. 📱
 3.  **Data Saving:** Because it's text-based in the terminal, the data exchanged is much smaller.
 
-![Claude Code CLI](https://code.claude.com/assets/hero-terminal.jpg)
+![Claude Code CLI](https://code.claude.com/assets/hero-terminal.png)
 
 ---
 
