@@ -16,7 +16,7 @@ Berdasarkan tips dari [**Boris Cherny**](https://x.com/bcherny) (sang kreator), 
 2.  **Solusi "Marbot IT" & *Freelancer*:** Kadang kita harus benerin *bug* sambil di jalan. Dengan fitur [***Dispatch***](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code), kita bisa kontrol proses *coding* di *PC* rumah cuma lewat *HP*. 📱
 3.  **Hemat Kuota:** Karena berbasis teks di *terminal*, data yang ditukar jauh lebih kecil.
 
-![Claude Code CLI](https://code.claude.com/assets/hero-terminal.jpg)
+![Claude Code CLI](https://code.claude.com/assets/hero-terminal.png)
 
 ---
 
