@@ -24,7 +24,17 @@ const writingManifest = null;
 // Read markdown files
 const contentDir = path.join(process.cwd(), 'tulisan', slug);
 const idPath = path.join(contentDir, 'index.mdoc');
-const enPath = path.join(contentDir, 'tulisan.en.mdoc');
+
+// Try multiple possible English content filenames
+const enFilenames = ['index.en.mdoc', 'tulisan.en.mdoc', 'tulisan.en.md'];
+let enPath = '';
+for (const filename of enFilenames) {
+  const p = path.join(contentDir, filename);
+  if (fs.existsSync(p)) {
+    enPath = p;
+    break;
+  }
+}
 
 if (!fs.existsSync(idPath)) {
   return Astro.redirect('/404');
@@ -67,9 +77,10 @@ if (fs.existsSync(idPath)) {
 
 // Fallback to separate English file if Keystatic content_en_markdown is not present
 let htmlEnFallback = '';
-if (!contentEnMarkdown && fs.existsSync(enPath)) {
-  const content = fs.readFileSync(enPath, 'utf-8');
-  htmlEnFallback = marked(content);
+if (!contentEnMarkdown && enPath) {
+  const rawEnContent = fs.readFileSync(enPath, 'utf-8');
+  const { content: enContent } = matter(rawEnContent);
+  htmlEnFallback = marked(enContent);
 }
 
 const writing = writingMetadata;
