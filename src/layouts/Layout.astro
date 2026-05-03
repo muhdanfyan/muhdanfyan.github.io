@@ -53,6 +53,23 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhdan Fyan Syah Sofian",
+      "url": "https://muhdanfyan.github.io",
+      "jobTitle": "Full Stack Developer",
+      "knowsAbout": ["Web Development", "PHP", "Laravel", "React", "TypeScript", "AI", "Mobile Development"],
+      "sameAs": [
+        "https://linkedin.com/in/muhdanfyan",
+        "https://github.com/muhdanfyan",
+        "https://instagram.com/muhdanfyan"
+      ]
+    }
+    </script>
 	</head>
 	<body class="bg-white text-slate-900 font-sans">
 		<slot />
@@ -67,8 +84,49 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
 	html {
 		font-family: 'Inter', system-ui, sans-serif;
 		scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
 	}
   h1, h2, h3 {
     font-family: 'Outfit', sans-serif;
+  }
+  
+  /* Premium Card Transitions */
+  .project-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Smooth Fade-in for Content */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Custom Selection Color */
+  ::selection {
+    background: rgba(99, 102, 241, 0.2);
+    color: #4f46e5;
+  }
+
+  /* Refined Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f8fafc;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
   }
 </style>

@@ -831,8 +831,8 @@
       "image": "img/screenshots/demopisantri.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
-      "url": "https://demopisantri.netlify.app",
-      "is_featured": false
+      "url": "https://demopisantri.vercel.app",
+      "is_featured": true
     },
     {
       "slug": "pesantrenteknologi",
