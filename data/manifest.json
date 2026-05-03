@@ -191,8 +191,8 @@
     },
     {
       "slug": "simkes",
-      "title": "Simkes",
-      "title_en": "Simkes",
+      "title": "SIMKES Dinkes Baubau",
+      "title_en": "SIMKES Dinkes Baubau",
       "year": "2025",
       "category": "System",
       "category_en": "System",
@@ -200,16 +200,17 @@
         "id",
         "en"
       ],
-      "image": "img/screenshots/bearboy.png",
-      "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
-      "description_en": "Hospital Management Information System for Clinics and Hospitals.",
-      "url": "https://simkes-demo.site",
-      "full_description": "SIMKES adalah sistem manajemen rumah sakit terpadu yang mencakup pendaftaran pasien, rekam medis elektronik, manajemen apotek, hingga sistem penagihan asuransi.",
-      "full_description_en": "SIMKES is an integrated hospital management system covering patient registration, electronic medical records, pharmacy management, and insurance billing systems.",
+      "image": "img/screenshots/simkes.png",
+      "description": "Sistem Informasi Manajemen Kesehatan Dinas Kesehatan Kota Baubau.",
+      "description_en": "Health Management Information System for Baubau Health Office.",
+      "url": "https://simkes-seven.vercel.app/",
+      "full_description": "SIMKES adalah sistem informasi terpadu untuk Dinas Kesehatan Kota Baubau yang mencakup visualisasi sebaran puskesmas, monitoring kasus P2P, kesehatan masyarakat, dan capaian program kesehatan secara real-time.",
+      "full_description_en": "SIMKES is an integrated information system for the Baubau City Health Office that includes visualization of health center distribution, monitoring of infectious disease cases, public health, and real-time health program achievements.",
       "tech_stack": [
         "Laravel",
-        "MySQL",
-        "Livewire"
+        "Leaflet JS",
+        "Tailwind CSS",
+        "MySQL"
       ],
       "impact": "Mempercepat proses pendaftaran pasien dan memastikan data medis tersimpan dengan aman serta mudah diakses oleh tenaga medis.",
       "impact_en": "Speeding up the patient registration process and ensuring medical data is stored securely and easily accessible by medical personnel.",
@@ -364,19 +365,6 @@
       "url": "https://sukrigrafis.netlify.app",
       "description": "Digital project: Sukrigrafis. Deployed via Netlify.",
       "description_en": "Digital project: Sukrigrafis. Deployed via Netlify.",
-      "available_langs": [
-        "id",
-        "en"
-      ]
-    },
-    {
-      "title": "Simkes",
-      "title_en": "Simkes",
-      "category": "Web App",
-      "image": "https://d33wubrfki0l68.cloudfront.net/69238f9bf60ae700081215a8/screenshot_2025-11-23-22-50-21-0000.webp",
-      "url": "https://simkes.netlify.app",
-      "description": "Digital project: Simkes. Deployed via Netlify.",
-      "description_en": "Digital project: Simkes. Deployed via Netlify.",
       "available_langs": [
         "id",
         "en"
