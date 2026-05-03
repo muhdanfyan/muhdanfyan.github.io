@@ -50,7 +50,8 @@
       ],
       "project_type": "UMKM",
       "difficulty_level": "Intermediate",
-      "difficulty_score": 85
+      "difficulty_score": 85,
+      "is_featured": true
     },
     {
       "slug": "aindea",
@@ -103,7 +104,8 @@
       ],
       "project_type": "Personal/Education",
       "difficulty_level": "Advanced",
-      "difficulty_score": 92
+      "difficulty_score": 92,
+      "is_featured": true
     },
     {
       "slug": "mbgone",
@@ -156,38 +158,28 @@
       ],
       "project_type": "Corporate",
       "difficulty_level": "Expert",
-      "difficulty_score": 96
+      "difficulty_score": 96,
+      "is_featured": true
     },
     {
-      "slug": "bearboy",
-      "title": "Bearboy",
-      "title_en": "Bearboy",
+      "slug": "quranpwa",
+      "title": "Quranpwa",
+      "title_en": "Quranpwa",
       "year": "2026",
-      "category": "System",
-      "category_en": "System",
+      "category": "Repository",
+      "category_en": "Repository",
       "available_langs": [
         "id",
         "en"
       ],
-      "image": "img/screenshots/bearboy.png",
-      "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
-      "description_en": "Health management information system and digital circumcision.",
-      "url": "https://bearboysunat.com",
-      "full_description": "Bearboy adalah sistem informasi manajemen kesehatan yang dikembangkan khusus untuk memodernisasi layanan sirkumsisi (sunat). Platform ini mengintegrasikan pendaftaran online, manajemen pasien, hingga pemantauan kondisi pasca-sunat.",
-      "full_description_en": "Bearboy is a health management information system developed specifically to modernize circumcision services. The platform integrates online registration, patient management, and post-circumcision condition monitoring.",
-      "tech_stack": [
-        "Next.js",
-        "Tailwind CSS",
-        "Laravel API"
-      ],
-      "impact": "Digitalisasi layanan sunat tradisional menjadi lebih profesional, aman, dan memudahkan pemantauan medis oleh tenaga ahli secara jarak jauh.",
-      "impact_en": "Digitalizing traditional circumcision services to be more professional, safe, and facilitating remote medical monitoring by specialists.",
-      "process": "Proses pengerjaan meliputi desain antarmuka yang ramah anak, pengembangan sistem penjadwalan otomatis, dan integrasi API untuk sinkronisasi data rekam medis.",
-      "tech_rationale": "Next.js dengan Server-Side Rendering (SSR) memastikan data rekam medis pasien selalu sinkron secara instan dan aman. Laravel API memberikan struktur backend yang solid dengan sistem otentikasi berlapis untuk melindungi data sensitif pasien sesuai standar privasi kesehatan.",
-      "tech_rationale_en": "Next.js with Server-Side Rendering (SSR) ensures patient medical record data is always instantly synchronized and secure. Laravel API provides a solid backend structure with multi-layered authentication to protect sensitive patient data in accordance with health privacy standards.",
-      "project_type": "UMKM",
+      "image": null,
+      "description": "Digital project: quranpwa.",
+      "description_en": "Digital project: quranpwa.",
+      "url": "https://github.com/muhdanfyan/quranpwa",
+      "project_type": "Personal/Education",
       "difficulty_level": "Intermediate",
-      "difficulty_score": 82
+      "difficulty_score": 80,
+      "is_featured": true
     },
     {
       "slug": "simkes",
@@ -220,7 +212,560 @@
       "tech_rationale_en": "Laravel guarantees the security of sensitive patient data, while MySQL provides high data integrity for complex medical record reports.",
       "project_type": "Corporate",
       "difficulty_level": "Advanced",
-      "difficulty_score": 88
+      "difficulty_score": 88,
+      "is_featured": true
+    },
+    {
+      "slug": "bearboy",
+      "title": "Bearboy",
+      "title_en": "Bearboy",
+      "year": "2026",
+      "category": "System",
+      "category_en": "System",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "img/screenshots/bearboy.png",
+      "description": "Sistem informasi manajemen kesehatan dan sirkumsisi digital.",
+      "description_en": "Health management information system and digital circumcision.",
+      "url": "https://bearboysunat.com",
+      "full_description": "Bearboy adalah sistem informasi manajemen kesehatan yang dikembangkan khusus untuk memodernisasi layanan sirkumsisi (sunat). Platform ini mengintegrasikan pendaftaran online, manajemen pasien, hingga pemantauan kondisi pasca-sunat.",
+      "full_description_en": "Bearboy is a health management information system developed specifically to modernize circumcision services. The platform integrates online registration, patient management, and post-circumcision condition monitoring.",
+      "tech_stack": [
+        "Next.js",
+        "Tailwind CSS",
+        "Laravel API"
+      ],
+      "impact": "Digitalisasi layanan sunat tradisional menjadi lebih profesional, aman, dan memudahkan pemantauan medis oleh tenaga ahli secara jarak jauh.",
+      "impact_en": "Digitalizing traditional circumcision services to be more professional, safe, and facilitating remote medical monitoring by specialists.",
+      "process": "Proses pengerjaan meliputi desain antarmuka yang ramah anak, pengembangan sistem penjadwalan otomatis, dan integrasi API untuk sinkronisasi data rekam medis.",
+      "tech_rationale": "Next.js dengan Server-Side Rendering (SSR) memastikan data rekam medis pasien selalu sinkron secara instan dan aman. Laravel API memberikan struktur backend yang solid dengan sistem otentikasi berlapis untuk melindungi data sensitif pasien sesuai standar privasi kesehatan.",
+      "tech_rationale_en": "Next.js with Server-Side Rendering (SSR) ensures patient medical record data is always instantly synchronized and secure. Laravel API provides a solid backend structure with multi-layered authentication to protect sensitive patient data in accordance with health privacy standards.",
+      "project_type": "UMKM",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 82,
+      "is_featured": false
+    },
+    {
+      "slug": "muhdanfyan.github.io",
+      "title": "Muhdanfyan.Github.Io",
+      "title_en": "Muhdanfyan.Github.Io",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Personal Web",
+      "description_en": "Personal Web",
+      "url": "https://github.com/muhdanfyan/muhdanfyan.github.io",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "mbg-management",
+      "title": "Mbg Management",
+      "title_en": "Mbg Management",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: mbg-management.",
+      "description_en": "Digital project: mbg-management.",
+      "url": "https://github.com/muhdanfyan/mbg-management",
+      "project_type": "Corporate",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 90,
+      "is_featured": false
+    },
+    {
+      "slug": "retribusi-api",
+      "title": "Retribusi Api",
+      "title_en": "Retribusi Api",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: retribusi-api.",
+      "description_en": "Digital project: retribusi-api.",
+      "url": "https://github.com/muhdanfyan/retribusi-api",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "retribusi-petugas",
+      "title": "Retribusi Petugas",
+      "title_en": "Retribusi Petugas",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: retribusi-petugas.",
+      "description_en": "Digital project: retribusi-petugas.",
+      "url": "https://github.com/muhdanfyan/retribusi-petugas",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "retribusi-mobile",
+      "title": "Retribusi Mobile",
+      "title_en": "Retribusi Mobile",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: retribusi-mobile.",
+      "description_en": "Digital project: retribusi-mobile.",
+      "url": "https://github.com/muhdanfyan/retribusi-mobile",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "retribusi-admin",
+      "title": "Retribusi Admin",
+      "title_en": "Retribusi Admin",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: retribusi-admin.",
+      "description_en": "Digital project: retribusi-admin.",
+      "url": "https://retribusi-admin.vercel.app",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "pisantri-api",
+      "title": "Pisantri Api",
+      "title_en": "Pisantri Api",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Pisantri API - Laravel 11 Backend for Pondok Pesantren Management System",
+      "description_en": "Pisantri API - Laravel 11 Backend for Pondok Pesantren Management System",
+      "url": "https://github.com/muhdanfyan/pisantri-api",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pisantriv2",
+      "title": "Pisantriv2",
+      "title_en": "Pisantriv2",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pisantriv2.",
+      "description_en": "Digital project: pisantriv2.",
+      "url": "https://github.com/muhdanfyan/pisantriv2",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webprofil_umkm",
+      "title": "Webprofil_Umkm",
+      "title_en": "Webprofil_Umkm",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: webprofil_umkm.",
+      "description_en": "Digital project: webprofil_umkm.",
+      "url": "https://github.com/muhdanfyan/webprofil_umkm",
+      "project_type": "UMKM",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 88,
+      "is_featured": false
+    },
+    {
+      "slug": "claude-code-tips",
+      "title": "Claude Code Tips",
+      "title_en": "Claude Code Tips",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: claude-code-tips.",
+      "description_en": "Digital project: claude-code-tips.",
+      "url": "https://github.com/muhdanfyan/claude-code-tips",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "playwright-automation-master",
+      "title": "Playwright Automation Master",
+      "title_en": "Playwright Automation Master",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: playwright-automation-master.",
+      "description_en": "Digital project: playwright-automation-master.",
+      "url": "https://github.com/muhdanfyan/playwright-automation-master",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "api-sirangkul",
+      "title": "Api Sirangkul",
+      "title_en": "Api Sirangkul",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: api-sirangkul.",
+      "description_en": "Digital project: api-sirangkul.",
+      "url": "https://github.com/muhdanfyan/api-sirangkul",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "quranta",
+      "title": "Quranta",
+      "title_en": "Quranta",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: quranta.",
+      "description_en": "Digital project: quranta.",
+      "url": "https://github.com/muhdanfyan/quranta",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "wifi-baubau",
+      "title": "Wifi Baubau",
+      "title_en": "Wifi Baubau",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: wifi-baubau.",
+      "description_en": "Digital project: wifi-baubau.",
+      "url": "https://github.com/muhdanfyan/wifi-baubau",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "wabos",
+      "title": "Wabos",
+      "title_en": "Wabos",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: wabos.",
+      "description_en": "Digital project: wabos.",
+      "url": "https://github.com/muhdanfyan/wabos",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "visibaubau-4.0",
+      "title": "Visibaubau 4.0",
+      "title_en": "Visibaubau 4.0",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: visibaubau-4.0.",
+      "description_en": "Digital project: visibaubau-4.0.",
+      "url": "https://visibaubau4.vercel.app",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "launch-mpad",
+      "title": "Launch Mpad",
+      "title_en": "Launch Mpad",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: launch-mpad.",
+      "description_en": "Digital project: launch-mpad.",
+      "url": "https://github.com/muhdanfyan/launch-mpad",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pimasjid",
+      "title": "Pimasjid",
+      "title_en": "Pimasjid",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pimasjid.",
+      "description_en": "Digital project: pimasjid.",
+      "url": "https://github.com/muhdanfyan/pimasjid",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kunjunganperpus",
+      "title": "Kunjunganperpus",
+      "title_en": "Kunjunganperpus",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: kunjunganperpus.",
+      "description_en": "Digital project: kunjunganperpus.",
+      "url": "https://github.com/muhdanfyan/kunjunganperpus",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "api-kassaone",
+      "title": "Api Kassaone",
+      "title_en": "Api Kassaone",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: api-kassaone.",
+      "description_en": "Digital project: api-kassaone.",
+      "url": "https://github.com/muhdanfyan/api-kassaone",
+      "project_type": "UMKM",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 88,
+      "is_featured": false
+    },
+    {
+      "slug": "asetkendaraandaerah",
+      "title": "Asetkendaraandaerah",
+      "title_en": "Asetkendaraandaerah",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: asetkendaraandaerah.",
+      "description_en": "Digital project: asetkendaraandaerah.",
+      "url": "https://asetkendaraandaerah.vercel.app",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "retribusi-baubau",
+      "title": "Retribusi Baubau",
+      "title_en": "Retribusi Baubau",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Project Hub - Sistem Manajemen Pajak dan Retribusi Daerah Kota Bau-Bau",
+      "description_en": "Project Hub - Sistem Manajemen Pajak dan Retribusi Daerah Kota Bau-Bau",
+      "url": "https://github.com/muhdanfyan/retribusi-baubau",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "bearboysunat",
+      "title": "Bearboysunat",
+      "title_en": "Bearboysunat",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: bearboysunat.",
+      "description_en": "Digital project: bearboysunat.",
+      "url": "https://bearboysunat.vercel.app",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "ytdownload",
+      "title": "Ytdownload",
+      "title_en": "Ytdownload",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: ytdownload.",
+      "description_en": "Digital project: ytdownload.",
+      "url": "https://github.com/muhdanfyan/ytdownload",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "api-risethub",
+      "title": "Api Risethub",
+      "title_en": "Api Risethub",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: api-risethub.",
+      "description_en": "Digital project: api-risethub.",
+      "url": "https://github.com/muhdanfyan/api-risethub",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "wiyasamediapustaka.com",
+      "title": "Wiyasamediapustaka.Com",
+      "title_en": "Wiyasamediapustaka.Com",
+      "year": "2026",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: wiyasamediapustaka.com.",
+      "description_en": "Digital project: wiyasamediapustaka.com.",
+      "url": "https://wiyasamediapustaka-com.vercel.app",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
     },
     {
       "slug": "kassaone",
@@ -252,7 +797,8 @@
       "tech_rationale_en": "Firebase was chosen for real-time data synchronization between cashier devices, while Vue.js provides a highly responsive interface performance for busy cashiers.",
       "project_type": "UMKM",
       "difficulty_level": "Advanced",
-      "difficulty_score": 86
+      "difficulty_score": 86,
+      "is_featured": false
     },
     {
       "slug": "risethub",
@@ -268,7 +814,8 @@
       "image": "img/screenshots/risethub.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
-      "url": "https://risethub.netlify.app"
+      "url": "https://risethub.netlify.app",
+      "is_featured": false
     },
     {
       "slug": "demopisantri",
@@ -284,7 +831,8 @@
       "image": "img/screenshots/demopisantri.png",
       "description": "Project created in 2025.",
       "description_en": "Project created in 2025.",
-      "url": "https://demopisantri.netlify.app"
+      "url": "https://demopisantri.netlify.app",
+      "is_featured": false
     },
     {
       "slug": "pesantrenteknologi",
@@ -316,7 +864,4508 @@
       "tech_rationale_en": "Bootstrap was chosen so the system remains responsive when accessed by teachers via smartphone, while MySQL ensures student development data is stored centrally.",
       "project_type": "Education",
       "difficulty_level": "Intermediate",
-      "difficulty_score": 78
+      "difficulty_score": 78,
+      "is_featured": false
+    },
+    {
+      "slug": "fnb-management",
+      "title": "Fnb Management",
+      "title_en": "Fnb Management",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: fnb-management.",
+      "description_en": "Digital project: fnb-management.",
+      "url": "https://github.com/muhdanfyan/fnb-management",
+      "project_type": "UMKM",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 88,
+      "is_featured": false
+    },
+    {
+      "slug": "tormonitor",
+      "title": "Tormonitor",
+      "title_en": "Tormonitor",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: tormonitor.",
+      "description_en": "Digital project: tormonitor.",
+      "url": "https://github.com/muhdanfyan/tormonitor",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sistem-asesmen-adaptif",
+      "title": "Sistem Asesmen Adaptif",
+      "title_en": "Sistem Asesmen Adaptif",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: sistem-asesmen-adaptif.",
+      "description_en": "Digital project: sistem-asesmen-adaptif.",
+      "url": "https://github.com/muhdanfyan/sistem-asesmen-adaptif",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pondok-tracker",
+      "title": "Pondok Tracker",
+      "title_en": "Pondok Tracker",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Desktop Time Tracking Agent for Pondok Informatika (Tauri)",
+      "description_en": "Desktop Time Tracking Agent for Pondok Informatika (Tauri)",
+      "url": "https://github.com/muhdanfyan/pondok-tracker",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "quizfanwalk",
+      "title": "Quizfanwalk",
+      "title_en": "Quizfanwalk",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: quizfanwalk.",
+      "description_en": "Digital project: quizfanwalk.",
+      "url": "https://github.com/muhdanfyan/quizfanwalk",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "quiz-funwalhutmk2025",
+      "title": "Quiz Funwalhutmk2025",
+      "title_en": "Quiz Funwalhutmk2025",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Leaderboard Quiz Fun Walk HUT MK 2025 - Realtime",
+      "description_en": "Leaderboard Quiz Fun Walk HUT MK 2025 - Realtime",
+      "url": "https://github.com/muhdanfyan/quiz-funwalhutmk2025",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "api-quiz",
+      "title": "Api Quiz",
+      "title_en": "Api Quiz",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: api-quiz.",
+      "description_en": "Digital project: api-quiz.",
+      "url": "https://github.com/muhdanfyan/api-quiz",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravel-sirangkul",
+      "title": "Laravel Sirangkul",
+      "title_en": "Laravel Sirangkul",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: laravel-sirangkul.",
+      "description_en": "Digital project: laravel-sirangkul.",
+      "url": "https://github.com/muhdanfyan/laravel-sirangkul",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pestek",
+      "title": "Pestek",
+      "title_en": "Pestek",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pestek.",
+      "description_en": "Digital project: pestek.",
+      "url": "https://github.com/muhdanfyan/pestek",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kassaapp",
+      "title": "Kassaapp",
+      "title_en": "Kassaapp",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: kassaapp.",
+      "description_en": "Digital project: kassaapp.",
+      "url": "https://github.com/muhdanfyan/kassaapp",
+      "project_type": "UMKM",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 88,
+      "is_featured": false
+    },
+    {
+      "slug": "ahqi",
+      "title": "Ahqi",
+      "title_en": "Ahqi",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: ahqi.",
+      "description_en": "Digital project: ahqi.",
+      "url": "https://github.com/muhdanfyan/ahqi",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "hrm_qr",
+      "title": "Hrm_Qr",
+      "title_en": "Hrm_Qr",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: hrm_qr.",
+      "description_en": "Digital project: hrm_qr.",
+      "url": "https://github.com/muhdanfyan/hrm_qr",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "system-pestek",
+      "title": "System Pestek",
+      "title_en": "System Pestek",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: system-pestek.",
+      "description_en": "Digital project: system-pestek.",
+      "url": "https://github.com/muhdanfyan/system-pestek",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kodingku",
+      "title": "Kodingku",
+      "title_en": "Kodingku",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: kodingku.",
+      "description_en": "Digital project: kodingku.",
+      "url": "https://github.com/muhdanfyan/kodingku",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kurikulumkoding-anaksekolah",
+      "title": "Kurikulumkoding Anaksekolah",
+      "title_en": "Kurikulumkoding Anaksekolah",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: kurikulumkoding-anaksekolah.",
+      "description_en": "Digital project: kurikulumkoding-anaksekolah.",
+      "url": "https://github.com/muhdanfyan/kurikulumkoding-anaksekolah",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "beritait",
+      "title": "Beritait",
+      "title_en": "Beritait",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: beritait.",
+      "description_en": "Digital project: beritait.",
+      "url": "https://github.com/muhdanfyan/beritait",
+      "project_type": "Personal/Research",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 92,
+      "is_featured": false
+    },
+    {
+      "slug": "alluluwalmarjan",
+      "title": "Alluluwalmarjan",
+      "title_en": "Alluluwalmarjan",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: alluluwalmarjan.",
+      "description_en": "Digital project: alluluwalmarjan.",
+      "url": "https://github.com/muhdanfyan/alluluwalmarjan",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pisebar-wa",
+      "title": "Pisebar Wa",
+      "title_en": "Pisebar Wa",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pisebar-wa.",
+      "description_en": "Digital project: pisebar-wa.",
+      "url": "https://github.com/muhdanfyan/pisebar-wa",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webpi2025",
+      "title": "Webpi2025",
+      "title_en": "Webpi2025",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: webpi2025.",
+      "description_en": "Digital project: webpi2025.",
+      "url": "https://github.com/muhdanfyan/webpi2025",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "proker-pondokinformatika-2025",
+      "title": "Proker Pondokinformatika 2025",
+      "title_en": "Proker Pondokinformatika 2025",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: proker-pondokinformatika-2025.",
+      "description_en": "Digital project: proker-pondokinformatika-2025.",
+      "url": "https://github.com/muhdanfyan/proker-pondokinformatika-2025",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "lapor-santri",
+      "title": "Lapor Santri",
+      "title_en": "Lapor Santri",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: lapor-santri.",
+      "description_en": "Digital project: lapor-santri.",
+      "url": "https://github.com/muhdanfyan/lapor-santri",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pantau-laptop",
+      "title": "Pantau Laptop",
+      "title_en": "Pantau Laptop",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pantau-laptop.",
+      "description_en": "Digital project: pantau-laptop.",
+      "url": "https://github.com/muhdanfyan/pantau-laptop",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webprofil-kausarilqurro",
+      "title": "Webprofil Kausarilqurro",
+      "title_en": "Webprofil Kausarilqurro",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: webprofil-kausarilqurro.",
+      "description_en": "Digital project: webprofil-kausarilqurro.",
+      "url": "https://github.com/muhdanfyan/webprofil-kausarilqurro",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sekolahquran_almuyassar",
+      "title": "Sekolahquran_Almuyassar",
+      "title_en": "Sekolahquran_Almuyassar",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: sekolahquran_almuyassar.",
+      "description_en": "Digital project: sekolahquran_almuyassar.",
+      "url": "https://github.com/muhdanfyan/sekolahquran_almuyassar",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bacabuku",
+      "title": "Bacabuku",
+      "title_en": "Bacabuku",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: bacabuku.",
+      "description_en": "Digital project: bacabuku.",
+      "url": "https://github.com/muhdanfyan/bacabuku",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "koperasi_pondok",
+      "title": "Koperasi_Pondok",
+      "title_en": "Koperasi_Pondok",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "untuk pengelolaan koperasi pondok nanti menggunakan dashboard admin dngan filamen",
+      "description_en": "untuk pengelolaan koperasi pondok nanti menggunakan dashboard admin dngan filamen",
+      "url": "https://github.com/muhdanfyan/koperasi_pondok",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "api.pondokinformatika.id",
+      "title": "Api.Pondokinformatika.Id",
+      "title_en": "Api.Pondokinformatika.Id",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: api.pondokinformatika.id.",
+      "description_en": "Digital project: api.pondokinformatika.id.",
+      "url": "https://github.com/muhdanfyan/api.pondokinformatika.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "implementasi-qrcode",
+      "title": "Implementasi Qrcode",
+      "title_en": "Implementasi Qrcode",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: implementasi-qrcode.",
+      "description_en": "Digital project: implementasi-qrcode.",
+      "url": "https://github.com/muhdanfyan/implementasi-qrcode",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sqquranalmuyassar",
+      "title": "Sqquranalmuyassar",
+      "title_en": "Sqquranalmuyassar",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: sqquranalmuyassar.",
+      "description_en": "Digital project: sqquranalmuyassar.",
+      "url": "https://github.com/muhdanfyan/sqquranalmuyassar",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sippeka-lp",
+      "title": "Sippeka Lp",
+      "title_en": "Sippeka Lp",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: sippeka-lp.",
+      "description_en": "Digital project: sippeka-lp.",
+      "url": "https://github.com/muhdanfyan/sippeka-lp",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "backendapi-golang",
+      "title": "Backendapi Golang",
+      "title_en": "Backendapi Golang",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: backendapi-golang.",
+      "description_en": "Digital project: backendapi-golang.",
+      "url": "https://github.com/muhdanfyan/backendapi-golang",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "smartlurah",
+      "title": "Smartlurah",
+      "title_en": "Smartlurah",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: smartlurah.",
+      "description_en": "Digital project: smartlurah.",
+      "url": "https://github.com/muhdanfyan/smartlurah",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "homelurah",
+      "title": "Homelurah",
+      "title_en": "Homelurah",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: homelurah.",
+      "description_en": "Digital project: homelurah.",
+      "url": "https://github.com/muhdanfyan/homelurah",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "unit_opd",
+      "title": "Unit_Opd",
+      "title_en": "Unit_Opd",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: unit_opd.",
+      "description_en": "Digital project: unit_opd.",
+      "url": "https://github.com/muhdanfyan/unit_opd",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webbaubau_htmlnew",
+      "title": "Webbaubau_Htmlnew",
+      "title_en": "Webbaubau_Htmlnew",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: webbaubau_htmlnew.",
+      "description_en": "Digital project: webbaubau_htmlnew.",
+      "url": "https://github.com/muhdanfyan/webbaubau_htmlnew",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "groq_react",
+      "title": "Groq_React",
+      "title_en": "Groq_React",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: groq_react.",
+      "description_en": "Digital project: groq_react.",
+      "url": "https://github.com/muhdanfyan/groq_react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "muhdanfyan",
+      "title": "Muhdanfyan",
+      "title_en": "Muhdanfyan",
+      "year": "2025",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Config files for my GitHub profile.",
+      "description_en": "Config files for my GitHub profile.",
+      "url": "https://github.com/muhdanfyan",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "chirper_inertia",
+      "title": "Chirper_Inertia",
+      "title_en": "Chirper_Inertia",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Chirper adalah aplikasi web sederhana menggunakan Laravel untuk membuat, menampilkan, mengedit, dan menghapus chirps. Fitur mencakup autentikasi dengan Laravel Breeze dan dukungan Docker via Laravel Sail. ",
+      "description_en": "Chirper adalah aplikasi web sederhana menggunakan Laravel untuk membuat, menampilkan, mengedit, dan menghapus chirps. Fitur mencakup autentikasi dengan Laravel Breeze dan dukungan Docker via Laravel Sail. ",
+      "url": "https://github.com/muhdanfyan/chirper_inertia",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "chirper_livewire",
+      "title": "Chirper_Livewire",
+      "title_en": "Chirper_Livewire",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: chirper_livewire.",
+      "description_en": "Digital project: chirper_livewire.",
+      "url": "https://github.com/muhdanfyan/chirper_livewire",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "hrd_system",
+      "title": "Hrd_System",
+      "title_en": "Hrd_System",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: hrd_system.",
+      "description_en": "Digital project: hrd_system.",
+      "url": "https://github.com/muhdanfyan/hrd_system",
+      "project_type": "Corporate",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 90,
+      "is_featured": false
+    },
+    {
+      "slug": "chirper-blade",
+      "title": "Chirper Blade",
+      "title_en": "Chirper Blade",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: chirper-blade.",
+      "description_en": "Digital project: chirper-blade.",
+      "url": "https://github.com/muhdanfyan/chirper-blade",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "lms_next",
+      "title": "Lms_Next",
+      "title_en": "Lms_Next",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Ini adalah aplikasi Learning Manajemen Sistem, Aplikasi ini dibangun menggunakan nextJS Tailwind, Hygraph, dan cleck sebagai User Authentication",
+      "description_en": "Ini adalah aplikasi Learning Manajemen Sistem, Aplikasi ini dibangun menggunakan nextJS Tailwind, Hygraph, dan cleck sebagai User Authentication",
+      "url": "https://github.com/muhdanfyan/lms_next",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "hygraphnext-crud",
+      "title": "Hygraphnext Crud",
+      "title_en": "Hygraphnext Crud",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: hygraphnext-crud.",
+      "description_en": "Digital project: hygraphnext-crud.",
+      "url": "https://github.com/muhdanfyan/hygraphnext-crud",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "ppdb_pesantech",
+      "title": "Ppdb_Pesantech",
+      "title_en": "Ppdb_Pesantech",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: ppdb_pesantech.",
+      "description_en": "Digital project: ppdb_pesantech.",
+      "url": "https://github.com/muhdanfyan/ppdb_pesantech",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "clerk-react",
+      "title": "Clerk React",
+      "title_en": "Clerk React",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: clerk-react.",
+      "description_en": "Digital project: clerk-react.",
+      "url": "https://github.com/muhdanfyan/clerk-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pihome-laravel",
+      "title": "Pihome Laravel",
+      "title_en": "Pihome Laravel",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pihome-laravel.",
+      "description_en": "Digital project: pihome-laravel.",
+      "url": "https://github.com/muhdanfyan/pihome-laravel",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "approval-be",
+      "title": "Approval Be",
+      "title_en": "Approval Be",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: approval-be.",
+      "description_en": "Digital project: approval-be.",
+      "url": "https://github.com/muhdanfyan/approval-be",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "approval-system",
+      "title": "Approval System",
+      "title_en": "Approval System",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "REST API untuk sistem persetujuan pengeluaran menggunakan Laravel 8. Fitur meliputi manajemen approver, tahap approval, dan pengeluaran dengan validasi bertahap. Mendukung dokumentasi Swagger, transaksi database dengan Eloquent, serta pengujian otomatis menggunakan PHPUnit. Dibangun untuk memenuhi kebutuhan evaluasi teknis.",
+      "description_en": "REST API untuk sistem persetujuan pengeluaran menggunakan Laravel 8. Fitur meliputi manajemen approver, tahap approval, dan pengeluaran dengan validasi bertahap. Mendukung dokumentasi Swagger, transaksi database dengan Eloquent, serta pengujian otomatis menggunakan PHPUnit. Dibangun untuk memenuhi kebutuhan evaluasi teknis.",
+      "url": "https://github.com/muhdanfyan/approval-system",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravel11-api",
+      "title": "Laravel11 Api",
+      "title_en": "Laravel11 Api",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: laravel11-api.",
+      "description_en": "Digital project: laravel11-api.",
+      "url": "https://github.com/muhdanfyan/laravel11-api",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravel10api",
+      "title": "Laravel10Api",
+      "title_en": "Laravel10Api",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: laravel10api.",
+      "description_en": "Digital project: laravel10api.",
+      "url": "https://github.com/muhdanfyan/laravel10api",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "express-mongodb",
+      "title": "Express Mongodb",
+      "title_en": "Express Mongodb",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: express-mongodb.",
+      "description_en": "Digital project: express-mongodb.",
+      "url": "https://github.com/muhdanfyan/express-mongodb",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "test-laravel",
+      "title": "Test Laravel",
+      "title_en": "Test Laravel",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: test-laravel.",
+      "description_en": "Digital project: test-laravel.",
+      "url": "https://github.com/muhdanfyan/test-laravel",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "stopwatch_react",
+      "title": "Stopwatch_React",
+      "title_en": "Stopwatch_React",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: stopwatch_react.",
+      "description_en": "Digital project: stopwatch_react.",
+      "url": "https://github.com/muhdanfyan/stopwatch_react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs1-intro",
+      "title": "Dasarlogicjs1 Intro",
+      "title_en": "Dasarlogicjs1 Intro",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dasarlogicjs1-intro.",
+      "description_en": "Digital project: dasarlogicjs1-intro.",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs1-intro",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs-tugas_function",
+      "title": "Dasarlogicjs Tugas_Function",
+      "title_en": "Dasarlogicjs Tugas_Function",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dasarlogicjs-tugas_function.",
+      "description_en": "Digital project: dasarlogicjs-tugas_function.",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs-tugas_function",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "todolist-vitereact",
+      "title": "Todolist Vitereact",
+      "title_en": "Todolist Vitereact",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: todolist-vitereact.",
+      "description_en": "Digital project: todolist-vitereact.",
+      "url": "https://github.com/muhdanfyan/todolist-vitereact",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs5-function",
+      "title": "Dasarlogicjs5 Function",
+      "title_en": "Dasarlogicjs5 Function",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dasarlogicjs5-function.",
+      "description_en": "Digital project: dasarlogicjs5-function.",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs5-function",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "companyprofile",
+      "title": "Companyprofile",
+      "title_en": "Companyprofile",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Buat Website Profil Untuk perusahaan, lembaga, dan UMKM",
+      "description_en": "Buat Website Profil Untuk perusahaan, lembaga, dan UMKM",
+      "url": "https://github.com/muhdanfyan/companyprofile",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "filamentstarter",
+      "title": "Filamentstarter",
+      "title_en": "Filamentstarter",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: filamentstarter.",
+      "description_en": "Digital project: filamentstarter.",
+      "url": "https://github.com/muhdanfyan/filamentstarter",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravel-filament-starter",
+      "title": "Laravel Filament Starter",
+      "title_en": "Laravel Filament Starter",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: laravel-filament-starter.",
+      "description_en": "Digital project: laravel-filament-starter.",
+      "url": "https://github.com/muhdanfyan/laravel-filament-starter",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs4-looping",
+      "title": "Dasarlogicjs4 Looping",
+      "title_en": "Dasarlogicjs4 Looping",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dasarlogicjs4-looping.",
+      "description_en": "Digital project: dasarlogicjs4-looping.",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs4-looping",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs2-tipedata",
+      "title": "Dasarlogicjs2 Tipedata",
+      "title_en": "Dasarlogicjs2 Tipedata",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dasarlogicjs2-tipedata.",
+      "description_en": "Digital project: dasarlogicjs2-tipedata.",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs2-tipedata",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs3-condition",
+      "title": "Dasarlogicjs3 Condition",
+      "title_en": "Dasarlogicjs3 Condition",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Tutorial ini mengajarkan cara kerja dari conditional statement",
+      "description_en": "Tutorial ini mengajarkan cara kerja dari conditional statement",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs3-condition",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dasarlogicjs1-pengenalan",
+      "title": "Dasarlogicjs1 Pengenalan",
+      "title_en": "Dasarlogicjs1 Pengenalan",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dasarlogicjs1-pengenalan.",
+      "description_en": "Digital project: dasarlogicjs1-pengenalan.",
+      "url": "https://github.com/muhdanfyan/dasarlogicjs1-pengenalan",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "expressreact",
+      "title": "Expressreact",
+      "title_en": "Expressreact",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: expressreact.",
+      "description_en": "Digital project: expressreact.",
+      "url": "https://github.com/muhdanfyan/expressreact",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webpondok_new",
+      "title": "Webpondok_New",
+      "title_en": "Webpondok_New",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website Official pondok informatika yang baru",
+      "description_en": "Website Official pondok informatika yang baru",
+      "url": "https://github.com/muhdanfyan/webpondok_new",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dompet-santri",
+      "title": "Dompet Santri",
+      "title_en": "Dompet Santri",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: dompet-santri.",
+      "description_en": "Digital project: dompet-santri.",
+      "url": "https://github.com/muhdanfyan/dompet-santri",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "react-google",
+      "title": "React Google",
+      "title_en": "React Google",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: react-google.",
+      "description_en": "Digital project: react-google.",
+      "url": "https://github.com/muhdanfyan/react-google",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bladeengine",
+      "title": "Bladeengine",
+      "title_en": "Bladeengine",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar memahami prinsip kerja dari blade engine laravel",
+      "description_en": "Belajar memahami prinsip kerja dari blade engine laravel",
+      "url": "https://github.com/muhdanfyan/bladeengine",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webkeuangan-filament",
+      "title": "Webkeuangan Filament",
+      "title_en": "Webkeuangan Filament",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar filament dengan menggunakan tutorial di link https://www.youtube.com/playlist?list=PLXTfmstF10qACmsURBNFbhHnvoVm9QDaq",
+      "description_en": "belajar filament dengan menggunakan tutorial di link https://www.youtube.com/playlist?list=PLXTfmstF10qACmsURBNFbhHnvoVm9QDaq",
+      "url": "https://github.com/muhdanfyan/webkeuangan-filament",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "adminblog-dpd",
+      "title": "Adminblog Dpd",
+      "title_en": "Adminblog Dpd",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: adminblog-dpd.",
+      "description_en": "Digital project: adminblog-dpd.",
+      "url": "https://github.com/muhdanfyan/adminblog-dpd",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "nextauth",
+      "title": "Nextauth",
+      "title_en": "Nextauth",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar membuat Page Next JS",
+      "description_en": "Belajar membuat Page Next JS",
+      "url": "https://github.com/muhdanfyan/nextauth",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tugasfe3",
+      "title": "Tugasfe3",
+      "title_en": "Tugasfe3",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: tugasfe3.",
+      "description_en": "Digital project: tugasfe3.",
+      "url": "https://github.com/muhdanfyan/tugasfe3",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "belajar-astro",
+      "title": "Belajar Astro",
+      "title_en": "Belajar Astro",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: belajar-astro.",
+      "description_en": "Digital project: belajar-astro.",
+      "url": "https://github.com/muhdanfyan/belajar-astro",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tugasfe3-pi",
+      "title": "Tugasfe3 Pi",
+      "title_en": "Tugasfe3 Pi",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Tugas Front End Pondok Informatika",
+      "description_en": "Tugas Front End Pondok Informatika",
+      "url": "https://tugasfe3-pi.vercel.app",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webdpd-fe",
+      "title": "Webdpd Fe",
+      "title_en": "Webdpd Fe",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: webdpd-fe.",
+      "description_en": "Digital project: webdpd-fe.",
+      "url": "https://github.com/muhdanfyan/webdpd-fe",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "wahdahbaubau",
+      "title": "Wahdahbaubau",
+      "title_en": "Wahdahbaubau",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: wahdahbaubau.",
+      "description_en": "Digital project: wahdahbaubau.",
+      "url": "https://github.com/muhdanfyan/wahdahbaubau",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "wahdah-baubau",
+      "title": "Wahdah Baubau",
+      "title_en": "Wahdah Baubau",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: wahdah-baubau.",
+      "description_en": "Digital project: wahdah-baubau.",
+      "url": "https://wahdah-baubau.vercel.app",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "lms-pondok",
+      "title": "Lms Pondok",
+      "title_en": "Lms Pondok",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: lms-pondok.",
+      "description_en": "Digital project: lms-pondok.",
+      "url": "https://github.com/muhdanfyan/lms-pondok",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "nextjs-imgupload",
+      "title": "Nextjs Imgupload",
+      "title_en": "Nextjs Imgupload",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Upload Image dengan menggunakan NextJS dengan tutorial di ytb link https://youtu.be/8hWC1zzXYGA?si=5ZAYxzVhKihIPf6x",
+      "description_en": "Belajar Upload Image dengan menggunakan NextJS dengan tutorial di ytb link https://youtu.be/8hWC1zzXYGA?si=5ZAYxzVhKihIPf6x",
+      "url": "https://imgupload-beige.vercel.app",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "jelajahpublishing.id",
+      "title": "Jelajahpublishing.Id",
+      "title_en": "Jelajahpublishing.Id",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: jelajahpublishing.id.",
+      "description_en": "Digital project: jelajahpublishing.id.",
+      "url": "https://github.com/muhdanfyan/jelajahpublishing.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "filamen_crud",
+      "title": "Filamen_Crud",
+      "title_en": "Filamen_Crud",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar filamen dari tutorial https://youtu.be/ZnrmzKVziM0?si=7L9WhiDn77OGW0q3",
+      "description_en": "belajar filamen dari tutorial https://youtu.be/ZnrmzKVziM0?si=7L9WhiDn77OGW0q3",
+      "url": "https://github.com/muhdanfyan/filamen_crud",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "filament_keuangan",
+      "title": "Filament_Keuangan",
+      "title_en": "Filament_Keuangan",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar filament laravel untuk pembuatan web keuangan",
+      "description_en": "belajar filament laravel untuk pembuatan web keuangan",
+      "url": "https://github.com/muhdanfyan/filament_keuangan",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "starting-ci4",
+      "title": "Starting Ci4",
+      "title_en": "Starting Ci4",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: starting-ci4.",
+      "description_en": "Digital project: starting-ci4.",
+      "url": "https://github.com/muhdanfyan/starting-ci4",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "belajarrefine",
+      "title": "Belajarrefine",
+      "title_en": "Belajarrefine",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: belajarrefine.",
+      "description_en": "Digital project: belajarrefine.",
+      "url": "https://github.com/muhdanfyan/belajarrefine",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "go-restapi-gin",
+      "title": "Go Restapi Gin",
+      "title_en": "Go Restapi Gin",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: go-restapi-gin.",
+      "description_en": "Digital project: go-restapi-gin.",
+      "url": "https://github.com/muhdanfyan/go-restapi-gin",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bootstrap-3.3.7-dist",
+      "title": "Bootstrap 3.3.7 Dist",
+      "title_en": "Bootstrap 3.3.7 Dist",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: bootstrap-3.3.7-dist.",
+      "description_en": "Digital project: bootstrap-3.3.7-dist.",
+      "url": "https://github.com/muhdanfyan/bootstrap-3.3.7-dist",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "latihan-crud",
+      "title": "Latihan Crud",
+      "title_en": "Latihan Crud",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "latihan crud dengan laravel",
+      "description_en": "latihan crud dengan laravel",
+      "url": "https://github.com/muhdanfyan/latihan-crud",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webku-muhdan",
+      "title": "Webku Muhdan",
+      "title_en": "Webku Muhdan",
+      "year": "2024",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Web tugas untuk ekskull",
+      "description_en": "Web tugas untuk ekskull",
+      "url": "https://github.com/muhdanfyan/webku-muhdan",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "htmldasar",
+      "title": "Htmldasar",
+      "title_en": "Htmldasar",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar html dasar di tahfidz baubau",
+      "description_en": "belajar html dasar di tahfidz baubau",
+      "url": "https://github.com/muhdanfyan/htmldasar",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "zulkifliat.com",
+      "title": "Zulkifliat.Com",
+      "title_en": "Zulkifliat.Com",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: zulkifliat.com.",
+      "description_en": "Digital project: zulkifliat.com.",
+      "url": "https://github.com/muhdanfyan/zulkifliat.com",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "objectmediatama.com",
+      "title": "Objectmediatama.Com",
+      "title_en": "Objectmediatama.Com",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "landing page ov",
+      "description_en": "landing page ov",
+      "url": "https://github.com/muhdanfyan/objectmediatama.com",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravel10-api",
+      "title": "Laravel10 Api",
+      "title_en": "Laravel10 Api",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: laravel10-api.",
+      "description_en": "Digital project: laravel10-api.",
+      "url": "https://github.com/muhdanfyan/laravel10-api",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "popup",
+      "title": "Popup",
+      "title_en": "Popup",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "plugin untuk testing latihan",
+      "description_en": "plugin untuk testing latihan",
+      "url": "https://github.com/muhdanfyan/popup",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "golangcrud",
+      "title": "Golangcrud",
+      "title_en": "Golangcrud",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar buat CRUD dasar di Golang",
+      "description_en": "Belajar buat CRUD dasar di Golang",
+      "url": "https://github.com/muhdanfyan/golangcrud",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kpb",
+      "title": "Kpb",
+      "title_en": "Kpb",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "halaman utama website Komunitas Programmer Baubau",
+      "description_en": "halaman utama website Komunitas Programmer Baubau",
+      "url": "https://github.com/muhdanfyan/kpb",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravue-pos",
+      "title": "Laravue Pos",
+      "title_en": "Laravue Pos",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Repo untuk SC Sekolah Laravel - Buku Membuat Aplikasi POS/Kasir laravel, intertia.js, Vue.js",
+      "description_en": "Repo untuk SC Sekolah Laravel - Buku Membuat Aplikasi POS/Kasir laravel, intertia.js, Vue.js",
+      "url": "https://github.com/muhdanfyan/laravue-pos",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bbkp",
+      "title": "Bbkp",
+      "title_en": "Bbkp",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website Balai Besar Karantina Pertanian Makassar",
+      "description_en": "Website Balai Besar Karantina Pertanian Makassar",
+      "url": "https://github.com/muhdanfyan/bbkp",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "flutter_try",
+      "title": "Flutter_Try",
+      "title_en": "Flutter_Try",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: flutter_try.",
+      "description_en": "Digital project: flutter_try.",
+      "url": "https://github.com/muhdanfyan/flutter_try",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kasibagusstudio",
+      "title": "Kasibagusstudio",
+      "title_en": "Kasibagusstudio",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: kasibagusstudio.",
+      "description_en": "Digital project: kasibagusstudio.",
+      "url": "https://github.com/muhdanfyan/kasibagusstudio",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bpkthl-mks",
+      "title": "Bpkthl Mks",
+      "title_en": "Bpkthl Mks",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "website profil Balai Pelestarian dan Kerjasama Budaya Hutan Tanaman Lestari Wilayah VII Makassar",
+      "description_en": "website profil Balai Pelestarian dan Kerjasama Budaya Hutan Tanaman Lestari Wilayah VII Makassar",
+      "url": "https://github.com/muhdanfyan/bpkthl-mks",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sheetrest_node",
+      "title": "Sheetrest_Node",
+      "title_en": "Sheetrest_Node",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "how you can Get Google Spreadsheet by API. If you do not know how to create a Google Sheets API watch my previous video link is below.  Create Google API | Sheets API      \u2022 How to Create Goo...    Get Google Sheets in PHP      \u2022 Get Google Sheets...    Wherefrom Create API http://console.cloud.google.com/",
+      "description_en": "how you can Get Google Spreadsheet by API. If you do not know how to create a Google Sheets API watch my previous video link is below.  Create Google API | Sheets API      \u2022 How to Create Goo...    Get Google Sheets in PHP      \u2022 Get Google Sheets...    Wherefrom Create API http://console.cloud.google.com/",
+      "url": "https://github.com/muhdanfyan/sheetrest_node",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "jslanjut",
+      "title": "Jslanjut",
+      "title_en": "Jslanjut",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: jslanjut.",
+      "description_en": "Digital project: jslanjut.",
+      "url": "https://github.com/muhdanfyan/jslanjut",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "try-ci4",
+      "title": "Try Ci4",
+      "title_en": "Try Ci4",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: try-ci4.",
+      "description_en": "Digital project: try-ci4.",
+      "url": "https://github.com/muhdanfyan/try-ci4",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "trylaravel10",
+      "title": "Trylaravel10",
+      "title_en": "Trylaravel10",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "dari tutrial di link : https://santrikoding.com/tutorial-set/tutorial-laravel-10-untuk-pemula",
+      "description_en": "dari tutrial di link : https://santrikoding.com/tutorial-set/tutorial-laravel-10-untuk-pemula",
+      "url": "https://github.com/muhdanfyan/trylaravel10",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "newsgofirebase",
+      "title": "Newsgofirebase",
+      "title_en": "Newsgofirebase",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: newsgofirebase.",
+      "description_en": "Digital project: newsgofirebase.",
+      "url": "https://github.com/muhdanfyan/newsgofirebase",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "daftar.pondokinformatika",
+      "title": "Daftar.Pondokinformatika",
+      "title_en": "Daftar.Pondokinformatika",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "LP yang baru",
+      "description_en": "LP yang baru",
+      "url": "https://github.com/muhdanfyan/daftar.pondokinformatika",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "quantumbrain.id",
+      "title": "Quantumbrain.Id",
+      "title_en": "Quantumbrain.Id",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: quantumbrain.id.",
+      "description_en": "Digital project: quantumbrain.id.",
+      "url": "https://github.com/muhdanfyan/quantumbrain.id",
+      "project_type": "Personal/Research",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 92,
+      "is_featured": false
+    },
+    {
+      "slug": "kliniksedayu",
+      "title": "Kliniksedayu",
+      "title_en": "Kliniksedayu",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website Profil Klinik Sedayu",
+      "description_en": "Website Profil Klinik Sedayu",
+      "url": "https://github.com/muhdanfyan/kliniksedayu",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "lestareecommodities",
+      "title": "Lestareecommodities",
+      "title_en": "Lestareecommodities",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Landing page Lestaree Commodities ",
+      "description_en": "Landing page Lestaree Commodities ",
+      "url": "https://github.com/muhdanfyan/lestareecommodities",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webnews-laravel",
+      "title": "Webnews Laravel",
+      "title_en": "Webnews Laravel",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website news dengan laravel",
+      "description_en": "Website news dengan laravel",
+      "url": "https://github.com/muhdanfyan/webnews-laravel",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webyayasanalihizaam",
+      "title": "Webyayasanalihizaam",
+      "title_en": "Webyayasanalihizaam",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Web Landing Page Yayasan Ali Hizaam dengan menggunakan Nuxt JS untuk Skripsi Bang Sul",
+      "description_en": "Web Landing Page Yayasan Ali Hizaam dengan menggunakan Nuxt JS untuk Skripsi Bang Sul",
+      "url": "https://github.com/muhdanfyan/webyayasanalihizaam",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "portalnews-larareact",
+      "title": "Portalnews Larareact",
+      "title_en": "Portalnews Larareact",
+      "year": "2023",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "projek coding website bareng dari 0 sampai jadi untuk pemula menggunakan framework Laravel 9 terbaru 2022 dari bahasa pemrograman PHP yang selalu jadi andalan perusahaan-perusahaan di Indonesia.  PART 1 - Setup & projek installation versi dea afrizal PART 2 - https://youtu.be/zX2_FiKqOJE PART 3 - https://youtu.be/v3dzQ650j-k",
+      "description_en": "projek coding website bareng dari 0 sampai jadi untuk pemula menggunakan framework Laravel 9 terbaru 2022 dari bahasa pemrograman PHP yang selalu jadi andalan perusahaan-perusahaan di Indonesia.  PART 1 - Setup & projek installation versi dea afrizal PART 2 - https://youtu.be/zX2_FiKqOJE PART 3 - https://youtu.be/v3dzQ650j-k",
+      "url": "https://github.com/muhdanfyan/portalnews-larareact",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "ihs.sch.id",
+      "title": "Ihs.Sch.Id",
+      "title_en": "Ihs.Sch.Id",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website Profil Sekolah IHS",
+      "description_en": "Website Profil Sekolah IHS",
+      "url": "https://github.com/muhdanfyan/ihs.sch.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "create-react-app-belajar",
+      "title": "Create React App Belajar",
+      "title_en": "Create React App Belajar",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: create-react-app-belajar.",
+      "description_en": "Digital project: create-react-app-belajar.",
+      "url": "https://github.com/muhdanfyan/create-react-app-belajar",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "golangrestapi-news",
+      "title": "Golangrestapi News",
+      "title_en": "Golangrestapi News",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: golangrestapi-news.",
+      "description_en": "Digital project: golangrestapi-news.",
+      "url": "https://github.com/muhdanfyan/golangrestapi-news",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sekolahprogrammer",
+      "title": "Sekolahprogrammer",
+      "title_en": "Sekolahprogrammer",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: sekolahprogrammer.",
+      "description_en": "Digital project: sekolahprogrammer.",
+      "url": "https://github.com/muhdanfyan/sekolahprogrammer",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tahfidzsalmanalfarisi.id",
+      "title": "Tahfidzsalmanalfarisi.Id",
+      "title_en": "Tahfidzsalmanalfarisi.Id",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Web Profil Pesantren Tahfidzul Quran Salman Al Faarisi",
+      "description_en": "Web Profil Pesantren Tahfidzul Quran Salman Al Faarisi",
+      "url": "https://github.com/muhdanfyan/tahfidzsalmanalfarisi.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pondokinformatika.id",
+      "title": "Pondokinformatika.Id",
+      "title_en": "Pondokinformatika.Id",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: pondokinformatika.id.",
+      "description_en": "Digital project: pondokinformatika.id.",
+      "url": "https://github.com/muhdanfyan/pondokinformatika.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "watsap-broadcast",
+      "title": "Watsap Broadcast",
+      "title_en": "Watsap Broadcast",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "aplikasi whatsapp broadcast",
+      "description_en": "aplikasi whatsapp broadcast",
+      "url": "https://github.com/muhdanfyan/watsap-broadcast",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "interview-reactselect",
+      "title": "Interview Reactselect",
+      "title_en": "Interview Reactselect",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Soal test coding interview kerja programmer frontend web developer di Indonesia tahun 2022. Ngerjain langsung soal interview test coding programmer dari salah satu perusahaan teknologi besar di Indonesia, tanpa editing video alias real ngoding seadanya.",
+      "description_en": "Soal test coding interview kerja programmer frontend web developer di Indonesia tahun 2022. Ngerjain langsung soal interview test coding programmer dari salah satu perusahaan teknologi besar di Indonesia, tanpa editing video alias real ngoding seadanya.",
+      "url": "https://github.com/muhdanfyan/interview-reactselect",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "objectvideography",
+      "title": "Objectvideography",
+      "title_en": "Objectvideography",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: objectvideography.",
+      "description_en": "Digital project: objectvideography.",
+      "url": "https://github.com/muhdanfyan/objectvideography",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "workshop1milyar",
+      "title": "Workshop1Milyar",
+      "title_en": "Workshop1Milyar",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: workshop1milyar.",
+      "description_en": "Digital project: workshop1milyar.",
+      "url": "https://github.com/muhdanfyan/workshop1milyar",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "coba-go",
+      "title": "Coba Go",
+      "title_en": "Coba Go",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: coba-go.",
+      "description_en": "Digital project: coba-go.",
+      "url": "https://github.com/muhdanfyan/coba-go",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "web-nuxt-yayasan",
+      "title": "Web Nuxt Yayasan",
+      "title_en": "Web Nuxt Yayasan",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": " Membuat Tampilan Web Frontend sederhana berdasarkan API yang sudah dibuat dengan framework Nuxt.js dan Vuetify.js",
+      "description_en": " Membuat Tampilan Web Frontend sederhana berdasarkan API yang sudah dibuat dengan framework Nuxt.js dan Vuetify.js",
+      "url": "https://github.com/muhdanfyan/Web-Nuxt-Yayasan",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kembalikemasjid.id",
+      "title": "Kembalikemasjid.Id",
+      "title_en": "Kembalikemasjid.Id",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website Resmi KembaliKeMasjid.ID",
+      "description_en": "Website Resmi KembaliKeMasjid.ID",
+      "url": "https://github.com/muhdanfyan/kembalikemasjid.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "ekstraksi-fitur",
+      "title": "Ekstraksi Fitur",
+      "title_en": "Ekstraksi Fitur",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: ekstraksi-fitur.",
+      "description_en": "Digital project: ekstraksi-fitur.",
+      "url": "https://github.com/muhdanfyan/ekstraksi-fitur",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "matadata",
+      "title": "Matadata",
+      "title_en": "Matadata",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: matadata.",
+      "description_en": "Digital project: matadata.",
+      "url": "https://github.com/muhdanfyan/matadata",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "malmora-fe",
+      "title": "Malmora Fe",
+      "title_en": "Malmora Fe",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: malmora-fe.",
+      "description_en": "Digital project: malmora-fe.",
+      "url": "https://github.com/muhdanfyan/malmora-fe",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "laravel8-sanctum",
+      "title": "Laravel8 Sanctum",
+      "title_en": "Laravel8 Sanctum",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Cara membuat REST API Authentication dan mem-protect route mengggunakan Sanctum di Laravel 8.",
+      "description_en": "Cara membuat REST API Authentication dan mem-protect route mengggunakan Sanctum di Laravel 8.",
+      "url": "https://github.com/muhdanfyan/laravel8-sanctum",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "smartcontract",
+      "title": "Smartcontract",
+      "title_en": "Smartcontract",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar membuat Smart Contract menggunakan Solidity, Hardhat & Ethers JS.  membuat smart contract pada blockchain ethereum & mengintegrasikannya dengan aplikasi frontend kita. Disini kita menggunakan beberapa tools seperti solidity, hardhat & ethersJS. link tutor : https://youtu.be/5Hzf6C2SEpI",
+      "description_en": "Belajar membuat Smart Contract menggunakan Solidity, Hardhat & Ethers JS.  membuat smart contract pada blockchain ethereum & mengintegrasikannya dengan aplikasi frontend kita. Disini kita menggunakan beberapa tools seperti solidity, hardhat & ethersJS. link tutor : https://youtu.be/5Hzf6C2SEpI",
+      "url": "https://github.com/muhdanfyan/smartcontract",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bwasartup-go",
+      "title": "Bwasartup Go",
+      "title_en": "Bwasartup Go",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Repo untuk Backend Crowd-Funding BWA dengan Go-VueJS",
+      "description_en": "Repo untuk Backend Crowd-Funding BWA dengan Go-VueJS",
+      "url": "https://github.com/muhdanfyan/bwasartup-go",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reduxreacthook",
+      "title": "Reduxreacthook",
+      "title_en": "Reduxreacthook",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar penggunaan Redux dari dasar di React JS dengan menggunakan Hooks dengan langsung belajar studi kasus CRUD Buku Kontak. link : https://youtu.be/NBY70QmxSUE",
+      "description_en": "Belajar penggunaan Redux dari dasar di React JS dengan menggunakan Hooks dengan langsung belajar studi kasus CRUD Buku Kontak. link : https://youtu.be/NBY70QmxSUE",
+      "url": "https://github.com/muhdanfyan/reduxreacthook",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "fegin-jwt",
+      "title": "Fegin Jwt",
+      "title_en": "Fegin Jwt",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "login dan register menggunakan JWT (JSON Web Token) dengan Node JS, express, dan MySQL di sisi backend dan React JS di sisi frontend.",
+      "description_en": "login dan register menggunakan JWT (JSON Web Token) dengan Node JS, express, dan MySQL di sisi backend dan React JS di sisi frontend.",
+      "url": "https://github.com/muhdanfyan/fegin-jwt",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "malmora_fe",
+      "title": "Malmora_Fe",
+      "title_en": "Malmora_Fe",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: malmora_fe.",
+      "description_en": "Digital project: malmora_fe.",
+      "url": "https://github.com/muhdanfyan/malmora_fe",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kurirquran.com",
+      "title": "Kurirquran.Com",
+      "title_en": "Kurirquran.Com",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: kurirquran.com.",
+      "description_en": "Digital project: kurirquran.com.",
+      "url": "https://github.com/muhdanfyan/kurirquran.com",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "simrs-node",
+      "title": "Simrs Node",
+      "title_en": "Simrs Node",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Sistem Informasi Manajemen Rumah Sakit Terintegrasi Berbasis Node JS. Demo dapat dilihat",
+      "description_en": "Sistem Informasi Manajemen Rumah Sakit Terintegrasi Berbasis Node JS. Demo dapat dilihat",
+      "url": "https://github.com/muhdanfyan/simrs-node",
+      "project_type": "Corporate",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 90,
+      "is_featured": false
+    },
+    {
+      "slug": "cartconcept-react",
+      "title": "Cartconcept React",
+      "title_en": "Cartconcept React",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Build A Simple Shopping Cart Using Only React For All Levels Web Developers. ref : https://youtu.be/AmIdY1Eb8tY",
+      "description_en": "Build A Simple Shopping Cart Using Only React For All Levels Web Developers. ref : https://youtu.be/AmIdY1Eb8tY",
+      "url": "https://github.com/muhdanfyan/cartconcept-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "axios-testing",
+      "title": "Axios Testing",
+      "title_en": "Axios Testing",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: axios-testing.",
+      "description_en": "Digital project: axios-testing.",
+      "url": "https://github.com/muhdanfyan/axios-testing",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "kasir-react",
+      "title": "Kasir React",
+      "title_en": "Kasir React",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "React JS API dengan Studi Kasus Aplikasi Kasir jadi tutorial ini lanjutan dari Tutorial React JS Dasar. Disini kita akan belajar membuat Aplikasi sederhana dengan berinteraksi dengan backend menggunakan API.",
+      "description_en": "React JS API dengan Studi Kasus Aplikasi Kasir jadi tutorial ini lanjutan dari Tutorial React JS Dasar. Disini kita akan belajar membuat Aplikasi sederhana dengan berinteraksi dengan backend menggunakan API.",
+      "url": "https://github.com/muhdanfyan/kasir-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "jwt-laravelreact",
+      "title": "Jwt Laravelreact",
+      "title_en": "Jwt Laravelreact",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "membuat sebuah sistem otentikasi menggunakan Laravel dan React.js. Dan untuk provider API token yang akan kita gunakan adalah Json Web Token atau biasa disebut dengan JWT.",
+      "description_en": "membuat sebuah sistem otentikasi menggunakan Laravel dan React.js. Dan untuk provider API token yang akan kita gunakan adalah Json Web Token atau biasa disebut dengan JWT.",
+      "url": "https://github.com/muhdanfyan/jwt-laravelreact",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "silp",
+      "title": "Silp",
+      "title_en": "Silp",
+      "year": "2022",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Sistem Informasi Pengolahan Data Laporan Polisi Pada Polres Bone Berbasis Web dengan menggunakan Codeigniter dan MySQL",
+      "description_en": "Sistem Informasi Pengolahan Data Laporan Polisi Pada Polres Bone Berbasis Web dengan menggunakan Codeigniter dan MySQL",
+      "url": "https://github.com/muhdanfyan/silp",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pilaragroidn.com",
+      "title": "Pilaragroidn.Com",
+      "title_en": "Pilaragroidn.Com",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Company Profile Produk Rempah-Rempah",
+      "description_en": "Company Profile Produk Rempah-Rempah",
+      "url": "https://github.com/muhdanfyan/pilaragroidn.com",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "begin-jwt",
+      "title": "Begin Jwt",
+      "title_en": "Begin Jwt",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "login dan register menggunakan JWT (JSON Web Token) dengan Node JS, express, dan MySQL di sisi backend dan React JS di sisi frontend.",
+      "description_en": "login dan register menggunakan JWT (JSON Web Token) dengan Node JS, express, dan MySQL di sisi backend dan React JS di sisi frontend.",
+      "url": "https://github.com/muhdanfyan/begin-jwt",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "latihan-auth0",
+      "title": "Latihan Auth0",
+      "title_en": "Latihan Auth0",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: latihan-auth0.",
+      "description_en": "Digital project: latihan-auth0.",
+      "url": "https://github.com/muhdanfyan/latihan-auth0",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "authjwt-react",
+      "title": "Authjwt React",
+      "title_en": "Authjwt React",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Login dan register menggunakan JWT (JSON Web Token) dengan Node JS, express, dan MySQL di sisi backend dan React JS di sisi frontend.",
+      "description_en": "Login dan register menggunakan JWT (JSON Web Token) dengan Node JS, express, dan MySQL di sisi backend dan React JS di sisi frontend.",
+      "url": "https://github.com/muhdanfyan/authjwt-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tahfizid",
+      "title": "Tahfizid",
+      "title_en": "Tahfizid",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "landing page tahfiz indonesia online",
+      "description_en": "landing page tahfiz indonesia online",
+      "url": "https://github.com/muhdanfyan/tahfizid",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "simleg-be",
+      "title": "Simleg Be",
+      "title_en": "Simleg Be",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Rest API untuk SIMLEG-SULTENG (link : https://github.com/iqram98/sistem-agenda) menggunakan CI, MYSQL",
+      "description_en": "Rest API untuk SIMLEG-SULTENG (link : https://github.com/iqram98/sistem-agenda) menggunakan CI, MYSQL",
+      "url": "https://github.com/muhdanfyan/simleg-be",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bazarwi",
+      "title": "Bazarwi",
+      "title_en": "Bazarwi",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Marketplace untuk Bazar Muktamar WI dengan menggunakan CI dan MySQL",
+      "description_en": "Marketplace untuk Bazar Muktamar WI dengan menggunakan CI dan MySQL",
+      "url": "https://github.com/muhdanfyan/bazarwi",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "absensi_be",
+      "title": "Absensi_Be",
+      "title_en": "Absensi_Be",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "mysql node express strapi headless cms",
+      "description_en": "mysql node express strapi headless cms",
+      "url": "https://github.com/muhdanfyan/absensi_be",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "insanhijrah",
+      "title": "Insanhijrah",
+      "title_en": "Insanhijrah",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Landing Page Insan Hijrah  ",
+      "description_en": "Landing Page Insan Hijrah  ",
+      "url": "https://github.com/muhdanfyan/insanhijrah",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tahfizbaubau",
+      "title": "Tahfizbaubau",
+      "title_en": "Tahfizbaubau",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Tahfizbaubau.com : Website Sekolah, untuk manajemen informasi, News, Informasi Santri, dlln ",
+      "description_en": "Tahfizbaubau.com : Website Sekolah, untuk manajemen informasi, News, Informasi Santri, dlln ",
+      "url": "https://github.com/muhdanfyan/tahfizbaubau",
+      "project_type": "Government",
+      "difficulty_level": "Expert",
+      "difficulty_score": 95,
+      "is_featured": false
+    },
+    {
+      "slug": "sipundi-ittest",
+      "title": "Sipundi Ittest",
+      "title_en": "Sipundi Ittest",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "jawaban dari soal sipundi-test",
+      "description_en": "jawaban dari soal sipundi-test",
+      "url": "https://github.com/muhdanfyan/sipundi-ittest",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "bazarwi-event",
+      "title": "Bazarwi Event",
+      "title_en": "Bazarwi Event",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Landing Page Publikasi Kegiatan bazar dan pameran Muktamar WI",
+      "description_en": "Landing Page Publikasi Kegiatan bazar dan pameran Muktamar WI",
+      "url": "https://github.com/muhdanfyan/bazarwi-event",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sistem-agenda",
+      "title": "Sistem Agenda",
+      "title_en": "Sistem Agenda",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Mobile App untuk Sistem Informasi Agenda Rapat Legislatif",
+      "description_en": "Mobile App untuk Sistem Informasi Agenda Rapat Legislatif",
+      "url": "https://github.com/muhdanfyan/sistem-agenda",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "pegasbelajar",
+      "title": "Pegasbelajar",
+      "title_en": "Pegasbelajar",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Website Test Psikologi dengan menggunakan PHP Framework Codeigniter, database MYSQL",
+      "description_en": "Website Test Psikologi dengan menggunakan PHP Framework Codeigniter, database MYSQL",
+      "url": "https://github.com/muhdanfyan/pegasbelajar",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "porto",
+      "title": "Porto",
+      "title_en": "Porto",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "web portofolio",
+      "description_en": "web portofolio",
+      "url": "https://github.com/muhdanfyan/porto",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "crudgo-mysql",
+      "title": "Crudgo Mysql",
+      "title_en": "Crudgo Mysql",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "developing an application that exposes a basic REST-API server for CRUD operations for managing Persons (id,firstName,lastName, age) Before we start, lets us make a check that the reader might have basic knowledge of SQL and Golang. In case of learning more about Golang, would suggest going through link : https://towardsdev.com/building-basic-restful-crud-with-golang-mysql-6869dfdefade",
+      "description_en": "developing an application that exposes a basic REST-API server for CRUD operations for managing Persons (id,firstName,lastName, age) Before we start, lets us make a check that the reader might have basic knowledge of SQL and Golang. In case of learning more about Golang, would suggest going through link : https://towardsdev.com/building-basic-restful-crud-with-golang-mysql-6869dfdefade",
+      "url": "https://github.com/muhdanfyan/crudgo-mysql",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "crudapi-golang",
+      "title": "Crudapi Golang",
+      "title_en": "Crudapi Golang",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "bagaimana membuat sebuah simple CRUD webservice dengan bahasa GoLang, disini saya menggunakan Echo sebagai minimalis webframeworknya. link : https://pratamawijaya.com/programming/simple-crud-api-dengan-golang/",
+      "description_en": "bagaimana membuat sebuah simple CRUD webservice dengan bahasa GoLang, disini saya menggunakan Echo sebagai minimalis webframeworknya. link : https://pratamawijaya.com/programming/simple-crud-api-dengan-golang/",
+      "url": "https://github.com/muhdanfyan/crudapi-golang",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "murajaahgoweb",
+      "title": "Murajaahgoweb",
+      "title_en": "Murajaahgoweb",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar website development menggunakan bahasa Go atau yang biasa juga disebut Golang. olang banyak digunakan oleh perusahaan-perusahaan terkenal dan semakin hari semakin populer jadi akan sangat menguntungkan bagi kita untuk mempelajarinya. link : https://youtu.be/K76y2_ZQYwY",
+      "description_en": "belajar website development menggunakan bahasa Go atau yang biasa juga disebut Golang. olang banyak digunakan oleh perusahaan-perusahaan terkenal dan semakin hari semakin populer jadi akan sangat menguntungkan bagi kita untuk mempelajarinya. link : https://youtu.be/K76y2_ZQYwY",
+      "url": "https://github.com/muhdanfyan/murajaahgoweb",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "flickbe-test",
+      "title": "Flickbe Test",
+      "title_en": "Flickbe Test",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Challenges Flick Backend Test ",
+      "description_en": "Challenges Flick Backend Test ",
+      "url": "https://github.com/muhdanfyan/flickbe-test",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "personalweb-nextchakra",
+      "title": "Personalweb Nextchakra",
+      "title_en": "Personalweb Nextchakra",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "code a personal website and blog using the next.js JavaScript framework and the Chakra-UI css framework. We override and create a custom theme, add a dark mode, create and modify _app.js and _document.js, and set up the index.js page for the rest of the videos. Be sure to watch part 2 where we finish off the remainder of this video. link:https://youtu.be/lhOvI9s5gQY | https://youtu.be/G6_qqMrfTQg  code :https://github.com/bjcarlson42/personal-website-nextjs-chakra",
+      "description_en": "code a personal website and blog using the next.js JavaScript framework and the Chakra-UI css framework. We override and create a custom theme, add a dark mode, create and modify _app.js and _document.js, and set up the index.js page for the rest of the videos. Be sure to watch part 2 where we finish off the remainder of this video. link:https://youtu.be/lhOvI9s5gQY | https://youtu.be/G6_qqMrfTQg  code :https://github.com/bjcarlson42/personal-website-nextjs-chakra",
+      "url": "https://github.com/muhdanfyan/personalweb-nextchakra",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "typescript-try",
+      "title": "Typescript Try",
+      "title_en": "Typescript Try",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar typescript dari Sastra nababan Bicara Typescript",
+      "description_en": "belajar typescript dari Sastra nababan Bicara Typescript",
+      "url": "https://github.com/muhdanfyan/typescript-try",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "login-chakraui",
+      "title": "Login Chakraui",
+      "title_en": "Login Chakraui",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Updated command The command for installing Chakra UI into your project has been changed. Refer to the docsite (https://chakra-ui.com/docs/getting-st...) to see the updated command.",
+      "description_en": "Updated command The command for installing Chakra UI into your project has been changed. Refer to the docsite (https://chakra-ui.com/docs/getting-st...) to see the updated command.",
+      "url": "https://github.com/muhdanfyan/login-chakraui",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "chakra-kyuibi",
+      "title": "Chakra Kyuibi",
+      "title_en": "Chakra Kyuibi",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "cloning the interface of meetup.com using Chakra UI. After this video you will be comfortable enough to implement this awesome framework in your next projects.  https://youtu.be/s-bIsz-NR3c",
+      "description_en": "cloning the interface of meetup.com using Chakra UI. After this video you will be comfortable enough to implement this awesome framework in your next projects.  https://youtu.be/s-bIsz-NR3c",
+      "url": "https://github.com/muhdanfyan/chakra-kyuibi",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "todoapp-reactjs",
+      "title": "Todoapp Reactjs",
+      "title_en": "Todoapp Reactjs",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Build a React Todo List App in this beginner project tutorial. We will mainly use React hooks, so useEffect, useState, and useRef. You will be able to add, remove, edit, and mark complete/cross out the todo items. the mentor : Brian Design. link : youtu.be/E1E08i2UJGI",
+      "description_en": "Build a React Todo List App in this beginner project tutorial. We will mainly use React hooks, so useEffect, useState, and useRef. You will be able to add, remove, edit, and mark complete/cross out the todo items. the mentor : Brian Design. link : youtu.be/E1E08i2UJGI",
+      "url": "https://github.com/muhdanfyan/todoapp-reactjs",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "onlineshop_golang",
+      "title": "Onlineshop_Golang",
+      "title_en": "Onlineshop_Golang",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Fitur yang akan dibuat dalam Repo ini membuat toko online dengan golang. TechStack: Golang, Gorm, Postgresql, REST API.   Fiturnya adalah: - Home Page - Register, Login, Profile User - Products Page - Single Product Page - Shopping Cart - Checkout :Shipping Cost Calculation, Payment Gateway - Order History - Admin Panel: Dashboard, Manage Products, Manage Orders, Manage Users, Reports, Configuration. link belajar : https://www.youtube.com/watch?v=NaMnilMAkYA&list=PLcgY4YvE4BFA-0BZ4HaBjlbe4G8PJhCgY",
+      "description_en": "Fitur yang akan dibuat dalam Repo ini membuat toko online dengan golang. TechStack: Golang, Gorm, Postgresql, REST API.   Fiturnya adalah: - Home Page - Register, Login, Profile User - Products Page - Single Product Page - Shopping Cart - Checkout :Shipping Cost Calculation, Payment Gateway - Order History - Admin Panel: Dashboard, Manage Products, Manage Orders, Manage Users, Reports, Configuration. link belajar : https://www.youtube.com/watch?v=NaMnilMAkYA&list=PLcgY4YvE4BFA-0BZ4HaBjlbe4G8PJhCgY",
+      "url": "https://github.com/muhdanfyan/onlineshop_golang",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "restapicrud-go",
+      "title": "Restapicrud Go",
+      "title_en": "Restapicrud Go",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "- Membuat project di golang - Install package yang di perlukan - Koneksi ke MySQL Server, Struct, Migration dan manipulasi data dengan Gorm - Routing dengan Mux - Membuat CRUD rest api - Testing dengan Postman. link : https://youtu.be/gmP50RUd6YA source:https://github.com/gieart87/go-api-crud-mysql",
+      "description_en": "- Membuat project di golang - Install package yang di perlukan - Koneksi ke MySQL Server, Struct, Migration dan manipulasi data dengan Gorm - Routing dengan Mux - Membuat CRUD rest api - Testing dengan Postman. link : https://youtu.be/gmP50RUd6YA source:https://github.com/gieart87/go-api-crud-mysql",
+      "url": "https://github.com/muhdanfyan/restapicrud-go",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "hotelbook-react",
+      "title": "Hotelbook React",
+      "title_en": "Hotelbook React",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Case Study Aplikasi pemesanan Hotel bagian Front End Menggunakan Library React dengan tutorial dari BWA",
+      "description_en": "Case Study Aplikasi pemesanan Hotel bagian Front End Menggunakan Library React dengan tutorial dari BWA",
+      "url": "https://github.com/muhdanfyan/hotelbook-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reactjshook",
+      "title": "Reactjshook",
+      "title_en": "Reactjshook",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "React.js adalah library user interface yang membuat website kamu jadi lebih dinamis. Nah kali ini IDStack mengeluarkan kelas gratis Satu Jam Jago React.js Basic sebagai permulaan untuk kelas premium kedepannya. Link : https://youtu.be/Xeozh4udqUQ",
+      "description_en": "React.js adalah library user interface yang membuat website kamu jadi lebih dinamis. Nah kali ini IDStack mengeluarkan kelas gratis Satu Jam Jago React.js Basic sebagai permulaan untuk kelas premium kedepannya. Link : https://youtu.be/Xeozh4udqUQ",
+      "url": "https://github.com/muhdanfyan/reactjshook",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "whopaysbill",
+      "title": "Whopaysbill",
+      "title_en": "Whopaysbill",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Get started with React native with a tiny application.We will create a tiny React Native application so you can get started and realize that creating apps its super easy with React.    The app calls \"Who pays the bill ?\", the user can create a list of players and at the end we will randomly pick one and show the Looser.  On this one we will practice validation, toasts, state with context, we will use libraries, install fonts and more.",
+      "description_en": "Get started with React native with a tiny application.We will create a tiny React Native application so you can get started and realize that creating apps its super easy with React.    The app calls \"Who pays the bill ?\", the user can create a list of players and at the end we will randomly pick one and show the Looser.  On this one we will practice validation, toasts, state with context, we will use libraries, install fonts and more.",
+      "url": "https://github.com/muhdanfyan/whopaysbill",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tinyapp-reactnative",
+      "title": "Tinyapp Reactnative",
+      "title_en": "Tinyapp Reactnative",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Get started with React native with a tiny application from link tutorial : https://www.udemy.com/course/create-a-tiny-app-with-react-native",
+      "description_en": "Get started with React native with a tiny application from link tutorial : https://www.udemy.com/course/create-a-tiny-app-with-react-native",
+      "url": "https://github.com/muhdanfyan/tinyapp-reactnative",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "chatapp-reactnative",
+      "title": "Chatapp Reactnative",
+      "title_en": "Chatapp Reactnative",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Learn how to build an awesome chat application using react native, expo and socketio. link: https://www.udemy.com/course/learn-react-native-by-building-a-chat-app/learn/lecture/15499864",
+      "description_en": "Learn how to build an awesome chat application using react native, expo and socketio. link: https://www.udemy.com/course/learn-react-native-by-building-a-chat-app/learn/lecture/15499864",
+      "url": "https://github.com/muhdanfyan/chatapp-reactnative",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "flexpanelimagegallery",
+      "title": "Flexpanelimagegallery",
+      "title_en": "Flexpanelimagegallery",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Wes Bos JS30 Challenge 5 - Flex Image Gallery ",
+      "description_en": "Wes Bos JS30 Challenge 5 - Flex Image Gallery ",
+      "url": "https://github.com/muhdanfyan/flexpanelimagegallery",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "arraycardio-day1",
+      "title": "Arraycardio Day1",
+      "title_en": "Arraycardio Day1",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Challenge js30 Wes Bos ke 4 array cardio Day 1",
+      "description_en": "Challenge js30 Wes Bos ke 4 array cardio Day 1",
+      "url": "https://github.com/muhdanfyan/arraycardio-day1",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "variablecssjs-play",
+      "title": "Variablecssjs Play",
+      "title_en": "Variablecssjs Play",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Day 3 Challenge Wes Bos",
+      "description_en": "Day 3 Challenge Wes Bos",
+      "url": "https://github.com/muhdanfyan/variablecssjs-play",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "cssjsclock",
+      "title": "Cssjsclock",
+      "title_en": "Cssjsclock",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "membuat jam analog menggunakan CSS dan JavaSript",
+      "description_en": "membuat jam analog menggunakan CSS dan JavaSript",
+      "url": "https://github.com/muhdanfyan/cssjsclock",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "js-drumkit",
+      "title": "Js Drumkit",
+      "title_en": "Js Drumkit",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Challenge Day 1 - Javascript Drum Kit link: https://courses.wesbos.com/account/access/6163cf51e15af66ceff746a8/view/194130650",
+      "description_en": "Challenge Day 1 - Javascript Drum Kit link: https://courses.wesbos.com/account/access/6163cf51e15af66ceff746a8/view/194130650",
+      "url": "https://github.com/muhdanfyan/js-drumkit",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "satukebaikan-be",
+      "title": "Satukebaikan Be",
+      "title_en": "Satukebaikan Be",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "BE sistem satu kebaikan",
+      "description_en": "BE sistem satu kebaikan",
+      "url": "https://github.com/muhdanfyan/satukebaikan-be",
+      "project_type": "Personal/Research",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 92,
+      "is_featured": false
+    },
+    {
+      "slug": "firebase-cloudfunction",
+      "title": "Firebase Cloudfunction",
+      "title_en": "Firebase Cloudfunction",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Testing & Implemetation Firebase Cloud Functions on link : https://youtu.be/qcECaRgU4uI",
+      "description_en": "Testing & Implemetation Firebase Cloud Functions on link : https://youtu.be/qcECaRgU4uI",
+      "url": "https://github.com/muhdanfyan/firebase-cloudfunction",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "uploadfile-react",
+      "title": "Uploadfile React",
+      "title_en": "Uploadfile React",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "repo untuk upload file dgn reactjs, link : https://youtu.be/XeiOnkEI7XI",
+      "description_en": "repo untuk upload file dgn reactjs, link : https://youtu.be/XeiOnkEI7XI",
+      "url": "https://github.com/muhdanfyan/uploadfile-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "tikustanah-gamejs",
+      "title": "Tikustanah Gamejs",
+      "title_en": "Tikustanah Gamejs",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Membuat GAME \"Pukul Tikus Tanah\" (Whack-a-Mole) menggunakan JAVASCRIPT link tutorial : https://youtu.be/T46dIkefhCE",
+      "description_en": "Membuat GAME \"Pukul Tikus Tanah\" (Whack-a-Mole) menggunakan JAVASCRIPT link tutorial : https://youtu.be/T46dIkefhCE",
+      "url": "https://github.com/muhdanfyan/tikustanah-gamejs",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "satukebaikan-fe",
+      "title": "Satukebaikan Fe",
+      "title_en": "Satukebaikan Fe",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: satukebaikan-fe.",
+      "description_en": "Digital project: satukebaikan-fe.",
+      "url": "https://github.com/muhdanfyan/satukebaikan-fe",
+      "project_type": "Personal/Research",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 92,
+      "is_featured": false
+    },
+    {
+      "slug": "pasarku-react",
+      "title": "Pasarku React",
+      "title_en": "Pasarku React",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Slicing dari Figma UI ke react. referensi tutorial : https://youtu.be/DmJWuggEFZI",
+      "description_en": "Belajar Slicing dari Figma UI ke react. referensi tutorial : https://youtu.be/DmJWuggEFZI",
+      "url": "https://github.com/muhdanfyan/pasarku-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "blajar-vuejs",
+      "title": "Blajar Vuejs",
+      "title_en": "Blajar Vuejs",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Vue JS (Vue CLI) dari tutorial MFikri : youtu.be/tQzWB1W0pok",
+      "description_en": "Belajar Vue JS (Vue CLI) dari tutorial MFikri : youtu.be/tQzWB1W0pok",
+      "url": "https://github.com/muhdanfyan/blajar-vuejs",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "projvue-router",
+      "title": "Projvue Router",
+      "title_en": "Projvue Router",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Materi terakhir Vue JS untuk pemula VUE CLI dari mfikri, link : https://youtu.be/tQzWB1W0pok",
+      "description_en": "Materi terakhir Vue JS untuk pemula VUE CLI dari mfikri, link : https://youtu.be/tQzWB1W0pok",
+      "url": "https://github.com/muhdanfyan/projvue-router",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "sample-reacthooks",
+      "title": "Sample Reacthooks",
+      "title_en": "Sample Reacthooks",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Bahan belajar react hooks, referensi belajar di youtu.be/UgAkn8IsEkk",
+      "description_en": "Bahan belajar react hooks, referensi belajar di youtu.be/UgAkn8IsEkk",
+      "url": "https://github.com/muhdanfyan/sample-reacthooks",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "noderest",
+      "title": "Noderest",
+      "title_en": "Noderest",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "starter node js API mysql",
+      "description_en": "starter node js API mysql",
+      "url": "https://github.com/muhdanfyan/noderest",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reacthooks-4-performance-optimization",
+      "title": "Reacthooks 4 Performance Optimization",
+      "title_en": "Reacthooks 4 Performance Optimization",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar performance optimization React Hook dari tutorial Sastra Nababan link Tutorial : https://youtu.be/c8fgGZD7NkY",
+      "description_en": "Belajar performance optimization React Hook dari tutorial Sastra Nababan link Tutorial : https://youtu.be/c8fgGZD7NkY",
+      "url": "https://github.com/muhdanfyan/reacthooks-4-performance-optimization",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reacthooks-3-global-state",
+      "title": "Reacthooks 3 Global State",
+      "title_en": "Reacthooks 3 Global State",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Globale State dari tutorial bang sastra nababan, link tutorial : youtu.be/ykmN2sDFMwc",
+      "description_en": "Belajar Globale State dari tutorial bang sastra nababan, link tutorial : youtu.be/ykmN2sDFMwc",
+      "url": "https://github.com/muhdanfyan/reacthooks-3-global-state",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reacthooks-2-side-effect",
+      "title": "Reacthooks 2 Side Effect",
+      "title_en": "Reacthooks 2 Side Effect",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Side effect React Hooks Studi Kasus News Feed dari tutorial sastra nababan : https://youtu.be/nXBap0YB2JA",
+      "description_en": "Belajar Side effect React Hooks Studi Kasus News Feed dari tutorial sastra nababan : https://youtu.be/nXBap0YB2JA",
+      "url": "https://github.com/muhdanfyan/reacthooks-2-side-effect",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reacthooks-1.component-state",
+      "title": "Reacthooks 1.Component State",
+      "title_en": "Reacthooks 1.Component State",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Component State dari tutorial sastra nababan : youtu.be/UgAkn8IsEkk",
+      "description_en": "Belajar Component State dari tutorial sastra nababan : youtu.be/UgAkn8IsEkk",
+      "url": "https://github.com/muhdanfyan/reacthooks-1.component-state",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "basic-react-hooks",
+      "title": "Basic React Hooks",
+      "title_en": "Basic React Hooks",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Bahan Studi belajar dengan tutorial : youtu.be/mNqZGTD-8os",
+      "description_en": "Bahan Studi belajar dengan tutorial : youtu.be/mNqZGTD-8os",
+      "url": "https://github.com/muhdanfyan/basic-react-hooks",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "webapi-golang",
+      "title": "Webapi Golang",
+      "title_en": "Webapi Golang",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar Golang Web API dari tutorial di youtube link : https://www.youtube.com/watch?v=GjI0GSvmcSU",
+      "description_en": "Belajar Golang Web API dari tutorial di youtube link : https://www.youtube.com/watch?v=GjI0GSvmcSU",
+      "url": "https://github.com/muhdanfyan/webapi-golang",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "simleg-sulteng",
+      "title": "Simleg Sulteng",
+      "title_en": "Simleg Sulteng",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Aplikasi sistem informasi dan manajemen legislatif DPR Sulawesi Tengah",
+      "description_en": "Aplikasi sistem informasi dan manajemen legislatif DPR Sulawesi Tengah",
+      "url": "https://github.com/muhdanfyan/simleg-sulteng",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "crud-graphql",
+      "title": "Crud Graphql",
+      "title_en": "Crud Graphql",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar CRUD graphQL dari tutorial BWA, link : https://class.buildwithangga.com/course_playing/build-crud-with-graphql",
+      "description_en": "belajar CRUD graphQL dari tutorial BWA, link : https://class.buildwithangga.com/course_playing/build-crud-with-graphql",
+      "url": "https://github.com/muhdanfyan/crud-graphql",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "blajar-graphql",
+      "title": "Blajar Graphql",
+      "title_en": "Blajar Graphql",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar GraphQL dari tutorial BWA - https://class.buildwithangga.com/course_playing/build-api-with-graphql",
+      "description_en": "Belajar GraphQL dari tutorial BWA - https://class.buildwithangga.com/course_playing/build-api-with-graphql",
+      "url": "https://github.com/muhdanfyan/blajar-graphql",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "strapi_mongo",
+      "title": "Strapi_Mongo",
+      "title_en": "Strapi_Mongo",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Headless CMS dengan menggunakan Strapi dan NoSQL database MongoDB",
+      "description_en": "Headless CMS dengan menggunakan Strapi dan NoSQL database MongoDB",
+      "url": "https://github.com/muhdanfyan/strapi_mongo",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "reacttohtml_bwa",
+      "title": "Reacttohtml_Bwa",
+      "title_en": "Reacttohtml_Bwa",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "belajar convert react ke html, tutorial dari BuiltWithAngga",
+      "description_en": "belajar convert react ke html, tutorial dari BuiltWithAngga",
+      "url": "https://github.com/muhdanfyan/reacttohtml_bwa",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "mern_udemy",
+      "title": "Mern_Udemy",
+      "title_en": "Mern_Udemy",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar MERN (Mongo, Express, React, Node) Fullstack JS Dasar dari tutorial di Udemy - https://www.udemy.com/course/mern-stack-authentication-and-deployment/",
+      "description_en": "Belajar MERN (Mongo, Express, React, Node) Fullstack JS Dasar dari tutorial di Udemy - https://www.udemy.com/course/mern-stack-authentication-and-deployment/",
+      "url": "https://github.com/muhdanfyan/mern_udemy",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "blajarreact-anakmama",
+      "title": "Blajarreact Anakmama",
+      "title_en": "Blajarreact Anakmama",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar implementasi reacthooks dari react js. dari dasar hingga bisa memahami routes dan states dasar",
+      "description_en": "Belajar implementasi reacthooks dari react js. dari dasar hingga bisa memahami routes dan states dasar",
+      "url": "https://github.com/muhdanfyan/blajarreact-anakmama",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "belajar-restfull-express",
+      "title": "Belajar Restfull Express",
+      "title_en": "Belajar Restfull Express",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Belajar JS Backend membuat RESTful API dengan express, mongo.",
+      "description_en": "Belajar JS Backend membuat RESTful API dengan express, mongo.",
+      "url": "https://github.com/muhdanfyan/belajar-restfull-express",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "fulljs-reactexpress",
+      "title": "Fulljs Reactexpress",
+      "title_en": "Fulljs Reactexpress",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Hasil Belajar fullstack React + Express + MySQL + Node Sehari",
+      "description_en": "Hasil Belajar fullstack React + Express + MySQL + Node Sehari",
+      "url": "https://github.com/muhdanfyan/fulljs-reactexpress",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "absensipegawai-be",
+      "title": "Absensipegawai Be",
+      "title_en": "Absensipegawai Be",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "backend untuk absensi pegawai",
+      "description_en": "backend untuk absensi pegawai",
+      "url": "https://github.com/muhdanfyan/absensipegawai-be",
+      "project_type": "Personal/Research",
+      "difficulty_level": "Advanced",
+      "difficulty_score": 92,
+      "is_featured": false
+    },
+    {
+      "slug": "muslimahwahdah1",
+      "title": "Muslimahwahdah1",
+      "title_en": "Muslimahwahdah1",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: muslimahwahdah1.",
+      "description_en": "Digital project: muslimahwahdah1.",
+      "url": "https://github.com/muhdanfyan/muslimahwahdah1",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "muslimahwahdah",
+      "title": "Muslimahwahdah",
+      "title_en": "Muslimahwahdah",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Sisfo Muslimah Wahdah Daerah Makassar",
+      "description_en": "Sisfo Muslimah Wahdah Daerah Makassar",
+      "url": "https://github.com/muhdanfyan/muslimahwahdah",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "picrud",
+      "title": "Picrud",
+      "title_en": "Picrud",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: picrud.",
+      "description_en": "Digital project: picrud.",
+      "url": "https://github.com/muhdanfyan/picrud",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "dbliqo",
+      "title": "Dbliqo",
+      "title_en": "Dbliqo",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Sisfo Database Liqo Tarbiyah SMS Gateway",
+      "description_en": "Sisfo Database Liqo Tarbiyah SMS Gateway",
+      "url": "https://github.com/muhdanfyan/DBliqo",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "man",
+      "title": "Man",
+      "title_en": "Man",
+      "year": "2021",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "depsos morotai",
+      "description_en": "depsos morotai",
+      "url": "https://github.com/muhdanfyan/man",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "cetakme.id",
+      "title": "Cetakme.Id",
+      "title_en": "Cetakme.Id",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: cetakme.id.",
+      "description_en": "Digital project: cetakme.id.",
+      "url": "https://github.com/muhdanfyan/cetakme.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "celanajoger",
+      "title": "Celanajoger",
+      "title_en": "Celanajoger",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: celanajoger.",
+      "description_en": "Digital project: celanajoger.",
+      "url": "https://github.com/muhdanfyan/celanajoger",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "belajar-react",
+      "title": "Belajar React",
+      "title_en": "Belajar React",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: belajar-react.",
+      "description_en": "Digital project: belajar-react.",
+      "url": "https://github.com/muhdanfyan/belajar-react",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "mentorbox.id",
+      "title": "Mentorbox.Id",
+      "title_en": "Mentorbox.Id",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: mentorbox.id.",
+      "description_en": "Digital project: mentorbox.id.",
+      "url": "https://github.com/muhdanfyan/mentorbox.id",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "valuz",
+      "title": "Valuz",
+      "title_en": "Valuz",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: valuz.",
+      "description_en": "Digital project: valuz.",
+      "url": "https://github.com/muhdanfyan/valuz",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "spesialissunat",
+      "title": "Spesialissunat",
+      "title_en": "Spesialissunat",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "landing page untuk jasa spesialis sunat",
+      "description_en": "landing page untuk jasa spesialis sunat",
+      "url": "https://github.com/muhdanfyan/spesialissunat",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "lpbintaro",
+      "title": "Lpbintaro",
+      "title_en": "Lpbintaro",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: lpbintaro.",
+      "description_en": "Digital project: lpbintaro.",
+      "url": "https://github.com/muhdanfyan/lpbintaro",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "valuz-lp",
+      "title": "Valuz Lp",
+      "title_en": "Valuz Lp",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "landing page di valuz.id",
+      "description_en": "landing page di valuz.id",
+      "url": "https://github.com/muhdanfyan/valuz-lp",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "book-lp",
+      "title": "Book Lp",
+      "title_en": "Book Lp",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "landing page buku",
+      "description_en": "landing page buku",
+      "url": "https://github.com/muhdanfyan/book-lp",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "landingpage-admin",
+      "title": "Landingpage Admin",
+      "title_en": "Landingpage Admin",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Landing Page untuk Magau Jaya Digital",
+      "description_en": "Landing Page untuk Magau Jaya Digital",
+      "url": "https://github.com/muhdanfyan/landingpage-admin",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "etryout",
+      "title": "Etryout",
+      "title_en": "Etryout",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Test Front End di Magau",
+      "description_en": "Test Front End di Magau",
+      "url": "https://github.com/muhdanfyan/etryout",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "etryout-fe",
+      "title": "Etryout Fe",
+      "title_en": "Etryout Fe",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Test Front End untuk etryout",
+      "description_en": "Test Front End untuk etryout",
+      "url": "https://github.com/muhdanfyan/etryout-fe",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "ci_bootstrap_3",
+      "title": "Ci_Bootstrap_3",
+      "title_en": "Ci_Bootstrap_3",
+      "year": "2020",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "A multi-tenant website template based on CodeIgniter 3 with integration of some useful tools",
+      "description_en": "A multi-tenant website template based on CodeIgniter 3 with integration of some useful tools",
+      "url": "https://github.com/muhdanfyan/ci_bootstrap_3",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "css3",
+      "title": "Css3",
+      "title_en": "Css3",
+      "year": "2019",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "repo belajar css3",
+      "description_en": "repo belajar css3",
+      "url": "https://github.com/muhdanfyan/CSS3",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "olshop",
+      "title": "Olshop",
+      "title_en": "Olshop",
+      "year": "2019",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Online Shop",
+      "description_en": "Online Shop",
+      "url": "https://github.com/muhdanfyan/olshop",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
+    },
+    {
+      "slug": "web-toko",
+      "title": "Web Toko",
+      "title_en": "Web Toko",
+      "year": "2017",
+      "category": "Repository",
+      "category_en": "Repository",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": null,
+      "description": "Digital project: Web-Toko.",
+      "description_en": "Digital project: Web-Toko.",
+      "url": "https://github.com/muhdanfyan/Web-Toko",
+      "project_type": "Personal/Education",
+      "difficulty_level": "Intermediate",
+      "difficulty_score": 80,
+      "is_featured": false
     },
     {
       "title": "Quizfunwalk",
@@ -329,7 +5378,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Quiz Funwalhutmk2025",
@@ -342,7 +5392,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Pisantri",
@@ -355,7 +5406,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Sukrigrafis",
@@ -368,7 +5420,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Mbgman",
@@ -381,7 +5434,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Retribusi Admin",
@@ -397,7 +5451,8 @@
       ],
       "project_type": "Government",
       "difficulty_level": "Expert",
-      "difficulty_score": 98
+      "difficulty_score": 98,
+      "is_featured": false
     },
     {
       "title": "E Retribusi",
@@ -413,7 +5468,8 @@
       ],
       "project_type": "Government",
       "difficulty_level": "Expert",
-      "difficulty_score": 95
+      "difficulty_score": 95,
+      "is_featured": false
     },
     {
       "title": "Devkassaone",
@@ -426,7 +5482,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Devsirangkul",
@@ -439,7 +5496,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Kassaoneid",
@@ -452,7 +5510,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Kassapp",
@@ -465,7 +5524,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Sirangkul",
@@ -478,7 +5538,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Visibaubau4",
@@ -491,7 +5552,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Profilsantri",
@@ -504,7 +5566,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Cekpondok",
@@ -517,7 +5580,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Super Pony B97Bcb",
@@ -530,7 +5594,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Ceksantri",
@@ -543,7 +5608,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Wiyasa",
@@ -556,7 +5622,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Implementasiqr",
@@ -569,7 +5636,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Cosmic Dragon 9961B6",
@@ -582,7 +5650,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Sdalmuyassar",
@@ -595,7 +5664,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Pondokinformatika",
@@ -608,7 +5678,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Sditkausarilqurro",
@@ -621,7 +5692,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Sippeka",
@@ -634,7 +5706,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Lbhtanasuci",
@@ -647,7 +5720,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Webdpd",
@@ -660,7 +5734,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Quantumbrain",
@@ -673,7 +5748,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Objectmediatama",
@@ -686,7 +5762,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Zulkifliat",
@@ -699,7 +5776,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Jelajahpublishing",
@@ -712,7 +5790,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Halimbubu",
@@ -725,7 +5804,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Kpbaubau",
@@ -738,7 +5818,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Ongkahomestay",
@@ -751,7 +5832,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Bengkelhondabaubau",
@@ -764,7 +5846,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Skomindo",
@@ -777,7 +5860,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Daftarpi",
@@ -790,7 +5874,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Klinikmatasedayu",
@@ -803,7 +5888,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Lestaree",
@@ -816,7 +5902,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Jamilulmukminin",
@@ -829,7 +5916,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Bvgarispringbed",
@@ -842,7 +5930,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Baksomasateng",
@@ -855,7 +5944,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Yysnalihizaam",
@@ -868,7 +5958,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Informatikahighschool",
@@ -881,7 +5972,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Workshop1Milyarpertama",
@@ -894,7 +5986,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Mainawa",
@@ -907,7 +6000,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Malmoraapp",
@@ -920,7 +6014,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Kurirquran",
@@ -933,7 +6028,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Tahfiz",
@@ -946,7 +6042,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Bazpar Wi",
@@ -959,7 +6056,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Bandarkasur",
@@ -972,7 +6070,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Satukebaikan",
@@ -985,7 +6084,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Pilaragroidn",
@@ -998,7 +6098,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Kedaiaisyah",
@@ -1011,7 +6112,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Fisheryndo",
@@ -1024,7 +6126,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Celanajogerkeren",
@@ -1037,7 +6140,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Piblajar",
@@ -1050,7 +6154,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Pihome",
@@ -1063,7 +6168,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Mentorboxid",
@@ -1076,7 +6182,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Rumahquranmultimedia",
@@ -1089,7 +6196,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Elegant Khorana 0B5B70",
@@ -1102,7 +6210,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Valuz Lp",
@@ -1115,7 +6224,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Bintarolc",
@@ -1128,7 +6238,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     },
     {
       "title": "Distracted Wright 4Bf154",
@@ -1141,7 +6252,8 @@
       "available_langs": [
         "id",
         "en"
-      ]
+      ],
+      "is_featured": false
     }
   ],
   "writing": [

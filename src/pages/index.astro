@@ -217,7 +217,16 @@ const writings = folders
               <div class="p-6 flex flex-col flex-grow">
                 <div class="flex justify-between items-start mb-2">
                   <h3 class="text-xl font-bold project-title" data-id={project.title} data-en={project.title_en}>{project.title}</h3>
-                  <span class="text-[10px] font-black px-2 py-0.5 bg-slate-100 text-slate-500 rounded uppercase tracking-tighter">{project.category}</span>
+                  <div class="flex flex-col items-end gap-1">
+                    <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter">{project.project_type || project.category}</span>
+                    <span class={`text-[9px] font-bold px-1.5 py-0.5 rounded-full border ${
+                      project.difficulty_level === 'Expert' ? 'bg-red-50 text-red-600 border-red-100' :
+                      project.difficulty_level === 'Advanced' ? 'bg-orange-50 text-orange-600 border-orange-100' :
+                      'bg-slate-50 text-slate-500 border-slate-100'
+                    }`}>
+                      {project.difficulty_level || 'Intermediate'}
+                    </span>
+                  </div>
                 </div>
                 <p class="text-slate-600 text-sm mb-6 line-clamp-2 project-desc" data-id={project.description} data-en={project.description_en}>{project.description}</p>
                 
