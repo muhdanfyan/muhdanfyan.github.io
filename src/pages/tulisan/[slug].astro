@@ -87,8 +87,8 @@ const writing = writingMetadata;
 ---
 
 <Layout 
-  title={`${writing.title} | Muhdan Fyan`}
-  description={writing.description}
+  title={`${writing.title_en || writing.title} | Muhdan Fyan`}
+  description={writing.description_en || writing.description}
   image={writing.image.startsWith('http') ? writing.image : `https://muhdanfyan.github.io/img/tulisan/${writing.image}`}
 >
   <!-- Navigation -->
