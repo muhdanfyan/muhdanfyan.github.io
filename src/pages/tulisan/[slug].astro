@@ -219,7 +219,7 @@ const writing = writingMetadata;
     </div>
   </footer>
 
-  <script is:inline>
+  <script is:inline define:vars={{ slug }}>
     const synth = window.speechSynthesis;
     let voices = [];
     let audioCtx = null;
@@ -286,7 +286,19 @@ const writing = writingMetadata;
       const langToggle = document.getElementById('langToggle');
       if (langToggle) {
         const n = langToggle.cloneNode(true); langToggle.parentNode.replaceChild(n, langToggle);
-        n.addEventListener('click', () => { currentLang = currentLang === 'id' ? 'en' : 'id'; localStorage.setItem('lang', currentLang); updateLanguageUI(); if (window.stopAudio) window.stopAudio(); });
+        n.addEventListener('click', () => { 
+          // If English version exists, redirect to /en/ route
+          const hasEn = document.getElementById('contentEn') && !document.getElementById('contentEn').innerHTML.includes('marked('); // Simple check if content exists
+          if (hasEn) {
+            localStorage.setItem('lang', 'en');
+            window.location.href = `/en/tulisan/${slug}`;
+          } else {
+            currentLang = currentLang === 'id' ? 'en' : 'id'; 
+            localStorage.setItem('lang', currentLang); 
+            updateLanguageUI(); 
+          }
+          if (window.stopAudio) window.stopAudio(); 
+        });
       }
       const copyBtn = document.getElementById('copyText');
       if (copyBtn) {
