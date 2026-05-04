@@ -339,41 +339,38 @@ const writings = folders
       const langLabel = document.getElementById('langLabel');
       if (langLabel) langLabel.innerText = currentLang.toUpperCase();
       
-      // Update General Text
+      // Update ALL General Text (including Experience & Education)
       document.querySelectorAll('.lang-text').forEach(el => {
         if (el instanceof HTMLElement) {
-          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
-        }
-      });
-
-      // Update Projects
-      document.querySelectorAll('.project-card').forEach(card => {
-        if (card instanceof HTMLElement) {
-          const langs = JSON.parse(card.dataset.langs || '["id"]');
-          card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+          const textID = el.dataset.id;
+          const textEN = el.dataset.en;
           
-          const titleEl = card.querySelector('.project-title');
-          const descEl = card.querySelector('.project-desc');
-          const detailEl = card.querySelector('.detail-link');
-          const orderEl = card.querySelector('.order-link');
-          
-          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
-          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
-          if (detailEl instanceof HTMLElement) detailEl.innerText = currentLang === 'en' ? (detailEl.dataset.en || detailEl.innerText) : (detailEl.dataset.id || detailEl.innerText);
-          
-          if (orderEl instanceof HTMLElement) {
-            const text = currentLang === 'en' ? (orderEl.dataset.en || '') : (orderEl.dataset.id || '');
-            // Update only the text node, preserving the icon
-            const textNode = Array.from(orderEl.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent?.trim());
-            if (textNode) textNode.textContent = text;
+          if (currentLang === 'en' && textEN) {
+            el.innerText = textEN;
+          } else if (currentLang === 'id' && textID) {
+            el.innerText = textID;
           }
         }
       });
 
-      // Update Writings
+      // Update Projects Visibility & Text
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (card instanceof HTMLElement) {
+          const langs = JSON.parse(card.dataset.langs || '["id", "en"]');
+          card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+          
+          const titleEl = card.querySelector('.project-title');
+          const descEl = card.querySelector('.project-desc');
+          
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+        }
+      });
+
+      // Update Writings Visibility & Text
       document.querySelectorAll('.writing-card').forEach(card => {
         if (card instanceof HTMLElement) {
-          const langs = JSON.parse(card.dataset.langs || '["id"]');
+          const langs = JSON.parse(card.dataset.langs || '["id", "en"]');
           card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
           
           const titleEl = card.querySelector('.writing-title');
@@ -385,9 +382,33 @@ const writings = folders
     }
 
     function init() {
+      // Auto-Language Detection for First Time Visitors
+      if (!localStorage.getItem('lang')) {
+        try {
+          const userLang = navigator.language || '';
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+          
+          // Check if outside Indonesia
+          const isIndonesianTZ = timezone.includes('Jakarta') || timezone.includes('Makassar') || timezone.includes('Jayapura') || timezone.includes('Pontianak');
+          const isIndonesianLang = userLang.toLowerCase().startsWith('id');
+          
+          if (isIndonesianTZ || isIndonesianLang) {
+            localStorage.setItem('lang', 'id');
+          } else {
+            localStorage.setItem('lang', 'en');
+          }
+        } catch (e) {
+          localStorage.setItem('lang', 'id'); // Fallback
+        }
+      }
+
       const langToggle = document.getElementById('langToggle');
       if (langToggle) {
-        langToggle.addEventListener('click', () => {
+        // Remove existing listeners to avoid duplicates
+        const newToggle = langToggle.cloneNode(true);
+        langToggle.parentNode.replaceChild(newToggle, langToggle);
+        
+        newToggle.addEventListener('click', () => {
           const currentLang = localStorage.getItem('lang') || 'id';
           const newLang = currentLang === 'id' ? 'en' : 'id';
           localStorage.setItem('lang', newLang);
@@ -397,7 +418,7 @@ const writings = folders
       updateLanguageUI();
     }
 
-    // Run on initial load and after each navigation
+    // Run on initial load and after each navigation (View Transitions support)
     init();
     document.addEventListener('astro:page-load', init);
   </script>
