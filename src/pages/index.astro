@@ -12,13 +12,25 @@ const projects = projectFolders.map(slug => {
   return { ...data, slug };
 }).filter(Boolean).sort((a, b) => (b.is_featured ? 1 : 0) - (a.is_featured ? 1 : 0));
 
+const stripMarkdown = (text) => {
+  if (!text) return '';
+  return text
+    .replace(/!\[.*?\]\(.*?\)/g, '') // remove images
+    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // keep link text only
+    .replace(/[*_~`]/g, '') // remove formatting
+    .replace(/#+\s/g, '') // remove headings
+    .replace(/>\s/g, '') // remove blockquotes
+    .replace(/\n+/g, ' ') // replace newlines with space
+    .trim();
+};
+
 const experienceDir = path.join(process.cwd(), 'content/experience');
 const experience = (fs.existsSync(experienceDir) ? fs.readdirSync(experienceDir) : [])
   .map(slug => {
     const filePath = path.join(experienceDir, slug, 'index.mdoc');
     if (!fs.existsSync(filePath)) return null;
     const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
-    return { ...data, content, slug };
+    return { ...data, content: stripMarkdown(content), slug };
   })
   .filter(Boolean)
   .sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -29,7 +41,7 @@ const education = (fs.existsSync(educationDir) ? fs.readdirSync(educationDir) : 
     const filePath = path.join(educationDir, slug, 'index.mdoc');
     if (!fs.existsSync(filePath)) return null;
     const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
-    return { ...data, content, slug };
+    return { ...data, content: stripMarkdown(content), slug };
   })
   .filter(Boolean)
   .sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -40,7 +52,7 @@ const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
     const filePath = path.join(teachingDir, slug, 'index.mdoc');
     if (!fs.existsSync(filePath)) return null;
     const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
-    return { ...data, content, slug };
+    return { ...data, content: stripMarkdown(content), slug };
   })
   .filter(Boolean)
   .sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -227,6 +239,12 @@ const writings = folders
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 				{projects.slice(0, 6).map((project) => {
           const slug = project.slug;
+          const imagePath = (project.image && project.image.startsWith('http')) 
+            ? project.image 
+            : (project.image && project.image.startsWith('/')) 
+              ? project.image 
+              : '/' + (project.image || 'img/screenshots/default.png');
+          
           return (
             <div 
               onclick={`window.location.href='/portofolio/${slug}'`}
@@ -234,7 +252,7 @@ const writings = folders
               data-langs={JSON.stringify(project.available_langs || ['id', 'en'])}
             >
               <div class="relative overflow-hidden">
-                <img src={(project.image && project.image.startsWith('http')) ? project.image : '/' + (project.image || 'img/screenshots/default.png')} alt={project.title} class="w-full h-48 object-cover group-hover:scale-105 transition-all duration-500" />
+                <img src={imagePath} alt={project.title} class="w-full h-48 object-cover group-hover:scale-105 transition-all duration-500" />
                 <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all"></div>
               </div>
               <div class="p-6 flex flex-col flex-grow">
