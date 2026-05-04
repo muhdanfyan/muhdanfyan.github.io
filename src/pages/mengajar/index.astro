@@ -1,0 +1,139 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+
+const teachingDir = path.join(process.cwd(), 'content/teaching');
+const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
+  .map(slug => {
+    const filePath = path.join(teachingDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    return { ...data, content, slug };
+  })
+  .filter(Boolean)
+  .sort((a, b) => (a.order || 0) - (b.order || 0));
+---
+
+<Layout title="Pengalaman Mengajar | Muhdan Fyan">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        MUHDAN FYAN
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Home</a>
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
+          <span id="langLabel">ID</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-6 pt-32 mb-20">
+    <div class="mb-12">
+      <h1 class="text-4xl font-extrabold mb-4 lang-text" data-id="Pengalaman Mengajar" data-en="Teaching Experience">Pengalaman Mengajar</h1>
+      <p class="text-slate-600 lang-text" data-id="Kumpulan materi, workshop, dan sesi berbagi ilmu yang telah saya lakukan." data-en="A collection of materials, workshops, and knowledge-sharing sessions I have conducted.">Kumpulan materi, workshop, dan sesi berbagi ilmu yang telah saya lakukan.</p>
+      <div class="w-12 h-1 bg-indigo-600 rounded-full mt-6"></div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="flex flex-col md:flex-row gap-4 mb-12">
+      <div class="relative flex-1">
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input 
+          type="text" 
+          id="teachingSearch" 
+          placeholder="Cari materi atau acara..." 
+          class="w-full pl-12 pr-6 py-3 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600/20 focus:bg-white transition-all"
+        />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="teachingGrid">
+      {teaching.map((t) => (
+        <div class="teaching-card p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col h-full" data-tags={JSON.stringify([t.event, t.topic, t.content])}>
+          {t.image && (
+            <div class="relative w-full h-48 mb-6 overflow-hidden rounded-xl">
+              <img src={t.image} alt={t.event} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+          )}
+          <div class="flex-grow">
+            <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter mb-4 inline-block">{t.period}</span>
+            <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">{t.event}</h3>
+            <p class="text-slate-500 text-sm font-medium mb-4 italic">"{t.topic}"</p>
+            <div class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
+              {t.content}
+            </div>
+          </div>
+          {t.link && (
+            <div class="mt-auto pt-6 border-t border-slate-50">
+              <a href={t.link} target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 hover:gap-3 transition-all">
+                Buka Dokumentasi <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-100 py-12 mt-20">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="logo font-black text-xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          MUHDAN FYAN
+        </div>
+        <p class="text-slate-400 text-sm font-medium">
+          &copy; 2026 Muhdan Fyan Syah Sofian.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    function initSearch() {
+      const searchInput = document.getElementById('teachingSearch');
+      const cards = document.querySelectorAll('.teaching-card');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase();
+          cards.forEach(card => {
+            const tags = JSON.parse(card.dataset.tags || '[]');
+            const matches = tags.some(tag => tag.toLowerCase().includes(query));
+            card.style.display = matches ? 'flex' : 'none';
+          });
+        });
+      }
+    }
+
+    function updateLanguageUI() {
+      const currentLang = localStorage.getItem('lang') || 'id';
+      const langLabel = document.getElementById('langLabel');
+      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
+      
+      document.querySelectorAll('.lang-text').forEach(el => {
+        const textID = el.dataset.id;
+        const textEN = el.dataset.en;
+        if (currentLang === 'en' && textEN) el.innerText = textEN;
+        else if (currentLang === 'id' && textID) el.innerText = textID;
+      });
+    }
+
+    document.getElementById('langToggle')?.addEventListener('click', () => {
+      const currentLang = localStorage.getItem('lang') || 'id';
+      const newLang = currentLang === 'id' ? 'en' : 'id';
+      localStorage.setItem('lang', newLang);
+      updateLanguageUI();
+    });
+
+    initSearch();
+    updateLanguageUI();
+  </script>
+</Layout>

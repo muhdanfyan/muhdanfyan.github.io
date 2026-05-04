@@ -1,12 +1,124 @@
 {
   "portfolio": [
     {
+      "slug": "it-high-school",
+      "title": "IT High School (Pesantren Teknologi)",
+      "title_en": "IT High School (Tech Boarding School)",
+      "year": "2023 - Sekarang",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "/img/mengajar/it-high-school.png",
+      "description": "Inisiator dan perancang kurikulum IT modern berbasis industri untuk Pesantren Teknologi.",
+      "description_en": "Initiator and designer of industry-based modern IT curriculum for Tech Boarding Schools.",
+      "url": "https://pondokinformatika.id",
+      "project_type": "Education",
+      "difficulty_level": "Expert",
+      "is_featured": true
+    },
+    {
+      "slug": "kurikulum-pondok-informatika",
+      "title": "Pondok Informatika",
+      "title_en": "Pondok Informatika",
+      "year": "2023 - Sekarang",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "https://res.cloudinary.com/duntlhjil/image/upload/v1766055515/pisantri/fotosantri/aat2mu8m7jccxutgplqa.jpg",
+      "description": "Mentor Backend Development dan Pengembang Kurikulum Pesantren IT.",
+      "description_en": "Backend Development Mentor and IT Boarding School Curriculum Developer.",
+      "url": "https://pondokinformatika.id/santri/muhdan-fyan-syah-sofian/",
+      "project_type": "Education",
+      "difficulty_level": "Expert",
+      "is_featured": true
+    },
+    {
+      "slug": "webinar-ai-lidmi",
+      "title": "Webinar Teknologi & Dakwah (LIDMI)",
+      "title_en": "Technology & Dawah Webinar (LIDMI)",
+      "year": "2025",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "/img/mengajar/lidmi-ai.jpg",
+      "description": "Narasumber utama dalam Webinar Nasional Pemanfaatan AI dalam Media Dakwah oleh PP LIDMI.",
+      "description_en": "Keynote speaker for the National Webinar on AI Utilization in Dawah Media by PP LIDMI.",
+      "url": "https://lidmi.or.id",
+      "project_type": "Speaking",
+      "difficulty_level": "Advanced",
+      "is_featured": true
+    },
+    {
+      "slug": "sosialisasi-sirangkul",
+      "title": "Sosialisasi SiRangkul",
+      "title_en": "SiRangkul Socialization",
+      "year": "2025",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "https://harian.fajar.co.id/wp-content/uploads/2025/10/IMG-20251009-WA0013.jpg",
+      "description": "Narasumber teknis aplikasi SiRangkul di MAN 2 Kota Makassar.",
+      "description_en": "Technical speaker for SiRangkul application at MAN 2 Kota Makassar.",
+      "url": "https://harian.fajar.co.id/2025/10/09/man-2-makassar-gagas-aplikasi-sirangkul-untuk-wujudkan-tata-kelola-anggaran-yang-transparan-dan-akuntabel/",
+      "project_type": "Speaking",
+      "difficulty_level": "Advanced",
+      "is_featured": true
+    },
+    {
+      "slug": "podcast-wahdah-tv",
+      "title": "Wahdah TV Podcast",
+      "title_en": "Wahdah TV Podcast",
+      "year": "2024",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "https://img.youtube.com/vi/gJyrTMco4aY/maxresdefault.jpg",
+      "description": "Bintang tamu Podcast Inspirasi Ramadhan membahas Santri & Teknologi.",
+      "description_en": "Guest speaker at Podcast Inspirasi Ramadhan discussing Santri & Tech.",
+      "url": "https://www.youtube.com/watch?v=gJyrTMco4aY",
+      "project_type": "Speaking",
+      "difficulty_level": "Intermediate",
+      "is_featured": true
+    },
+    {
+      "slug": "kembalike-masjid",
+      "title": "Pelatihan Digital KembaliKeMasjid",
+      "title_en": "KembaliKeMasjid Digital Training",
+      "year": "2022",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "/img/mengajar/kembalikemasjid.jpg",
+      "description": "Instruktur pelatihan produksi video dan animasi untuk pengelola masjid dari 23 kota di Indonesia.",
+      "description_en": "Video and animation production instructor for mosque managers from 23 cities in Indonesia.",
+      "url": "https://www.antaranews.com/berita/3069865/kembalikemasjidid-gelar-pelatihan-masjid-membangun-masjid",
+      "project_type": "Training",
+      "difficulty_level": "Advanced",
+      "is_featured": true
+    },
+    {
+      "slug": "komunitas-programmer-baubau",
+      "title": "Komunitas Programmer Baubau (KPB)",
+      "title_en": "Baubau Programmer Community (KPB)",
+      "year": "2021",
+      "category": "Pengalaman Mengajar",
+      "category_en": "Teaching Experience",
+      "available_langs": ["id", "en"],
+      "image": "/img/mengajar/kpb.jpg",
+      "description": "Narasumber dalam peluncuran Komunitas Programmer Baubau dan diskusi pembangunan ekosistem IT lokal.",
+      "description_en": "Speaker at the launch of the Baubau Programmer Community and discussion on local IT ecosystem development.",
+      "url": "https://www.facebook.com/zhatotech/photos/a.3921457501239097/4211844338867077/",
+      "project_type": "Speaking",
+      "difficulty_level": "Intermediate",
+      "is_featured": true
+    },
+    {
       "slug": "mpad",
       "title": "mPaD (Mitrapad Ecosystem)",
       "title_en": "mPaD (Mitrapad Ecosystem)",
       "year": "2025",
-      "category": "Product Suite",
-      "category_en": "Product Suite",
+      "category": "Aplikasi Enterprise",
+      "category_en": "Enterprise App",
       "available_langs": [
         "id",
         "en"
@@ -44,8 +156,8 @@
       "title": "One Creative",
       "title_en": "One Creative",
       "year": "2026",
-      "category": "Service & Retail",
-      "category_en": "Service & Retail",
+      "category": "Website Bisnis",
+      "category_en": "Business Website",
       "available_langs": [
         "id",
         "en"
@@ -97,8 +209,8 @@
       "title": "Aindea",
       "title_en": "Aindea",
       "year": "2026",
-      "category": "AI Translator",
-      "category_en": "AI Translator",
+      "category": "Aplikasi AI",
+      "category_en": "AI Application",
       "available_langs": [
         "id",
         "en"
@@ -151,8 +263,8 @@
       "title": "MBG One",
       "title_en": "MBG One",
       "year": "2026",
-      "category": "Management System",
-      "category_en": "Management System",
+      "category": "Aplikasi Manajemen",
+      "category_en": "Management App",
       "available_langs": [
         "id",
         "en"
@@ -6486,6 +6598,22 @@
       "image": "img/ai-landscape-cover.jpg",
       "description": "Pelajari berbagai jenis Chat AI (ChatGPT, Claude, Gemini, dll) agar Anda tidak sekadar ikut-ikutan tren.",
       "description_en": "Learn about various AI types (ChatGPT, Claude, Gemini, etc.) so you don't just follow the trend."
+    },
+    {
+      "slug": "scrapling-web-scraping",
+      "slug_en": "scrapling-web-scraping",
+      "title": "Scrapling: Revolusi Web Scraping Tanpa Blokir untuk Agen AI",
+      "title_en": "Scrapling: Revolutionizing Block-Free Web Scraping for AI Agents",
+      "date": "2026-05-04",
+      "category": "Technology & AI",
+      "category_en": "Technology & AI",
+      "available_langs": [
+        "id",
+        "en"
+      ],
+      "image": "/img/tulisan/scrapling-banner.jpg",
+      "description": "Pelajari bagaimana Scrapling mengubah cara agen AI berinteraksi dengan web melalui fitur zero bot detection dan bypassing Cloudflare secara natural.",
+      "description_en": "Learn how Scrapling changes how AI agents interact with the web through zero bot detection and natural Cloudflare bypassing."
     }
   ]
 }

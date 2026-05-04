@@ -180,23 +180,41 @@ const writings = folders
     </section>
     
     <!-- Teaching Experience Section -->
-    {teaching.length > 0 && (
+    {teaching.filter(t => t.is_featured).length > 0 && (
       <section id="teaching" class="mb-20">
         <div class="mb-12">
           <h2 class="text-3xl font-bold mb-2 lang-text" data-id="Pengalaman Mengajar & Materi" data-en="Teaching & Speaking Experience">Pengalaman Mengajar & Materi</h2>
           <div class="w-12 h-1 bg-indigo-600 rounded-full"></div>
         </div>
         <div class="grid md:grid-cols-2 gap-8">
-          {teaching.map((t) => (
-            <div class="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white transition-all group">
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">{t.period}</span>
-              <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors">{t.event}</h3>
-              <p class="text-slate-500 text-sm font-medium mb-4 italic">"{t.topic}"</p>
-              <div class="text-slate-600 text-sm leading-relaxed">
-                {t.content}
+          {teaching.filter(t => t.is_featured).map((t) => (
+            <div class="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white transition-all group flex flex-col md:flex-row gap-6">
+              {t.image && (
+                <div class="w-full md:w-32 h-32 flex-shrink-0 overflow-hidden rounded-xl">
+                  <img src={t.image} alt={t.event} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+              )}
+              <div class="flex-1">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">{t.period}</span>
+                <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors">{t.event}</h3>
+                <p class="text-slate-500 text-sm font-medium mb-4 italic">"{t.topic}"</p>
+                <div class="text-slate-600 text-sm leading-relaxed mb-4">
+                  {t.content}
+                </div>
+                {t.link && (
+                  <a href={t.link} target="_blank" class="text-xs font-bold text-indigo-600 hover:underline">
+                    Lihat Dokumentasi →
+                  </a>
+                )}
               </div>
             </div>
           ))}
+        </div>
+        <div class="mt-12 text-center">
+          <a href="/mengajar/" class="inline-flex items-center gap-2 text-indigo-600 font-bold hover:gap-4 transition-all lang-text"
+             data-id="Lihat Semua Pengalaman Mengajar" data-en="View All Teaching Experience">
+            Lihat Semua Pengalaman Mengajar <span class="text-xl">→</span>
+          </a>
         </div>
       </section>
     )}
