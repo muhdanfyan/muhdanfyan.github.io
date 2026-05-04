@@ -3,13 +3,50 @@ import Layout from '../layouts/Layout.astro';
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
-import manifest from '../../data/manifest.json';
+const projectsDir = path.join(process.cwd(), 'content/portfolio');
+const projectFolders = fs.existsSync(projectsDir) ? fs.readdirSync(projectsDir) : [];
+const projects = projectFolders.map(slug => {
+  const filePath = path.join(projectsDir, slug, 'index.mdoc');
+  if (!fs.existsSync(filePath)) return null;
+  const { data } = matter(fs.readFileSync(filePath, 'utf-8'));
+  return { ...data, slug };
+}).filter(Boolean).sort((a, b) => (b.is_featured ? 1 : 0) - (a.is_featured ? 1 : 0));
 
-const projects = manifest.portfolio;
+const experienceDir = path.join(process.cwd(), 'content/experience');
+const experience = (fs.existsSync(experienceDir) ? fs.readdirSync(experienceDir) : [])
+  .map(slug => {
+    const filePath = path.join(experienceDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    return { ...data, content, slug };
+  })
+  .filter(Boolean)
+  .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+const educationDir = path.join(process.cwd(), 'content/education');
+const education = (fs.existsSync(educationDir) ? fs.readdirSync(educationDir) : [])
+  .map(slug => {
+    const filePath = path.join(educationDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    return { ...data, content, slug };
+  })
+  .filter(Boolean)
+  .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+const teachingDir = path.join(process.cwd(), 'content/teaching');
+const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
+  .map(slug => {
+    const filePath = path.join(teachingDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    return { ...data, content, slug };
+  })
+  .filter(Boolean)
+  .sort((a, b) => (a.order || 0) - (b.order || 0));
 
 const tulisanDir = path.join(process.cwd(), 'tulisan');
 const folders = fs.existsSync(tulisanDir) ? fs.readdirSync(tulisanDir) : [];
-
 const writings = folders
   .map((slug) => {
     const filePath = path.join(tulisanDir, slug, 'index.mdoc');
@@ -100,53 +137,19 @@ const writings = folders
           </div>
           
           <div class="space-y-8">
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider lang-text" data-id="2017 - Sekarang" data-en="2017 - Present">2017 - Sekarang</span>
-              <h3 class="text-xl font-bold mt-1 lang-text" data-id="Founder & Lead Instructor" data-en="Founder & Lead Instructor">Founder & Lead Instructor</h3>
-              <p class="text-slate-500 font-medium mb-2"><a href="https://pondokinformatika.id" target="_blank" class="hover:text-indigo-600 transition-colors">Yayasan Pondok Informatika</a></p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Memegang posisi sebagai pemimpin dan mentor. Bertindak sebagai instruktur utama untuk pelatihan IT dan Pengembangan Web, serta menerbitkan sertifikat kompetensi resmi."
-                 data-en="Holding a position as the leader and mentor. Acting as the primary instructor for IT and Web Development training, issuing official certificates of competency.">
-                 Memegang posisi sebagai pemimpin dan mentor. Bertindak sebagai instruktur utama untuk pelatihan IT dan Pengembangan Web, serta menerbitkan sertifikat kompetensi resmi.
-              </p>
-            </div>
-
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Jan - July 2021</span>
-              <h3 class="text-xl font-bold mt-1">Back End Developer</h3>
-              <p class="text-slate-500 font-medium mb-2">PT. Jagona Era Teknologi</p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Membangun Administrator Web menggunakan Codeigniter, membuat REST API."
-                 data-en="Building a Web Administrator using Codeigniter, creating REST APIs.">
-                 Membangun Administrator Web menggunakan Codeigniter, membuat REST API.
-              </p>
-            </div>
-
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">2013 - 2014</span>
-              <h3 class="text-xl font-bold mt-1">Web Developer</h3>
-              <p class="text-slate-500 font-medium mb-2">CV. VISUALDATA</p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Mendesain Toko Online menggunakan CMS OpenCart dan kustomisasi menggunakan PHP."
-                 data-en="Designing an Online Shop using OpenCart CMS and Customization using PHP.">
-                 Mendesain Toko Online menggunakan CMS OpenCart dan kustomisasi menggunakan PHP.
-              </p>
-            </div>
-
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">2011 - 2012</span>
-              <h3 class="text-xl font-bold mt-1 lang-text" data-id="Staf IT & Database" data-en="IT Staff & Database">Staf IT & Database</h3>
-              <p class="text-slate-500 font-medium mb-2">STIBA MAKASSAR</p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Mengelola Database Mahasiswa dan Administrasi Pendaftaran, Mendesain Sistem Manajemen Akademik berbasis Aplikasi Desktop, Desain Grafis, & Dukungan IT."
-                 data-en="Managing Student Database and Registration Administration, Designing Desktop App-based Academic Management System, Graphic Design, & IT Support.">
-                 Mengelola Database Mahasiswa dan Administrasi Pendaftaran, Mendesain Sistem Manajemen Akademik berbasis Aplikasi Desktop, Desain Grafis, & Dukungan IT.
-              </p>
-            </div>
+            {experience.map((exp) => (
+              <div class="relative pl-8 border-l-2 border-slate-100">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider lang-text" data-id={exp.period} data-en={exp.period_en}>{exp.period}</span>
+                <h3 class="text-xl font-bold mt-1 lang-text" data-id={exp.position} data-en={exp.position_en}>{exp.position}</h3>
+                <p class="text-slate-500 font-medium mb-2">{exp.link ? <a href={exp.link} target="_blank" class="hover:text-indigo-600 transition-colors">{exp.company}</a> : exp.company}</p>
+                <p class="text-slate-600 text-sm leading-relaxed lang-text"
+                   data-id={exp.content}
+                   data-en={exp.content_en || exp.content}>
+                   {exp.content}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -158,45 +161,45 @@ const writings = folders
           </div>
 
           <div class="space-y-8">
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider lang-text" data-id="2024 - Sekarang" data-en="2024 - Present">2024 - Sekarang</span>
-              <h3 class="text-xl font-bold mt-1 lang-text" data-id="Magister Psikologi Islam (MSc PIC)" data-en="Master of Science in Psychology and Islamic Counselling (MSc PIC)">Magister Psikologi Islam (MSc PIC)</h3>
-              <p class="text-slate-500 font-medium mb-2">International Open University (IOU)</p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Fokus pada integrasi psikologi modern dengan nilai-nilai Islam dan konseling Islami."
-                 data-en="Focus on the integration of modern psychology with Islamic values and Islamic counseling.">
-                 Fokus pada integrasi psikologi modern dengan nilai-nilai Islam dan konseling Islami.
-              </p>
-            </div>
-
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">2006 - 2011</span>
-              <h3 class="text-xl font-bold mt-1">Teknik Informatika (S1)</h3>
-              <p class="text-slate-500 font-medium mb-2">Universitas Dipa Makassar</p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Gelar Sarjana dalam Ilmu Komputer."
-                 data-en="Bachelor's degree in Computer Science.">
-                 Gelar Sarjana dalam Ilmu Komputer.
-              </p>
-            </div>
-
-            <div class="relative pl-8 border-l-2 border-slate-100">
-              <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">2017 - 2020</span>
-              <h3 class="text-xl font-bold mt-1">Back End Developer</h3>
-              <p class="text-slate-500 font-medium mb-2">Pondok Informatika</p>
-              <p class="text-slate-600 text-sm leading-relaxed lang-text"
-                 data-id="Pelatihan khusus intensif dalam pengembangan sisi server dan manajemen database."
-                 data-en="Intensive specialized training in server-side development and database management.">
-                 Pelatihan khusus intensif dalam pengembangan sisi server dan manajemen database.
-              </p>
-            </div>
+            {education.map((edu) => (
+              <div class="relative pl-8 border-l-2 border-slate-100">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider lang-text" data-id={edu.period} data-en={edu.period_en}>{edu.period}</span>
+                <h3 class="text-xl font-bold mt-1 lang-text" data-id={edu.degree} data-en={edu.degree_en}>{edu.degree}</h3>
+                <p class="text-slate-500 font-medium mb-2">{edu.school}</p>
+                <p class="text-slate-600 text-sm leading-relaxed lang-text"
+                   data-id={edu.content}
+                   data-en={edu.content_en || edu.content}>
+                   {edu.content}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
+    
+    <!-- Teaching Experience Section -->
+    {teaching.length > 0 && (
+      <section id="teaching" class="mb-20">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold mb-2 lang-text" data-id="Pengalaman Mengajar & Materi" data-en="Teaching & Speaking Experience">Pengalaman Mengajar & Materi</h2>
+          <div class="w-12 h-1 bg-indigo-600 rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {teaching.map((t) => (
+            <div class="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white transition-all group">
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">{t.period}</span>
+              <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors">{t.event}</h3>
+              <p class="text-slate-500 text-sm font-medium mb-4 italic">"{t.topic}"</p>
+              <div class="text-slate-600 text-sm leading-relaxed">
+                {t.content}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
 		<!-- Portfolio Section -->
 		<section id="portfolio" class="mb-20">
@@ -207,12 +210,12 @@ const writings = folders
 			
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 				{projects.slice(0, 6).map((project) => {
-          const slug = project.slug || project.title.toLowerCase().replace(/\s+/g, '-');
+          const slug = project.slug;
           return (
             <div 
               onclick={`window.location.href='/portofolio/${slug}'`}
               class="project-card group cursor-pointer bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl transition-all flex flex-col h-full" 
-              data-langs={JSON.stringify(project.available_langs)}
+              data-langs={JSON.stringify(project.available_langs || ['id', 'en'])}
             >
               <div class="relative overflow-hidden">
                 <img src={(project.image && project.image.startsWith('http')) ? project.image : '/' + (project.image || 'img/screenshots/default.png')} alt={project.title} class="w-full h-48 object-cover group-hover:scale-105 transition-all duration-500" />
@@ -222,13 +225,13 @@ const writings = folders
                 <div class="flex justify-between items-start mb-2">
                   <h3 class="text-xl font-bold project-title" data-id={project.title} data-en={project.title_en}>{project.title}</h3>
                   <div class="flex flex-col items-end gap-1">
-                    <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter">{project.project_type || project.category}</span>
+                    <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter">{project.category}</span>
                     <span class={`text-[9px] font-bold px-1.5 py-0.5 rounded-full border ${
-                      project.difficulty_level === 'Expert' ? 'bg-red-50 text-red-600 border-red-100' :
-                      project.difficulty_level === 'Advanced' ? 'bg-orange-50 text-orange-600 border-orange-100' :
+                      project.difficulty === 'Expert' ? 'bg-red-50 text-red-600 border-red-100' :
+                      project.difficulty === 'Advanced' ? 'bg-orange-50 text-orange-600 border-orange-100' :
                       'bg-slate-50 text-slate-500 border-slate-100'
                     }`}>
-                      {project.difficulty_level || 'Intermediate'}
+                      {project.difficulty || 'Intermediate'}
                     </span>
                   </div>
                 </div>
@@ -236,7 +239,7 @@ const writings = folders
                 
                 <div class="grid grid-cols-2 gap-3 mt-auto pt-4 border-t border-slate-50">
                   <a 
-                    href={project.url} 
+                    href={project.link} 
                     target="_blank" 
                     onclick="event.stopPropagation()"
                     class="flex items-center justify-center gap-1.5 py-2 px-3 bg-indigo-50 text-indigo-600 rounded-xl text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all"
@@ -245,7 +248,7 @@ const writings = folders
                     Visit App
                   </a>
                   <a 
-                    href={`https://wa.me/6283134086899?text=Halo Fyan, saya tertarik buat sistem seperti ${project.title}`}
+                    href={`https://wa.me/6283134086899?text=${project.whatsapp_text || 'Halo Fyan, saya tertarik buat sistem seperti ' + project.title}`}
                     target="_blank"
                     onclick="event.stopPropagation()"
                     class="flex items-center justify-center gap-1.5 py-2 px-3 bg-emerald-50 text-emerald-600 rounded-xl text-xs font-bold hover:bg-emerald-600 hover:text-white transition-all order-link"
