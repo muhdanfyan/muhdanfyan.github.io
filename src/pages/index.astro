@@ -331,50 +331,71 @@ const writings = folders
 	</footer>
 
   <script is:inline>
-    let currentLang = localStorage.getItem('lang') || 'id';
-
     function updateLanguageUI() {
-      document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+      const currentLang = localStorage.getItem('lang') || 'id';
+      const langLabel = document.getElementById('langLabel');
+      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
       
       // Update General Text
       document.querySelectorAll('.lang-text').forEach(el => {
-        el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
       });
 
       // Update Projects
       document.querySelectorAll('.project-card').forEach(card => {
-        const langs = JSON.parse(card.dataset.langs || '["id"]');
-        card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
-        
-        const titleEl = card.querySelector('.project-title');
-        const descEl = card.querySelector('.project-desc');
-        const detailEl = card.querySelector('.detail-link');
-        const orderEl = card.querySelector('.order-link');
-        if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
-        if (descEl) descEl.innerText = currentLang === 'en' ? descEl.dataset.en : descEl.dataset.id;
-        if (detailEl) detailEl.innerText = currentLang === 'en' ? detailEl.dataset.en : detailEl.dataset.id;
-        if (orderEl) orderEl.childNodes[2].textContent = currentLang === 'en' ? orderEl.dataset.en : orderEl.dataset.id;
+        if (card instanceof HTMLElement) {
+          const langs = JSON.parse(card.dataset.langs || '["id"]');
+          card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+          
+          const titleEl = card.querySelector('.project-title');
+          const descEl = card.querySelector('.project-desc');
+          const detailEl = card.querySelector('.detail-link');
+          const orderEl = card.querySelector('.order-link');
+          
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+          if (detailEl instanceof HTMLElement) detailEl.innerText = currentLang === 'en' ? (detailEl.dataset.en || detailEl.innerText) : (detailEl.dataset.id || detailEl.innerText);
+          
+          if (orderEl instanceof HTMLElement) {
+            const text = currentLang === 'en' ? (orderEl.dataset.en || '') : (orderEl.dataset.id || '');
+            // Update only the text node, preserving the icon
+            const textNode = Array.from(orderEl.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent?.trim());
+            if (textNode) textNode.textContent = text;
+          }
+        }
       });
 
       // Update Writings
       document.querySelectorAll('.writing-card').forEach(card => {
-        const langs = JSON.parse(card.dataset.langs || '["id"]');
-        card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
-        
-        const titleEl = card.querySelector('.writing-title');
-        const descEl = card.querySelector('.writing-desc');
-        if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
-        if (descEl) descEl.innerText = currentLang === 'en' ? descEl.dataset.en : descEl.dataset.id;
+        if (card instanceof HTMLElement) {
+          const langs = JSON.parse(card.dataset.langs || '["id"]');
+          card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+          
+          const titleEl = card.querySelector('.writing-title');
+          const descEl = card.querySelector('.writing-desc');
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+        }
       });
     }
 
-    document.getElementById('langToggle').addEventListener('click', () => {
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      localStorage.setItem('lang', currentLang);
+    function init() {
+      const langToggle = document.getElementById('langToggle');
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'id';
+          const newLang = currentLang === 'id' ? 'en' : 'id';
+          localStorage.setItem('lang', newLang);
+          updateLanguageUI();
+        });
+      }
       updateLanguageUI();
-    });
+    }
 
-    // Initial run
-    updateLanguageUI();
+    // Run on initial load and after each navigation
+    init();
+    document.addEventListener('astro:page-load', init);
   </script>
 </Layout>

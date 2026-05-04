@@ -153,109 +153,154 @@ const writings = folders
   </footer>
 
   <script is:inline>
-    let currentLang = localStorage.getItem('lang') || 'id';
-    let searchQuery = '';
-    let selectedCategory = 'all';
-    let currentPage = 1;
-    const itemsPerPage = 6;
-
     function updateUI() {
-      document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+      const currentLang = localStorage.getItem('lang') || 'id';
+      const langLabel = document.getElementById('langLabel');
+      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
       
       // Update general text
       document.querySelectorAll('.lang-text').forEach(el => {
-        el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
       });
 
       const cards = Array.from(document.querySelectorAll('.writing-card'));
+      if (cards.length === 0) return;
+
+      const searchInput = document.getElementById('searchInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
+      const selectedCategory = categorySelect ? categorySelect.value : 'all';
       
       // Filtering
       const filteredCards = cards.filter(card => {
+        if (!(card instanceof HTMLElement)) return false;
         const langs = JSON.parse(card.dataset.langs || '["id"]');
         const matchesLang = langs.includes(currentLang);
         const matchesCategory = selectedCategory === 'all' || card.dataset.category === selectedCategory;
-        const titleId = card.dataset.titleId || '';
-        const titleEn = card.dataset.titleEn || '';
-        const matchesSearch = titleId.includes(searchQuery.toLowerCase()) || titleEn.includes(searchQuery.toLowerCase());
+        const titleId = (card.dataset.titleId || '').toLowerCase();
+        const titleEn = (card.dataset.titleEn || '').toLowerCase();
+        const matchesSearch = titleId.includes(searchQuery) || titleEn.includes(searchQuery);
         
         return matchesLang && matchesCategory && matchesSearch;
       });
 
       // Pagination
+      const itemsPerPage = 6;
       const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+      const urlParams = new URLSearchParams(window.location.search);
+      let currentPage = parseInt(urlParams.get('page') || '1');
       if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
       if (currentPage < 1) currentPage = 1;
 
       const startIndex = (currentPage - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
 
-      cards.forEach(card => card.style.display = 'none');
+      cards.forEach(card => { if (card instanceof HTMLElement) card.style.display = 'none'; });
       filteredCards.slice(startIndex, endIndex).forEach(card => {
-        card.style.display = 'flex';
-        const titleEl = card.querySelector('.writing-title');
-        const descEl = card.querySelector('.writing-desc');
-        if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
-        if (descEl) descEl.innerText = currentLang === 'en' ? descEl.dataset.en : descEl.dataset.id;
+        if (card instanceof HTMLElement) {
+          card.style.display = 'flex';
+          const titleEl = card.querySelector('.writing-title');
+          const descEl = card.querySelector('.writing-desc');
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+        }
       });
 
       // Update Pagination Controls
-      updatePaginationControls(totalPages);
+      updatePaginationControls(totalPages, currentPage);
     }
 
-    function updatePaginationControls(totalPages) {
+    function updatePaginationControls(totalPages, currentPage) {
       const pageNumbers = document.getElementById('pageNumbers');
+      if (!pageNumbers) return;
       pageNumbers.innerHTML = '';
       
       for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement('button');
-        btn.innerText = i;
+        btn.innerText = i.toString();
         btn.className = `w-10 h-10 rounded-xl font-bold transition-all ${i === currentPage ? 'bg-indigo-600 text-white' : 'bg-slate-50 text-slate-600 hover:bg-slate-100'}`;
         btn.onclick = () => {
-          currentPage = i;
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', i.toString());
+          window.history.pushState({}, '', url);
           updateUI();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         };
         pageNumbers.appendChild(btn);
       }
 
-      document.getElementById('prevBtn').disabled = currentPage === 1;
-      document.getElementById('nextBtn').disabled = currentPage === totalPages || totalPages === 0;
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      if (prevBtn instanceof HTMLButtonElement) prevBtn.disabled = currentPage === 1;
+      if (nextBtn instanceof HTMLButtonElement) nextBtn.disabled = currentPage === totalPages || totalPages === 0;
     }
 
-    // Event Listeners
-    document.getElementById('langToggle').addEventListener('click', () => {
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      localStorage.setItem('lang', currentLang);
-      updateUI();
-    });
+    function init() {
+      const langToggle = document.getElementById('langToggle');
+      const searchInput = document.getElementById('searchInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      currentPage = 1;
-      updateUI();
-    });
-
-    document.getElementById('categorySelect').addEventListener('change', (e) => {
-      selectedCategory = e.target.value;
-      currentPage = 1;
-      updateUI();
-    });
-
-    document.getElementById('prevBtn').onclick = () => {
-      if (currentPage > 1) {
-        currentPage--;
-        updateUI();
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'id';
+          const newLang = currentLang === 'id' ? 'en' : 'id';
+          localStorage.setItem('lang', newLang);
+          updateUI();
+        });
       }
-    };
 
-    document.getElementById('nextBtn').onclick = () => {
-      const cards = document.querySelectorAll('.writing-card:not([style*="display: none"])');
-      // This is a bit complex for client side with totalPages, but updateUI handles it
-      currentPage++;
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', '1');
+          window.history.pushState({}, '', url);
+          updateUI();
+        });
+      }
+
+      if (categorySelect) {
+        categorySelect.addEventListener('change', () => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', '1');
+          window.history.pushState({}, '', url);
+          updateUI();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.onclick = () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const currentPage = parseInt(urlParams.get('page') || '1');
+          if (currentPage > 1) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('page', (currentPage - 1).toString());
+            window.history.pushState({}, '', url);
+            updateUI();
+          }
+        };
+      }
+
+      if (nextBtn) {
+        nextBtn.onclick = () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const currentPage = parseInt(urlParams.get('page') || '1');
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', (currentPage + 1).toString());
+          window.history.pushState({}, '', url);
+          updateUI();
+        };
+      }
+
       updateUI();
-    };
+    }
 
-    updateUI();
+    // Run on initial load and after each navigation
+    init();
+    document.addEventListener('astro:page-load', init);
   </script>
 
   <style>
