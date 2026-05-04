@@ -14,7 +14,12 @@
     }
     </script><link rel="stylesheet" href="/_astro/Layout.DWnyQpx-.css"></head> <body class="bg-white text-slate-900 font-sans">   <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100"> <div class="container mx-auto px-6 py-4 flex justify-between items-center"> <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
 MUHDAN FYAN
-</a> <div class="flex items-center gap-6"> <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Beranda" data-en="Home">Beranda</a> <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all"> <span id="langLabel">ID</span> </button> </div> </div> </nav> <main class="pt-32 pb-20"> <div class="container mx-auto px-6 max-w-4xl"> <header class="mb-12"> <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4"> <span>2025</span> <span>•</span> <span class="text-indigo-600">Sosialisasi SiRangkul</span> </div> <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight"> Tata Kelola Anggaran Berbasis Web </h1> <div class="relative group mb-12"> <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-10 rounded-3xl group-hover:opacity-20 transition-all"></div> <img src="https://harian.fajar.co.id/wp-content/uploads/2025/10/IMG-20251009-WA0013.jpg" alt="Sosialisasi SiRangkul" class="w-full aspect-video object-cover rounded-3xl shadow-2xl relative z-10 border border-slate-100"> </div> </header> <div class="prose prose-indigo prose-lg max-w-none mb-12"> <div><p>Menjadi narasumber utama dalam kegiatan sosialisasi aplikasi SiRangkul (Sistem Rencana Anggaran Kelola Usulan) di MAN 2 Kota Makassar. Mempresentasikan aspek teknis dan operasional aplikasi kepada pengelola madrasah untuk meningkatkan transparansi anggaran.</p>
+</a> <div class="flex items-center gap-6"> <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Beranda" data-en="Home">Beranda</a> <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all"> <span id="langLabel">ID</span> </button> </div> </div> </nav> <main class="pt-32 pb-20"> <div class="container mx-auto px-6 max-w-4xl"> <header class="mb-12"> <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4"> <span class="lang-text" data-id="2025">2025</span> <span>•</span> <span class="text-indigo-600 lang-text" data-id="Sosialisasi SiRangkul">Sosialisasi SiRangkul</span> </div> <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight lang-text" data-id="Tata Kelola Anggaran Berbasis Web"> Tata Kelola Anggaran Berbasis Web </h1> <div class="relative group mb-12"> <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-10 rounded-3xl group-hover:opacity-20 transition-all"></div> <img src="https://harian.fajar.co.id/wp-content/uploads/2025/10/IMG-20251009-WA0013.jpg" alt="Sosialisasi SiRangkul" class="w-full aspect-video object-cover rounded-3xl shadow-2xl relative z-10 border border-slate-100"> </div> </header> <div class="prose prose-indigo prose-lg max-w-none mb-12"> <div id="contentId" class="lang-content"><p>Menjadi narasumber utama dalam kegiatan sosialisasi aplikasi SiRangkul (Sistem Rencana Anggaran Kelola Usulan) di MAN 2 Kota Makassar. Mempresentasikan aspek teknis dan operasional aplikasi kepada pengelola madrasah untuk meningkatkan transparansi anggaran.</p>
+<p><strong>Liputan Media:</strong></p>
+<ul>
+<li><a href="https://harian.fajar.co.id/2025/10/09/man-2-makassar-gagas-aplikasi-sirangkul-untuk-wujudkan-tata-kelola-anggaran-yang-transparan-dan-akuntabel/">Harian Fajar</a></li>
+</ul>
+</div> <div id="contentEn" class="lang-content hidden"><p>Menjadi narasumber utama dalam kegiatan sosialisasi aplikasi SiRangkul (Sistem Rencana Anggaran Kelola Usulan) di MAN 2 Kota Makassar. Mempresentasikan aspek teknis dan operasional aplikasi kepada pengelola madrasah untuk meningkatkan transparansi anggaran.</p>
 <p><strong>Liputan Media:</strong></p>
 <ul>
 <li><a href="https://harian.fajar.co.id/2025/10/09/man-2-makassar-gagas-aplikasi-sirangkul-untuk-wujudkan-tata-kelola-anggaran-yang-transparan-dan-akuntabel/">Harian Fajar</a></li>
@@ -34,6 +39,12 @@ Kunjungi Link
           el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
         }
       });
+
+      const idC = document.getElementById('contentId'), enC = document.getElementById('contentEn');
+      if (idC && enC) {
+        idC.classList.toggle('hidden', currentLang === 'en');
+        enC.classList.toggle('hidden', currentLang !== 'en');
+      }
     }
 
     function init() {

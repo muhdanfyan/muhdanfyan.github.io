@@ -23,10 +23,11 @@ export async function getStaticPaths() {
 }
 
 const { teaching } = Astro.props;
-const htmlContent = marked(teaching.content || '');
+const htmlId = marked(teaching.content || '');
+const htmlEn = marked(teaching.content_en || teaching.content || '');
 ---
 
-<Layout title={`${teaching.event} | Teaching Experience`}>
+<Layout title={`${teaching.event_en || teaching.event} | Teaching Experience`}>
   <!-- Navigation -->
   <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -46,11 +47,11 @@ const htmlContent = marked(teaching.content || '');
     <div class="container mx-auto px-6 max-w-4xl">
       <header class="mb-12">
         <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4">
-          <span>{teaching.period}</span>
+          <span class="lang-text" data-id={teaching.period} data-en={teaching.period_en}>{teaching.period}</span>
           <span>•</span>
-          <span class="text-indigo-600">{teaching.event}</span>
+          <span class="text-indigo-600 lang-text" data-id={teaching.event} data-en={teaching.event_en}>{teaching.event}</span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight lang-text" data-id={teaching.topic} data-en={teaching.topic_en}>
           {teaching.topic}
         </h1>
         {teaching.image && (
@@ -66,7 +67,8 @@ const htmlContent = marked(teaching.content || '');
       </header>
 
       <div class="prose prose-indigo prose-lg max-w-none mb-12">
-        <div set:html={htmlContent}></div>
+        <div id="contentId" class="lang-content" set:html={htmlId}></div>
+        <div id="contentEn" class="lang-content hidden" set:html={htmlEn}></div>
       </div>
 
       {teaching.link && (
@@ -109,6 +111,12 @@ const htmlContent = marked(teaching.content || '');
           el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
         }
       });
+
+      const idC = document.getElementById('contentId'), enC = document.getElementById('contentEn');
+      if (idC && enC) {
+        idC.classList.toggle('hidden', currentLang === 'en');
+        enC.classList.toggle('hidden', currentLang !== 'en');
+      }
     }
 
     function init() {

@@ -210,10 +210,10 @@ const writings = folders
                 </div>
               )}
               <div class="flex-1">
-                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">{t.period}</span>
-                <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors">{t.event}</h3>
-                <p class="text-slate-500 text-sm font-medium mb-4 italic">"{t.topic}"</p>
-                <div class="text-slate-600 text-sm leading-relaxed">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider lang-text" data-id={t.period} data-en={t.period_en}>{t.period}</span>
+                <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors lang-text" data-id={t.event} data-en={t.event_en}>{t.event}</h3>
+                <p class="text-slate-500 text-sm font-medium mb-4 italic lang-text" data-id={`"${t.topic}"`} data-en={`"${t.topic_en}"`}>"{t.topic}"</p>
+                <div class="text-slate-600 text-sm leading-relaxed lang-text" data-id={t.content} data-en={t.content_en}>
                   {t.content}
                 </div>
               </div>

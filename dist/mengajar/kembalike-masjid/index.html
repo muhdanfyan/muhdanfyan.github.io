@@ -14,7 +14,14 @@
     }
     </script><link rel="stylesheet" href="/_astro/Layout.DWnyQpx-.css"></head> <body class="bg-white text-slate-900 font-sans">   <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100"> <div class="container mx-auto px-6 py-4 flex justify-between items-center"> <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
 MUHDAN FYAN
-</a> <div class="flex items-center gap-6"> <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Beranda" data-en="Home">Beranda</a> <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all"> <span id="langLabel">ID</span> </button> </div> </div> </nav> <main class="pt-32 pb-20"> <div class="container mx-auto px-6 max-w-4xl"> <header class="mb-12"> <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4"> <span>20 Agustus 2022</span> <span>•</span> <span class="text-indigo-600">Pelatihan Digital KembaliKeMasjid</span> </div> <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight"> Produksi Konten Video &amp; Animasi </h1> <div class="relative group mb-12"> <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-10 rounded-3xl group-hover:opacity-20 transition-all"></div> <img src="/img/teaching/kembalikemasjid-poster.png" alt="Pelatihan Digital KembaliKeMasjid" class="w-full aspect-video object-cover rounded-3xl shadow-2xl relative z-10 border border-slate-100"> </div> </header> <div class="prose prose-indigo prose-lg max-w-none mb-12"> <div><p>Instruktur pelatihan digital nasional untuk pengelola masjid. Mengajarkan teknik pembuatan konten video dan animasi untuk meningkatkan literasi digital masjid, diikuti oleh peserta dari 23 kota di Indonesia.</p>
+</a> <div class="flex items-center gap-6"> <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Beranda" data-en="Home">Beranda</a> <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all"> <span id="langLabel">ID</span> </button> </div> </div> </nav> <main class="pt-32 pb-20"> <div class="container mx-auto px-6 max-w-4xl"> <header class="mb-12"> <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4"> <span class="lang-text" data-id="20 Agustus 2022">20 Agustus 2022</span> <span>•</span> <span class="text-indigo-600 lang-text" data-id="Pelatihan Digital KembaliKeMasjid">Pelatihan Digital KembaliKeMasjid</span> </div> <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight lang-text" data-id="Produksi Konten Video &#38; Animasi"> Produksi Konten Video &amp; Animasi </h1> <div class="relative group mb-12"> <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-10 rounded-3xl group-hover:opacity-20 transition-all"></div> <img src="/img/teaching/kembalikemasjid-poster.png" alt="Pelatihan Digital KembaliKeMasjid" class="w-full aspect-video object-cover rounded-3xl shadow-2xl relative z-10 border border-slate-100"> </div> </header> <div class="prose prose-indigo prose-lg max-w-none mb-12"> <div id="contentId" class="lang-content"><p>Instruktur pelatihan digital nasional untuk pengelola masjid. Mengajarkan teknik pembuatan konten video dan animasi untuk meningkatkan literasi digital masjid, diikuti oleh peserta dari 23 kota di Indonesia.</p>
+<p><strong>Liputan Media:</strong></p>
+<ul>
+<li><a href="https://www.antaranews.com/berita/3069865/kembalikemasjidid-gelar-pelatihan-masjid-membangun-masjid">Antara News</a></li>
+<li><a href="https://matakita.co/2022/08/20/pelatihan-digital-perdana-kembalikemasjid-diikuti-peserta-dari-23-kota-di-indonesia/">Matakita</a></li>
+</ul>
+<p><img src="/img/teaching/kembalikemasjid-group.jpg" alt="KembaliKeMasjid Group Photo"></p>
+</div> <div id="contentEn" class="lang-content hidden"><p>Instruktur pelatihan digital nasional untuk pengelola masjid. Mengajarkan teknik pembuatan konten video dan animasi untuk meningkatkan literasi digital masjid, diikuti oleh peserta dari 23 kota di Indonesia.</p>
 <p><strong>Liputan Media:</strong></p>
 <ul>
 <li><a href="https://www.antaranews.com/berita/3069865/kembalikemasjidid-gelar-pelatihan-masjid-membangun-masjid">Antara News</a></li>
@@ -36,6 +43,12 @@ Kunjungi Link
           el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
         }
       });
+
+      const idC = document.getElementById('contentId'), enC = document.getElementById('contentEn');
+      if (idC && enC) {
+        idC.classList.toggle('hidden', currentLang === 'en');
+        enC.classList.toggle('hidden', currentLang !== 'en');
+      }
     }
 
     function init() {
