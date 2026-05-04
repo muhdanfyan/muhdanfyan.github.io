@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const teachingDir = path.join(process.cwd(), 'content/teaching');
+  const folders = fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [];
+  
+  return folders.map((slug) => {
+    const filePath = path.join(teachingDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    
+    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    
+    return {
+      params: { slug },
+      props: { teaching: { ...data, content, slug } },
+    };
+  }).filter(Boolean);
+}
+
+const { teaching } = Astro.props;
+const htmlContent = marked(teaching.content || '');
+---
+
+<Layout title={`${teaching.event} | Teaching Experience`}>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        MUHDAN FYAN
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Beranda" data-en="Home">Beranda</a>
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
+          <span id="langLabel">ID</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-20">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <header class="mb-12">
+        <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4">
+          <span>{teaching.period}</span>
+          <span>•</span>
+          <span class="text-indigo-600">{teaching.event}</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+          {teaching.topic}
+        </h1>
+        {teaching.image && (
+          <div class="relative group mb-12">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-10 rounded-3xl group-hover:opacity-20 transition-all"></div>
+            <img 
+              src={teaching.image} 
+              alt={teaching.event} 
+              class="w-full aspect-video object-cover rounded-3xl shadow-2xl relative z-10 border border-slate-100"
+            />
+          </div>
+        )}
+      </header>
+
+      <div class="prose prose-indigo prose-lg max-w-none mb-12">
+        <div set:html={htmlContent}></div>
+      </div>
+
+      {teaching.link && (
+        <div class="mt-12 p-8 bg-slate-50 rounded-3xl border border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1 lang-text" data-id="Ingin melihat lebih lanjut?" data-en="Want to see more?">Ingin melihat lebih lanjut?</h3>
+            <p class="text-slate-500 text-sm lang-text" data-id="Dokumentasi resmi dan materi tersedia di link berikut." data-en="Official documentation and materials are available at the link below.">Dokumentasi resmi dan materi tersedia di link berikut.</p>
+          </div>
+          <a href={teaching.link} target="_blank" class="px-8 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-indigo-200 transition-all lang-text" data-id="Kunjungi Link" data-en="Visit Link">
+            Kunjungi Link
+          </a>
+        </div>
+      )}
+      
+      <div class="mt-20 pt-8 border-t border-slate-100">
+        <a href="/#teaching" class="text-indigo-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+          <span class="text-xl">←</span> 
+          <span class="lang-text" data-id="Kembali ke Beranda" data-en="Back to Home">Kembali ke Beranda</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-100 py-12">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-slate-400 text-sm font-medium">
+        &copy; 2026 Muhdan Fyan Syah Sofian.
+      </p>
+    </div>
+  </footer>
+
+  <script is:inline>
+    function updateLanguageUI() {
+      const currentLang = localStorage.getItem('lang') || 'id';
+      const langLabel = document.getElementById('langLabel');
+      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
+      
+      document.querySelectorAll('.lang-text').forEach(el => {
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
+      });
+    }
+
+    function init() {
+      const langToggle = document.getElementById('langToggle');
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'id';
+          const newLang = currentLang === 'id' ? 'en' : 'id';
+          localStorage.setItem('lang', newLang);
+          updateLanguageUI();
+        });
+      }
+      updateLanguageUI();
+    }
+
+    init();
+    document.addEventListener('astro:page-load', init);
+  </script>
+</Layout>

@@ -188,7 +188,10 @@ const writings = folders
         </div>
         <div class="grid md:grid-cols-2 gap-8">
           {teaching.filter(t => t.is_featured).map((t) => (
-            <div class="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white transition-all group flex flex-col md:flex-row gap-6">
+            <div 
+              onclick={`window.location.href='/mengajar/${t.slug}'`}
+              class="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white transition-all group flex flex-col md:flex-row gap-6 cursor-pointer hover:shadow-xl"
+            >
               {t.image && (
                 <div class="w-full md:w-32 h-32 flex-shrink-0 overflow-hidden rounded-xl">
                   <img src={t.image} alt={t.event} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -198,14 +201,9 @@ const writings = folders
                 <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">{t.period}</span>
                 <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors">{t.event}</h3>
                 <p class="text-slate-500 text-sm font-medium mb-4 italic">"{t.topic}"</p>
-                <div class="text-slate-600 text-sm leading-relaxed mb-4">
+                <div class="text-slate-600 text-sm leading-relaxed">
                   {t.content}
                 </div>
-                {t.link && (
-                  <a href={t.link} target="_blank" class="text-xs font-bold text-indigo-600 hover:underline">
-                    Lihat Dokumentasi →
-                  </a>
-                )}
               </div>
             </div>
           ))}
