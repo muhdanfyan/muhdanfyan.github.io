@@ -234,13 +234,15 @@ const hasDetails = project.full_description?.trim() || project.full_description_
   </footer>
 
   <script is:inline>
-    let currentLang = localStorage.getItem('lang') || 'id';
-
     function updateLanguageUI() {
-      document.getElementById('langLabel').innerText = currentLang.toUpperCase();
+      const currentLang = localStorage.getItem('lang') || 'id';
+      const langLabel = document.getElementById('langLabel');
+      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
       
       document.querySelectorAll('.lang-text').forEach(el => {
-        el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
       });
 
       const titleEl = document.querySelector('.project-title');
@@ -250,24 +252,49 @@ const hasDetails = project.full_description?.trim() || project.full_description_
       const impactEl = document.querySelector('.project-impact');
       const processEl = document.querySelector('.project-process');
 
-      if (titleEl) titleEl.innerText = currentLang === 'en' ? titleEl.dataset.en : titleEl.dataset.id;
-      if (descEl) descEl.innerText = currentLang === 'en' ? descEl.dataset.en : descEl.dataset.id;
-      if (fullDescEl) fullDescEl.innerText = currentLang === 'en' ? fullDescEl.dataset.en : fullDescEl.dataset.id;
-      if (techRationaleEl) techRationaleEl.innerText = currentLang === 'en' ? techRationaleEl.dataset.en : techRationaleEl.dataset.id;
-      if (impactEl) impactEl.innerText = currentLang === 'en' ? impactEl.dataset.en : impactEl.dataset.id;
-      if (processEl) processEl.innerText = currentLang === 'en' ? processEl.dataset.en : processEl.dataset.id;
+      if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+      if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+      if (fullDescEl instanceof HTMLElement) fullDescEl.innerText = currentLang === 'en' ? (fullDescEl.dataset.en || fullDescEl.innerText) : (fullDescEl.dataset.id || fullDescEl.innerText);
+      if (techRationaleEl instanceof HTMLElement) techRationaleEl.innerText = currentLang === 'en' ? (techRationaleEl.dataset.en || techRationaleEl.innerText) : (techRationaleEl.dataset.id || techRationaleEl.innerText);
+      if (impactEl instanceof HTMLElement) impactEl.innerText = currentLang === 'en' ? (impactEl.dataset.en || impactEl.innerText) : (impactEl.dataset.id || impactEl.innerText);
+      if (processEl instanceof HTMLElement) processEl.innerText = currentLang === 'en' ? (processEl.dataset.en || processEl.innerText) : (processEl.dataset.id || processEl.innerText);
 
       document.querySelectorAll('.project-highlight').forEach(el => {
-        el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
       });
     }
 
-    document.getElementById('langToggle').addEventListener('click', () => {
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      localStorage.setItem('lang', currentLang);
-      updateLanguageUI();
-    });
+    function init() {
+      // Auto-Language Detection for First Time Visitors
+      if (!localStorage.getItem('lang')) {
+        try {
+          const userLang = navigator.language || '';
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+          const isIndonesianTZ = timezone.includes('Jakarta') || timezone.includes('Makassar') || timezone.includes('Jayapura') || timezone.includes('Pontianak');
+          const isIndonesianLang = userLang.toLowerCase().startsWith('id');
+          localStorage.setItem('lang', (isIndonesianTZ || isIndonesianLang) ? 'id' : 'en');
+        } catch (e) {
+          localStorage.setItem('lang', 'id');
+        }
+      }
 
-    updateLanguageUI();
+      const langToggle = document.getElementById('langToggle');
+      if (langToggle) {
+        const newToggle = langToggle.cloneNode(true);
+        langToggle.parentNode.replaceChild(newToggle, langToggle);
+        newToggle.addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'id';
+          const newLang = currentLang === 'id' ? 'en' : 'id';
+          localStorage.setItem('lang', newLang);
+          updateLanguageUI();
+        });
+      }
+      updateLanguageUI();
+    }
+
+    init();
+    document.addEventListener('astro:page-load', init);
   </script>
 </Layout>
