@@ -1,0 +1,286 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+
+const writingDir = path.join(process.cwd(), 'content/writing');
+const folders = fs.readdirSync(writingDir);
+
+const writings = folders
+  .map((slug) => {
+    const filePath = path.join(writingDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data } = matter(fileContent);
+    
+    const hasEnFile = fs.existsSync(path.join(writingDir, slug, 'index.en.mdoc')) || 
+                      fs.existsSync(path.join(writingDir, slug, 'tulisan.en.mdoc')) ||
+                      fs.existsSync(path.join(writingDir, slug, 'tulisan.en.md'));
+
+    return {
+      slug,
+      title: data.title_id || slug,
+      title_en: data.title_en || slug,
+      date: data.date || '',
+      category: data.category || 'General',
+      category_en: data.category || 'General',
+      description: data.description_id || '',
+      description_en: data.description_en || '',
+      image: data.image || '',
+      available_langs: (data.content_en_markdown || hasEnFile) ? ['id', 'en'] : ['id']
+    };
+  })
+  .filter(Boolean)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<Layout title="All Writings | Muhdan Fyan">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+        MUHDAN FYAN
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Home</a>
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
+          <span id="langLabel">ID</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-6 pt-32 mb-20">
+    <div class="mb-12">
+      <h1 class="text-4xl font-extrabold mb-4 lang-text" data-id="Semua Tulisan" data-en="All Writings">Semua Tulisan</h1>
+      <p class="text-slate-600 lang-text" data-id="Catatan teknologi, edukasi, dan pemikiran saya." data-en="My notes on technology, education, and thoughts.">Catatan teknologi, edukasi, dan pemikiran saya.</p>
+      <div class="w-12 h-1 bg-indigo-600 rounded-full mt-6"></div>
+    </div>
+
+    <!-- Filters & Search -->
+    <div class="flex flex-col md:flex-row gap-6 mb-12 items-stretch md:items-center">
+      <div class="relative flex-1 group">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Cari tulisan atau topik..." 
+          class="w-full pl-12 pr-4 py-4 bg-white border-2 border-slate-100 rounded-2xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all shadow-sm group-hover:border-slate-200"
+        />
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-slate-400 group-focus-within:text-indigo-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+      
+      <div class="relative min-w-[240px]">
+        <select 
+          id="categorySelect" 
+          class="w-full appearance-none pl-6 pr-12 py-4 bg-white border-2 border-slate-100 rounded-2xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all shadow-sm font-bold text-slate-600 cursor-pointer"
+        >
+          <option value="all">Semua Kategori</option>
+          {Array.from(new Set(writings.map(w => w.category))).map(category => (
+            <option value={category}>{category}</option>
+          ))}
+        </select>
+        <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8" id="writingGrid">
+      {writings.map((writing) => (
+        <a href={`/writing/${writing.slug}/`} 
+           class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" 
+           data-langs={JSON.stringify(writing.available_langs)}
+           data-category={writing.category}
+           data-title-id={writing.title.toLowerCase()}
+           data-title-en={writing.title_en.toLowerCase()}
+        >
+          <img src={(writing.image && writing.image.startsWith('http')) ? writing.image : (writing.image?.startsWith('/') ? writing.image : (writing.image?.startsWith('img/') ? '/' + writing.image : `/img/writing/${writing.image || 'default.png'}`))} alt={writing.title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-all" />
+          <div class="flex-1">
+            <span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{writing.category}</span>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors writing-title" data-id={writing.title} data-en={writing.title_en}>{writing.title}</h3>
+            <p class="text-slate-500 text-sm mb-4 line-clamp-2 writing-desc" data-id={writing.description} data-en={writing.description_en}>{writing.description}</p>
+            <div class="flex items-center gap-2 text-slate-400 text-xs">
+              <span>{writing.date}</span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-4 mt-16" id="pagination">
+      <button id="prevBtn" class="p-3 rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all disabled:opacity-50 disabled:hover:bg-slate-50 disabled:hover:text-slate-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <div id="pageNumbers" class="flex gap-2"></div>
+      <button id="nextBtn" class="p-3 rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-600 hover:text-white transition-all disabled:opacity-50 disabled:hover:bg-slate-50 disabled:hover:text-slate-400">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </main>
+
+  <script is:inline>
+    function updateUI() {
+      const currentLang = localStorage.getItem('lang') || 'id';
+      
+      // Update general text
+      document.querySelectorAll('.lang-text').forEach(el => {
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
+      });
+
+      const cards = Array.from(document.querySelectorAll('.writing-card'));
+      if (cards.length === 0) return;
+
+      const searchInput = document.getElementById('searchInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const searchQuery = searchInput ? searchInput.value.toLowerCase() : '';
+      const selectedCategory = categorySelect ? categorySelect.value : 'all';
+      
+      // Filtering
+      const filteredCards = cards.filter(card => {
+        if (!(card instanceof HTMLElement)) return false;
+        const langs = JSON.parse(card.dataset.langs || '["id"]');
+        const matchesLang = langs.includes(currentLang);
+        const matchesCategory = selectedCategory === 'all' || card.dataset.category === selectedCategory;
+        const titleId = (card.dataset.titleId || '').toLowerCase();
+        const titleEn = (card.dataset.titleEn || '').toLowerCase();
+        const matchesSearch = titleId.includes(searchQuery) || titleEn.includes(searchQuery);
+        
+        return matchesLang && matchesCategory && matchesSearch;
+      });
+
+      // Pagination
+      const itemsPerPage = 6;
+      const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
+      const urlParams = new URLSearchParams(window.location.search);
+      let currentPage = parseInt(urlParams.get('page') || '1');
+      if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+
+      cards.forEach(card => { if (card instanceof HTMLElement) card.style.display = 'none'; });
+      filteredCards.slice(startIndex, endIndex).forEach(card => {
+        if (card instanceof HTMLElement) {
+          card.style.display = 'flex';
+          const titleEl = card.querySelector('.writing-title');
+          const descEl = card.querySelector('.writing-desc');
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+        }
+      });
+
+      // Update Pagination Controls
+      updatePaginationControls(totalPages, currentPage);
+    }
+
+    function updatePaginationControls(totalPages, currentPage) {
+      const pageNumbers = document.getElementById('pageNumbers');
+      if (!pageNumbers) return;
+      pageNumbers.innerHTML = '';
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.innerText = i.toString();
+        btn.className = `w-10 h-10 rounded-xl font-bold transition-all ${i === currentPage ? 'bg-indigo-600 text-white' : 'bg-slate-50 text-slate-600 hover:bg-slate-100'}`;
+        btn.onclick = () => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', i.toString());
+          window.history.pushState({}, '', url);
+          updateUI();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+        pageNumbers.appendChild(btn);
+      }
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      if (prevBtn instanceof HTMLButtonElement) prevBtn.disabled = currentPage === 1;
+      if (nextBtn instanceof HTMLButtonElement) nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    function init() {
+      const langToggle = document.getElementById('langToggle');
+      const searchInput = document.getElementById('searchInput');
+      const categorySelect = document.getElementById('categorySelect');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      if (langToggle) {
+        langToggle.addEventListener('click', () => {
+          const currentLang = localStorage.getItem('lang') || 'id';
+          const newLang = currentLang === 'id' ? 'en' : 'id';
+          localStorage.setItem('lang', newLang);
+          updateUI();
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', '1');
+          window.history.pushState({}, '', url);
+          updateUI();
+        });
+      }
+
+      if (categorySelect) {
+        categorySelect.addEventListener('change', () => {
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', '1');
+          window.history.pushState({}, '', url);
+          updateUI();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.onclick = () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const currentPage = parseInt(urlParams.get('page') || '1');
+          if (currentPage > 1) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('page', (currentPage - 1).toString());
+            window.history.pushState({}, '', url);
+            updateUI();
+          }
+        };
+      }
+
+      if (nextBtn) {
+        nextBtn.onclick = () => {
+          const urlParams = new URLSearchParams(window.location.search);
+          const currentPage = parseInt(urlParams.get('page') || '1');
+          const url = new URL(window.location.href);
+          url.searchParams.set('page', (currentPage + 1).toString());
+          window.history.pushState({}, '', url);
+          updateUI();
+        };
+      }
+
+      updateUI();
+    }
+
+    // Run on initial load and after each navigation
+    init();
+    document.addEventListener('astro:page-load', init);
+  </script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</Layout>

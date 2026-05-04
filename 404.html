@@ -4,6 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      if (path.indexOf('/tulisan/') !== -1) {
+        window.location.href = path.replace('/tulisan/', '/writing/');
+      } else if (path.indexOf('/mengajar/') !== -1) {
+        window.location.href = path.replace('/mengajar/', '/teach/');
+      }
+    })();
+  </script>
   <title>Muhdan Fyan | Full Stack Developer</title>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -825,7 +835,7 @@
       const hash = window.location.hash;
 
       // Reset Detail View if not in hash
-      if (!hash.includes('/portofolio/') && !hash.includes('/tulisan/')) {
+      if (!hash.includes('/portofolio/') && !hash.includes('/writing/')) {
         closeDetail();
       }
 
@@ -836,7 +846,7 @@
       } else if (hash.startsWith('#/portofolio/')) {
         const slug = hash.split('/')[2];
         await showDetail('portofolio', slug);
-      } else if (hash.startsWith('#/tulisan/')) {
+      } else if (hash.startsWith('#/writing/')) {
         const slug = hash.split('/')[2];
         await showDetail('tulisan', slug);
       }

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://muhdanfyan.github.io/sitemap-index.xml

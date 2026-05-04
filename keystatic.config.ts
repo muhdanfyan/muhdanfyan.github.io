@@ -28,7 +28,7 @@ export default config({
     writing: collection({
       label: 'Tulisan (Utama/ID)',
       slugField: 'slug', 
-      path: 'tulisan/*/',
+      path: 'content/writing/*/',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
@@ -39,8 +39,8 @@ export default config({
         
         image: fields.image({
           label: 'Gambar Sampul',
-          directory: 'public/img/tulisan',
-          publicPath: '/img/tulisan',
+          directory: 'public/img/writing',
+          publicPath: '/img/writing',
         }),
         
         // Hanya satu kategori, dropdown canggih
@@ -59,8 +59,8 @@ export default config({
           dividers: true,
           links: true,
           images: {
-            directory: 'public/img/tulisan/content',
-            publicPath: '/img/tulisan/content',
+            directory: 'public/img/writing/content',
+            publicPath: '/img/writing/content',
           },
         }),
       },
@@ -68,7 +68,7 @@ export default config({
     writing_en: collection({
       label: 'Tulisan (Versi English)',
       slugField: 'slug', 
-      path: 'tulisan/*/index.en',
+      path: 'content/writing/*/index.en',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
@@ -79,8 +79,8 @@ export default config({
           dividers: true,
           links: true,
           images: {
-            directory: 'public/img/tulisan/content',
-            publicPath: '/img/tulisan/content',
+            directory: 'public/img/writing/content',
+            publicPath: '/img/writing/content',
           },
         }),
       },

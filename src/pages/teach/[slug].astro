@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const teachingDir = path.join(process.cwd(), 'content/teaching');
+  const folders = fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [];
+  
+  return folders.map((slug) => {
+    const filePath = path.join(teachingDir, slug, 'index.mdoc');
+    if (!fs.existsSync(filePath)) return null;
+    
+    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    
+    return {
+      params: { slug },
+      props: { teaching: { ...data, content, slug } },
+    };
+  }).filter(Boolean);
+}
+
+const { teaching } = Astro.props;
+const htmlId = marked(teaching.content || '');
+const htmlEn = marked(teaching.content_en || teaching.content || '');
+---
+
+<Layout title={`${teaching.event_en || teaching.event} | Teaching Experience`}>
+  <main class="pt-32 pb-20">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <header class="mb-12">
+        <div class="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-wider mb-4">
+          <span class="lang-text" data-id={teaching.period} data-en={teaching.period_en}>{teaching.period}</span>
+          <span>•</span>
+          <span class="text-indigo-600 lang-text" data-id={teaching.event} data-en={teaching.event_en}>{teaching.event}</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight lang-text" data-id={teaching.topic} data-en={teaching.topic_en}>
+          {teaching.topic}
+        </h1>
+        {teaching.image && (
+          <div class="relative group mb-12">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 blur-2xl opacity-10 rounded-3xl group-hover:opacity-20 transition-all"></div>
+            <img 
+              src={teaching.image} 
+              alt={teaching.event} 
+              class="w-full aspect-video object-cover rounded-3xl shadow-2xl relative z-10 border border-slate-100"
+            />
+          </div>
+        )}
+      </header>
+
+      <div class="max-w-none mb-12 text-slate-700 leading-relaxed space-y-6">
+        <style is:global>
+          .lang-content h1 { font-size: 2.25rem; font-weight: 800; margin-bottom: 1.5rem; color: #0f172a; }
+          .lang-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #1e293b; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.5rem; }
+          .lang-content h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #334155; }
+          .lang-content p { margin-bottom: 1.25rem; }
+          .lang-content ul, .lang-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+          .lang-content li { margin-bottom: 0.5rem; list-style-type: disc; }
+          .lang-content a { color: #4f46e5; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+          .lang-content a:hover { color: #4338ca; }
+          .lang-content strong { color: #0f172a; font-weight: 700; }
+          .lang-content img { border-radius: 1.5rem; margin-top: 2rem; margin-bottom: 2rem; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); border: 1px solid #f1f5f9; }
+          .lang-content blockquote { border-left: 4px solid #6366f1; padding-left: 1.5rem; font-style: italic; color: #475569; margin: 2rem 0; }
+        </style>
+        <div id="contentId" class="lang-content" set:html={htmlId}></div>
+        <div id="contentEn" class="lang-content hidden" set:html={htmlEn}></div>
+      </div>
+
+      {teaching.link && (
+        <div class="mt-12 p-8 bg-slate-50 rounded-3xl border border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-lg font-bold text-slate-900 mb-1 lang-text" data-id="Ingin melihat lebih lanjut?" data-en="Want to see more?">Ingin melihat lebih lanjut?</h3>
+            <p class="text-slate-500 text-sm lang-text" data-id="Dokumentasi resmi dan materi tersedia di link berikut." data-en="Official documentation and materials are available at the link below.">Dokumentasi resmi dan materi tersedia di link berikut.</p>
+          </div>
+          <a href={teaching.link} target="_blank" class="px-8 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-indigo-200 transition-all lang-text" data-id="Kunjungi Link" data-en="Visit Link">
+            Kunjungi Link
+          </a>
+        </div>
+      )}
+      
+      <div class="mt-20 pt-8 border-t border-slate-100">
+        <a href="/teach/" class="text-indigo-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+          <span class="text-xl">←</span> 
+          <span class="lang-text" data-id="Kembali ke Beranda" data-en="Back to Home">Kembali ke Beranda</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script is:inline>
+    function updateLanguageUI() {
+      const currentLang = localStorage.getItem('lang') || 'id';
+      
+      document.querySelectorAll('.lang-text').forEach(el => {
+        if (el instanceof HTMLElement) {
+          el.innerText = currentLang === 'en' ? (el.dataset.en || el.innerText) : (el.dataset.id || el.innerText);
+        }
+      });
+
+      const idC = document.getElementById('contentId'), enC = document.getElementById('contentEn');
+      if (idC && enC) {
+        idC.classList.toggle('hidden', currentLang === 'en');
+        enC.classList.toggle('hidden', currentLang !== 'en');
+      }
+    }
+
+    updateLanguageUI();
+    document.addEventListener('astro:page-load', updateLanguageUI);
+  </script>
+</Layout>

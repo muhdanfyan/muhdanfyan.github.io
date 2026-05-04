@@ -43,21 +43,6 @@ const hasDetails = project.full_description?.trim() || project.full_description_
 ---
 
 <Layout title={`${project.title} | Portfolio Detail`}>
-  <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="/" class="logo font-black text-2xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-        MUHDAN FYAN
-      </a>
-      <div class="flex items-center gap-6">
-        <a href="/portofolio" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Back to Portfolio</a>
-        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
-          <span id="langLabel">ID</span>
-        </button>
-      </div>
-    </div>
-  </nav>
-
   <main class="pt-32 pb-20">
     <div class="container mx-auto px-6">
       <!-- Hero Section -->
@@ -225,19 +210,9 @@ const hasDetails = project.full_description?.trim() || project.full_description_
     </div>
   </main>
 
-  <footer class="border-t border-slate-100 py-12">
-    <div class="container mx-auto px-6 text-center">
-      <p class="text-slate-400 text-sm font-medium">
-        &copy; 2026 Muhdan Fyan Syah Sofian.
-      </p>
-    </div>
-  </footer>
-
   <script is:inline>
     function updateLanguageUI() {
       const currentLang = localStorage.getItem('lang') || 'id';
-      const langLabel = document.getElementById('langLabel');
-      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
       
       document.querySelectorAll('.lang-text').forEach(el => {
         if (el instanceof HTMLElement) {
@@ -266,35 +241,7 @@ const hasDetails = project.full_description?.trim() || project.full_description_
       });
     }
 
-    function init() {
-      // Auto-Language Detection for First Time Visitors
-      if (!localStorage.getItem('lang')) {
-        try {
-          const userLang = navigator.language || '';
-          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-          const isIndonesianTZ = timezone.includes('Jakarta') || timezone.includes('Makassar') || timezone.includes('Jayapura') || timezone.includes('Pontianak');
-          const isIndonesianLang = userLang.toLowerCase().startsWith('id');
-          localStorage.setItem('lang', (isIndonesianTZ || isIndonesianLang) ? 'id' : 'en');
-        } catch (e) {
-          localStorage.setItem('lang', 'id');
-        }
-      }
-
-      const langToggle = document.getElementById('langToggle');
-      if (langToggle) {
-        const newToggle = langToggle.cloneNode(true);
-        langToggle.parentNode.replaceChild(newToggle, langToggle);
-        newToggle.addEventListener('click', () => {
-          const currentLang = localStorage.getItem('lang') || 'id';
-          const newLang = currentLang === 'id' ? 'en' : 'id';
-          localStorage.setItem('lang', newLang);
-          updateLanguageUI();
-        });
-      }
-      updateLanguageUI();
-    }
-
-    init();
-    document.addEventListener('astro:page-load', init);
+    updateLanguageUI();
+    document.addEventListener('astro:page-load', updateLanguageUI);
   </script>
 </Layout>

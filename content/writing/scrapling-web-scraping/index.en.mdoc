@@ -1,0 +1,121 @@
+---
+title_id: "Scrapling: Revolusi Web Scraping Tanpa Blokir untuk Agen AI"
+title_en: "Scrapling: Revolutionizing Block-Free Web Scraping for AI Agents"
+date: "2026-05-04"
+category: "Technology"
+image: "img/writing/scrapling-banner.jpg"
+description_id: "Pelajari bagaimana Scrapling mengubah cara agen AI berinteraksi dengan web melalui fitur zero bot detection dan bypassing Cloudflare secara natural."
+description_en: "Learn how Scrapling changes how AI agents interact with the web through zero bot detection and natural Cloudflare bypassing."
+---
+
+Have you ever wondered how price comparison apps or cheap ticket search bots work? They use a technique called **Web Scraping**. Simply put, *web scraping* is an automated way to collect large amounts of information from the internet without having to copy it manually one by one.
+
+However, many websites today have very strict "digital security guards" (such as Cloudflare or Anti-Bot systems). Their goal is to distinguish between real human visitors and automated robots. The problem is, automated robots are often immediately blocked before they can retrieve the required data.
+
+This is where **Scrapling** comes in as a revolutionary solution. It is designed so that your data collection robot can "disguise" itself as a human so perfectly that it is not detected by any security system. This technology becomes very crucial in the current era of Artificial Intelligence (AI), where fresh data from the internet is its main fuel.
+
+![Scrapling GitHub Status](/img/writing/scrapling-github.jpg)
+*Scrapling reached #1 GitHub Trending, proving the community's enthusiasm for this technology.*
+
+## Why is Scrapling Different?
+
+Unlike traditional libraries such as *BeautifulSoup* or *Selenium*, **Scrapling** is built with a "total camouflage" philosophy. This tool is capable of bypassing *Cloudflare* protection naturally without requiring complex proxy configurations or constant selector maintenance.
+
+Several superior features that make **Scrapling** the main choice for AI agent developers include:
+
+1. **Zero Bot Detection**: Uses human-like behavior techniques that make requests almost impossible to distinguish from real human users.
+2. **Natural Cloudflare Bypass**: Automatically handles *Turnstile* and *JavaScript challenges* behind the scenes.
+3. **Incredible Speed**: Based on performance tests, this tool is claimed to be **774 times faster** than the combination of *Requests* and *BeautifulSoup*.
+4. **Adaptive Parsing**: Scrapling's parser has learning capabilities to detect structural changes in web elements, minimizing failures when target sites are updated.
+
+### Terminal Performance Demo
+
+Here is a recording demonstrating how Scrapling operates at high speed directly from the terminal:
+
+<div class="terminal-container mb-8">
+  <script src="https://asciinema.org/a/736339.js" id="asciicast-736339" async></script>
+</div>
+
+### Simple Implementation Example
+
+Here is an example of how **Scrapling** handles data retrieval with *Stealth Mode* active adaptively:
+
+```python
+from scrapling.fetchers import StealthyFetcher
+
+# Initialize Fetcher with adaptive mode
+StealthyFetcher.adaptive = True
+
+# Fetch content from a protected site
+page = StealthyFetcher.fetch('https://example.com', headless=True)
+
+# Data extraction with CSS selector
+# If the web structure changes, Scrapling will try to find it again!
+products = page.css('.product-item', adaptive=True)
+```
+
+## Advanced Features for Large Scale
+
+For more complex needs, **Scrapling** provides a Spider framework similar to *Scrapy* but with much better ease of use:
+
+```python
+from scrapling.spiders import Spider, Response
+
+class TechSpider(Spider):
+    name = "tech_crawler"
+    start_urls = ["https://tech-site.com/news"]
+
+    async def parse(self, response: Response):
+        for article in response.css('.article-card'):
+            yield {
+                "title": article.css('h2::text').get(),
+                "link": article.attrib['href']
+            }
+
+TechSpider().start()
+```
+
+## MCP Integration for AI Agents (Claude/Cursor)
+
+![AI Agents Scraping](/img/writing/scrapling-ai-agents.jpg)
+*Illustration of AI Agents using Scrapling to extract web data intelligently and efficiently.*
+
+One of **Scrapling**'s most innovative features is its support for the **Model Context Protocol (MCP)**. This allows AI agents like *Claude* or *Cursor* to perform scraping directly and extract targeted data before sending it to the AI model.
+
+### MCP Server Demo
+
+Here is a demonstration of how Scrapling works behind the scenes to assist AI agents:
+
+<div class="video-container mb-8">
+  <iframe 
+    class="w-full aspect-video rounded-2xl shadow-lg" 
+    src="https://www.youtube.com/embed/qyFk3ZNwOxE" 
+    title="Scrapling MCP Server Demo" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+This is very effective for:
+- **Saving Tokens**: AI only receives relevant clean data.
+- **Speed**: Extraction operations are performed locally by Scrapling.
+- **Accuracy**: Ensures AI gets the latest data from the web in real-time.
+
+### Quick Installation
+
+You can start trying **Scrapling** with just one command:
+
+```bash
+pip install scrapling
+# For full features with browser engine
+pip install "scrapling[fetchers]"
+scrapling install
+```
+
+## Conclusion
+
+The presence of **Scrapling** marks the end of the fragile and easily detectable scraping era. For anyone serious about data or artificial intelligence development, this tool is a mandatory addition to your tech stack.
+
+---
+**Source:** [D4Vinci/Scrapling GitHub](https://github.com/D4Vinci/Scrapling) | **Reviewer:** Muhdan Fyan Syah Sofian.

@@ -15,4 +15,10 @@ export default defineConfig({
   ].filter(Boolean),
   output: 'static',
   site: 'https://muhdanfyan.github.io',
+  redirects: {
+    '/tulisan/[slug]': '/writing/[slug]',
+    '/tulisan': '/writing',
+    '/mengajar/[slug]': '/teach/[slug]',
+    '/mengajar': '/teach'
+  }
 });

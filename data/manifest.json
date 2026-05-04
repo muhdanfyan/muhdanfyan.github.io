@@ -8,7 +8,7 @@
       "category": "Pengalaman Mengajar",
       "category_en": "Teaching Experience",
       "available_langs": ["id", "en"],
-      "image": "/img/mengajar/it-high-school.png",
+      "image": "/img/teaching/it-high-school.png",
       "description": "Inisiator dan perancang kurikulum IT modern berbasis industri untuk Pesantren Teknologi.",
       "description_en": "Initiator and designer of industry-based modern IT curriculum for Tech Boarding Schools.",
       "url": "https://pondokinformatika.id",
@@ -40,7 +40,7 @@
       "category": "Pengalaman Mengajar",
       "category_en": "Teaching Experience",
       "available_langs": ["id", "en"],
-      "image": "/img/mengajar/lidmi-ai.jpg",
+      "image": "/img/teaching/lidmi-ai.jpg",
       "description": "Narasumber utama dalam Webinar Nasional Pemanfaatan AI dalam Media Dakwah oleh PP LIDMI.",
       "description_en": "Keynote speaker for the National Webinar on AI Utilization in Dawah Media by PP LIDMI.",
       "url": "https://lidmi.or.id",
@@ -88,7 +88,7 @@
       "category": "Pengalaman Mengajar",
       "category_en": "Teaching Experience",
       "available_langs": ["id", "en"],
-      "image": "/img/mengajar/kembalikemasjid.jpg",
+      "image": "/img/teaching/kembalikemasjid.jpg",
       "description": "Instruktur pelatihan produksi video dan animasi untuk pengelola masjid dari 23 kota di Indonesia.",
       "description_en": "Video and animation production instructor for mosque managers from 23 cities in Indonesia.",
       "url": "https://www.antaranews.com/berita/3069865/kembalikemasjidid-gelar-pelatihan-masjid-membangun-masjid",
@@ -104,7 +104,7 @@
       "category": "Pengalaman Mengajar",
       "category_en": "Teaching Experience",
       "available_langs": ["id", "en"],
-      "image": "/img/mengajar/kpb.jpg",
+      "image": "/img/teaching/kpb.jpg",
       "description": "Narasumber dalam peluncuran Komunitas Programmer Baubau dan diskusi pembangunan ekosistem IT lokal.",
       "description_en": "Speaker at the launch of the Baubau Programmer Community and discussion on local IT ecosystem development.",
       "url": "https://www.facebook.com/zhatotech/photos/a.3921457501239097/4211844338867077/",
@@ -6420,7 +6420,7 @@
         "id",
         "en"
       ],
-      "image": "img/tulisan/flipped-classroom.jpg",
+      "image": "img/writing/flipped-classroom.jpg",
       "description": "Membahas model belajar Flipped Classroom dan Trias Akademika di Pondok Informatika untuk mencetak talenta IT yang tangguh di era Education 4.0.",
       "description_en": "Discussing the Flipped Classroom and Trias Akademika learning model at Pondok Informatika to produce tough IT talent in the Education 4.0 era."
     },
@@ -6483,7 +6483,7 @@
       "available_langs": [
         "id"
       ],
-      "image": "tulisan/ukk-smkn4-baubau-diskominfo/lab-smk.jpg",
+      "image": "img/writing/lab-smk.jpg",
       "description": "Pengalaman berkesan mewakili Diskominfo Baubau dalam menguji kompetensi taruna TKJ di SMKN 4 Baubau.",
       "description_en": "A memorable experience representing Diskominfo Baubau in testing the competency of TKJ cadets at SMKN 4 Baubau."
     },
@@ -6499,7 +6499,7 @@
         "id",
         "en"
       ],
-      "image": "tulisan/insight-media-group/hero.jpg",
+      "image": "img/writing/hero.jpg",
       "description": "Eksplorasi bagaimana Insight Media Group merevolusi dunia publikasi digital melalui integrasi teknologi.",
       "description_en": "Exploring how Insight Media Group is revolutionizing the digital publication world through technology integration."
     },
@@ -6563,7 +6563,7 @@
         "id",
         "en"
       ],
-      "image": "img/tulisan/indonesia-engineering-risk.jpg",
+      "image": "img/writing/indonesia-engineering-risk.jpg",
       "description": "Analisis mendalam mengenai risiko hukum, hambatan birokrasi, dan krisis literasi digital bagi engineer di Indonesia.",
       "description_en": "Deep analysis of legal risks, bureaucratic obstacles, and digital literacy crisis for engineers in Indonesia."
     },
@@ -6611,7 +6611,7 @@
         "id",
         "en"
       ],
-      "image": "/img/tulisan/scrapling-banner.jpg",
+      "image": "/img/writing/scrapling-banner.jpg",
       "description": "Pelajari bagaimana Scrapling mengubah cara agen AI berinteraksi dengan web melalui fitur zero bot detection dan bypassing Cloudflare secara natural.",
       "description_en": "Learn how Scrapling changes how AI agents interact with the web through zero bot detection and natural Cloudflare bypassing."
     }
