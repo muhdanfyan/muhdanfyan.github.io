@@ -16,6 +16,10 @@ const writings = folders
     if (!fs.existsSync(filePath)) return null;
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const { data } = matter(fileContent);
+    const hasEnFile = fs.existsSync(path.join(tulisanDir, slug, 'index.en.mdoc')) || 
+                      fs.existsSync(path.join(tulisanDir, slug, 'tulisan.en.mdoc')) ||
+                      fs.existsSync(path.join(tulisanDir, slug, 'tulisan.en.md'));
+    
     return {
       slug,
       title: data.title_id || slug,
@@ -25,7 +29,7 @@ const writings = folders
       description: data.description_id || '',
       description_en: data.description_en || '',
       image: data.image || '',
-      available_langs: data.content_en_markdown ? ['id', 'en'] : ['id']
+      available_langs: (data.content_en_markdown || hasEnFile) ? ['id', 'en'] : ['id']
     };
   })
   .filter(Boolean)
