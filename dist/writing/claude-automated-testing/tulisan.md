@@ -1,0 +1,56 @@
+# Strategi "Testing-First": Melejitkan Performa Claude Code hingga Batas Maksimal 🚀
+
+📅 **25 April 2026**
+
+![Automated Testing Mastery](https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&q=80&w=1200)
+
+Dunia pengembangan perangkat lunak telah memasuki era baru. Jika dulu hambatan terbesar seorang pengembang adalah kecepatan menulis kode, kini hambatan tersebut telah berpindah ke **proses verifikasi**. Dengan kehadiran [***AI Agent***](https://aws.amazon.com/what-is/ai-agents/) seperti [**Claude Code**](https://www.anthropic.com/news/claude-3-7-sonnet), kita mampu menghasilkan ribuan baris kode dalam sekejap. Namun, tanpa strategi pengujian yang matang, kecepatan ini justru akan menjebak kita dalam "neraka debugging".
+
+Berdasarkan panduan teknis dari [***Towards Data Science***](https://towardsdatascience.com/how-to-vastly-improve-claude-code-performance-with-automated-testing/), artikel ini akan membedah secara menyeluruh bagaimana mematangkan workflow Anda dari sekadar "ngoding bareng AI" menjadi "membangun sistem otonom yang teruji".
+
+---
+
+### 🇮🇩 Perspektif Indonesia: Menghapus Budaya "Asal Jalan"
+Di ekosistem pengembang lokal, pengujian sering kali dianaktirikan demi mengejar *deadline* yang mepet. Namun, saat berkolaborasi dengan [**Claude Code**](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code), malas menulis tes adalah "bunuh diri teknis". Kode yang dihasilkan AI bisa terlihat sempurna secara sintaks tapi gagal secara logika bisnis. Dengan memindahkan beban pengujian ke tangan AI, kita justru bisa rilis lebih cepat dengan kualitas yang jauh lebih stabil.
+
+---
+
+### 🧠 Inti Strategi: Pergeseran Menuju *Agent-Led Testing*
+
+#### 1. Memberikan Izin Otonom Penuh (*Agentic Permission*)
+Untuk mendapatkan performa maksimal, Claude Code butuh "tangan" untuk bekerja. Aktifkan [***Auto Mode***](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code) dan berikan izin bagi Claude untuk mengakses sistem file, menjalankan perintah terminal, dan berinteraksi dengan [***Local Database***](https://en.wikipedia.org/wiki/Database). Tanpa izin ini, siklus perbaikan kode akan terus terhenti karena menunggu konfirmasi manual Anda, yang justru membuang waktu.
+
+#### 2. Mandat "Pantang Berhenti" (*The No-Stop Directive*)
+Ini adalah taktik tingkat tinggi bagi *Senior Engineer*. Saat menyuruh Claude membuat fitur, jangan biarkan dia berhenti setelah kode ditulis. Gunakan instruksi:
+> "Claude, buatkan [***Integration Test***](https://www.atlassian.com/continuous-delivery/software-testing/automated-testing) untuk fitur ini. ***Jangan berhenti bekerja sampai semua skrip pengujian lulus 100%. Jika ada error, analisis outputnya dan perbaiki kodenya sendiri secara berulang.***"
+
+Ini memaksa Claude untuk melakukan [***Self-Correction Loop***](https://en.wikipedia.org/wiki/Self-correction) secara otonom. Selain itu, pastikan pengujian dibuat bersifat **deterministik**—misalnya dengan memastikan pemrosesan data melalui *parsing pipeline* memberikan hasil yang konsisten setiap saat.
+
+#### 3. Inspeksi Manual pada Skrip Tes
+Jangan percaya buta pada AI. Kadang Claude bisa membuat pengujian yang "asal lulus" namun logikanya salah. Lakukan inspeksi manual sesekali pada input dan output yang dihasilkan skrip tes tersebut. Mintalah Claude untuk menunjukkan hasil eksekusi tes secara detail agar Anda bisa mendeteksi jika ada *bug* di dalam skrip pengujian itu sendiri.
+
+---
+
+### 📊 Meningkatkan Efektivitas Verifikasi Manual
+
+Jika ada bagian yang tidak bisa diuji secara otomatis (seperti tampilan visual atau izin admin khusus), gunakan workflow "Zero Cognitive Energy":
+
+- **HTML Checklist Report:** Mintalah Claude membuat laporan HTML otonom yang berisi daftar tugas yang telah dikerjakan lengkap dengan **checkbox**. Sertakan deskripsi cara menguji dan link langsung ke halaman terkait. Tujuannya adalah agar Anda hanya perlu melakukan verifikasi klik-klik saja tanpa perlu mengingat apa yang harus diuji.
+- **Outsourcing Data Test:** Jangan habiskan waktu mencari data manual. Perintahkan Claude: *"Cari atau buatkan data dummy yang valid dari database atau file JSON untuk skenario ini."* Biarkan AI menangani persiapan data yang membosankan.
+
+---
+
+### 🚀 Integrasi CI/CD: Penjaga Gerbang Terakhir
+Hasil kerja Claude harus selalu melalui gerbang [***CI/CD (Continuous Integration/Continuous Deployment)***](https://aws.amazon.com/id/devops/what-is-ci-cd/). Gunakan [***GitHub Actions***](https://github.com/features/actions) untuk menjalankan tes yang telah dibuat Claude setiap kali ada *push* kode. Jika tes gagal, kode tersebut tidak akan pernah masuk ke lingkungan produksi.
+
+#### Menghindari "Test Rot" (Pembusukan Tes)
+Tes yang dibuat AI harus terus dirawat. Setiap kali Anda (atau Claude) menghapus fitur lama, pastikan untuk memberi instruksi: *"Update atau hapus skrip pengujian yang sudah tidak relevan agar tidak terjadi redudansi."*
+
+---
+
+### 💡 Kesimpulan: Peran Baru Anda sebagai Arsitek
+Di era AI, pekerjaan Anda bukan lagi menulis setiap baris kode. Peran Anda telah berevolusi menjadi seorang **Desainer Skenario Pengujian**. Waktu yang Anda hemat dari menulis kode manual harus diinvestasikan sepenuhnya untuk merancang pengujian yang lebih ketat dan mendalam.
+
+---
+**Sumber:** [Towards Data Science](https://towardsdatascience.com/how-to-vastly-improve-claude-code-performance-with-automated-testing/) | **Penulis:** Muhdan Fyan Syah Sofian
+*Ditulis dengan dedikasi tinggi menggunakan Gemini CLI*

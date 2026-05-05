@@ -1,0 +1,40 @@
+# Sinergi Digital di Pulau Makassar: Catatan Penguji UKK SMK Negeri 4 Baubau 🌊💻
+
+📅 **25 April 2026**
+
+![Laboratorium SMKN 4 Baubau](lab-smk.jpg)
+
+Menjadi bagian dari proses penjaminan mutu pendidikan vokasi adalah sebuah kehormatan. Sejak Senin hingga Sabtu ini, saya berkesempatan mewakili [**Dinas Komunikasi dan Informatika (Diskominfo) Kota Baubau**](https://diskominfo.baubaukota.go.id/) untuk menguji [***Uji Kompetensi Keahlian (UKK)***](https://psmk.kemdikbud.go.id/) di [**SMK Negeri 4 Baubau**](http://smkn4baubau.sch.id/), sebuah sekolah yang berdiri kokoh di tengah keindahan Pulau Makassar (Puma).
+
+---
+
+### 🇮🇩 Perjalanan Pagi: Dari Jembatan Batu ke Negeri Para Taruna
+Setiap pagi, rutinitas dimulai dengan menyeberangi selat menggunakan *jarangka* (perahu tradisional penyeberangan). Suasana laut yang tenang di pagi hari menuju dermaga Pulau Makassar memberikan perspektif berbeda; bahwa transformasi digital tidak hanya milik pusat kota, tetapi juga harus menjangkau mereka yang berada di pesisir. 
+
+Di SMKN 4 Baubau, kedisiplinan gaya taruna sangat terasa. Karakter kuat ini menjadi modal penting bagi para siswa untuk menghadapi ketatnya standar dunia kerja di bidang teknologi.
+
+---
+
+### 🧠 Menguji Kompetensi TKJ: Fokus pada Konektivitas
+Sebagai penguji eksternal untuk jurusan [***Teknik Komputer dan Jaringan (TKJ)***](https://en.wikipedia.org/wiki/Computer_network), fokus utama pekan ini adalah memastikan para siswa mampu merancang dan mengonfigurasi jaringan yang andal. Beberapa aspek kunci yang menjadi poin penilaian meliputi:
+
+1.  **Konfigurasi Router:** Penggunaan perangkat [**MikroTik**](https://mikrotik.com/) untuk manajemen *gateway* dan keamanan jaringan.
+2.  **Manajemen Bandwidth:** Memastikan distribusi internet yang adil bagi seluruh pengguna.
+3.  **Network Security:** Implementasi *firewall* dan proteksi terhadap akses ilegal.
+4.  **Sistem Hotspot:** Membangun layanan Wi-Fi berbasis *voucher* yang umum digunakan di industri.
+
+---
+
+### 💡 Kolaborasi Pemerintah dan Pendidikan
+Kehadiran Diskominfo dalam UKK ini adalah bentuk nyata keterlibatan pemerintah dalam menyelaraskan kurikulum sekolah dengan kebutuhan riil pembangunan kota pintar ([***Smart City***](https://en.wikipedia.org/wiki/Smart_city)). Kami ingin memastikan bahwa lulusan dari Pulau Makassar memiliki kompetensi yang setara dengan mereka yang ada di kota-kota besar.
+
+Saya melihat potensi besar pada para siswa di sini. Meski berada di pulau, ambisi mereka untuk menguasai teknologi jaringan sangat tinggi. Ini adalah sinyal positif bagi kedaulatan digital di wilayah Buton.
+
+---
+
+### 🚀 Harapan untuk Masa Depan
+Menjelang akhir pekan ini, saya merasa optimis. UKK bukan sekadar syarat kelulusan, melainkan gerbang pembuktian jati diri bagi para taruna TKJ. Semoga sertifikat kompetensi yang mereka raih nantinya menjadi tiket untuk berkontribusi bagi Indonesia, baik di darat maupun di lautan.
+
+---
+**Sumber:** Pengalaman Pribadi | **Penulis:** Muhdan Fyan Syah Sofian
+*Ditulis dengan dedikasi tinggi menggunakan Gemini CLI*

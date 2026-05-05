@@ -93,10 +93,10 @@ const writings = folders
         MUHDAN FYAN
       </a>
       <div class="flex items-center gap-6">
-        <a href="#portfolio" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Portfolio</a>
-        <a href="#writing" class="text-sm font-bold text-slate-600 hover:text-indigo-600">Writing</a>
-        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all">
-          <span id="langLabel">ID</span>
+        <a href="#portfolio" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Portofolio" data-en="Portfolio">Portofolio</a>
+        <a href="#writing" class="text-sm font-bold text-slate-600 hover:text-indigo-600 lang-text" data-id="Tulisan" data-en="Writing">Tulisan</a>
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold hover:bg-indigo-600 hover:text-white transition-all group">
+          <span id="langLabel" class="group-hover:scale-110 transition-transform">ID</span>
         </button>
       </div>
     </div>
@@ -115,7 +115,7 @@ const writings = folders
 			</div>
 			
 			<div>
-				<span class="inline-block px-4 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold mb-4">
+				<span class="inline-block px-4 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold mb-4 lang-text" data-id="Full Stack Developer" data-en="Full Stack Developer">
 					Full Stack Developer
 				</span>
 				<h1 class="text-6xl font-extrabold mb-6 tracking-tight text-slate-900">
@@ -259,12 +259,12 @@ const writings = folders
                 <div class="flex justify-between items-start mb-2">
                   <h3 class="text-xl font-bold project-title" data-id={project.title} data-en={project.title_en}>{project.title}</h3>
                   <div class="flex flex-col items-end gap-1">
-                    <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter">{project.category}</span>
-                    <span class={`text-[9px] font-bold px-1.5 py-0.5 rounded-full border ${
+                    <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter lang-text" data-id={project.category} data-en={project.category === 'Repository' ? 'Repository' : project.category === 'Web App' ? 'Web App' : project.category}>{project.category}</span>
+                    <span class={`text-[9px] font-bold px-1.5 py-0.5 rounded-full border lang-text ${
                       project.difficulty === 'Expert' ? 'bg-red-50 text-red-600 border-red-100' :
                       project.difficulty === 'Advanced' ? 'bg-orange-50 text-orange-600 border-orange-100' :
                       'bg-slate-50 text-slate-500 border-slate-100'
-                    }`}>
+                    }`} data-id={project.difficulty === 'Advanced' ? 'Lanjutan' : project.difficulty === 'Intermediate' ? 'Menengah' : project.difficulty} data-en={project.difficulty}>
                       {project.difficulty || 'Intermediate'}
                     </span>
                   </div>
@@ -276,16 +276,18 @@ const writings = folders
                     href={project.link} 
                     target="_blank" 
                     onclick="event.stopPropagation()"
-                    class="flex items-center justify-center gap-1.5 py-2 px-3 bg-indigo-50 text-indigo-600 rounded-xl text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all"
+                    class="flex items-center justify-center gap-1.5 py-2 px-3 bg-indigo-50 text-indigo-600 rounded-xl text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all lang-text"
+                    data-id="Kunjungi App"
+                    data-en="Visit App"
                   >
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                    Visit App
+                    Kunjungi App
                   </a>
                   <a 
                     href={`https://wa.me/6283134086899?text=${project.whatsapp_text || 'Halo Fyan, saya tertarik buat sistem seperti ' + project.title}`}
                     target="_blank"
                     onclick="event.stopPropagation()"
-                    class="flex items-center justify-center gap-1.5 py-2 px-3 bg-emerald-50 text-emerald-600 rounded-xl text-xs font-bold hover:bg-emerald-600 hover:text-white transition-all order-link"
+                    class="flex items-center justify-center gap-1.5 py-2 px-3 bg-emerald-50 text-emerald-600 rounded-xl text-xs font-bold hover:bg-emerald-600 hover:text-white transition-all lang-text"
                     data-id="Pesan Jasa"
                     data-en="Order Service"
                   >
@@ -319,7 +321,7 @@ const writings = folders
 					<a href={`/tulisan/${writing.slug}/`} class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" data-langs={JSON.stringify(writing.available_langs)}>
 						<img src={(writing.image && writing.image.startsWith('http')) ? writing.image : (writing.image?.startsWith('/') ? writing.image : (writing.image?.startsWith('img/') ? '/' + writing.image : `/img/tulisan/${writing.image || 'default.png'}`))} alt={writing.title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-all" />
 						<div class="flex-1">
-							<span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{writing.category}</span>
+							<span class="text-xs font-bold text-indigo-600 uppercase mb-2 block lang-text" data-id={writing.category} data-en={writing.category}>{writing.category}</span>
 							<h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors writing-title" data-id={writing.title} data-en={writing.title_en}>{writing.title}</h3>
 							<p class="text-slate-500 text-sm mb-4 line-clamp-2 writing-desc" data-id={writing.description} data-en={writing.description_en}>{writing.description}</p>
 							<div class="flex items-center gap-2 text-slate-400 text-xs">
@@ -360,7 +362,7 @@ const writings = folders
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.886.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.98zm11.387-5.464c-.301-.15-1.779-.877-2.053-.976-.275-.1-.475-.15-.675.15-.199.301-.775.976-.951 1.176-.175.199-.35.225-.651.075-.301-.15-1.267-.467-2.414-1.49-.893-.797-1.495-1.782-1.671-2.081-.175-.301-.019-.463.131-.612.135-.133.301-.351.452-.526.149-.175.199-.301.299-.501.101-.199.051-.376-.025-.526-.075-.15-.675-1.628-.925-2.229-.244-.588-.491-.508-.675-.508-.174-.001-.374-.001-.574-.001-.2 0-.526.075-.802.376-.275.301-1.051 1.026-1.051 2.504 0 1.477 1.076 2.904 1.226 3.104.15.199 2.118 3.235 5.13 4.537.716.31 1.275.496 1.71.636.72.228 1.375.196 1.892.119.577-.085 1.779-.726 2.028-1.427.25-.701.25-1.302.175-1.427-.075-.125-.275-.199-.575-.35z"/></svg>
           </a>
         </div>
-        <p class="text-slate-400 text-sm font-medium">
+        <p class="text-slate-400 text-sm font-medium lang-text" data-id="&copy; 2026 Muhdan Fyan Syah Sofian. Seluruh hak cipta dilindungi." data-en="&copy; 2026 Muhdan Fyan Syah Sofian. All rights reserved.">
           &copy; 2026 Muhdan Fyan Syah Sofian.
         </p>
       </div>
@@ -371,18 +373,42 @@ const writings = folders
     function updateLanguageUI() {
       const currentLang = localStorage.getItem('lang') || 'id';
       const langLabel = document.getElementById('langLabel');
-      if (langLabel) langLabel.innerText = currentLang.toUpperCase();
+      if (langLabel) {
+        langLabel.innerText = currentLang.toUpperCase();
+        // Add visual feedback to button
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+          if (currentLang === 'en') {
+            langToggle.classList.add('bg-indigo-600', 'text-white');
+            langToggle.classList.remove('bg-slate-100');
+          } else {
+            langToggle.classList.remove('bg-indigo-600', 'text-white');
+            langToggle.classList.add('bg-slate-100');
+          }
+        }
+      }
       
-      // Update ALL General Text (including Experience & Education)
+      // Update ALL General Text
       document.querySelectorAll('.lang-text').forEach(el => {
         if (el instanceof HTMLElement) {
           const textID = el.dataset.id;
           const textEN = el.dataset.en;
+          const newText = currentLang === 'en' ? textEN : textID;
           
-          if (currentLang === 'en' && textEN) {
-            el.innerText = textEN;
-          } else if (currentLang === 'id' && textID) {
-            el.innerText = textID;
+          if (newText) {
+            // Preserve elements (like SVG or SPAN), only update text nodes
+            let hasUpdated = false;
+            el.childNodes.forEach(node => {
+              if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                node.textContent = node.textContent.startsWith(' ') ? ' ' + newText : newText;
+                hasUpdated = true;
+              }
+            });
+            
+            // Fallback if no text node was found (e.g. empty element with only data-en)
+            if (!hasUpdated && el.children.length === 0) {
+              el.innerText = newText;
+            }
           }
         }
       });
@@ -428,11 +454,16 @@ const writings = folders
           localStorage.setItem('lang', 'id');
         }
       }
+      
       updateLanguageUI();
-      // Listen for language changes from Layout's langToggle
+
       const langToggle = document.getElementById('langToggle');
       if (langToggle) {
-        langToggle.addEventListener('click', () => {
+        // Remove existing listener to prevent duplicates
+        const newLangToggle = langToggle.cloneNode(true);
+        langToggle.parentNode.replaceChild(newLangToggle, langToggle);
+        
+        newLangToggle.addEventListener('click', () => {
           const currentLang = localStorage.getItem('lang') || 'id';
           const newLang = currentLang === 'id' ? 'en' : 'id';
           localStorage.setItem('lang', newLang);
