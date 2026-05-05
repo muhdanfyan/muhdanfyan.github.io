@@ -14,11 +14,5 @@ export default defineConfig({
     process.env.NODE_ENV === 'development' ? keystatic() : null
   ].filter(Boolean),
   output: 'static',
-  site: 'https://muhdanfyan.github.io',
-  redirects: {
-    '/tulisan/[slug]': '/writing/[slug]',
-    '/tulisan': '/writing',
-    '/mengajar/[slug]': '/teach/[slug]',
-    '/mengajar': '/teach'
-  }
+  site: 'https://muhdanfyan.github.io'
 });
