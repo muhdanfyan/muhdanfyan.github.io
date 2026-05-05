@@ -55,9 +55,6 @@ const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
     return { 
       ...data, 
       content: stripMarkdown(content), 
-      fullContent: content, // Keep for potential use
-      summary: data.summary || stripMarkdown(content).substring(0, 160) + '...',
-      summary_en: data.summary_en || data.content_en || stripMarkdown(content).substring(0, 160) + '...',
       slug 
     };
   })
@@ -67,10 +64,11 @@ const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
 const writingDir = path.join(process.cwd(), 'content/writing');
 const folders = fs.existsSync(writingDir) ? fs.readdirSync(writingDir) : [];
 const writings = folders
-  .map(slug => {
+  .map((slug) => {
     const filePath = path.join(writingDir, slug, 'index.mdoc');
     if (!fs.existsSync(filePath)) return null;
-    const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const { data } = matter(fileContent);
     const hasEnFile = fs.existsSync(path.join(writingDir, slug, 'index.en.mdoc')) || 
                       fs.existsSync(path.join(writingDir, slug, 'tulisan.en.mdoc')) ||
                       fs.existsSync(path.join(writingDir, slug, 'tulisan.en.md'));
@@ -91,7 +89,7 @@ const writings = folders
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 ---
 
-<Layout title="Muhdan Fyan | Full Stack Developer & Dakwah IT Specialist" isHome={true}>
+<Layout title="Muhdan Fyan | Full Stack Developer" isHome={true}>
 	<main class="container mx-auto px-6 pt-32">
 		<!-- Hero Section -->
 		<section class="flex flex-col items-center text-center gap-10 mb-20">
@@ -118,7 +116,7 @@ const writings = folders
 				</p>
 				<div class="flex gap-4 justify-center">
 					<a href="#portfolio" class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg hover:shadow-indigo-200 transition-all lang-text"
-              data-id="Lihat Portofolio" data-en="View Portfolio">
+             data-id="Lihat Portofolio" data-en="View Portfolio">
 						Lihat Portofolio
 					</a>
 					<a href="https://github.com/muhdanfyan" target="_blank" class="border border-slate-200 px-8 py-3 rounded-xl font-bold hover:bg-slate-50 transition-all">
@@ -180,6 +178,44 @@ const writings = folders
         </div>
       </div>
     </section>
+    
+    <!-- Teaching Experience Section -->
+    {teaching.filter(t => t.is_featured).length > 0 && (
+      <section id="teaching" class="mb-20">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold mb-2 lang-text" data-id="Pengalaman Mengajar & Materi" data-en="Teaching & Speaking Experience">Pengalaman Mengajar & Materi</h2>
+          <div class="w-12 h-1 bg-indigo-600 rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {teaching.filter(t => t.is_featured).map((t) => (
+            <div 
+              onclick={`window.location.href='/teach/${t.slug}'`}
+              class="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100 hover:bg-white transition-all group flex flex-col md:flex-row gap-6 cursor-pointer hover:shadow-xl"
+            >
+              {t.image && (
+                <div class="w-full md:w-32 h-32 flex-shrink-0 overflow-hidden rounded-xl">
+                  <img src={t.image} alt={t.event} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
+              )}
+              <div class="flex-1">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider lang-text" data-id={t.period} data-en={t.period_en}>{t.period}</span>
+                <h3 class="text-xl font-bold mt-2 mb-1 group-hover:text-indigo-600 transition-colors lang-text" data-id={t.event} data-en={t.event_en}>{t.event}</h3>
+                <p class="text-slate-500 text-sm font-medium mb-4 italic lang-text" data-id={`"${t.topic}"`} data-en={`"${t.topic_en}"`}>"{t.topic}"</p>
+                <div class="text-slate-600 text-sm leading-relaxed lang-text" data-id={t.content} data-en={t.content_en}>
+                  {t.content}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-12 text-center">
+          <a href="/teach/" class="inline-flex items-center gap-2 text-indigo-600 font-bold hover:gap-4 transition-all lang-text"
+             data-id="Lihat Semua Pengalaman Mengajar" data-en="View All Teaching Experience">
+            Lihat Semua Pengalaman Mengajar <span class="text-xl">→</span>
+          </a>
+        </div>
+      </section>
+    )}
 
 		<!-- Portfolio Section -->
 		<section id="portfolio" class="mb-20">
@@ -259,51 +295,6 @@ const writings = folders
       </div>
 		</section>
 
-    <!-- Teaching Section -->
-    <section id="teaching" class="mb-20">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold mb-2 lang-text" data-id="Pengalaman Mengajar" data-en="Teaching Experience">Pengalaman Mengajar</h2>
-        <div class="w-12 h-1 bg-indigo-600 rounded-full"></div>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teaching.slice(0, 3).map((t) => (
-          <div 
-            onclick={`window.location.href='/teach/${t.slug}'`}
-            class="teaching-card p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col h-full cursor-pointer" 
-          >
-            {t.image && (
-              <div class="relative w-full h-48 mb-6 overflow-hidden rounded-xl">
-                <img src={t.image} alt={t.event} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-            )}
-            <div class="flex-grow">
-              <span class="text-[10px] font-black px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded uppercase tracking-tighter mb-4 inline-block">{t.period}</span>
-              <h3 class="text-xl font-bold mb-2 group-hover:text-indigo-600 transition-colors" data-id={t.event} data-en={t.event_en}>{t.event}</h3>
-              <p class="text-slate-500 text-sm font-medium mb-4 italic" data-id={`"${t.topic}"`} data-en={`"${t.topic_en}"`}>"{t.topic}"</p>
-              <div class="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3" data-id={t.summary} data-en={t.summary_en}>
-                {t.summary}
-              </div>
-            </div>
-            <div class="mt-auto pt-6 border-t border-slate-50">
-              <span class="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 hover:gap-3 transition-all">
-                <span class="lang-text" data-id="Lihat Detail" data-en="View Detail">Lihat Detail</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-12 text-center">
-        <a href="/teach/" class="inline-flex items-center gap-2 text-indigo-600 font-bold hover:gap-4 transition-all lang-text"
-           data-id="Lihat Semua Pengalaman" data-en="View All Teaching">
-          Lihat Semua Pengalaman <span class="text-xl">→</span>
-        </a>
-      </div>
-    </section>
-
 		<!-- Writings Section -->
 		<section id="writing" class="mb-20">
 			<div class="mb-12">
@@ -312,15 +303,15 @@ const writings = folders
 			</div>
 
 			<div class="grid md:grid-cols-2 gap-8" id="writingGrid">
-				{writings.slice(0, 4).map((w) => (
-					<a href={`/writing/${w.slug}/`} class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" data-langs={JSON.stringify(w.available_langs)}>
-						<img src={(w.image && w.image.startsWith('http')) ? w.image : (w.image?.startsWith('/') ? w.image : (w.image?.startsWith('img/') ? '/' + w.image : `/img/writing/${w.image || 'default.png'}`))} alt={w.title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-all" />
+				{writings.slice(0, 4).map((writing) => (
+					<a href={`/writing/${writing.slug}/`} class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" data-langs={JSON.stringify(writing.available_langs)}>
+						<img src={(writing.image && writing.image.startsWith('http')) ? writing.image : (writing.image?.startsWith('/') ? writing.image : (writing.image?.startsWith('img/') ? '/' + writing.image : `/img/writing/${writing.image || 'default.png'}`))} alt={writing.title} class="w-24 h-24 object-cover rounded-xl shadow-sm group-hover:scale-105 transition-all" />
 						<div class="flex-1">
-							<span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{w.category}</span>
-							<h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors writing-title" data-id={w.title} data-en={w.title_en}>{w.title}</h3>
-							<p class="text-slate-500 text-sm mb-4 line-clamp-2 writing-desc" data-id={w.description} data-en={w.description_en}>{w.description}</p>
+							<span class="text-xs font-bold text-indigo-600 uppercase mb-2 block">{writing.category}</span>
+							<h3 class="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors writing-title" data-id={writing.title} data-en={writing.title_en}>{writing.title}</h3>
+							<p class="text-slate-500 text-sm mb-4 line-clamp-2 writing-desc" data-id={writing.description} data-en={writing.description_en}>{writing.description}</p>
 							<div class="flex items-center gap-2 text-slate-400 text-xs">
-								<span>{w.date}</span>
+								<span>{writing.date}</span>
 							</div>
 						</div>
 					</a>
@@ -338,14 +329,34 @@ const writings = folders
 	</main>
 
   <script is:inline>
-    function updateIndexUI() {
+    function updateLanguageUI() {
       const currentLang = localStorage.getItem('lang') || 'id';
       
+      // Update ALL General Text (including Experience & Education)
+      document.querySelectorAll('.lang-text').forEach(el => {
+        if (el instanceof HTMLElement) {
+          const textID = el.dataset.id;
+          const textEN = el.dataset.en;
+          
+          if (currentLang === 'en' && textEN) {
+            el.innerText = textEN;
+          } else if (currentLang === 'id' && textID) {
+            el.innerText = textID;
+          }
+        }
+      });
+
       // Update Projects Visibility & Text
       document.querySelectorAll('.project-card').forEach(card => {
         if (card instanceof HTMLElement) {
           const langs = JSON.parse(card.dataset.langs || '["id", "en"]');
           card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+          
+          const titleEl = card.querySelector('.project-title');
+          const descEl = card.querySelector('.project-desc');
+          
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
         }
       });
 
@@ -354,11 +365,16 @@ const writings = folders
         if (card instanceof HTMLElement) {
           const langs = JSON.parse(card.dataset.langs || '["id", "en"]');
           card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+          
+          const titleEl = card.querySelector('.writing-title');
+          const descEl = card.querySelector('.writing-desc');
+          if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+          if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
         }
       });
     }
 
-    function initIndex() {
+    function init() {
       // Auto-Language Detection for First Time Visitors
       if (!localStorage.getItem('lang')) {
         try {
@@ -371,17 +387,17 @@ const writings = folders
           localStorage.setItem('lang', 'id');
         }
       }
-      updateIndexUI();
+      updateLanguageUI();
       // Listen for language changes from Layout's langToggle
       const langToggle = document.getElementById('langToggle');
       if (langToggle) {
         langToggle.addEventListener('click', () => {
-          setTimeout(updateIndexUI, 50); // slight delay to ensure localStorage is updated
+          setTimeout(updateLanguageUI, 50); // slight delay to ensure localStorage is updated
         });
       }
     }
 
-    initIndex();
-    document.addEventListener('astro:page-load', initIndex);
+    init();
+    document.addEventListener('astro:page-load', init);
   </script>
 </Layout>
