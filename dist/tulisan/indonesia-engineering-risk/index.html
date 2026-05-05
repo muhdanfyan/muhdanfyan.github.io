@@ -224,6 +224,79 @@ MUHDAN FYAN
       navigator.mediaSession.setActionHandler('pause', () => { if (window.toggleAudio) window.toggleAudio(); });
     }
 
+    function initAudioPlayer() {
+      let isPlaying = false, currentText = '', currentAudioIndex = 0;
+      let audioQueue = [];
+      const playBtn = document.getElementById('playAudio');
+      if (!playBtn) return;
+      const playIcon = document.getElementById('playIcon'), pauseIcon = document.getElementById('pauseIcon');
+      const progressBar = document.getElementById('progressBar');
+      
+      function setUI(playing) {
+        isPlaying = playing;
+        playIcon.classList.toggle('hidden', playing); pauseIcon.classList.toggle('hidden', !playing);
+      }
+
+      window.stopAudio = () => {
+        audioQueue.forEach(a => { a.pause(); a.src = ''; });
+        audioQueue = [];
+        setUI(false);
+      }
+
+      function playNextChunk() {
+        if (currentAudioIndex < audioQueue.length) {
+          const audio = audioQueue[currentAudioIndex];
+          audio.play().catch(e => {
+            console.error("Audio play failed:", e);
+            currentAudioIndex++;
+            playNextChunk();
+          });
+          audio.onended = () => {
+            currentAudioIndex++;
+            playNextChunk();
+          };
+          const p = ((currentAudioIndex + 1) / audioQueue.length) * 100;
+          progressBar.style.width = `${p}%`;
+        } else {
+          window.stopAudio();
+          progressBar.style.width = '100%';
+        }
+      }
+
+      function startSpeaking() {
+        window.stopAudio();
+        const lang = localStorage.getItem('lang') || 'id';
+        const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+        currentText = c.innerText.trim();
+        if (!currentText) return;
+
+        // Split text into 200-char chunks for Google TTS
+        const chunks = currentText.match(/.{1,200}(?:\s|$|[,.!?])/g) || [currentText];
+        audioQueue = chunks.map(chunk => {
+          const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(chunk)}&tl=${lang}&client=tw-ob`;
+          return new Audio(url);
+        });
+
+        currentAudioIndex = 0;
+        playNextChunk();
+        setUI(true);
+      }
+
+      playBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          audioQueue[currentAudioIndex]?.pause();
+          setUI(false);
+        } else {
+          if (audioQueue.length > 0) {
+            audioQueue[currentAudioIndex]?.play();
+            setUI(true);
+          } else {
+            startSpeaking();
+          }
+        }
+      });
+    }
+
     function initPage() {
       // Audio Player and Code Boxes are page-specific
       if (typeof initAudioPlayer === 'function') initAudioPlayer();
@@ -256,113 +329,6 @@ MUHDAN FYAN
             alert('Link copied!'); 
           } 
         });
-      }
-    }
-
-    function formatTime(seconds) {
-      const m = Math.floor(seconds / 60);
-      const s = Math.floor(seconds % 60);
-      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-    }
-
-    function initAudioPlayer() {
-      let utterance = null, isPlaying = false, currentText = '', lastCharIndex = 0, charOffset = 0, progressInterval = null;
-      let totalSeconds = 0;
-      const playBtn = document.getElementById('playAudio');
-      if (!playBtn) return;
-      const playIcon = document.getElementById('playIcon'), pauseIcon = document.getElementById('pauseIcon');
-      const progressBar = document.getElementById('progressBar'), audioProgressText = document.getElementById('audioProgress');
-      const silentAudio = document.getElementById('silentAudio');
-      const getStorageKey = () => `audio_progress_${window.location.pathname}_${localStorage.getItem('lang') || 'id'}`;
-
-      function estimateTotalTime(text) {
-        // Average speaking rate: ~15 characters per second
-        return Math.ceil(text.length / 15);
-      }
-
-      function updateProgress(ci) {
-        const abs = ci + charOffset; lastCharIndex = abs;
-        const p = Math.min((abs / (currentText.length || 1)) * 100, 100);
-        progressBar.style.width = `${p}%`;
-        
-        // Countdown timer
-        const remainingChars = currentText.length - abs;
-        const remainingSeconds = Math.max(0, Math.ceil(remainingChars / 15));
-        audioProgressText.innerText = formatTime(remainingSeconds);
-        
-        localStorage.setItem(getStorageKey(), abs);
-      }
-
-      function startProgressTimer() {
-        clearInterval(progressInterval);
-        progressInterval = setInterval(() => { if (synth.speaking && !synth.paused) { lastCharIndex += 1; updateProgress(lastCharIndex - charOffset); } }, 150);
-      }
-
-      function setUI(playing) {
-        isPlaying = playing;
-        playIcon.classList.toggle('hidden', playing); pauseIcon.classList.toggle('hidden', !playing);
-        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
-      }
-
-      window.stopAudio = () => {
-        synth.cancel(); silentAudio.pause(); stopKeepAlive(); stopResumeHack();
-        clearInterval(progressInterval); setUI(false);
-        if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'none';
-      };
-
-      function startSpeaking() {
-        synth.cancel();
-        const lang = localStorage.getItem('lang') || 'id';
-        const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-        currentText = c.innerText.trim(); if (!currentText) return;
-        
-        totalSeconds = estimateTotalTime(currentText);
-        
-        const saved = parseInt(localStorage.getItem(getStorageKey())) || 0;
-        charOffset = saved >= currentText.length ? 0 : saved; lastCharIndex = charOffset;
-        utterance = new SpeechSynthesisUtterance(currentText.substring(charOffset));
-        utterance.lang = lang === 'id' ? 'id-ID' : 'en-US'; utterance.rate = 0.95;
-        const preferred = ['Damayanti', 'Ardi', 'Indah', 'Natural', 'Enhanced', 'Premium'];
-        // Try to find a native-sounding Indonesian voice
-        let bv = voices.find(v => (v.lang.includes('id') || v.lang.includes('ID')) && !v.name.includes('Google') && preferred.some(k => v.name.includes(k)));
-        if (!bv) bv = voices.find(v => (v.lang.includes('id') || v.lang.includes('ID')) && !v.name.includes('Google'));
-        if (bv) utterance.voice = bv;
-        // If no high-quality voice found, we don't set utterance.voice to let browser use device default
-        utterance.onstart = () => { startProgressTimer(); startResumeHack(); };
-        utterance.onboundary = (e) => updateProgress(e.charIndex);
-        utterance.onend = () => { window.stopAudio(); progressBar.style.width = '0%'; audioProgressText.innerText = '00:00'; localStorage.removeItem(getStorageKey()); };
-        utterance.onerror = window.stopAudio;
-        updateMediaSession();
-        startKeepAlive();
-        silentAudio.play().catch(()=>{});
-        synth.speak(utterance);
-      }
-
-      window.toggleAudio = () => {
-        if (isPlaying) {
-          synth.pause(); silentAudio.pause(); stopResumeHack(); clearInterval(progressInterval); setUI(false);
-        } else {
-          if (synth.paused && utterance) { synth.resume(); silentAudio.play().catch(()=>{}); startProgressTimer(); startResumeHack(); }
-          else { startSpeaking(); }
-          setUI(true);
-        }
-      };
-
-      const np = playBtn.cloneNode(true); playBtn.parentNode.replaceChild(np, playBtn);
-      np.addEventListener('click', window.toggleAudio);
-      const pc = document.getElementById('progressContainer');
-      if (pc) { pc.addEventListener('click', (e) => { if (!currentText) return; const r = e.currentTarget.getBoundingClientRect(); localStorage.setItem(getStorageKey(), Math.floor(((e.clientX - r.left) / r.width) * currentText.length)); startSpeaking(); setUI(true); }); }
-      
-      // Initialize with estimated time if not playing
-      const lang = localStorage.getItem('lang') || 'id';
-      const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-      if (c) {
-        const text = c.innerText.trim();
-        const saved = parseInt(localStorage.getItem(getStorageKey())) || 0;
-        const remainingChars = text.length - (saved >= text.length ? 0 : saved);
-        audioProgressText.innerText = formatTime(Math.max(0, Math.ceil(remainingChars / 15)));
-        const p = Math.min(((saved >= text.length ? 0 : saved) / (text.length || 1)) * 100, 100);
-        progressBar.style.width = `${p}%`;
       }
     }
 
