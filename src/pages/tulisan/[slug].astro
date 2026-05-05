@@ -237,47 +237,31 @@ const writing = writingMetadata;
       navigator.mediaSession.setActionHandler('pause', () => { if (window.toggleAudio) window.toggleAudio(); });
     }
 
-    function initLanguage() {
-      let currentLang = localStorage.getItem('lang') || 'id';
-      function updateLanguageUI() {
-        const label = document.getElementById('langLabel');
-        if (label) label.innerText = currentLang.toUpperCase();
-        document.querySelectorAll('.lang-text').forEach(el => {
-          el.innerText = currentLang === 'en' ? el.dataset.en : el.dataset.id;
-        });
-        const idC = document.getElementById('contentId'), enC = document.getElementById('contentEn');
-        if (idC && enC) { idC.classList.toggle('hidden', currentLang === 'en'); enC.classList.toggle('hidden', currentLang !== 'en'); }
-      }
-      const langToggle = document.getElementById('langToggle');
-      if (langToggle) {
-        const n = langToggle.cloneNode(true); langToggle.parentNode.replaceChild(n, langToggle);
-        n.addEventListener('click', () => { 
-          // If English version exists, redirect to /en/ route
-          const hasEn = document.getElementById('contentEn') && !document.getElementById('contentEn').innerHTML.includes('marked('); // Simple check if content exists
-          if (hasEn) {
-            localStorage.setItem('lang', 'en');
-            window.location.href = `/en/writing/${slug}`;
-          } else {
-            currentLang = currentLang === 'id' ? 'en' : 'id'; 
-            localStorage.setItem('lang', currentLang); 
-            updateLanguageUI(); 
-          }
-          if (window.stopAudio) window.stopAudio(); 
-        });
-      }
+    function initPage() {
+      // Audio Player and Code Boxes are page-specific
+      if (typeof initAudioPlayer === 'function') initAudioPlayer();
+      if (typeof initCodeBoxes === 'function') initCodeBoxes();
+      
       const copyBtn = document.getElementById('copyText');
       if (copyBtn) {
         const n = copyBtn.cloneNode(true); copyBtn.parentNode.replaceChild(n, copyBtn);
         n.addEventListener('click', async () => {
+          const currentLang = localStorage.getItem('lang') || 'id';
           const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-          try { await navigator.clipboard.writeText(c.innerText); const l = n.querySelector('#copyLabel'); const o = l.innerText; l.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!'; setTimeout(() => { l.innerText = o; }, 2000); } catch(e) {}
+          try { 
+            await navigator.clipboard.writeText(c.innerText); 
+            const l = n.querySelector('#copyLabel'); 
+            const o = l.innerText; 
+            l.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!'; 
+            setTimeout(() => { l.innerText = o; }, 2000); 
+          } catch(e) {}
         });
       }
       const shareIG = document.getElementById('shareIG');
       if (shareIG) {
         const n = shareIG.cloneNode(true); shareIG.parentNode.replaceChild(n, shareIG);
         n.addEventListener('click', () => { 
-          const url = "https://muhdanfyan.github.io" + window.location.pathname;
+          const url = window.location.href;
           if (navigator.share) { 
             navigator.share({ title: document.querySelector('h1').innerText, url: url }); 
           } else { 
@@ -286,7 +270,6 @@ const writing = writingMetadata;
           } 
         });
       }
-      updateLanguageUI();
     }
 
     function formatTime(seconds) {
@@ -439,12 +422,13 @@ const writing = writingMetadata;
       });
     }
 
-    document.addEventListener('astro:page-load', () => { 
-      initLanguage(); 
-      initAudioPlayer(); 
-      initCodeBoxes();
+    document.addEventListener('astro:page-load', initPage);
+    initPage();
+    
+    // Listen for global language changes to stop audio
+    window.addEventListener('lang-changed', () => {
+      if (window.stopAudio) window.stopAudio();
     });
-    initLanguage(); initAudioPlayer(); initCodeBoxes();
   </script>
 </Layout>
 

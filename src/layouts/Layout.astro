@@ -1,5 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -73,7 +75,116 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     </script>
 	</head>
 	<body class="bg-white text-slate-900 font-sans">
+    <Navigation />
 		<slot />
+    <Footer />
+
+    <script is:inline>
+      function updateLanguageUI() {
+        const currentLang = localStorage.getItem('lang') || 'id';
+        const langLabel = document.getElementById('langLabel');
+        if (langLabel) {
+          langLabel.innerText = currentLang.toUpperCase();
+          const langToggle = document.getElementById('langToggle');
+          if (langToggle) {
+            if (currentLang === 'en') {
+              langToggle.classList.add('bg-indigo-600', 'text-white');
+              langToggle.classList.remove('bg-slate-100');
+            } else {
+              langToggle.classList.remove('bg-indigo-600', 'text-white');
+              langToggle.classList.add('bg-slate-100');
+            }
+          }
+        }
+        
+        // Update ALL General Text
+        document.querySelectorAll('.lang-text').forEach(el => {
+          if (el instanceof HTMLElement) {
+            const textID = el.dataset.id;
+            const textEN = el.dataset.en;
+            const newText = currentLang === 'en' ? textEN : textID;
+            
+            if (newText) {
+              let hasUpdated = false;
+              el.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                  node.textContent = node.textContent.startsWith(' ') ? ' ' + newText : newText;
+                  hasUpdated = true;
+                }
+              });
+              if (!hasUpdated && el.children.length === 0) {
+                el.innerText = newText;
+              }
+            }
+          }
+        });
+
+        // Update Content Blocks (for [slug].astro)
+        const idContent = document.getElementById('contentId');
+        const enContent = document.getElementById('contentEn');
+        if (idContent && enContent) {
+          idContent.classList.toggle('hidden', currentLang === 'en');
+          enContent.classList.toggle('hidden', currentLang !== 'en');
+        }
+
+        // Update Projects Visibility & Text
+        document.querySelectorAll('.project-card').forEach(card => {
+          if (card instanceof HTMLElement) {
+            const langs = JSON.parse(card.dataset.langs || '["id", "en"]');
+            card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+            const titleEl = card.querySelector('.project-title');
+            const descEl = card.querySelector('.project-desc');
+            if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+            if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+          }
+        });
+
+        // Update Writings Visibility & Text
+        document.querySelectorAll('.writing-card').forEach(card => {
+          if (card instanceof HTMLElement) {
+            const langs = JSON.parse(card.dataset.langs || '["id", "en"]');
+            card.style.display = langs.includes(currentLang) ? 'flex' : 'none';
+            const titleEl = card.querySelector('.writing-title');
+            const descEl = card.querySelector('.writing-desc');
+            if (titleEl instanceof HTMLElement) titleEl.innerText = currentLang === 'en' ? (titleEl.dataset.en || titleEl.innerText) : (titleEl.dataset.id || titleEl.innerText);
+            if (descEl instanceof HTMLElement) descEl.innerText = currentLang === 'en' ? (descEl.dataset.en || descEl.innerText) : (descEl.dataset.id || descEl.innerText);
+          }
+        });
+      }
+
+      function initGlobal() {
+        if (!localStorage.getItem('lang')) {
+          try {
+            const userLang = navigator.language || '';
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            const isIndonesianTZ = timezone.includes('Jakarta') || timezone.includes('Makassar') || timezone.includes('Jayapura') || timezone.includes('Pontianak');
+            const isIndonesianLang = userLang.toLowerCase().startsWith('id');
+            localStorage.setItem('lang', (isIndonesianTZ || isIndonesianLang) ? 'id' : 'en');
+          } catch (e) {
+            localStorage.setItem('lang', 'id');
+          }
+        }
+        
+        updateLanguageUI();
+
+        const langToggle = document.getElementById('langToggle');
+        if (langToggle) {
+          const newLangToggle = langToggle.cloneNode(true);
+          langToggle.parentNode.replaceChild(newLangToggle, langToggle);
+          newLangToggle.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('lang') || 'id';
+            const newLang = currentLang === 'id' ? 'en' : 'id';
+            localStorage.setItem('lang', newLang);
+            updateLanguageUI();
+            // Dispatch event for components that might need to react (like audio player)
+            window.dispatchEvent(new CustomEvent('lang-changed', { detail: { lang: newLang } }));
+          });
+        }
+      }
+
+      initGlobal();
+      document.addEventListener('astro:page-load', initGlobal);
+    </script>
 	</body>
 </html>
 
