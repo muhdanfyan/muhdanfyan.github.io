@@ -42,7 +42,7 @@ const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="teachingGrid">
       {teaching.map((t) => (
         <div 
-          onclick={`window.location.href='/teach/${t.slug}'`}
+          onclick={`window.location.href='/mengajar/${t.slug}'`}
           class="teaching-card p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col h-full cursor-pointer" 
           data-tags={JSON.stringify([t.event, t.topic, t.content])}
         >

@@ -46,13 +46,13 @@ const education = (fs.existsSync(educationDir) ? fs.readdirSync(educationDir) : 
   .filter(Boolean)
   .sort((a, b) => (a.order || 0) - (b.order || 0));
 
-const teachingDir = path.join(process.cwd(), 'mengajar');
+const teachingDir = path.join(process.cwd(), 'content/teaching');
 const teaching = (fs.existsSync(teachingDir) ? fs.readdirSync(teachingDir) : [])
   .map(slug => {
     const filePath = path.join(teachingDir, slug, 'index.mdoc');
     if (!fs.existsSync(filePath)) return null;
     const { data, content } = matter(fs.readFileSync(filePath, 'utf-8'));
-    return { ...data, content: stripMarkdown(content), slug };
+    return { ...data, content: data.summary || stripMarkdown(content), slug };
   })
   .filter(Boolean)
   .sort((a, b) => (a.order || 0) - (b.order || 0));
