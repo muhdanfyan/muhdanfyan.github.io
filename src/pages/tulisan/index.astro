@@ -93,7 +93,7 @@ const writings = folders
 
     <div class="grid md:grid-cols-2 gap-8" id="writingGrid">
       {writings.map((writing) => (
-        <a href={`/writing/${writing.slug}/`} 
+        <a href={`/tulisan/${writing.slug}/`} 
            class="writing-card flex gap-6 p-6 bg-slate-50 rounded-2xl hover:bg-white border border-transparent hover:border-slate-100 transition-all group" 
            data-langs={JSON.stringify(writing.available_langs)}
            data-category={writing.category}

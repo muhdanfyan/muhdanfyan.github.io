@@ -27,3 +27,4 @@ playwright/.cache/
 mbg-management
 .vercel
 scratch/
+dist/

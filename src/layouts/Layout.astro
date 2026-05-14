@@ -27,7 +27,7 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <meta property="og:url" content={`https://muhdanfyan.github.io${Astro.url.pathname}`} />
 
     <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content={Astro.url.pathname.startsWith('/writing/') ? 'article' : 'website'} />
+    <meta property="og:type" content={Astro.url.pathname.startsWith('/tulisan/') ? 'article' : 'website'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image.startsWith('http') ? image : `https://muhdanfyan.github.io${image.startsWith('/') ? image : '/' + image}`} />

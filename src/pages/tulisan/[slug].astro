@@ -116,7 +116,7 @@ const writing = writingMetadata;
 
     <!-- AI Voice Reader -->
     <div id="audioPlayerContainer" transition:persist class="audio-player mt-16 p-8 bg-gradient-to-br from-slate-50 to-indigo-50/30 rounded-[2rem] border border-slate-100 shadow-sm flex flex-col md:flex-row items-center gap-6">
-      <button id="playAudio" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group active:scale-95">
+      <button id="playAudio" onclick="window.aimanAudioToggle(event)" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group active:scale-95">
         <svg id="playIcon" class="w-8 h-8 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         <svg id="pauseIcon" class="w-8 h-8 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
       </button>
@@ -238,76 +238,131 @@ const writing = writingMetadata;
     }
 
     function initAudioPlayer() {
-      let isPlaying = false, currentText = '', currentAudioIndex = 0;
-      let audioQueue = [];
       const playBtn = document.getElementById('playAudio');
       if (!playBtn) return;
-      const playIcon = document.getElementById('playIcon'), pauseIcon = document.getElementById('pauseIcon');
+
+      // Audio player state — global via window
+      let audioState = window.__audioState = window.__audioState || {
+        isPlaying: false,
+        speechUtterance: null,
+        audioQueue: [],
+        currentAudioIndex: 0
+      };
+
+      const playIcon = document.getElementById('playIcon');
+      const pauseIcon = document.getElementById('pauseIcon');
       const progressBar = document.getElementById('progressBar');
-      
+
       function setUI(playing) {
-        isPlaying = playing;
-        playIcon.classList.toggle('hidden', playing); pauseIcon.classList.toggle('hidden', !playing);
+        audioState.isPlaying = playing;
+        if (playIcon) playIcon.classList.toggle('hidden', playing);
+        if (pauseIcon) pauseIcon.classList.toggle('hidden', !playing);
       }
 
       window.stopAudio = () => {
-        audioQueue.forEach(a => { a.pause(); a.src = ''; });
-        audioQueue = [];
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+        audioState.audioQueue.forEach(a => { try { a.pause(); a.src = ''; } catch(e) {} });
+        audioState.audioQueue = [];
         setUI(false);
-      }
+        if (progressBar) progressBar.style.width = '0%';
+      };
 
-      function playNextChunk() {
-        if (currentAudioIndex < audioQueue.length) {
-          const audio = audioQueue[currentAudioIndex];
-          audio.play().catch(e => {
-            console.error("Audio play failed:", e);
-            currentAudioIndex++;
-            playNextChunk();
-          });
-          audio.onended = () => {
-            currentAudioIndex++;
-            playNextChunk();
-          };
-          const p = ((currentAudioIndex + 1) / audioQueue.length) * 100;
-          progressBar.style.width = `${p}%`;
-        } else {
-          window.stopAudio();
-          progressBar.style.width = '100%';
-        }
-      }
-
-      function startSpeaking() {
-        window.stopAudio();
-        const lang = localStorage.getItem('lang') || 'id';
-        const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-        currentText = c.innerText.trim();
-        if (!currentText) return;
-
-        // Split text into 200-char chunks for Google TTS
-        const chunks = currentText.match(/.{1,200}(?:\s|$|[,.!?])/g) || [currentText];
-        audioQueue = chunks.map(chunk => {
-          const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(chunk)}&tl=${lang}&client=tw-ob`;
-          return new Audio(url);
-        });
-
-        currentAudioIndex = 0;
-        playNextChunk();
-        setUI(true);
-      }
-
-      playBtn.addEventListener('click', () => {
-        if (isPlaying) {
-          audioQueue[currentAudioIndex]?.pause();
-          setUI(false);
-        } else {
-          if (audioQueue.length > 0) {
-            audioQueue[currentAudioIndex]?.play();
-            setUI(true);
-          } else {
-            startSpeaking();
+      window.aimanAudioToggle = (e) => {
+        if (e) e.preventDefault();
+        if (audioState.isPlaying) {
+          // Pause
+          if (audioState.speechUtterance && window.speechSynthesis) {
+            if (window.speechSynthesis.speaking) {
+              window.speechSynthesis.pause();
+              setUI(false);
+              return;
+            } else {
+              window.speechSynthesis.resume();
+              setUI(true);
+              return;
+            }
           }
+          audioState.audioQueue[audioState.currentAudioIndex]?.pause();
+          setUI(false);
+          return;
         }
-      });
+
+        // Play — coba MP3 dulu
+        window.stopAudio();
+        const slugVal = slug || window.location.pathname.split('/').filter(Boolean).pop() || '';
+        const langVal = localStorage.getItem('lang') || 'id';
+        const audioUrl = `/audio/${slugVal}_${langVal}.mp3`;
+
+        const testAudio = new Audio(audioUrl);
+        testAudio.onloadeddata = () => {
+          window.stopAudio();
+          audioState.audioQueue = [testAudio];
+          audioState.currentAudioIndex = 0;
+          testAudio.play().then(() => {
+            setUI(true);
+            testAudio.onended = () => {
+              window.stopAudio();
+              if (progressBar) progressBar.style.width = '100%';
+            };
+            testAudio.ontimeupdate = () => {
+              if (progressBar) progressBar.style.width = `${(testAudio.currentTime / testAudio.duration) * 100}%`;
+            };
+          }).catch(() => useBrowserTTS(slugVal, langVal));
+        };
+        testAudio.onerror = () => useBrowserTTS(slugVal, langVal);
+      };
+
+      function useBrowserTTS(slugVal, langVal) {
+        const lang = langVal || 'id';
+        const content = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
+        const text = content?.innerText?.trim();
+        if (!text) return;
+
+        const synth = window.speechSynthesis;
+        if (!synth) { alert('Browser tidak mendukung text-to-speech'); return; }
+
+        // Dapatkan suara dulu
+        const getVoicesAndSpeak = () => {
+          const voices = synth.getVoices();
+          const prefix = lang === 'en' ? 'en' : 'id';
+          let voice = null;
+          for (const v of voices) {
+            if (!v.lang.startsWith(prefix)) continue;
+            if (!voice) voice = v;
+            if (/microsoft|google|neural|natural/i.test(v.name)) { voice = v; break; }
+          }
+
+          const utter = new SpeechSynthesisUtterance(text);
+          utter.lang = lang === 'en' ? 'en-US' : 'id-ID';
+          utter.rate = 0.9;
+          if (voice) utter.voice = voice;
+
+          audioState.speechUtterance = utter;
+
+          utter.onstart = () => setUI(true);
+          utter.onend = () => { window.stopAudio(); if (progressBar) progressBar.style.width = '100%'; };
+          utter.onerror = () => setUI(false);
+
+          // Progress
+          const words = text.split(/\s+/).length;
+          let spoken = 0;
+          utter.onboundary = (e) => {
+            if (e.name === 'word') { spoken++; if (progressBar) progressBar.style.width = `${Math.min((spoken/words)*100, 99)}%`; }
+          };
+
+          synth.speak(utter);
+        };
+
+        // Voices might be loaded asynchronously
+        const voices = synth.getVoices();
+        if (voices.length > 0) getVoicesAndSpeak();
+        else synth.onvoiceschanged = getVoicesAndSpeak;
+      }
+
+      // Auto-init on Astro page load
+      const init = () => { /* already handled by onclick */ };
+      document.addEventListener('astro:page-load', () => {});
+    }
     }
 
     function initPage() {
@@ -334,13 +389,26 @@ const writing = writingMetadata;
       if (shareIG) {
         const n = shareIG.cloneNode(true); shareIG.parentNode.replaceChild(n, shareIG);
         n.addEventListener('click', () => { 
+          const title = document.querySelector('h1')?.innerText || '';
           const url = window.location.href;
-          if (navigator.share) { 
-            navigator.share({ title: document.querySelector('h1').innerText, url: url }); 
-          } else { 
-            navigator.clipboard.writeText(url); 
-            alert('Link copied!'); 
-          } 
+          const shareText = `${title}\n${url}`;
+          
+          // Copy to clipboard
+          navigator.clipboard.writeText(shareText).then(() => {
+            // Try to open Instagram app
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isMobile) {
+              // Deep link ke Instagram
+              window.location.href = 'instagram://story';
+              // Fallback: buka Play Store / App Store kalau IG ga terinstall
+              setTimeout(() => {
+                window.location.href = 'https://www.instagram.com';
+              }, 500);
+            }
+          }).catch(() => {
+            // Fallback: copy manual
+            prompt('Copy link ini, buka IG Story, tempel:', shareText);
+          });
         });
       }
     }
