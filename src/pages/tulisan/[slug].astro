@@ -370,6 +370,29 @@ const writing = writingMetadata;
       if (typeof initAudioPlayer === 'function') initAudioPlayer();
       if (typeof initCodeBoxes === 'function') initCodeBoxes();
       
+      // Toast notification system
+      function showToast(msg) {
+        const existing = document.getElementById('copyToast');
+        if (existing) existing.remove();
+        const t = document.createElement('div');
+        t.id = 'copyToast';
+        t.innerText = msg;
+        Object.assign(t.style, {
+          position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
+          background: '#0f172a', color: '#fff', padding: '0.75rem 1.5rem',
+          borderRadius: '9999px', fontSize: '0.875rem', fontWeight: '700',
+          boxShadow: '0 10px 25px rgba(0,0,0,0.2)', zIndex: '99999',
+          opacity: '0', transition: 'opacity 0.3s ease',
+          fontFamily: 'Outfit, sans-serif'
+        });
+        document.body.appendChild(t);
+        requestAnimationFrame(() => { t.style.opacity = '1'; });
+        setTimeout(() => {
+          t.style.opacity = '0';
+          setTimeout(() => t.remove(), 300);
+        }, 2000);
+      }
+
       const copyBtn = document.getElementById('copyText');
       if (copyBtn) {
         copyBtn.addEventListener('click', async (e) => {
@@ -378,21 +401,16 @@ const writing = writingMetadata;
           const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
           if (!c) return;
           try { 
-            // Get ALL text content (including hidden English divs)
             let text = '';
             if (currentLang === 'en') {
-              // English: grab visible English content
               const enDiv = c.querySelector('div');
               text = enDiv ? enDiv.innerText : c.innerText;
             } else {
               text = c.innerText;
             }
             await navigator.clipboard.writeText(text.trim()); 
-            const l = document.getElementById('copyLabel'); 
-            if (!l) return;
-            const o = l.innerText; 
-            l.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!'; 
-            setTimeout(() => { l.innerText = o; }, 2000); 
+            const msg = currentLang === 'en' ? '📋 Copied to clipboard!' : '📋 Teks tersalin!';
+            showToast(msg);
           } catch(e) {
             // Fallback
             const textarea = document.createElement('textarea');
@@ -401,6 +419,8 @@ const writing = writingMetadata;
             textarea.select();
             document.execCommand('copy');
             document.body.removeChild(textarea);
+            const msg = currentLang === 'en' ? '📋 Copied to clipboard!' : '📋 Teks tersalin!';
+            showToast(msg);
           }
         });
       }
