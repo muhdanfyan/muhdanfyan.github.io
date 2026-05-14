@@ -372,17 +372,36 @@ const writing = writingMetadata;
       
       const copyBtn = document.getElementById('copyText');
       if (copyBtn) {
-        const n = copyBtn.cloneNode(true); copyBtn.parentNode.replaceChild(n, copyBtn);
-        n.addEventListener('click', async () => {
+        copyBtn.addEventListener('click', async (e) => {
+          e.preventDefault();
           const currentLang = localStorage.getItem('lang') || 'id';
           const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+          if (!c) return;
           try { 
-            await navigator.clipboard.writeText(c.innerText); 
-            const l = n.querySelector('#copyLabel'); 
+            // Get ALL text content (including hidden English divs)
+            let text = '';
+            if (currentLang === 'en') {
+              // English: grab visible English content
+              const enDiv = c.querySelector('div');
+              text = enDiv ? enDiv.innerText : c.innerText;
+            } else {
+              text = c.innerText;
+            }
+            await navigator.clipboard.writeText(text.trim()); 
+            const l = document.getElementById('copyLabel'); 
+            if (!l) return;
             const o = l.innerText; 
             l.innerText = currentLang === 'en' ? 'Copied!' : 'Tersalin!'; 
             setTimeout(() => { l.innerText = o; }, 2000); 
-          } catch(e) {}
+          } catch(e) {
+            // Fallback
+            const textarea = document.createElement('textarea');
+            textarea.value = c.innerText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+          }
         });
       }
       const shareIG = document.getElementById('shareIG');
