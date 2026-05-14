@@ -506,10 +506,15 @@ MUHDAN FYAN
       } catch(e) {}
     }
 
-    document.addEventListener('astro:page-load', initPage);
-    initPage();
+    // Run on every page load (works with Astro client router)  
+    function runInit() {
+      try { if (typeof initPage === 'function') initPage(); } catch(e) {}
+    }
+    document.addEventListener('astro:page-load', runInit);
+    document.addEventListener('DOMContentLoaded', runInit);
+    if (document.readyState !== 'loading') setTimeout(runInit, 100);
     
-    // Listen for global language changes to stop audio
+    // Listen for global language changes
     window.addEventListener('lang-changed', () => {
       if (window.stopAudio) window.stopAudio();
     });
