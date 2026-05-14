@@ -361,13 +361,9 @@ MUHDAN FYAN
     }
     }
 
-    function initPage() {
-      // Audio Player and Code Boxes are page-specific
-      if (typeof initAudioPlayer === 'function') initAudioPlayer();
-      if (typeof initCodeBoxes === 'function') initCodeBoxes();
-      
-      // Toast notification system
-      function showToast(msg) {
+    // Toast notification system (defined BEFORE initPage call)
+    function showToast(msg) {
+      try {
         const existing = document.getElementById('copyToast');
         if (existing) existing.remove();
         const t = document.createElement('div');
@@ -387,108 +383,111 @@ MUHDAN FYAN
           t.style.opacity = '0';
           setTimeout(() => t.remove(), 300);
         }, 2000);
-      }
-
-      const copyBtn = document.getElementById('copyText');
-      if (copyBtn) {
-        copyBtn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          const currentLang = localStorage.getItem('lang') || 'id';
-          const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-          if (!c) return;
-          try { 
-            let text = '';
-            if (currentLang === 'en') {
-              const enDiv = c.querySelector('div');
-              text = enDiv ? enDiv.innerText : c.innerText;
-            } else {
-              text = c.innerText;
-            }
-            await navigator.clipboard.writeText(text.trim()); 
-            const msg = currentLang === 'en' ? '📋 Copied to clipboard!' : '📋 Teks tersalin!';
-            showToast(msg);
-          } catch(e) {
-            // Fallback
-            const textarea = document.createElement('textarea');
-            textarea.value = c.innerText;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            const msg = currentLang === 'en' ? '📋 Copied to clipboard!' : '📋 Teks tersalin!';
-            showToast(msg);
-          }
-        });
-      }
-      const shareIG = document.getElementById('shareIG');
-      if (shareIG) {
-        const n = shareIG.cloneNode(true); shareIG.parentNode.replaceChild(n, shareIG);
-        n.addEventListener('click', () => { 
-          const title = document.querySelector('h1')?.innerText || '';
-          const url = window.location.href;
-          const shareText = `${title}\n${url}`;
-          
-          // Copy to clipboard
-          navigator.clipboard.writeText(shareText).then(() => {
-            // Try to open Instagram app
-            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-            if (isMobile) {
-              // Deep link ke Instagram
-              window.location.href = 'instagram://story';
-              // Fallback: buka Play Store / App Store kalau IG ga terinstall
-              setTimeout(() => {
-                window.location.href = 'https://www.instagram.com';
-              }, 500);
-            }
-          }).catch(() => {
-            // Fallback: copy manual
-            prompt('Copy link ini, buka IG Story, tempel:', shareText);
-          });
-        });
-      }
+      } catch(e) {}
     }
 
     function initCodeBoxes() {
-      document.querySelectorAll('.prose pre').forEach(pre => {
-        if (pre.parentElement.classList.contains('code-box-wrapper')) return;
-
-        // Wrap pre in a container
-        const wrapper = document.createElement('div');
-        wrapper.className = 'code-box-wrapper group';
-        
-        const code = pre.querySelector('code');
-        const lang = Array.from(code.classList).find(c => c.startsWith('language-'))?.replace('language-', '') || 'code';
-        
-        // Header with language and copy button
-        const header = document.createElement('div');
-        header.className = 'code-box-header';
-        header.innerHTML = `
-          <span class="code-lang">${lang.toUpperCase()}</span>
-          <button class="copy-code-btn" title="Copy Code">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-            <span class="copy-label">Copy</span>
-          </button>
-        `;
-
-        pre.parentNode.insertBefore(wrapper, pre);
-        wrapper.appendChild(header);
-        wrapper.appendChild(pre);
-
-        const copyBtn = header.querySelector('.copy-code-btn');
-        const copyLabel = header.querySelector('.copy-label');
-
-        copyBtn.addEventListener('click', async () => {
+      try {
+        document.querySelectorAll('.prose pre').forEach(pre => {
           try {
-            await navigator.clipboard.writeText(code.innerText);
-            copyLabel.innerText = 'Copied!';
-            copyBtn.classList.add('copied');
-            setTimeout(() => {
-              copyLabel.innerText = 'Copy';
-              copyBtn.classList.remove('copied');
-            }, 2000);
-          } catch (err) {}
+            if (pre.parentElement.classList.contains('code-box-wrapper')) return;
+            const code = pre.querySelector('code');
+            if (!code) return;  // skip if no code tag
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = 'code-box-wrapper group';
+            
+            const lang = Array.from(code.classList).find(c => c.startsWith('language-'))?.replace('language-', '') || 'code';
+            
+            const header = document.createElement('div');
+            header.className = 'code-box-header';
+            header.innerHTML = '<span class="code-lang">' + lang.toUpperCase() + '</span><button class="copy-code-btn" title="Copy Code"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg><span class="copy-label">Copy</span></button>';
+
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(header);
+            wrapper.appendChild(pre);
+
+            const cb = header.querySelector('.copy-code-btn');
+            const cl = header.querySelector('.copy-label');
+            if (cb && cl) {
+              cb.addEventListener('click', async function() {
+                try {
+                  await navigator.clipboard.writeText(code.innerText);
+                  cl.innerText = 'Copied!';
+                  cb.classList.add('copied');
+                  setTimeout(() => { cl.innerText = 'Copy'; cb.classList.remove('copied'); }, 2000);
+                } catch(err) {}
+              });
+            }
+          } catch(e) {}
         });
-      });
+      } catch(e) {}
+    }
+
+    function initPage() {
+      try {
+        if (typeof initAudioPlayer === 'function') initAudioPlayer();
+      } catch(e) {}
+      try {
+        if (typeof initCodeBoxes === 'function') initCodeBoxes();
+      } catch(e) {}
+      
+      try {
+        const copyBtn = document.getElementById('copyText');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const currentLang = localStorage.getItem('lang') || 'id';
+            const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+            if (!c) return;
+            try { 
+              let text = '';
+              if (currentLang === 'en') {
+                const enDiv = c.querySelector('div');
+                text = enDiv ? enDiv.innerText : c.innerText;
+              } else {
+                text = c.innerText;
+              }
+              await navigator.clipboard.writeText(text.trim()); 
+              const msg = currentLang === 'en' ? '📋 Copied!' : '📋 Tersalin!';
+              showToast(msg);
+            } catch(e) {
+              try {
+                const textarea = document.createElement('textarea');
+                textarea.value = c.innerText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                const msg = currentLang === 'en' ? '📋 Copied!' : '📋 Tersalin!';
+                showToast(msg);
+              } catch(e2) {}
+            }
+          });
+        }
+      } catch(e) {}
+      
+      try {
+        const shareIG = document.getElementById('shareIG');
+        if (shareIG) {
+          var n = shareIG.cloneNode(true);
+          shareIG.parentNode.replaceChild(n, shareIG);
+          n.addEventListener('click', function() { 
+            var title = document.querySelector('h1')?.innerText || '';
+            var url = window.location.href;
+            var shareText = title + '\n' + url;
+            navigator.clipboard.writeText(shareText).then(function() {
+              var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+              if (isMobile) {
+                window.location.href = 'instagram://story';
+                setTimeout(function() { window.location.href = 'https://www.instagram.com'; }, 500);
+              }
+            }).catch(function() {
+              prompt('Copy link ini, buka IG Story, tempel:', shareText);
+            });
+          });
+        }
+      } catch(e) {}
     }
 
     document.addEventListener('astro:page-load', initPage);
