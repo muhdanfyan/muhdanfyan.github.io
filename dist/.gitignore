@@ -1,2 +1,0 @@
-# Override parent .gitignore — we want everything tracked
-!.gitignore
