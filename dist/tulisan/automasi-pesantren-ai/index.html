@@ -417,6 +417,63 @@ MUHDAN FYAN
 
       initGlobal();
       document.addEventListener('astro:page-load', initGlobal);
+
+      // ======= ARTICLE UTILITIES: Always available (fixes view transition bug) =======
+
+      function aimanToast(msg) {
+        try {
+          const existing = document.getElementById('copyToast');
+          if (existing) existing.remove();
+          const t = document.createElement('div');
+          t.id = 'copyToast';
+          t.innerText = msg;
+          Object.assign(t.style, {
+            position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
+            background: '#0f172a', color: '#fff', padding: '0.75rem 1.5rem',
+            borderRadius: '9999px', fontSize: '0.875rem', fontWeight: '700',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.2)', zIndex: '99999',
+            opacity: '0', transition: 'opacity 0.3s ease',
+            fontFamily: 'Outfit, sans-serif'
+          });
+          document.body.appendChild(t);
+          requestAnimationFrame(() => { t.style.opacity = '1'; });
+          setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 300); }, 2000);
+        } catch(e) {}
+      }
+
+      window.aimanCopyText = window.aimanCopyText || async function(e) {
+        if (e) e.preventDefault();
+        try {
+          const lang = localStorage.getItem('lang') || 'id';
+          const c = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
+          if (!c) return;
+          await navigator.clipboard.writeText(c.innerText.trim());
+          aimanToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
+        } catch(e) {
+          try {
+            const lang = localStorage.getItem('lang') || 'id';
+            const c = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
+            if (!c) return;
+            const ta = document.createElement('textarea');
+            ta.value = c.innerText;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            aimanToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
+          } catch(e2) {}
+        }
+      };
+
+      // Audio toggle stub — overridden by article page on first direct load
+      window.aimanAudioToggle = window.aimanAudioToggle || function(e) {
+        if (e) e.preventDefault();
+        const btn = document.getElementById('playAudio');
+        if (btn) {
+          // Auto-refresh if audio player not initialized
+          location.reload();
+        }
+      };
     </script> </body> </html> <script>(function(){const slug = "automasi-pesantren-ai";
 
     const synth = window.speechSynthesis;
@@ -600,30 +657,6 @@ MUHDAN FYAN
     }
 
     // Toast notification system (defined BEFORE initPage call)
-    function showToast(msg) {
-      try {
-        const existing = document.getElementById('copyToast');
-        if (existing) existing.remove();
-        const t = document.createElement('div');
-        t.id = 'copyToast';
-        t.innerText = msg;
-        Object.assign(t.style, {
-          position: 'fixed', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
-          background: '#0f172a', color: '#fff', padding: '0.75rem 1.5rem',
-          borderRadius: '9999px', fontSize: '0.875rem', fontWeight: '700',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.2)', zIndex: '99999',
-          opacity: '0', transition: 'opacity 0.3s ease',
-          fontFamily: 'Outfit, sans-serif'
-        });
-        document.body.appendChild(t);
-        requestAnimationFrame(() => { t.style.opacity = '1'; });
-        setTimeout(() => {
-          t.style.opacity = '0';
-          setTimeout(() => t.remove(), 300);
-        }, 2000);
-      } catch(e) {}
-    }
-
     function initCodeBoxes() {
       try {
         document.querySelectorAll('.prose pre').forEach(pre => {
@@ -692,31 +725,6 @@ MUHDAN FYAN
         }
       } catch(e) {}
     }
-
-    window.aimanCopyText = async function(e) {
-      if (e) e.preventDefault();
-      try {
-        const lang = localStorage.getItem('lang') || 'id';
-        const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-        if (!c) return;
-        let text = c.innerText.trim();
-        await navigator.clipboard.writeText(text);
-        showToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
-      } catch(e) {
-        try {
-          const textarea = document.createElement('textarea');
-          const lang = localStorage.getItem('lang') || 'id';
-          const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-          if (!c) return;
-          textarea.value = c.innerText;
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand('copy');
-          document.body.removeChild(textarea);
-          showToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
-        } catch(e2) {}
-      }
-    };
 
     // Run on every page load (works with Astro client router)  
     function runInit() {
