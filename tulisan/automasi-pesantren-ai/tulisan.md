@@ -39,6 +39,8 @@ Nah, ini yang menarik. Sekarang ada **AI (Kecerdasan Buatan)**. Bedanya dengan a
 
 Caranya? **Cukup chat.** WhatsApp saja.
 
+Di belakang layar, ada AI assistant yang terhubung dengan workflow otomatis — jadi ketika ustadz atau wali santri chat, pesannya langsung diproses, dicatat, dijawab tanpa perlu manusia di sisi lain.
+
 Mau liat contoh konkret?
 
 ---
@@ -129,6 +131,8 @@ Biar AI yang kerja:
 - Bantu kasih saran pendidikan
 
 Kita? Kita fokus ke hal yang paling penting: **ngajar ngaji, ngasuh santri, dan ngebangun generasi.**
+
+*(Catatan kecil: di balik layar, teknologi seperti AI assistant dan workflow orchestration yang jadi otaknya — tapi intinya tetap sama: pondok yang diuntungkan.)*
 
 ---
 
