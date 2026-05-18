@@ -1,4 +1,4 @@
-# Dari Digitalisasi ke Automasi: Biar AI yang Kerja, Pondok Tinggal Ngaji
+# Sudah Saatnya Pesantren Beralih dari Digitalisasi Menuju Automasi dengan AI
 
 📅 **18 Mei 2026**
 
