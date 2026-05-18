@@ -116,7 +116,7 @@ const writing = writingMetadata;
 
     <!-- AI Voice Reader -->
     <div id="audioPlayerContainer" transition:persist class="audio-player mt-16 p-8 bg-gradient-to-br from-slate-50 to-indigo-50/30 rounded-[2rem] border border-slate-100 shadow-sm flex flex-col md:flex-row items-center gap-6">
-      <button id="playAudio" onclick="window.aimanAudioToggle(event)" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group active:scale-95">
+      <button id="playAudio" data-slug={slug} onclick="window.aimanAudioToggle(event)" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 group active:scale-95">
         <svg id="playIcon" class="w-8 h-8 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         <svg id="pauseIcon" class="w-8 h-8 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
       </button>
@@ -289,7 +289,7 @@ const writing = writingMetadata;
 
         // Play — coba MP3 dulu
         window.stopAudio();
-        const slugVal = slug || window.location.pathname.split('/').filter(Boolean).pop() || '';
+        const slugVal = document.getElementById('playAudio')?.getAttribute('data-slug') || window.location.pathname.split('/').filter(Boolean).pop() || '';
         const langVal = localStorage.getItem('lang') || 'id';
         const audioUrl = `/audio/${slugVal}_${langVal}.mp3`;
 
