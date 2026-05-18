@@ -2,7 +2,7 @@
 
 📅 **18 Mei 2026**
 
-![Pesantren dan AI](https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200)
+![Pesantren dan AI](/img/tulisan/automasi-pesantren-ai.jpg)
 
 Pernah ngalamin? Setiap hari ada absen santri — di buku tulis, atau kadang suka lupa dicatat. Ada yang bayar syahriyah mingguan — catatannya berserakan. Ustadz mau laporan santri — harus nunggu admin ngumpulin data. Pimpinan pondok pengen tau jumlah santri hari ini — kadang gak ada yang update.
 
