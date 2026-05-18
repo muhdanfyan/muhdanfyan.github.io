@@ -155,13 +155,39 @@ MUHDAN FYAN
             window.dispatchEvent(new CustomEvent('lang-changed', { detail: { lang: newLang } }));
           });
         }
+
+        // === ARTICLE UTILITY STUBS (re-set on every load including view transitions) ===
+        window.aimanCopyText = async function(e) {
+          if (e) e.preventDefault();
+          try {
+            const lang = localStorage.getItem('lang') || 'id';
+            const c = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
+            if (!c) return;
+            await navigator.clipboard.writeText(c.innerText.trim());
+            aimanToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
+          } catch(e) {
+            try {
+              const lang = localStorage.getItem('lang') || 'id';
+              const c = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
+              if (!c) return;
+              const ta = document.createElement('textarea');
+              ta.value = c.innerText;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+              aimanToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
+            } catch(e2) {}
+          }
+        };
+        window.aimanAudioToggle = function(e) {
+          if (e) e.preventDefault();
+          const btn = document.getElementById('playAudio');
+          if (btn) location.reload();
+        };
       }
-
-      initGlobal();
-      document.addEventListener('astro:page-load', initGlobal);
-
-      // ======= ARTICLE UTILITIES: Always available (fixes view transition bug) =======
-
+      
+      // Toast utils — available in closure
       function aimanToast(msg) {
         try {
           const existing = document.getElementById('copyToast');
@@ -183,39 +209,8 @@ MUHDAN FYAN
         } catch(e) {}
       }
 
-      window.aimanCopyText = window.aimanCopyText || async function(e) {
-        if (e) e.preventDefault();
-        try {
-          const lang = localStorage.getItem('lang') || 'id';
-          const c = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
-          if (!c) return;
-          await navigator.clipboard.writeText(c.innerText.trim());
-          aimanToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
-        } catch(e) {
-          try {
-            const lang = localStorage.getItem('lang') || 'id';
-            const c = document.getElementById(lang === 'en' ? 'contentEn' : 'contentId');
-            if (!c) return;
-            const ta = document.createElement('textarea');
-            ta.value = c.innerText;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
-            aimanToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
-          } catch(e2) {}
-        }
-      };
-
-      // Audio toggle stub — overridden by article page on first direct load
-      window.aimanAudioToggle = window.aimanAudioToggle || function(e) {
-        if (e) e.preventDefault();
-        const btn = document.getElementById('playAudio');
-        if (btn) {
-          // Auto-refresh if audio player not initialized
-          location.reload();
-        }
-      };
+      initGlobal();
+      document.addEventListener('astro:page-load', initGlobal);
     </script> </body> </html> <script>(function(){const slug = "ai-digital-literacy";
 
     const synth = window.speechSynthesis;
