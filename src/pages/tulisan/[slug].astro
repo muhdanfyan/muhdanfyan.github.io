@@ -170,7 +170,7 @@ const writing = writingMetadata;
           </div>
         </div>
 
-        <button id="copyText" class="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
+        <button id="copyText" onclick="window.aimanCopyText(event)" class="flex items-center gap-2 px-6 py-2.5 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
           <span id="copyLabel" class="lang-text" data-id="Salin Tulisan" data-en="Copy Writing">Salin Tulisan</span>
         </button>
@@ -437,41 +437,6 @@ const writing = writingMetadata;
       } catch(e) {}
       
       try {
-        const copyBtn = document.getElementById('copyText');
-        if (copyBtn) {
-          copyBtn.addEventListener('click', async function(e) {
-            e.preventDefault();
-            const currentLang = localStorage.getItem('lang') || 'id';
-            const c = currentLang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
-            if (!c) return;
-            try { 
-              let text = '';
-              if (currentLang === 'en') {
-                const enDiv = c.querySelector('div');
-                text = enDiv ? enDiv.innerText : c.innerText;
-              } else {
-                text = c.innerText;
-              }
-              await navigator.clipboard.writeText(text.trim()); 
-              const msg = currentLang === 'en' ? '📋 Copied!' : '📋 Tersalin!';
-              showToast(msg);
-            } catch(e) {
-              try {
-                const textarea = document.createElement('textarea');
-                textarea.value = c.innerText;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                const msg = currentLang === 'en' ? '📋 Copied!' : '📋 Tersalin!';
-                showToast(msg);
-              } catch(e2) {}
-            }
-          });
-        }
-      } catch(e) {}
-      
-      try {
         const shareIG = document.getElementById('shareIG');
         if (shareIG) {
           var n = shareIG.cloneNode(true);
@@ -493,6 +458,31 @@ const writing = writingMetadata;
         }
       } catch(e) {}
     }
+
+    window.aimanCopyText = async function(e) {
+      if (e) e.preventDefault();
+      try {
+        const lang = localStorage.getItem('lang') || 'id';
+        const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+        if (!c) return;
+        let text = c.innerText.trim();
+        await navigator.clipboard.writeText(text);
+        showToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
+      } catch(e) {
+        try {
+          const textarea = document.createElement('textarea');
+          const lang = localStorage.getItem('lang') || 'id';
+          const c = lang === 'en' ? document.getElementById('contentEn') : document.getElementById('contentId');
+          if (!c) return;
+          textarea.value = c.innerText;
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          showToast(lang === 'en' ? '📋 Copied!' : '📋 Tersalin!');
+        } catch(e2) {}
+      }
+    };
 
     // Run on every page load (works with Astro client router)  
     function runInit() {
