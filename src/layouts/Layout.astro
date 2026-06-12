@@ -52,6 +52,9 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <meta name="author" content="Muhdan Fyan Syah Sofian" />
     <meta name="theme-color" content="#6366f1" />
 
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,6 +83,13 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
     <Footer />
 
     <script is:inline>
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+
       function updateLanguageUI() {
         const currentLang = localStorage.getItem('lang') || 'id';
         const langLabel = document.getElementById('langLabel');
@@ -207,8 +217,9 @@ const { title, description = "Muhdan Fyan | Full Stack Developer Portfolio", ima
         };
         window.aimanAudioToggle = function(e) {
           if (e) e.preventDefault();
-          const btn = document.getElementById('playAudio');
-          if (btn) location.reload();
+          // Forward ke implementasi di halaman tulisan
+          const detailBtn = document.querySelector('[data-slug]');
+          if (detailBtn) detailBtn.click();
         };
       }
       
