@@ -14,7 +14,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONTENT_DIR = BASE_DIR / "content"
-OUTPUT_DIR = BASE_DIR  # Output di root biar akses via muhdanfyan.github.io/catatan/
+OUTPUT_DIR = BASE_DIR / "dist"  # Output di root biar akses via muhdanfyan.github.io/catatan/
 
 SECTIONS = {
     "catatan": {"title": "Catatan", "icon": "📝", "desc": "Pemikiran, diskusi, dan refleksi"},
