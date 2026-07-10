@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiRangkul — Sistem Rencana Anggaran Kelola Usulan — Muhdan Fyan — Muhdan Fyan</title>
+    <meta name="description" content="# SiRangkul  **SiRangkul** (Sistem Rencana Anggaran Kelola Usulan) adalah aplikasi manajemen pengajuan anggaran berbasis web untuk MAN 2 Kota Makassar.  ## Stac">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            line-height: 1.8;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Nav */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 50;
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid #f1f5f9;
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-top: 16px; padding-bottom: 16px;
+        }
+        nav .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800; font-size: 1.25rem;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+        nav .links { display: flex; gap: 20px; align-items: center; }
+        nav .links a {
+            color: #64748b; text-decoration: none; font-size: 0.875rem; font-weight: 600;
+            transition: color 0.2s;
+        }
+        nav .links a:hover { color: #6366f1; }
+        nav .links .back-btn {
+            padding: 6px 14px; background: #f8fafc; border-radius: 8px;
+            border: 1px solid #e2e8f0; font-size: 0.8rem; font-weight: 600;
+            color: #475569; text-decoration: none; transition: all 0.2s;
+        }
+        nav .links .back-btn:hover { border-color: #6366f1; color: #6366f1; }
+
+        main { padding-top: 80px; padding-bottom: 60px; }
+        
+        /* Header */
+        .page-header { padding: 40px 0 32px; }
+        .page-header .icon { font-size: 2rem; margin-bottom: 8px; }
+        .page-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem; font-weight: 800; color: #0f172a;
+            margin-bottom: 8px;
+        }
+        .page-header p { color: #64748b; font-size: 1rem; }
+
+        /* List */
+        .list { display: flex; flex-direction: column; gap: 12px; }
+        .list-item {
+            display: block; padding: 20px 24px;
+            background: #f8fafc; border: 1px solid #e2e8f0;
+            border-radius: 12px; text-decoration: none;
+            color: inherit; transition: all 0.2s;
+        }
+        .list-item:hover {
+            border-color: #6366f1; background: #f1f5ff;
+            transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.1);
+        }
+        .list-item .title {
+            font-weight: 600; font-size: 1.05rem; color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .list-item .meta {
+            font-size: 0.8rem; color: #94a3b8; display: flex; gap: 12px;
+        }
+        .list-item .meta .tag {
+            padding: 2px 8px; background: #eef2ff; color: #6366f1;
+            border-radius: 4px; font-size: 0.7rem; font-weight: 500;
+        }
+        .list-item .excerpt {
+            font-size: 0.9rem; color: #64748b; margin-top: 6px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* Article */
+        article { padding: 24px 0; }
+        article h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem; font-weight: 800; color: #0f172a;
+            margin-bottom: 8px; line-height: 1.3;
+        }
+        article .article-meta {
+            font-size: 0.85rem; color: #94a3b8; margin-bottom: 32px;
+            padding-bottom: 24px; border-bottom: 1px solid #f1f5f9;
+            display: flex; gap: 16px; flex-wrap: wrap;
+        }
+        article .article-meta .tag {
+            padding: 2px 10px; background: #eef2ff; color: #6366f1;
+            border-radius: 4px; font-size: 0.75rem; font-weight: 500;
+        }
+        article h2 { font-size: 1.4rem; font-weight: 700; margin: 28px 0 12px; color: #0f172a; }
+        article h3 { font-size: 1.15rem; font-weight: 600; margin: 24px 0 8px; color: #1e293b; }
+        article p { margin-bottom: 16px; color: #334155; }
+        article ul, article ol { margin-bottom: 16px; padding-left: 24px; }
+        article li { margin-bottom: 6px; color: #334155; }
+        article blockquote {
+            border-left: 4px solid #6366f1; background: #f8fafc;
+            padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0;
+            color: #475569; font-style: italic;
+        }
+        article code {
+            background: #f1f5f9; padding: 2px 6px; border-radius: 4px;
+            font-size: 0.85em; color: #6366f1;
+        }
+        article pre {
+            background: #0f172a; color: #e2e8f0; padding: 20px; border-radius: 12px;
+            overflow-x: auto; margin: 20px 0; font-size: 0.85rem; line-height: 1.6;
+        }
+        article pre code { background: none; color: inherit; padding: 0; }
+        article img { max-width: 100%; border-radius: 12px; margin: 20px 0; border: 1px solid #f1f5f9; }
+        article a { color: #6366f1; text-decoration: underline; text-underline-offset: 2px; }
+        article hr { border: none; border-top: 1px solid #e2e8f0; margin: 32px 0; }
+        article table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        article th, article td { padding: 10px 14px; border: 1px solid #e2e8f0; text-align: left; font-size: 0.9rem; }
+        article th { background: #f8fafc; font-weight: 600; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 40px 0; font-size: 0.8rem; color: #94a3b8;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        @media (max-width: 640px) {
+            .page-header h1 { font-size: 1.6rem; }
+            article h1 { font-size: 1.5rem; }
+            nav .links .desktop-only { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">MUHDAN FYAN</a>
+            <div class="links">
+                <a href="/" class="desktop-only">Beranda</a>
+                <a href="/catatan/" class="desktop-only">Catatan</a><a href="/laporan/" class="desktop-only">Laporan</a><a href="/project/" class="desktop-only">Proyek</a>
+                <a href="/" class="back-btn">← Kembali</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            
+        <article>
+            <h1>SiRangkul — Sistem Rencana Anggaran Kelola Usulan</h1>
+            <div class="article-meta">
+                <span>10 Jul 2026</span>
+                <span class="tag">[sirangkul</span><span class="tag">dokumentasi</span><span class="tag">man2-makassar]</span>
+            </div>
+            <br>
+<p><strong>SiRangkul</strong> (Sistem Rencana Anggaran Kelola Usulan) adalah aplikasi manajemen pengajuan anggaran berbasis web untuk MAN 2 Kota Makassar.</p>
+<br>
+<h2>Stack Teknis</h2>
+<br>
+<ul>
+<li>**Backend**: Laravel 11 (PHP 8.3)</li>
+<li>**Frontend**: React + Vite (SPA)</li>
+<li>**Database**: MySQL 8</li>
+<li>**Server**: Nginx, VPS 89.233.105.92</li>
+<li>**Domain**: sirangkul.man2kotamakassar.sch.id</li>
+</ul>
+<h2>Alur Persetujuan</h2>
+<br>
+<ol>
+<li>**Pengusul** → Membuat & mengajukan proposal (status: `draft` → `submitted`)</li>
+<li>**Verifikator** → Memeriksa kelengkapan (status: `submitted` → `verified`)</li>
+<li>**Komite Madrasah** → Menyetujui secara komite (status: `verified` → `approved`)</li>
+<li>**Kepala Madrasah** → Persetujuan akhir (status: `approved` → `final_approved`)</li>
+<li>**Bendahara** → Pemrosesan pembayaran (status: `final_approved` → `payment_processing` → `completed`)</li>
+</ol>
+<h2>Struktur Database</h2>
+<br>
+<p>Tabel utama:</p>
+<ul>
+<li>`users` — User dengan role UUID</li>
+<li>`proposals` — Data pengajuan dengan status workflow</li>
+<li>`rkam` — Rencana Kegiatan dan Anggaran Madrasah</li>
+<li>`audit_logs` — Catatan semua aktivitas</li>
+<li>`payments` — Data pembayaran</li>
+</ul>
+<h2>Catatan Penting</h2>
+<br>
+<ul>
+<li>Ada issue bypass approval: proposal langsung `draft → final_approved` tanpa mengisi kolom `approved_by` dan `final_approved_by`</li>
+<li>Role `administrator` ada 3 user — perlu dibersihkan agar hanya 1</li>
+</ul>
+
+        </article>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            © 2026 Muhdan Fyan Syah Sofian
+        </div>
+    </footer>
+</body>
+</html>
