@@ -215,6 +215,63 @@ def parse_frontmatter(text):
     return fm, rest
 
 
+def parse_table_block(lines, start):
+    """Parse a markdown table block starting at line `start`.
+    Returns (html_table_block, next_line_index).
+    Assumes lines[start] starts with '|'.
+    """
+    rows = []
+    i = start
+    while i < len(lines) and lines[i].strip().startswith("|"):
+        rows.append(lines[i].strip())
+        i += 1
+    # Filter out separator row (|---|---|)
+    header_row = None
+    data_rows = []
+    for r in rows:
+        # Check if it's a separator row (only |, -, :, spaces)
+        clean = r.replace("|", "").replace("-", "").replace(":", "").strip()
+        if clean == "":
+            continue  # skip separator
+        if header_row is None:
+            header_row = r
+        else:
+            data_rows.append(r)
+    if not header_row:
+        return "", start
+    # Parse cells
+    def split_cells(row):
+        cells = [c.strip() for c in row.strip().strip("|").split("|")]
+        # Apply inline formatting to each cell
+        formatted = []
+        for c in cells:
+            c = apply_inline(c)
+            formatted.append(c)
+        return formatted
+    html = "<table>\n<thead>\n<tr>\n"
+    for cell in split_cells(header_row):
+        html += f"  <th>{cell}</th>\n"
+    html += "</tr>\n</thead>\n<tbody>\n"
+    for row in data_rows:
+        html += "<tr>\n"
+        for cell in split_cells(row):
+            html += f"  <td>{cell}</td>\n"
+        html += "</tr>\n"
+    html += "</tbody>\n</table>\n"
+    return html, i
+
+
+def apply_inline(text):
+    """Apply inline markdown formatting: bold, italic, code, links, images."""
+    t = text
+    t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+    t = re.sub(r'\*(.+?)\*', r'<em>\1</em>', t)
+    t = re.sub(r'`(.+?)`', r'<code>\1</code>', t)
+    t = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', t)
+    t = re.sub(r'!\[(.+?)\]\((.+?)\)', r'<img src="\2" alt="\1">', t)
+    return t
+
+
 def md_to_html(text):
     """Simple markdown to HTML converter."""
     html = ""
@@ -256,20 +313,32 @@ def md_to_html(text):
             i += 1
             continue
         
+        # TABLE — line starts with |
+        if line.strip().startswith("|"):
+            table_html, next_i = parse_table_block(lines, i)
+            if table_html and next_i > i:
+                html += table_html
+                i = next_i
+                continue
+            # Fallback: treat as regular paragraph
+            i += 1
+            content = apply_inline(line.strip())
+            html += f"<p>{content}</p>\n"
+            continue
+        
         # Headers
         if line.startswith("## "):
-            html += f"<h2>{line[3:]}</h2>\n"
+            html += f"<h2>{apply_inline(line[3:])}</h2>\n"
         elif line.startswith("### "):
-            html += f"<h3>{line[4:]}</h3>\n"
+            html += f"<h3>{apply_inline(line[4:])}</h3>\n"
         elif line.startswith("# "):
-            # Skip H1 (used as title from frontmatter)
-            pass
+            pass  # Skip H1 (used as title from frontmatter)
         # Horizontal rule
         elif line.strip() in ("---", "***", "___"):
             html += "<hr>\n"
         # Blockquote
         elif line.startswith("> "):
-            html += f"<blockquote><p>{line[2:]}</p></blockquote>\n"
+            html += f"<blockquote><p>{apply_inline(line[2:])}</p></blockquote>\n"
         # Unordered list
         elif line.strip().startswith("- ") or line.strip().startswith("* "):
             if not in_list or list_type != "ul":
@@ -278,7 +347,7 @@ def md_to_html(text):
                 html += "<ul>\n"
                 in_list = True
                 list_type = "ul"
-            content = line.strip()[2:]
+            content = apply_inline(line.strip()[2:])
             html += f"<li>{content}</li>\n"
         # Ordered list
         elif re.match(r'^\d+[.)]\s', line.strip()):
@@ -288,7 +357,7 @@ def md_to_html(text):
                 html += "<ol>\n"
                 in_list = True
                 list_type = "ol"
-            content = re.sub(r'^\d+[.)]\s', '', line.strip())
+            content = apply_inline(re.sub(r'^\d+[.)]\s', '', line.strip()))
             html += f"<li>{content}</li>\n"
         # Empty line
         elif not line.strip():
@@ -297,16 +366,7 @@ def md_to_html(text):
             html += "<br>\n"
         # Paragraph (fallback)
         else:
-            # Inline formatting
-            content = line
-            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
-            content = re.sub(r'\*(.+?)\*', r'<em>\1</em>', content)
-            content = re.sub(r'`(.+?)`', r'<code>\1</code>', content)
-            # Links
-            content = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', content)
-            # Images
-            content = re.sub(r'!\[(.+?)\]\((.+?)\)', r'<img src="\2" alt="\1">', content)
-            html += f"<p>{content}</p>\n"
+            html += f"<p>{apply_inline(line)}</p>\n"
         i += 1
     
     if in_list:
