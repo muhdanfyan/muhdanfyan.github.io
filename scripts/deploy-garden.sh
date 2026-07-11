@@ -4,6 +4,10 @@
 
 set -e
 
+echo "=== GENERATE LAPORAN ==="
+python3 scripts/generate-laporan.py
+
+echo ""
 echo "=== BUILD GARDEN ==="
 python3 scripts/build_garden.py
 
