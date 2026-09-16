@@ -172,36 +172,36 @@
 <h2>Stack Teknis</h2>
 <br>
 <ul>
-<li><strong>Backend</strong>: Laravel 11 (PHP 8.3)</li>
-<li><strong>Frontend</strong>: React + Vite (SPA)</li>
-<li><strong>Database</strong>: MySQL 8</li>
-<li><strong>Server</strong>: Nginx, VPS 89.233.105.92</li>
-<li><strong>Domain</strong>: sirangkul.man2kotamakassar.sch.id</li>
+<li>**Backend**: Laravel 11 (PHP 8.3)</li>
+<li>**Frontend**: React + Vite (SPA)</li>
+<li>**Database**: MySQL 8</li>
+<li>**Server**: Nginx, VPS 89.233.105.92</li>
+<li>**Domain**: sirangkul.man2kotamakassar.sch.id</li>
 </ul>
 <h2>Alur Persetujuan</h2>
 <br>
 <ol>
-<li><strong>Pengusul</strong> → Membuat & mengajukan proposal (status: <code>draft</code> → <code>submitted</code>)</li>
-<li><strong>Verifikator</strong> → Memeriksa kelengkapan (status: <code>submitted</code> → <code>verified</code>)</li>
-<li><strong>Komite Madrasah</strong> → Menyetujui secara komite (status: <code>verified</code> → <code>approved</code>)</li>
-<li><strong>Kepala Madrasah</strong> → Persetujuan akhir (status: <code>approved</code> → <code>final_approved</code>)</li>
-<li><strong>Bendahara</strong> → Pemrosesan pembayaran (status: <code>final_approved</code> → <code>payment_processing</code> → <code>completed</code>)</li>
+<li>**Pengusul** → Membuat & mengajukan proposal (status: `draft` → `submitted`)</li>
+<li>**Verifikator** → Memeriksa kelengkapan (status: `submitted` → `verified`)</li>
+<li>**Komite Madrasah** → Menyetujui secara komite (status: `verified` → `approved`)</li>
+<li>**Kepala Madrasah** → Persetujuan akhir (status: `approved` → `final_approved`)</li>
+<li>**Bendahara** → Pemrosesan pembayaran (status: `final_approved` → `payment_processing` → `completed`)</li>
 </ol>
 <h2>Struktur Database</h2>
 <br>
 <p>Tabel utama:</p>
 <ul>
-<li><code>users</code> — User dengan role UUID</li>
-<li><code>proposals</code> — Data pengajuan dengan status workflow</li>
-<li><code>rkam</code> — Rencana Kegiatan dan Anggaran Madrasah</li>
-<li><code>audit_logs</code> — Catatan semua aktivitas</li>
-<li><code>payments</code> — Data pembayaran</li>
+<li>`users` — User dengan role UUID</li>
+<li>`proposals` — Data pengajuan dengan status workflow</li>
+<li>`rkam` — Rencana Kegiatan dan Anggaran Madrasah</li>
+<li>`audit_logs` — Catatan semua aktivitas</li>
+<li>`payments` — Data pembayaran</li>
 </ul>
 <h2>Catatan Penting</h2>
 <br>
 <ul>
-<li>Ada issue bypass approval: proposal langsung <code>draft → final_approved</code> tanpa mengisi kolom <code>approved_by</code> dan <code>final_approved_by</code></li>
-<li>Role <code>administrator</code> ada 3 user — perlu dibersihkan agar hanya 1</li>
+<li>Ada issue bypass approval: proposal langsung `draft → final_approved` tanpa mengisi kolom `approved_by` dan `final_approved_by`</li>
+<li>Role `administrator` ada 3 user — perlu dibersihkan agar hanya 1</li>
 </ul>
 
         </article>
