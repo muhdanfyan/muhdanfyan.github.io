@@ -233,11 +233,31 @@ def esc(s) -> str:
     return html.escape(str(s if s is not None else ""), quote=True)
 
 
+FALLBACK_IMG = "/img/screenshots/default.png"
+# Direktori tempat gambar bisa berada (untuk validasi keberadaan file)
+IMG_ROOTS = [BASE / "public", BASE, DIST.parent]
+
+
+def resolve_img(path: str) -> str:
+    """Kembalikan path gambar; pakai fallback kalau file lokal tidak ada."""
+    if not path:
+        return FALLBACK_IMG
+    # Gambar eksternal (http/https) — pakai apa adanya
+    if path.startswith(("http://", "https://")):
+        return path
+    rel = path.lstrip("/")
+    for root in IMG_ROOTS:
+        if (root / rel).is_file():
+            return path
+    # Tidak ketemu — cari fallback di public/img/screenshots
+    return FALLBACK_IMG
+
+
 def build_index(entries: list[dict]) -> str:
     cards = []
     for e in entries:
         slug = e["slug"]
-        img = e.get("image", "")
+        img = resolve_img(e.get("image", ""))
         period = e.get("period", "")
         event = e.get("event", slug)
         topic = e.get("topic", "")
@@ -267,7 +287,7 @@ def build_detail(e: dict) -> str:
     event = e.get("event", slug)
     topic = e.get("topic", "")
     period = e.get("period", "")
-    img = e.get("image", "")
+    img = resolve_img(e.get("image", ""))
     link = e.get("link", "")
     body_html = e.get("_body_html", "")
 

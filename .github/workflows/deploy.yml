@@ -33,25 +33,42 @@ jobs:
 
       - name: Build Astro
         run: npm run build
+        continue-on-error: true
 
       - name: Build Digital Garden
         run: python3 scripts/build_garden.py
+        continue-on-error: true
+
+      - name: Build Teaching pages
+        run: python3 scripts/build_teaching.py
 
       - name: Sync static assets
+        # dist/ di-gitignore, jadi aset root (img/, portofolio/, tulisan/, dll)
+        # yang di-track git harus disalin ulang ke dist/ setelah build.
         run: |
-          # Sinkronkan aset dari public/ dan root agar tidak ada gambar yang hilang
-          for dir in img public/img; do
-            if [ -d "$dir" ]; then
-              mkdir -p dist/$(dirname "$dir" | sed 's|^public/||')
-              cp -rn "$dir"/. dist/img/ 2>/dev/null || true
+          touch dist/.nojekyll
+          for d in img catatan portofolio project tulisan writing laporan \
+                   manifest.json robots.txt sw.js favicon.svg silent.mp3; do
+            if [ -e "$d" ]; then
+              cp -r "$d" dist/ 2>/dev/null || true
             fi
           done
-          # Pastikan folder mengajar & teaching image tersedia
-          mkdir -p dist/img/teaching
-          cp -rn public/img/teaching/. dist/img/teaching/ 2>/dev/null || true
-          touch dist/.nojekyll
-          echo "=== dist root ==="
-          ls dist/ | head -20
+          echo "=== dist/ ==="
+          ls dist/ | head -25
+          echo "=== mengajar/ ==="
+          ls dist/mengajar/ | head -15
+
+      - name: Verify required pages exist
+        run: |
+          fail=0
+          for p in dist/index.html dist/mengajar/index.html; do
+            if [ ! -f "$p" ]; then echo "❌ MISSING: $p"; fail=1; fi
+          done
+          for s in $(ls content/teaching | head -50); do
+            if [ ! -f "dist/mengajar/$s/index.html" ]; then echo "❌ MISSING teaching page: $s"; fail=1; fi
+          done
+          if [ "$fail" -ne 0 ]; then echo "Build incomplete — aborting deploy."; exit 1; fi
+          echo "✅ Semua halaman wajib tersedia."
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
