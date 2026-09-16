@@ -51,12 +51,24 @@ jobs:
       - name: Verify required pages exist
         run: |
           fail=0
+          total=$(ls content/teaching | wc -l)
           for p in dist/index.html dist/mengajar/index.html; do
             if [ ! -f "$p" ]; then echo "❌ MISSING: $p"; fail=1; fi
           done
-          for s in $(ls content/teaching | head -50); do
-            if [ ! -f "dist/mengajar/$s/index.html" ]; then echo "❌ MISSING teaching page: $s"; fail=1; fi
+          # Setiap entri di content/teaching HARUS punya halaman ter-generate,
+          # DAN halaman index harus memuat card-nya. Ini mencegah bug halaman
+          # baru hilang karena tertimpa aset lama.
+          found=0
+          for s in $(ls content/teaching); do
+            found=$((found+1))
+            if [ ! -f "dist/mengajar/$s/index.html" ]; then
+              echo "❌ MISSING teaching page: $s"; fail=1
+            fi
+            if ! grep -q "/mengajar/$s" dist/mengajar/index.html; then
+              echo "❌ Tidak ada card di index untuk: $s"; fail=1
+            fi
           done
+          echo "📊 Halaman teaching terverifikasi: $found / $total"
           if [ "$fail" -ne 0 ]; then echo "Build incomplete — aborting deploy."; exit 1; fi
           echo "✅ Semua halaman wajib tersedia."
 

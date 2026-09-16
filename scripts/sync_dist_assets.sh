@@ -24,6 +24,9 @@ if [ -f index.html ]; then
 fi
 
 # 2. Folder & file statis yang di-track git → salin ke dist/
+#    PENTING: `mengajar` TIDAK termasuk di sini — folder itu di-generate
+#    oleh build_teaching.py. Kalau ikut disalin, versi lama dari git akan
+#    MENIMPA halaman baru hasil generator (bug: halaman baru 404).
 for item in img catatan portofolio project tulisan writing laporan \
             manifest.json robots.txt sw.js favicon.svg silent.mp3 \
             sitemap-index.xml garden-sitemap.xml; do
