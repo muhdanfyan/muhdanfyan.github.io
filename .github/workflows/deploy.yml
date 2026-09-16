@@ -43,20 +43,10 @@ jobs:
         run: python3 scripts/build_teaching.py
 
       - name: Sync static assets
-        # dist/ di-gitignore, jadi aset root (img/, portofolio/, tulisan/, dll)
-        # yang di-track git harus disalin ulang ke dist/ setelah build.
-        run: |
-          touch dist/.nojekyll
-          for d in img catatan portofolio project tulisan writing laporan \
-                   manifest.json robots.txt sw.js favicon.svg silent.mp3; do
-            if [ -e "$d" ]; then
-              cp -r "$d" dist/ 2>/dev/null || true
-            fi
-          done
-          echo "=== dist/ ==="
-          ls dist/ | head -25
-          echo "=== mengajar/ ==="
-          ls dist/mengajar/ | head -15
+        # dist/ di-gitignore, jadi `astro build` membuat dist/ dari nol.
+        # index.html root + folder statis lain di-track git — script ini
+        # menyalinnya balik ke dist/ (lihat scripts/sync_dist_assets.sh).
+        run: bash scripts/sync_dist_assets.sh
 
       - name: Verify required pages exist
         run: |
