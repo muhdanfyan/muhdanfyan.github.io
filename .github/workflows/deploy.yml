@@ -6,12 +6,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,7 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
@@ -32,23 +33,33 @@ jobs:
 
       - name: Build Astro
         run: npm run build
-        continue-on-error: true
 
       - name: Build Digital Garden
         run: python3 scripts/build_garden.py
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
+      - name: Sync static assets
+        run: |
+          # Sinkronkan aset dari public/ dan root agar tidak ada gambar yang hilang
+          for dir in img public/img; do
+            if [ -d "$dir" ]; then
+              mkdir -p dist/$(dirname "$dir" | sed 's|^public/||')
+              cp -rn "$dir"/. dist/img/ 2>/dev/null || true
+            fi
+          done
+          # Pastikan folder mengajar & teaching image tersedia
+          mkdir -p dist/img/teaching
+          cp -rn public/img/teaching/. dist/img/teaching/ 2>/dev/null || true
+          touch dist/.nojekyll
+          echo "=== dist root ==="
+          ls dist/ | head -20
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: false
+          user_name: 'muhdanfyan'
+          user_email: 'muhdanfyan@gmail.com'
+          commit_message: 'deploy: ${{ github.event.head_commit.message }}'
