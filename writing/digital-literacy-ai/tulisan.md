@@ -1,0 +1,27 @@
+# Pentingnya Literasi Digital di Era AI 🤖
+
+📅 **24 April 2026**
+
+![Digital Literacy](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200)
+
+Di era [**kecerdasan buatan (*Artificial Intelligence*)**](https://id.wikipedia.org/wiki/Kecerdasan_buatan) yang berkembang pesat ini, literasi digital bukan lagi sekadar kemampuan menggunakan perangkat komputer. Ini adalah tentang kemampuan untuk memahami, mengevaluasi, dan menggunakan informasi yang dihasilkan oleh AI secara kritis.
+
+---
+
+### 🇮🇩 Mengapa Ini Krusial untuk Kita?
+Bagi pengembang dan pengguna teknologi di Indonesia, **tantangan terbesar** bukanlah akses ke teknologi, melainkan bagaimana menyaring informasi. 
+
+1. **Verifikasi Informasi:** Membedakan antara fakta nyata dan "[**halusinasi" AI (*AI Hallucinations*)**](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)).
+2. **Efisiensi Kerja:** Menggunakan *tools* AI seperti [**Claude**](https://claude.ai/) atau [**ChatGPT**](https://chatgpt.com/) untuk meningkatkan produktivitas tanpa kehilangan sentuhan personal.
+3. **Etika Berteknologi:** Memahami batasan hukum saat menggunakan AI.
+
+---
+
+### 💡 Menjadi Pengguna AI yang Bijak
+> "AI tidak akan menggantikan manusia, tapi orang yang menggunakan AI akan menggantikan mereka yang tidak menggunakannya."
+
+Kita harus memandang AI sebagai ***copilot***, bukan pengganti otak kita. **Literasi adalah tameng kita.**
+
+---
+**Sumber:** Pemikiran Pribadi | **Penulis:** Muhdan Fyan Syah Sofian
+*Ditulis menggunakan Gemini CLI*
