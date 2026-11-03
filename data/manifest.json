@@ -149,6 +149,7 @@
       "project_type": "Government",
       "difficulty_level": "Expert",
       "difficulty_score": 98,
+      "status": "Running",
       "is_featured": true
     },
     {
@@ -256,6 +257,7 @@
       "project_type": "Personal/Education",
       "difficulty_level": "Advanced",
       "difficulty_score": 92,
+      "status": "Running",
       "is_featured": true
     },
     {
@@ -433,6 +435,7 @@
       "project_type": "Personal/Education",
       "difficulty_level": "Intermediate",
       "difficulty_score": 80,
+      "status": "Running",
       "is_featured": false
     },
     {

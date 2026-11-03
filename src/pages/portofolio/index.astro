@@ -38,6 +38,12 @@ const projects = manifest.portfolio;
                   }`}>
                     {project.difficulty_level || 'Intermediate'}
                   </span>
+                  {project.status && (
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded-full flex items-center gap-1">
+                      <span class="w-1 h-1 bg-emerald-500 rounded-full animate-pulse"></span>
+                      {project.status}
+                    </span>
+                  )}
                 </div>
               </div>
               <p class="text-slate-600 text-sm mb-6 line-clamp-2 project-desc" data-id={project.description} data-en={project.description_en}>{project.description}</p>
