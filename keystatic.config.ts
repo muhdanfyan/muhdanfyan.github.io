@@ -28,7 +28,7 @@ export default config({
     writing: collection({
       label: 'Tulisan (Utama/ID)',
       slugField: 'slug', 
-      path: 'content/writing/*/',
+      path: 'tulisan/*/',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
@@ -68,7 +68,7 @@ export default config({
     writing_en: collection({
       label: 'Tulisan (Versi English)',
       slugField: 'slug', 
-      path: 'content/writing/*/index.en',
+      path: 'tulisan/*/index.en',
       format: { contentField: 'content' },
       entryLayout: 'content',
       schema: {
@@ -124,6 +124,16 @@ export default config({
           best_practices: fields.integer({ label: 'Best Practices', defaultValue: 100 }),
           seo: fields.integer({ label: 'SEO', defaultValue: 100 }),
         }, { label: 'Lighthouse Metrics' }),
+        status: fields.select({
+          label: 'Status Proyek',
+          options: [
+            { label: 'Running', value: 'Running' },
+            { label: 'Development', value: 'Development' },
+            { label: 'Maintenance', value: 'Maintenance' },
+            { label: 'Completed', value: 'Completed' },
+          ],
+          defaultValue: 'Running',
+        }),
         is_featured: fields.checkbox({ label: 'Tampilkan di Homepage', defaultValue: false }),
         content: fields.markdoc({ label: 'Detail Proyek' }),
       },
