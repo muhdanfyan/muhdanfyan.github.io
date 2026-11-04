@@ -40,3 +40,4 @@ const { filePath } = Astro.props;
 const html = fs.readFileSync(filePath, 'utf-8');
 ---
 <Fragment set:html={html} />
+
