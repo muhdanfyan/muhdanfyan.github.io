@@ -28,3 +28,6 @@ mbg-management
 .vercel
 scratch/
 dist/
+
+# Runtime logs must never create deployment commits
+garden-deploy.log
