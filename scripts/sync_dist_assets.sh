@@ -16,18 +16,21 @@ BASE="$(pwd)"
 
 echo "=== Sync aset statis ke dist/ ==="
 
+mkdir -p dist
+
 # 1. index.html root SELALU menang (punya card teaching terbaru).
 #    Astro build menghasilkan index minimal tanpa konten teaching.
 if [ -f index.html ]; then
   cp index.html dist/index.html
-  echo "  ✓ index.html (dari root, $(stat -c%s index.html) bytes)"
+  SIZE=$(stat -c%s index.html 2>/dev/null || stat -f%z index.html 2>/dev/null || echo "0")
+  echo "  ✓ index.html (dari root, ${SIZE} bytes)"
 fi
 
 # 2. Folder & file statis yang di-track git → salin ke dist/
 #    PENTING: `mengajar` TIDAK termasuk di sini — folder itu di-generate
 #    oleh build_teaching.py. Kalau ikut disalin, versi lama dari git akan
 #    MENIMPA halaman baru hasil generator (bug: halaman baru 404).
-for item in img catatan portofolio project tulisan writing laporan \
+for item in assets img catatan portofolio project tulisan writing laporan \
             manifest.json robots.txt sw.js favicon.svg silent.mp3 \
             sitemap-index.xml garden-sitemap.xml; do
   if [ -e "$item" ]; then
