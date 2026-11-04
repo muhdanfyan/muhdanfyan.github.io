@@ -1,0 +1,42 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  const dirs = ['mengajar', 'tulisan', 'portofolio', 'catatan', 'laporan', 'project'];
+  const paths: Array<{ params: { slug: string }; props: { filePath: string } }> = [];
+
+  for (const dir of dirs) {
+    const fullDirPath = path.resolve(process.cwd(), dir);
+    if (!fs.existsSync(fullDirPath)) continue;
+
+    function scan(currentDir: string, currentSlug: string) {
+      const items = fs.readdirSync(currentDir, { withFileTypes: true });
+      for (const item of items) {
+        if (item.isDirectory()) {
+          scan(path.join(currentDir, item.name), `${currentSlug}/${item.name}`);
+        } else if (item.name === 'index.html' && currentSlug !== dir) {
+          paths.push({
+            params: { slug: currentSlug },
+            props: { filePath: path.join(currentDir, item.name) }
+          });
+        }
+      }
+    }
+
+    if (fs.existsSync(path.join(fullDirPath, 'index.html'))) {
+      paths.push({
+        params: { slug: dir },
+        props: { filePath: path.join(fullDirPath, 'index.html') }
+      });
+    }
+    scan(fullDirPath, dir);
+  }
+
+  return paths;
+}
+
+const { filePath } = Astro.props;
+const html = fs.readFileSync(filePath, 'utf-8');
+---
+<Fragment set:html={html} />
