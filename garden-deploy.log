@@ -111404,3 +111404,112 @@ Already up to date.
    📍 https://muhdanfyan.github.io/laporan/
    📍 https://muhdanfyan.github.io/project/
   ✅ Build selesai
+[main ca0a21a] gardener: auto-build 2026-11-04 19:30
+ 1 file changed, 20 insertions(+)
+  ✅ Push ke GitHub Pages selesai
+[2026-11-04 19:30:05] ✅ Selesai!
+
+[2026-11-04 20:00:01] 🌱 Memulai deploy Digital Garden...
+Updating ca0a21a..b105af7
+Fast-forward
+ portofolio/index.html                              | 664 ++++++++++-----------
+ public/img/ai-landscape-cover.jpg                  | Bin 0 -> 161121 bytes
+ public/img/gadget-addiction.jpg                    | Bin 0 -> 25008 bytes
+ public/img/generated-gadget-addiction.jpg          | Bin 0 -> 79228 bytes
+ public/img/generated-gadget-addiction.png          | Bin 0 -> 74781 bytes
+ public/img/humankind-cover.jpg                     | Bin 0 -> 86197 bytes
+ public/img/indonesia-engineering-risk.jpg          | Bin 0 -> 256338 bytes
+ public/img/indonesia-engineering-risk.png          | Bin 0 -> 737442 bytes
+ public/img/screenshots/asesmen.png                 | Bin 0 -> 249158 bytes
+ public/img/screenshots/bearboy.png                 | Bin 0 -> 374852 bytes
+ public/img/screenshots/cekpondok.png               | Bin 0 -> 95941 bytes
+ public/img/screenshots/demopisantri.png            | Bin 0 -> 270668 bytes
+ public/img/screenshots/e-retribusi.png             | Bin 0 -> 142180 bytes
+ public/img/screenshots/kassaapp.png                | Bin 0 -> 156462 bytes
+ public/img/screenshots/kassaone.png                | Bin 0 -> 170684 bytes
+ public/img/screenshots/mbgman.png                  | Bin 0 -> 142889 bytes
+ public/img/screenshots/pesantrenteknologi.png      | Bin 0 -> 270668 bytes
+ public/img/screenshots/pisantri.png                | Bin 0 -> 202955 bytes
+ public/img/screenshots/profilsantri.png            | Bin 0 -> 464865 bytes
+ public/img/screenshots/quiz-funwalhutmk2025.png    | Bin 0 -> 327327 bytes
+ public/img/screenshots/quizfunwalk.png             | Bin 0 -> 331062 bytes
+ public/img/screenshots/retribusi-admin.png         | Bin 0 -> 284854 bytes
+ public/img/screenshots/risethub.png                | Bin 0 -> 367474 bytes
+ public/img/screenshots/simkes.png                  | Bin 0 -> 182667 bytes
+ public/img/screenshots/sirangkul.png               | Bin 0 -> 646841 bytes
+ public/img/screenshots/sukrigrafis.png             | Bin 0 -> 50493 bytes
+ public/img/screenshots/visibaubau4.png             | Bin 0 -> 342408 bytes
+ public/img/writing/curious-book-cover.png          | Bin 0 -> 645410 bytes
+ public/img/writing/flipped-classroom.jpg           | Bin 0 -> 111402 bytes
+ public/img/writing/gadget-addiction.jpg            | Bin 0 -> 25008 bytes
+ public/img/writing/generated-gadget-addiction.jpg  | Bin 0 -> 79228 bytes
+ public/img/writing/hero.jpg                        | Bin 0 -> 245615 bytes
+ public/img/writing/humankind-cover.jpg             | Bin 0 -> 86197 bytes
+ public/img/writing/indonesia-engineering-risk.jpg  | Bin 0 -> 256338 bytes
+ public/img/writing/islam-stoisisme.jpg             | Bin 0 -> 251687 bytes
+ public/img/writing/lab-smk.jpg                     | Bin 0 -> 213395 bytes
+ public/img/writing/one-creative-cover.jpg          | Bin 0 -> 123231 bytes
+ public/img/writing/pseudo-intelektual-cover.jpg    | Bin 0 -> 109074 bytes
+ public/img/writing/rencana-penelitian-tadabbur.jpg | Bin 0 -> 97599 bytes
+ public/img/writing/scrapling-ai-agents.jpg         | Bin 0 -> 1154695 bytes
+ public/img/writing/scrapling-banner.jpg            | Bin 0 -> 854193 bytes
+ public/img/writing/scrapling-github.jpg            | Bin 0 -> 908866 bytes
+ src/pages/[...slug].astro                          |  42 ++
+ src/pages/index.astro                              |   7 +
+ 44 files changed, 381 insertions(+), 332 deletions(-)
+ create mode 100644 public/img/ai-landscape-cover.jpg
+ create mode 100644 public/img/gadget-addiction.jpg
+ create mode 100644 public/img/generated-gadget-addiction.jpg
+ create mode 100644 public/img/generated-gadget-addiction.png
+ create mode 100644 public/img/humankind-cover.jpg
+ create mode 100644 public/img/indonesia-engineering-risk.jpg
+ create mode 100644 public/img/indonesia-engineering-risk.png
+ create mode 100644 public/img/screenshots/asesmen.png
+ create mode 100644 public/img/screenshots/bearboy.png
+ create mode 100644 public/img/screenshots/cekpondok.png
+ create mode 100644 public/img/screenshots/demopisantri.png
+ create mode 100644 public/img/screenshots/e-retribusi.png
+ create mode 100644 public/img/screenshots/kassaapp.png
+ create mode 100644 public/img/screenshots/kassaone.png
+ create mode 100644 public/img/screenshots/mbgman.png
+ create mode 100644 public/img/screenshots/pesantrenteknologi.png
+ create mode 100644 public/img/screenshots/pisantri.png
+ create mode 100644 public/img/screenshots/profilsantri.png
+ create mode 100644 public/img/screenshots/quiz-funwalhutmk2025.png
+ create mode 100644 public/img/screenshots/quizfunwalk.png
+ create mode 100644 public/img/screenshots/retribusi-admin.png
+ create mode 100644 public/img/screenshots/risethub.png
+ create mode 100644 public/img/screenshots/simkes.png
+ create mode 100644 public/img/screenshots/sirangkul.png
+ create mode 100644 public/img/screenshots/sukrigrafis.png
+ create mode 100644 public/img/screenshots/visibaubau4.png
+ create mode 100644 public/img/writing/curious-book-cover.png
+ create mode 100644 public/img/writing/flipped-classroom.jpg
+ create mode 100644 public/img/writing/gadget-addiction.jpg
+ create mode 100644 public/img/writing/generated-gadget-addiction.jpg
+ create mode 100644 public/img/writing/hero.jpg
+ create mode 100644 public/img/writing/humankind-cover.jpg
+ create mode 100644 public/img/writing/indonesia-engineering-risk.jpg
+ create mode 100644 public/img/writing/islam-stoisisme.jpg
+ create mode 100644 public/img/writing/lab-smk.jpg
+ create mode 100644 public/img/writing/one-creative-cover.jpg
+ create mode 100644 public/img/writing/pseudo-intelektual-cover.jpg
+ create mode 100644 public/img/writing/rencana-penelitian-tadabbur.jpg
+ create mode 100644 public/img/writing/scrapling-ai-agents.jpg
+ create mode 100644 public/img/writing/scrapling-banner.jpg
+ create mode 100644 public/img/writing/scrapling-github.jpg
+ create mode 100644 src/pages/[...slug].astro
+ create mode 100644 src/pages/index.astro
+  ✅ Pull selesai
+🌱 Membangun Digital Garden...
+
+  📁 catatan/ → 1 artikel
+  📁 laporan/ → 9 artikel
+  📁 project/ → 1 artikel
+  ✅ Sitemap: 15 URLs
+
+✅ Selesai! Total 11 halaman terbit.
+   📍 https://muhdanfyan.github.io/catatan/
+   📍 https://muhdanfyan.github.io/laporan/
+   📍 https://muhdanfyan.github.io/project/
+  ✅ Build selesai
